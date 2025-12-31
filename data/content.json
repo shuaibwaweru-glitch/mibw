@@ -1,0 +1,52 @@
+{
+  "brand": {
+    "name": "Manwell",
+    "tagline": "Not healed. Forged.",
+    "coreMessage": "The man you're pretending to be is killing the man you could become."
+  },
+  "videos": {
+    "themes": ["Sovereignty", "Fathering Yourself", "The Burden", "The Unspoken"],
+    "videoList": [
+      {
+        "id": 1,
+        "title": "Sovereignty",
+        "theme": "Sovereignty",
+        "youtubeId": "dQw4w9WgXcQ"
+      },
+      {
+        "id": 2,
+        "title": "Fathering Yourself",
+        "theme": "Fathering Yourself",
+        "youtubeId": "dQw4w9WgXcQ"
+      },
+      {
+        "id": 3,
+        "title": "The Burden",
+        "theme": "The Burden",
+        "youtubeId": "dQw4w9WgXcQ"
+      },
+      {
+        "id": 4,
+        "title": "The Unspoken",
+        "theme": "The Unspoken",
+        "youtubeId": "dQw4w9WgXcQ"
+      }
+    ]
+  },
+  "social": {
+    "instagram": "https://instagram.com",
+    "tiktok": "https://tiktok.com",
+    "youtube": "https://youtube.com",
+    "email": "contact@manwell.com"
+  },
+  "texts": {
+    "theMarbleMan": "You were born with marble inside you. Not the soft kind that breaks easily, but the kind that requires fire to sculpt. The world has tried to smooth your edges, to make you safe and acceptable. But the marble remains. And it will wait. It will wait for you to find the fire within and begin the work of your own becoming. The man you are pretending to be is made of glass. Beautiful, perhaps. Reflective. But fragile. The real man—the one made of marble—is waiting underneath.",
+    "theLastBell": "There is a bell ringing. It has been ringing your entire life. It is the call to sovereignty. And every time you choose comfort, every time you choose the performance, every time you choose to be useful instead of true—the bell grows quieter. The question is not whether the bell will stop ringing. It will. The question is: will you answer it before it does?",
+    "theGhost": "You are haunted by the man you could have been. He walks beside you every day. He whispers in the moments when you're alone. He is not angry. He is simply disappointed. Not in what you've done, but in what you've refused to become. This ghost is not your enemy. He is your invitation. He is the man waiting on the other side of your own resistance. And the only way to lay him to rest is to become him."
+  },
+  "newsletter": {
+    "headline": "Receive the Unspoken Truth. Every Week.",
+    "tagline": "The weekly séance for your soul.",
+    "valueProposition": "One deep text. One hard truth. One question to confront. Delivered in silence every Sunday dawn."
+  }
+}
