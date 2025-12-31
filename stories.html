@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manwell Stories - Real journeys of men forging sovereignty and authentic masculinity.">
+  <title>Stories - Manwell</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .story-card {
+      background: white;
+      border: 1px solid #e8f0f5;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08);
+    }
+
+    .story-card:hover {
+      border-color: #4a9b8e;
+      box-shadow: 0 12px 28px rgba(74, 155, 142, 0.15);
+      transform: translateY(-8px);
+    }
+
+    .story-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .story-content {
+      padding: 2rem;
+    }
+
+    .story-tag {
+      display: inline-block;
+      background: #4a9b8e;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.75rem;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+    }
+
+    .story-card h3 {
+      margin-bottom: 0.5rem;
+      color: #1a3a52;
+    }
+
+    .story-card .subtitle {
+      color: #6b7a8a;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .story-card .excerpt {
+      color: #4a5568;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .read-more-btn {
+      color: #4a9b8e;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .story-card:hover .read-more-btn {
+      gap: 0.8rem;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 58, 82, 0.95);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.4s ease;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #1a3a52;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 10;
+    }
+
+    .modal-close:hover {
+      color: #4a9b8e;
+    }
+
+    .modal-header {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: 3rem 2rem;
+    }
+
+    .modal-body h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-body .subtitle {
+      color: #6b7a8a;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .modal-body .full-story {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .story-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    /* Video Testimonials Section */
+    .testimonials-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 6rem 2rem;
+      border-top: 1px solid #e8f0f5;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 1px solid #e8f0f5;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: #4a9b8e;
+      box-shadow: 0 12px 28px rgba(74, 155, 142, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .testimonial-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1a3a52;
+    }
+
+    .testimonial-info {
+      padding: 1.5rem;
+    }
+
+    .testimonial-info h3 {
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-info .role {
+      color: #4a9b8e;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-info .quote {
+      color: #6b7a8a;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-content {
+        width: 95%;
+        max-height: 95vh;
+      }
+
+      .modal-body {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Manwell Logo">
+        Manwell
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">The Forge</a></li>
+          <li><a href="mission.html">The Mission</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== STORIES HERO ========== -->
+  <section class="hero" style="margin-top: 70px; height: 60vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-headline">Stories of the Forge</h1>
+      <p class="hero-subheading">Real journeys. Real growth. Real men.</p>
+    </div>
+  </section>
+
+  <!-- ========== STORIES GRID ========== -->
+  <section style="padding: 6rem 2rem; background: #ffffff;">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Member Stories</h2>
+      
+      <div class="stories-grid">
+        <!-- Story 1 -->
+        <div class="story-card reveal" onclick="openStory(0)">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=250&fit=crop" alt="Story thumbnail">
+          <div class="story-content">
+            <span class="story-tag">Sovereignty</span>
+            <h3>The Performance Shattered</h3>
+            <p class="subtitle">Kamau - Nairobi, Kenya</p>
+            <p class="excerpt">For 15 years, I played the role expected of me. Perfect job, perfect image, hollow inside. Until the day it all fell apart...</p>
+            <span class="read-more-btn">Read Full Story →</span>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="story-card reveal" onclick="openStory(1)">
+          <img src="https://images.unsplash.com/photo-1507931957432-a881a62bd858?w=500&h=250&fit=crop" alt="Story thumbnail">
+          <div class="story-content">
+            <span class="story-tag">Fathering Himself</span>
+            <h3>Fathering the Boy I Was</h3>
+            <p class="subtitle">Daniel - Kampala, Uganda</p>
+            <p class="excerpt">Growing up without a father, I didn't know what it meant to be a man. Then I realized: I had to become the father I never had...</p>
+            <span class="read-more-btn">Read Full Story →</span>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="story-card reveal" onclick="openStory(2)">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=250&fit=crop" alt="Story thumbnail">
+          <div class="story-content">
+            <span class="story-tag">The Burden</span>
+            <h3>From Weight to Wisdom</h3>
+            <p class="subtitle">Kofi - Accra, Ghana</p>
+            <p class="excerpt">Carrying the weight of family expectations, I forgot to carry myself. Learning to put down what isn't mine changed everything...</p>
+            <span class="read-more-btn">Read Full Story →</span>
+          </div>
+        </div>
+
+        <!-- Story 4 -->
+        <div class="story-card reveal" onclick="openStory(3)">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=250&fit=crop" alt="Story thumbnail">
+          <div class="story-content">
+            <span class="story-tag">Community</span>
+            <h3>Building Brotherhood</h3>
+            <p class="subtitle">Jamal - Dar es Salaam, Tanzania</p>
+            <p class="excerpt">Isolated and broken, I thought I was alone. Then I found community that didn't judge my darkness, but helped me forge light...</p>
+            <span class="read-more-btn">Read Full Story →</span>
+          </div>
+        </div>
+
+        <!-- Story 5 -->
+        <div class="story-card reveal" onclick="openStory(4)">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=250&fit=crop" alt="Story thumbnail">
+          <div class="story-content">
+            <span class="story-tag">Vulnerability</span>
+            <h3>The Strength in Softness</h3>
+            <p class="subtitle">Marcus - Addis Ababa, Ethiopia</p>
+            <p class="excerpt">I learned that real strength isn't about hardness. It's about having the courage to be broken, and then rebuild yourself true...</p>
+            <span class="read-more-btn">Read Full Story →</span>
+          </div>
+        </div>
+
+        <!-- Story 6 -->
+        <div class="story-card reveal" onclick="openStory(5)">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=500&h=250&fit=crop" alt="Story thumbnail">
+          <div class="story-content">
+            <span class="story-tag">Transformation</span>
+            <h3>From Transactional to True</h3>
+            <p class="subtitle">Rashid - Kigali, Rwanda</p>
+            <p class="excerpt">Everything I did was for external validation. Losing it all taught me the only worth that matters is the one I give myself...</p>
+            <span class="read-more-btn">Read Full Story →</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VIDEO TESTIMONIALS ========== -->
+  <section class="testimonials-section">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 1.5rem;">Video Testimonials</h2>
+      <p style="text-align: center; color: #6b7a8a; margin-bottom: 3rem;">Hear directly from men in the forge about their transformation.</p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <iframe 
+            class="testimonial-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Testimonial 1"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <div class="testimonial-info">
+            <h3>My Journey Began Here</h3>
+            <p class="role">Kamau - Nairobi</p>
+            <p class="quote">"This isn't motivation. It's truth."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <iframe 
+            class="testimonial-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Testimonial 2"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <div class="testimonial-info">
+            <h3>The Real Work Begins</h3>
+            <p class="role">Daniel - Kampala</p>
+            <p class="quote">"I became the father I never had."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <iframe 
+            class="testimonial-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Testimonial 3"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <div class="testimonial-info">
+            <h3>From Performance to Truth</h3>
+            <p class="role">Kofi - Accra</p>
+            <p class="quote">"The forge burns away what's false."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <iframe 
+            class="testimonial-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Testimonial 4"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <div class="testimonial-info">
+            <h3>Brotherhood Changed Everything</h3>
+            <p class="role">Jamal - Dar es Salaam</p>
+            <p class="quote">"I'm not alone anymore."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <iframe 
+            class="testimonial-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Testimonial 5"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <div class="testimonial-info">
+            <h3>Strength Through Softness</h3>
+            <p class="role">Marcus - Addis Ababa</p>
+            <p class="quote">"Real strength is being real."</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <iframe 
+            class="testimonial-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Testimonial 6"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+          <div class="testimonial-info">
+            <h3>True Worth Discovered</h3>
+            <p class="role">Rashid - Kigali</p>
+            <p class="quote">"My worth isn't for sale anymore."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORY MODAL ========== -->
+  <div class="modal" id="story-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeStory()">×</button>
+      
+      <div class="modal-header">
+        <img id="modal-image" src="" alt="Story">
+      </div>
+      
+      <div class="modal-body">
+        <span class="story-tag" id="modal-tag"></span>
+        <h2 id="modal-title"></h2>
+        <p class="subtitle" id="modal-subtitle"></p>
+        
+        <div class="full-story" id="modal-story"></div>
+        
+        <iframe 
+          id="modal-video"
+          class="story-video"
+          src=""
+          title="Story video"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p><strong>Manwell</strong>. © 2025. Father Yourself.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">A digital forge for men who refuse to perform.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const stories = [
+      {
+        tag: 'Sovereignty',
+        title: 'The Performance Shattered',
+        subtitle: 'Kamau - Nairobi, Kenya',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0',
+        excerpt: 'For 15 years, I played the role expected of me. Perfect job, perfect image, hollow inside. Until the day it all fell apart...',
+        fullStory: `For 15 years, I played the role expected of me. Perfect job, perfect car, perfect image. Completely hollow inside.
+
+My father was a successful businessman, and I became obsessed with mirroring him. Not learning from him—becoming him. Every achievement was fuel for the performance. Every accolade was evidence that I was doing it right.
+
+But inside, there was nothing real. Just a man performing masculinity, checking boxes, waiting for something to break.
+
+And it did.
+
+When my marriage fell apart, when my business failed, when the mask couldn't hold anymore—that's when I finally understood. I wasn't a man. I was a carefully constructed illusion.
+
+Manwell taught me that sovereignty isn't about success. It's about truth. Real sovereignty is choosing to be authentically myself, even when that self is broken, even when it's not impressive.
+
+Now I'm building something real. Not for anyone's approval. For my own.`
+      },
+      {
+        tag: 'Fathering Himself',
+        title: 'Fathering the Boy I Was',
+        subtitle: 'Daniel - Kampala, Uganda',
+        image: 'https://images.unsplash.com/photo-1507931957432-a881a62bd858?w=800&h=400&fit=crop',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0',
+        excerpt: 'Growing up without a father, I didn\'t know what it meant to be a man...',
+        fullStory: `My father left when I was seven. I raised myself on the streets, learning masculinity from anyone who would show it to me—most of it toxic.
+
+For years, I was angry at him. At the absence. At the emptiness it created. But anger doesn't fill holes. It just deepens them.
+
+The turning point came when I realized something: my father couldn't father me because he was lost. So I had to stop waiting for him to show up, and instead, become the father I needed.
+
+That's what Manwell means by fathering yourself. It's not therapy speak. It's not positive thinking. It's the hard, daily work of becoming the man who will guide the boy you were.
+
+I have conversations with my younger self. I ask him what he needs. What he's scared of. What he's ashamed of. And then I—the man I've become—I show up for him.
+
+That's fathering. And it changes everything.`
+      },
+      {
+        tag: 'The Burden',
+        title: 'From Weight to Wisdom',
+        subtitle: 'Kofi - Accra, Ghana',
+        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=400&fit=crop',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0',
+        excerpt: 'Carrying the weight of family expectations, I forgot to carry myself...',
+        fullStory: `I was the hope. The first in my family to go to university, to get a good job, to make it out. And I carried that weight like Atlas carries the world.
+
+Every decision wasn't mine. It was for them. Every achievement wasn't a joy—it was an obligation. Every failure felt like a betrayal of the family's hope.
+
+I didn't realize I was suffocating under a weight that wasn't mine to carry.
+
+The breakthrough came when I understood this: I am not responsible for my family's narrative. I am not their redemption. I am not their hope. I am a man, with my own life to live.
+
+That sounds selfish until you realize something deeper: I cannot pour from an empty cup. I cannot be their hope while I'm drowning. The most loving thing I can do for my family is to stop drowning, to become whole, to actually live.
+
+Now my father told me something he'd never said before: he's proud of me not for my accomplishments, but for having the courage to put myself down and pick up my own life. That's what fathering yourself looks like. That's what sovereignty is.`
+      },
+      {
+        tag: 'Community',
+        title: 'Building Brotherhood',
+        subtitle: 'Jamal - Dar es Salaam, Tanzania',
+        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0',
+        excerpt: 'Isolated and broken, I thought I was alone...',
+        fullStory: `I was isolated. Broken. And I thought I was alone because I was weak, because I couldn't handle life like a "real man" was supposed to.
+
+I built walls. High ones. Told myself that needing help was shameful, that vulnerability was weakness, that asking for support was admitting defeat.
+
+Then I found Manwell. And I found men who were broken too. Men who were struggling. Men who admitted it.
+
+What shocked me wasn't their struggles—it was their honesty. There's a power in a room full of men who refuse to pretend. A power in admitting darkness and discovering you're not alone in it.
+
+For the first time in my life, I didn't have to perform. I could just be. And in that safety, something shifted. I could finally look at the wounds I'd been running from.
+
+Brotherhood isn't about having your life together. It's about having the courage to fall apart in front of other men and discovering they'll catch you. And then doing the same for them.
+
+That's what's rebuilt me. Not motivation. Not tactics. Just real men, doing real work, together.`
+      },
+      {
+        tag: 'Vulnerability',
+        title: 'The Strength in Softness',
+        subtitle: 'Marcus - Addis Ababa, Ethiopia',
+        image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=400&fit=crop',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0',
+        excerpt: 'I learned that real strength isn\'t about hardness...',
+        fullStory: `I was hard. Armor-plated. Nothing could touch me because I wouldn't let anything touch me.
+
+In my world, softness was death. Emotion was weakness. Vulnerability was the fastest way to lose respect—from others and from yourself.
+
+So I perfected the art of being untouchable. And it worked. People feared me. Respected me. And I was completely alone.
+
+The real strength I learned in Manwell is the ability to be broken and still be standing. To be soft and still be strong. To feel deeply and not be destroyed by it.
+
+I cried for the first time in 25 years in a circle with other men. And none of us fell apart. We held space for each other's realness, and something in me healed that no amount of hardness ever could.
+
+Real strength isn't about armor. It's about courage. The courage to be seen, to be vulnerable, to be real.
+
+That's the kind of man I'm becoming. And he's stronger than anyone I was before.`
+      },
+      {
+        tag: 'Transformation',
+        title: 'From Transactional to True',
+        subtitle: 'Rashid - Kigali, Rwanda',
+        image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&h=400&fit=crop',
+        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0',
+        excerpt: 'Everything I did was for external validation...',
+        fullStory: `My entire life was a transaction. Every achievement was currency. Every relationship was leverage. Every moment was an opportunity to gain or maintain status.
+
+I optimized everything. My image, my network, my output. I became very successful at turning myself into a product.
+
+And very, very lonely.
+
+Because when you're always in transaction mode, you're never truly present. You're always evaluating: Is this person beneficial to my image? Is this experience going to increase my status? Am I getting a good return on this investment?
+
+That's no way to live. That's no way to love. That's no way to be a man.
+
+Losing everything—my job, my reputation, my image—forced me to ask a question I'd never asked before: Who am I when I have nothing to offer? Who am I when I'm not optimizing? Who am I when nobody's watching?
+
+And the answer terrified me. Because I didn't know.
+
+But in that terror, I found something real. I found that I exist beyond my productivity, beyond my status, beyond my ability to impress. I'm a man. That's enough.
+
+Now my worth isn't for sale. It isn't negotiable. It isn't dependent on market conditions. It just is.
+
+And that changes everything.`
+      }
+    ];
+
+    function openStory(index) {
+      const story = stories[index];
+      document.getElementById('modal-tag').textContent = story.tag;
+      document.getElementById('modal-title').textContent = story.title;
+      document.getElementById('modal-subtitle').textContent = story.subtitle;
+      document.getElementById('modal-image').src = story.image;
+      document.getElementById('modal-story').textContent = story.fullStory;
+      document.getElementById('modal-video').src = story.video;
+      document.getElementById('story-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStory() {
+      document.getElementById('story-modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('story-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'story-modal') closeStory();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeStory();
+    });
+  </script>
+
+</body>
+</html>
