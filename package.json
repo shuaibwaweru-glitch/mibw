@@ -21,10 +21,6 @@
     "type": "git",
     "url": "https://github.com/manwell/manwell.git"
   },
-  "devDependencies": {
-    "comment": "Optional: Add build tools, linters, or other dev dependencies as needed"
-  },
-  "optionalDependencies": {
-    "comment": "For future integration with 11ty, PostCSS, or other tools"
-  }
+  "devDependencies": {},
+  "optionalDependencies": {}
 }
