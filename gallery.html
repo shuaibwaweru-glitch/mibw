@@ -131,6 +131,7 @@
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="stories.html">Stories</a></li>
           <li><a href="community.html">Community</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
         </ul>
       </nav>
       <button class="menu-toggle">☰</button>
@@ -330,7 +331,42 @@
         });
       });
     });
+
+    // Crisis Widget
+    const widgetToggle = document.querySelector('.widget-toggle');
+    const widgetContent = document.querySelector('.widget-content');
+    
+    if (widgetToggle) {
+      widgetToggle.addEventListener('click', function() {
+        widgetContent.classList.toggle('open');
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.crisis-footer-widget')) {
+          widgetContent.classList.remove('open');
+        }
+      });
+    }
   </script>
+
+  <!-- Crisis Footer Widget (Appears on all pages) -->
+  <div class="crisis-footer-widget">
+    <button class="widget-toggle" aria-label="Toggle crisis resources">
+      <span class="widget-icon">🆘</span>
+    </button>
+    <div class="widget-content">
+      <p><strong>Need Help?</strong></p>
+      <a href="tel:988" class="widget-link">Call 988</a>
+      <a href="sms:741741?body=HELLO" class="widget-link">Text 741741</a>
+      <a href="crisis.html" class="widget-link">More Resources</a>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p><strong>Manwell</strong>. © 2025. Father Yourself.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">A digital forge for men who refuse to perform.</p>
+  </footer>
 
 </body>
 </html>
