@@ -466,6 +466,24 @@ textarea {
   min-height: 120px;
 }
 
+.form-confirmation {
+  background: linear-gradient(135deg, rgba(255, 90, 9, 0.1), rgba(255, 90, 9, 0.05));
+  border: 1px solid rgba(255, 90, 9, 0.3);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 4px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.form-confirmation h3 {
+  color: #ff5a09;
+  margin-bottom: 1rem;
+}
+
+.form-confirmation p {
+  color: #a8a8a8;
+}
+
 /* ========== ANIMATIONS ========== */
 @keyframes fadeInUp {
   from {
