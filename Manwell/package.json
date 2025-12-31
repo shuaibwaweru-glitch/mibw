@@ -1,0 +1,30 @@
+{
+  "name": "manwell",
+  "version": "1.0.0",
+  "description": "Manwell - Digital Forge for Modern Masculinity",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build needed for static site'",
+    "test": "echo 'Add testing framework as needed'"
+  },
+  "keywords": [
+    "masculinity",
+    "sovereignty",
+    "self-improvement",
+    "personal-development",
+    "forge"
+  ],
+  "author": "Manwell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manwell/manwell.git"
+  },
+  "devDependencies": {
+    "comment": "Optional: Add build tools, linters, or other dev dependencies as needed"
+  },
+  "optionalDependencies": {
+    "comment": "For future integration with 11ty, PostCSS, or other tools"
+  }
+}

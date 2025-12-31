@@ -1,0 +1,20 @@
+# Manwell Robots.txt
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://manwell.com/sitemap.xml
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1
+
+# Allow specific crawlers
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1

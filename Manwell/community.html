@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Séance - Weekly deep truths from Manwell. Email community for men forging sovereignty.">
+  <title>The Séance - Manwell</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    .form-confirmation {
+      background: linear-gradient(135deg, rgba(255, 90, 9, 0.1), rgba(255, 90, 9, 0.05));
+      border: 1px solid rgba(255, 90, 9, 0.3);
+      padding: 2rem;
+      text-align: center;
+      border-radius: 4px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .form-confirmation h3 {
+      color: #ff5a09;
+      margin-bottom: 1rem;
+    }
+
+    .form-confirmation p {
+      color: #a8a8a8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Manwell Logo">
+        Manwell
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">The Forge</a></li>
+          <li><a href="mission.html">The Mission</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== SÉANCE HERO ========== -->
+  <section class="hero" style="margin-top: 70px;">
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content" id="seance">
+      <h1 class="hero-headline">The Séance</h1>
+      <p class="hero-subheading">Receive the Unspoken Truth. Every Week.</p>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY INTRO ========== -->
+  <section class="content-section reveal">
+    <h2>A Weekly Gathering in Silence</h2>
+    <p>
+      There is an ancient practice: the séance. A gathering of souls in a quiet room, seeking truth beneath the surface. That is what this email is.
+    </p>
+    <p>
+      Every Sunday at dawn, one deep text arrives in your inbox. Not a newsletter. Not a promo. Not tactics or life hacks. Just one unfiltered truth. One hard reality. One question to sit with.
+    </p>
+    <p style="color: #4a9b8e; font-style: italic;">
+      Your email is sacred space. No spam. Only substance.
+    </p>
+  </section>
+
+  <!-- ========== SIGNUP FORM ========== -->
+  <section class="content-section reveal" style="border-bottom: none;">
+    <div class="form-container" style="max-width: 500px;">
+      <form id="newsletter-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="First name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="you@domain.com"
+            required
+          >
+        </div>
+
+        <div class="form-group" style="margin-bottom: 2rem;">
+          <p style="font-size: 0.85rem; color: #6b7a8a;">
+            By signing up, you're choosing sovereignty over comfort. You're saying yes to hard truths and deep work. Welcome to the forge.
+          </p>
+        </div>
+
+        <button type="submit" class="cta-button" style="width: 100%; padding: 1rem; cursor: pointer;">
+          Join the Séance
+        </button>
+      </form>
+
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e8f0f5;">
+        <p style="font-size: 0.9rem; color: #6b7a8a; text-align: center;">
+          Already a participant? <a href="#" onclick="alert('Check your email for the archive link.')">Access the archive.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT YOU'LL RECEIVE ========== -->
+  <section class="content-section reveal">
+    <h2 style="text-align: center;">What You'll Receive</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto;">
+      <div style="padding: 2rem; border: 1px solid #e8f0f5; border-radius: 8px; background: #f8f9fa;">
+        <h3 style="color: #4a9b8e; margin-bottom: 0.5rem;">One Deep Text</h3>
+        <p style="color: #6b7a8a; font-size: 0.95rem;">
+          Not a how-to. Not motivational. One poetic, unfiltered truth about what it means to be a man in this world.
+        </p>
+      </div>
+
+      <div style="padding: 2rem; border: 1px solid #e8f0f5; border-radius: 8px; background: #f8f9fa;">
+        <h3 style="color: #4a9b8e; margin-bottom: 0.5rem;">One Hard Reality</h3>
+        <p style="color: #6b7a8a; font-size: 0.95rem;">
+          The thing you've been avoiding. The truth beneath the surface. The confrontation you've been putting off.
+        </p>
+      </div>
+
+      <div style="padding: 2rem; border: 1px solid #e8f0f5; border-radius: 8px; background: #f8f9fa;">
+        <h3 style="color: #4a9b8e; margin-bottom: 0.5rem;">One Question to Sit With</h3>
+        <p style="color: #6b7a8a; font-size: 0.95rem;">
+          No answer required. No performance needed. Just a question that goes deep. That demands you look in the mirror.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION WITH IMAGES ========== -->
+  <section style="padding: 6rem 2rem; background: #f8f9fa; border-top: 1px solid #e8f0f5;">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 1rem;">Voices from the Community</h2>
+      <p style="text-align: center; color: #6b7a8a; margin-bottom: 3rem; font-size: 1.05rem;">Men who chose the forge over comfort.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <!-- Testimonial 1 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08); transition: all 0.4s ease;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="Profile" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 2rem;">
+            <h3 style="color: #1a3a52; margin-bottom: 0.3rem;">Marcus</h3>
+            <p style="color: #4a9b8e; font-size: 0.9rem; margin-bottom: 1rem;">Nairobi, Kenya</p>
+            <p style="color: #4a5568; font-style: italic;">
+              "These emails arrive and they know exactly where I'm stuck. Not motivational. Just true."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08); transition: all 0.4s ease;">
+          <img src="https://images.unsplash.com/photo-1507931957432-a881a62bd858?w=400&h=300&fit=crop" alt="Profile" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 2rem;">
+            <h3 style="color: #1a3a52; margin-bottom: 0.3rem;">James</h3>
+            <p style="color: #4a9b8e; font-size: 0.9rem; margin-bottom: 1rem;">Kampala, Uganda</p>
+            <p style="color: #4a5568; font-style: italic;">
+              "I've been reading for three months. No spam. No upsell. Just the real work."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08); transition: all 0.4s ease;">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop" alt="Profile" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 2rem;">
+            <h3 style="color: #1a3a52; margin-bottom: 0.3rem;">David</h3>
+            <p style="color: #4a9b8e; font-size: 0.9rem; margin-bottom: 1rem;">Dar es Salaam, Tanzania</p>
+            <p style="color: #4a5568; font-style: italic;">
+              "Sunday mornings are different now. That's the point. That's the forge."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08); transition: all 0.4s ease;">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Profile" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 2rem;">
+            <h3 style="color: #1a3a52; margin-bottom: 0.3rem;">Kofi</h3>
+            <p style="color: #4a9b8e; font-size: 0.9rem; margin-bottom: 1rem;">Accra, Ghana</p>
+            <p style="color: #4a5568; font-style: italic;">
+              "This isn't another email list. This is a community of men doing the work."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08); transition: all 0.4s ease;">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop" alt="Profile" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 2rem;">
+            <h3 style="color: #1a3a52; margin-bottom: 0.3rem;">Rashid</h3>
+            <p style="color: #4a9b8e; font-size: 0.9rem; margin-bottom: 1rem;">Kigali, Rwanda</p>
+            <p style="color: #4a5568; font-style: italic;">
+              "The work is real. The community is real. The transformation is real."
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08); transition: all 0.4s ease;">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=300&fit=crop" alt="Profile" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: 2rem;">
+            <h3 style="color: #1a3a52; margin-bottom: 0.3rem;">Jamal</h3>
+            <p style="color: #4a9b8e; font-size: 0.9rem; margin-bottom: 1rem;">Addis Ababa, Ethiopia</p>
+            <p style="color: #4a5568; font-style: italic;">
+              "Finally, a space where I don't have to perform. Where I can just be real."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="content-section reveal">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Voices from the Community</h2>
+    
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem;">
+      <div style="padding: 2rem; border-left: 3px solid #4a9b8e; background: #f8f9fa; border-radius: 4px;">
+        <p style="font-style: italic; color: #1a3a52; margin-bottom: 1rem;">
+          "These emails arrive and they know exactly where I'm stuck. Not motivational. Just true. This is what I needed."
+        </p>
+        <p style="color: #4a9b8e; font-weight: 700;">— Marcus</p>
+      </div>
+
+      <div style="padding: 2rem; border-left: 3px solid #4a9b8e; background: #f8f9fa; border-radius: 4px;">
+        <p style="font-style: italic; color: #1a3a52; margin-bottom: 1rem;">
+          "I've been reading for three months. No spam. No upsell. Just the real work. This is rare."
+        </p>
+        <p style="color: #4a9b8e; font-weight: 700;">— James</p>
+      </div>
+
+      <div style="padding: 2rem; border-left: 3px solid #4a9b8e; background: #f8f9fa; border-radius: 4px;">
+        <p style="font-style: italic; color: #1a3a52; margin-bottom: 1rem;">
+          "Sunday mornings are different now. I wake up, read, and I'm confronted. That's the point. That's the forge."
+        </p>
+        <p style="color: #4a9b8e; font-weight: 700;">— David</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRIVACY PROMISE ========== -->
+  <section class="content-section reveal" style="border-bottom: none;">
+    <h2 style="text-align: center; margin-bottom: 1.5rem;">Our Promise</h2>
+    <p style="text-align: center; color: #4a5568;">
+      <strong style="color: #1a3a52;">Your email is sacred space.</strong> We will never sell it. We will never spam it. We will never use it for anything except what we promised: one deep truth, one hard reality, one question to confront. That's it. That's all.
+    </p>
+    <p style="text-align: center; color: #4a5568; margin-top: 1rem; font-size: 0.9rem;">
+      If you change your mind, unsubscribe anytime. No questions asked. No shame. The door is always open.
+    </p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p><strong>Manwell</strong>. © 2025. Father Yourself.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">A digital forge for men who refuse to perform.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
