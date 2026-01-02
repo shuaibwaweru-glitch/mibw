@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Our Experts - Mental health professionals and advisors at Manwell">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Our Experts - Manwell</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <style>
+    .experts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .expert-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .expert-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .expert-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .expert-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .expert-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #1a3a52;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .expert-title {
+      color: #d4af37;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .expert-bio {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .expertise-tag {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #1a3a52;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .expertise-tag.featured {
+      background: #d4af37;
+      color: #1a3a52;
+    }
+
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #4a9b8e 100%);
+      margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1576091160550-112173dee94e?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Meet Our Experts</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Dedicated Professionals Committed to Your Wellness</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">Our team of licensed psychologists, counselors, and wellness specialists bring decades of combined experience to support your journey.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <!-- About Experts Section -->
+      <section style="margin: 4rem 0; text-align: center;">
+        <h2 style="font-family: 'Playfair Display', serif; color: #1a3a52; font-size: 2.5rem; margin-bottom: 1rem;">Who We Are</h2>
+        <p style="color: #666; max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.8;">
+          Each expert on the Manwell team has been carefully selected for their expertise, compassion, and dedication to men's mental health. We believe in evidence-based treatment combined with genuine human connection.
+        </p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Experts Grid -->
+      <section>
+        <h2 style="font-family: 'Playfair Display', serif; color: #1a3a52; font-size: 2rem; margin: 3rem 0 2rem 0;">Clinical Team</h2>
+        <div class="experts-grid">
+          <!-- Expert 1 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1537368310025-700d6a60b78c?w=400&h=350&fit=crop" alt="Dr. Samuel Okonkwo" class="expert-image">
+            <div class="expert-content">
+              <h3 class="expert-name">Dr. Samuel Okonkwo</h3>
+              <p class="expert-title">Clinical Psychologist, Ph.D.</p>
+              <p class="expert-bio">Specializes in cognitive behavioral therapy and trauma-informed care. Over 15 years helping men process depression, anxiety, and life transitions.</p>
+              <div class="expertise-tags">
+                <span class="expertise-tag featured">Depression</span>
+                <span class="expertise-tag featured">Anxiety</span>
+                <span class="expertise-tag">Trauma</span>
+                <span class="expertise-tag">CBT</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expert 2 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1537368310025-700d6a60b78c?w=400&h=350&fit=crop" alt="Dr. James Chen" class="expert-image">
+            <div class="expert-content">
+              <h3 class="expert-name">Dr. James Chen</h3>
+              <p class="expert-title">Licensed Clinical Counselor, M.A.</p>
+              <p class="expert-bio">Focuses on relationship dynamics, communication skills, and men's identity development. Passionate about helping men build authentic connections.</p>
+              <div class="expertise-tags">
+                <span class="expertise-tag featured">Relationships</span>
+                <span class="expertise-tag featured">Communication</span>
+                <span class="expertise-tag">Identity</span>
+                <span class="expertise-tag">Couples Work</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expert 3 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1576091160603-112173dee94e?w=400&h=350&fit=crop" alt="Dr. Maria Rodriguez" class="expert-image">
+            <div class="expert-content">
+              <h3 class="expert-name">Dr. Maria Rodriguez</h3>
+              <p class="expert-title">Addiction Specialist, Psy.D.</p>
+              <p class="expert-bio">Expert in substance use recovery and co-occurring disorders. 12+ years supporting men through addiction and recovery pathways.</p>
+              <div class="expertise-tags">
+                <span class="expertise-tag featured">Addiction</span>
+                <span class="expertise-tag featured">Recovery</span>
+                <span class="expertise-tag">Harm Reduction</span>
+                <span class="expertise-tag">Support Groups</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expert 4 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1537368310025-700d6a60b78c?w=400&h=350&fit=crop" alt="Dr. David Patel" class="expert-image">
+            <div class="expert-content">
+              <h3 class="expert-name">Dr. David Patel</h3>
+              <p class="expert-title">Trauma & EMDR Specialist</p>
+              <p class="expert-bio">Trained in EMDR and somatic therapies. Specializes in processing PTSD, complex trauma, and helping men reclaim their sense of safety.</p>
+              <div class="expertise-tags">
+                <span class="expertise-tag featured">Trauma</span>
+                <span class="expertise-tag featured">PTSD</span>
+                <span class="expertise-tag">EMDR</span>
+                <span class="expertise-tag">Somatic</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expert 5 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1576091160550-112173dee94e?w=400&h=350&fit=crop" alt="Dr. Angela Williams" class="expert-image">
+            <div class="expert-content">
+              <h3 class="expert-name">Dr. Angela Williams</h3>
+              <p class="expert-title">Grief Counselor, M.S.</p>
+              <p class="expert-bio">Compassionate guide through loss and bereavement. Helps men honor their emotions while moving forward with resilience and meaning.</p>
+              <div class="expertise-tags">
+                <span class="expertise-tag featured">Grief</span>
+                <span class="expertise-tag featured">Loss</span>
+                <span class="expertise-tag">Bereavement</span>
+                <span class="expertise-tag">Meaning-Making</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expert 6 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1537368310025-700d6a60b78c?w=400&h=350&fit=crop" alt="Dr. Michael Torres" class="expert-image">
+            <div class="expert-content">
+              <h3 class="expert-name">Dr. Michael Torres</h3>
+              <p class="expert-title">Wellness Coach & Health Psychologist</p>
+              <p class="expert-bio">Integrated approach combining mental health with physical wellness. Coaches men toward sustainable lifestyle changes and self-care practices.</p>
+              <div class="expertise-tags">
+                <span class="expertise-tag featured">Wellness</span>
+                <span class="expertise-tag featured">Lifestyle</span>
+                <span class="expertise-tag">Fitness</span>
+                <span class="expertise-tag">Nutrition</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Advisory Board Section -->
+      <section style="margin: 4rem 0;">
+        <h2 style="font-family: 'Playfair Display', serif; color: #1a3a52; font-size: 2rem; margin-bottom: 2rem;">Advisory Board</h2>
+        <div class="experts-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+          <!-- Board Member 1 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1576091160603-112173dee94e?w=400&h=300&fit=crop" alt="Prof. Robert Johnson" class="expert-image" style="height: 250px;">
+            <div class="expert-content">
+              <h3 class="expert-name" style="font-size: 1.3rem;">Prof. Robert Johnson</h3>
+              <p class="expert-title">University Professor, Mental Health Policy</p>
+              <p class="expert-bio" style="font-size: 0.9rem;">Research leader in men's mental health advocacy and systemic change.</p>
+            </div>
+          </div>
+
+          <!-- Board Member 2 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1537368310025-700d6a60b78c?w=400&h=300&fit=crop" alt="Dr. Lisa Anderson" class="expert-image" style="height: 250px;">
+            <div class="expert-content">
+              <h3 class="expert-name" style="font-size: 1.3rem;">Dr. Lisa Anderson</h3>
+              <p class="expert-title">Director, Community Health Programs</p>
+              <p class="expert-bio" style="font-size: 0.9rem;">20 years experience designing accessible mental health initiatives.</p>
+            </div>
+          </div>
+
+          <!-- Board Member 3 -->
+          <div class="expert-card">
+            <img src="https://images.unsplash.com/photo-1576091160550-112173dee94e?w=400&h=300&fit=crop" alt="Marcus Thompson" class="expert-image" style="height: 250px;">
+            <div class="expert-content">
+              <h3 class="expert-name" style="font-size: 1.3rem;">Marcus Thompson</h3>
+              <p class="expert-title">Peer Recovery Specialist, Author</p>
+              <p class="expert-bio" style="font-size: 0.9rem;">Lived experience advocate transforming men's recovery narratives.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section style="background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%); border-radius: 12px; padding: 4rem 2rem; text-align: center; margin: 4rem 0 3rem 0;">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Connect With an Expert</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Our team is ready to support your mental health journey. Book a consultation today.</p>
+        <a href="therapist-directory.html" class="btn" style="background: #d4af37; color: #1a3a52; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Find Your Therapist</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ngo-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Manwell</h4>
+        <p>Dedicated to transforming men's mental health through accessible, compassionate support and community.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="therapist-directory.html">Find Therapist</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell - Supporting Men's Mental Health. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

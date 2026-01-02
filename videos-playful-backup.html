@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mental Health Videos - Expert talks, tutorials, and educational content at Manwell">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Videos - Manwell</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <style>
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail::after {
+      content: '▶';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .video-card:hover .video-thumbnail::after {
+      background: rgba(212, 175, 55, 0.8);
+      transform: scale(1.2);
+    }
+
+    .video-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #1a3a52;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .video-speaker {
+      color: #d4af37;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .video-description {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 1rem 0;
+      flex: 1;
+    }
+
+    .video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      color: #999;
+      font-size: 0.85rem;
+    }
+
+    .series-badge {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #1a3a52;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .series-section {
+      background: linear-gradient(135deg, rgba(26, 58, 82, 0.05) 0%, rgba(74, 155, 142, 0.05) 100%);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .series-title {
+      font-family: 'Playfair Display', serif;
+      color: #1a3a52;
+      font-size: 1.8rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #4a9b8e 100%);
+      margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1611339555312-e607c04352fa?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Educational Videos</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Expert Insights. Practical Strategies. Real Stories.</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">Learn from mental health professionals and community leaders about topics that matter to you.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <!-- Featured Video Series -->
+      <section class="series-section">
+        <h2 class="series-title">Featured Series: Mental Health Fundamentals</h2>
+        <p style="color: #666; margin-bottom: 2rem;">10-part video series covering essential mental health topics from basics to advanced coping strategies.</p>
+        <div class="series-grid">
+          <div class="video-card">
+            <div class="video-thumbnail">📺</div>
+            <div class="video-content">
+              <span class="series-badge">Series 1/10</span>
+              <h3 class="video-title">Understanding Mental Health Basics</h3>
+              <p class="video-speaker">Dr. Samuel Okonkwo</p>
+              <p class="video-description">What is mental health? Learn the fundamentals and how mental health affects all aspects of your life.</p>
+              <div class="video-meta">
+                <span>12:45</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">📺</div>
+            <div class="video-content">
+              <span class="series-badge">Series 2/10</span>
+              <h3 class="video-title">Recognizing Depression Symptoms</h3>
+              <p class="video-speaker">Dr. Maria Rodriguez</p>
+              <p class="video-description">Identify signs of depression in yourself and others. Learn when to seek professional help.</p>
+              <div class="video-meta">
+                <span>15:22</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">📺</div>
+            <div class="video-content">
+              <span class="series-badge">Series 3/10</span>
+              <h3 class="video-title">Anxiety: Causes & Coping Strategies</h3>
+              <p class="video-speaker">Dr. James Chen</p>
+              <p class="video-description">Understanding anxiety triggers and evidence-based techniques to manage anxious thoughts and feelings.</p>
+              <div class="video-meta">
+                <span>18:10</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Expert Talks Section -->
+      <section>
+        <h2 style="font-family: 'Playfair Display', serif; color: #1a3a52; font-size: 2rem; margin: 3rem 0 2rem 0;">Expert Talks</h2>
+        <div class="videos-grid">
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Healing from Trauma</h3>
+              <p class="video-speaker">Dr. David Patel</p>
+              <p class="video-description">Deep dive into trauma recovery, EMDR therapy, and somatic approaches to healing stored trauma.</p>
+              <div class="video-meta">
+                <span>28:45</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Relationship Skills for Men</h3>
+              <p class="video-speaker">Dr. James Chen</p>
+              <p class="video-description">Building authentic connections through vulnerable communication and emotional intelligence.</p>
+              <div class="video-meta">
+                <span>24:18</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Recovery from Addiction</h3>
+              <p class="video-speaker">Dr. Maria Rodriguez</p>
+              <p class="video-description">Understanding addiction, recovery pathways, and building a support network for long-term sobriety.</p>
+              <div class="video-meta">
+                <span>32:05</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Grief and Loss Navigation</h3>
+              <p class="video-speaker">Dr. Angela Williams</p>
+              <p class="video-description">Navigating the grief process and honoring your emotions while moving forward with meaning.</p>
+              <div class="video-meta">
+                <span>25:30</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Work Stress & Burnout</h3>
+              <p class="video-speaker">Dr. Michael Torres</p>
+              <p class="video-description">Managing work-related stress, recognizing burnout, and creating healthy boundaries at work.</p>
+              <div class="video-meta">
+                <span>20:14</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Toxic Masculinity & Identity</h3>
+              <p class="video-speaker">Dr. Samuel Okonkwo</p>
+              <p class="video-description">Redefining masculinity, breaking stereotypes, and developing a healthy male identity.</p>
+              <div class="video-meta">
+                <span>29:42</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- CTA Section -->
+      <section style="background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%); border-radius: 12px; padding: 4rem 2rem; text-align: center; margin: 4rem 0 3rem 0;">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">More Support Available</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore our complete education library, assessments, and community support options.</p>
+        <a href="mental-health-hub.html" class="btn" style="background: #d4af37; color: #1a3a52; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Browse Education Hub</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ngo-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Manwell</h4>
+        <p>Dedicated to transforming men's mental health through accessible, compassionate support and community.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="therapist-directory.html">Find Therapist</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell - Supporting Men's Mental Health. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

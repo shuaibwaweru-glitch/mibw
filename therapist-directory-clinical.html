@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find a Therapist - Licensed mental health professionals specializing in men's mental health">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Find a Therapist - Manwell</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a3a52;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #1a3a52;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1a3a52 0%, #2d5a7f 100%);
+      color: white;
+      padding: 120px 2rem 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      background: white;
+      margin: 2rem 0;
+    }
+
+    section h2 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: #1a3a52;
+      margin-bottom: 2rem;
+    }
+
+    .filter-section {
+      background: #f8f9fa;
+      padding: 2.5rem;
+      border-radius: 4px;
+      margin-bottom: 3rem;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .filter-group label {
+      font-weight: 600;
+      color: #1a3a52;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .filter-group select {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #1a3a52;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #2d5a7f;
+    }
+
+    .therapist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .therapist-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 2.5rem;
+      transition: all 0.3s;
+    }
+
+    .therapist-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .therapist-name {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      color: #1a3a52;
+      margin-bottom: 0.25rem;
+    }
+
+    .therapist-title {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .therapist-details {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .therapist-details p {
+      margin: 0.5rem 0;
+      color: #666;
+    }
+
+    .therapy-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .therapy-tag {
+      display: inline-block;
+      background: #e3f2fd;
+      color: #1a3a52;
+      padding: 0.4rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-small {
+      flex: 1;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: #1a3a52;
+      color: white;
+      padding: 4rem 0 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      line-height: 2;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .therapist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">Manwell</a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="therapist-directory.html" class="active">Find Help</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="crisis.html">Crisis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Find a Therapist</h1>
+      <p>Browse our network of 200+ licensed mental health professionals specializing in men's mental health.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section>
+      <div class="filter-section">
+        <h3 style="margin-top: 0; color: #1a3a52;">Search Therapists</h3>
+        
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label>Specialization</label>
+            <select id="specialty">
+              <option>All Specializations</option>
+              <option>Depression</option>
+              <option>Anxiety</option>
+              <option>Trauma & PTSD</option>
+              <option>Addiction</option>
+              <option>Relationships</option>
+              <option>Grief & Loss</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Therapy Type</label>
+            <select id="modality">
+              <option>All Types</option>
+              <option>CBT</option>
+              <option>EMDR</option>
+              <option>Psychodynamic</option>
+              <option>DBT</option>
+              <option>Somatic</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Format</label>
+            <select id="format">
+              <option>All Formats</option>
+              <option>Online</option>
+              <option>In-Person</option>
+              <option>Hybrid</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label>Insurance</label>
+            <select id="insurance">
+              <option>All Options</option>
+              <option>Accepts Insurance</option>
+              <option>Sliding Scale</option>
+              <option>Private Pay</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-buttons">
+          <button class="btn">Search</button>
+          <button class="btn" style="background: #666;">Reset</button>
+        </div>
+      </div>
+
+      <h2>Available Therapists</h2>
+      
+      <div class="therapist-grid">
+        <!-- Therapist 1 -->
+        <div class="therapist-card">
+          <div class="therapist-name">Dr. Samuel Okonkwo, Ph.D.</div>
+          <div class="therapist-title">Licensed Clinical Psychologist</div>
+          
+          <p style="color: #666; margin-bottom: 1rem;">
+            15+ years specializing in depression, anxiety, and men's mental health. Evidence-based CBT and psychodynamic approaches.
+          </p>
+
+          <div class="therapy-tags">
+            <span class="therapy-tag">Depression</span>
+            <span class="therapy-tag">Anxiety</span>
+            <span class="therapy-tag">CBT</span>
+            <span class="therapy-tag">Online</span>
+          </div>
+
+          <div class="therapist-details">
+            <p><strong>Modalities:</strong> CBT, Psychodynamic</p>
+            <p><strong>Format:</strong> Online Video</p>
+            <p><strong>Insurance:</strong> Most major plans accepted</p>
+            <p><strong>Availability:</strong> Evenings & Weekends</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-small">Schedule</button>
+            <button class="btn btn-small" style="background: #666;">Profile</button>
+          </div>
+        </div>
+
+        <!-- Therapist 2 -->
+        <div class="therapist-card">
+          <div class="therapist-name">James Chen, M.A., LPCC</div>
+          <div class="therapist-title">Licensed Professional Counselor</div>
+          
+          <p style="color: #666; margin-bottom: 1rem;">
+            Specializes in relationships, communication, and identity development. Creates safe space for vulnerability.
+          </p>
+
+          <div class="therapy-tags">
+            <span class="therapy-tag">Relationships</span>
+            <span class="therapy-tag">Communication</span>
+            <span class="therapy-tag">Psychodynamic</span>
+            <span class="therapy-tag">Hybrid</span>
+          </div>
+
+          <div class="therapist-details">
+            <p><strong>Modalities:</strong> Psychodynamic, Experiential</p>
+            <p><strong>Format:</strong> Online & In-Person</p>
+            <p><strong>Insurance:</strong> Sliding scale available</p>
+            <p><strong>Availability:</strong> Weekday afternoons</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-small">Schedule</button>
+            <button class="btn btn-small" style="background: #666;">Profile</button>
+          </div>
+        </div>
+
+        <!-- Therapist 3 -->
+        <div class="therapist-card">
+          <div class="therapist-name">Dr. Maria Rodriguez, Psy.D.</div>
+          <div class="therapist-title">Addiction Specialist</div>
+          
+          <p style="color: #666; margin-bottom: 1rem;">
+            12+ years treating substance use disorders and co-occurring mental health conditions. Recovery-focused approach.
+          </p>
+
+          <div class="therapy-tags">
+            <span class="therapy-tag">Addiction</span>
+            <span class="therapy-tag">Recovery</span>
+            <span class="therapy-tag">DBT</span>
+            <span class="therapy-tag">In-Person</span>
+          </div>
+
+          <div class="therapist-details">
+            <p><strong>Modalities:</strong> DBT, Motivational Interviewing</p>
+            <p><strong>Format:</strong> In-Person only</p>
+            <p><strong>Insurance:</strong> Most major plans accepted</p>
+            <p><strong>Availability:</strong> Daily 9am-6pm</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-small">Schedule</button>
+            <button class="btn btn-small" style="background: #666;">Profile</button>
+          </div>
+        </div>
+
+        <!-- Therapist 4 -->
+        <div class="therapist-card">
+          <div class="therapist-name">Dr. David Patel, Ph.D.</div>
+          <div class="therapist-title">Trauma Specialist - EMDR</div>
+          
+          <p style="color: #666; margin-bottom: 1rem;">
+            Specializes in processing trauma and PTSD. Trained in EMDR and somatic therapies for lasting healing.
+          </p>
+
+          <div class="therapy-tags">
+            <span class="therapy-tag">Trauma</span>
+            <span class="therapy-tag">PTSD</span>
+            <span class="therapy-tag">EMDR</span>
+            <span class="therapy-tag">Online</span>
+          </div>
+
+          <div class="therapist-details">
+            <p><strong>Modalities:</strong> EMDR, Somatic, Mindfulness</p>
+            <p><strong>Format:</strong> Online Video</p>
+            <p><strong>Insurance:</strong> Private pay, FSA/HSA accepted</p>
+            <p><strong>Availability:</strong> Flexible scheduling</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-small">Schedule</button>
+            <button class="btn btn-small" style="background: #666;">Profile</button>
+          </div>
+        </div>
+
+        <!-- Therapist 5 -->
+        <div class="therapist-card">
+          <div class="therapist-name">Dr. Angela Williams, M.S.</div>
+          <div class="therapist-title">Grief & Bereavement Counselor</div>
+          
+          <p style="color: #666; margin-bottom: 1rem;">
+            Compassionate support for loss and grief. Helps men process emotions and find meaning after loss.
+          </p>
+
+          <div class="therapy-tags">
+            <span class="therapy-tag">Grief</span>
+            <span class="therapy-tag">Loss</span>
+            <span class="therapy-tag">Existential</span>
+            <span class="therapy-tag">Hybrid</span>
+          </div>
+
+          <div class="therapist-details">
+            <p><strong>Modalities:</strong> Existential, Narrative</p>
+            <p><strong>Format:</strong> Online & In-Person</p>
+            <p><strong>Insurance:</strong> Most major plans accepted</p>
+            <p><strong>Availability:</strong> Mornings & early evenings</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-small">Schedule</button>
+            <button class="btn btn-small" style="background: #666;">Profile</button>
+          </div>
+        </div>
+
+        <!-- Therapist 6 -->
+        <div class="therapist-card">
+          <div class="therapist-name">Dr. Michael Torres, Ph.D.</div>
+          <div class="therapist-title">Health Psychologist</div>
+          
+          <p style="color: #666; margin-bottom: 1rem;">
+            Integrates mental and physical health. Coaches sustainable lifestyle changes and wellness practices.
+          </p>
+
+          <div class="therapy-tags">
+            <span class="therapy-tag">Wellness</span>
+            <span class="therapy-tag">Lifestyle</span>
+            <span class="therapy-tag">Mindfulness</span>
+            <span class="therapy-tag">Online</span>
+          </div>
+
+          <div class="therapist-details">
+            <p><strong>Modalities:</strong> CBT, Motivational, Coaching</p>
+            <p><strong>Format:</strong> Online Video</p>
+            <p><strong>Insurance:</strong> Sliding scale available</p>
+            <p><strong>Availability:</strong> Weekdays & evenings</p>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn btn-small">Schedule</button>
+            <button class="btn btn-small" style="background: #666;">Profile</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #f8f9fa;">
+      <h2>Why Choose Manwell?</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
+          <h3 style="margin-top: 0; color: #1a3a52;">Licensed Professionals</h3>
+          <p>All therapists are licensed and trained in evidence-based practices.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
+          <h3 style="margin-top: 0; color: #1a3a52;">Flexible Scheduling</h3>
+          <p>Online, in-person, and hybrid options with convenient appointment times.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
+          <h3 style="margin-top: 0; color: #1a3a52;">Confidential & Safe</h3>
+          <p>HIPAA-compliant, secure, and commitment to your privacy.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
+          <h3 style="margin-top: 0; color: #1a3a52;">Insurance Accepted</h3>
+          <p>Most major insurance plans accepted. Sliding scale available.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
+          <h3 style="margin-top: 0; color: #1a3a52;">Specialized Training</h3>
+          <p>All therapists trained specifically in men's mental health.</p>
+        </div>
+
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
+          <h3 style="margin-top: 0; color: #1a3a52;">Immediate Support</h3>
+          <p>Quick scheduling. Some same-day appointments available.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="therapist-directory.html">Find Therapist</a></li>
+            <li><a href="mental-health-hub.html">Education</a></li>
+            <li><a href="assessments.html">Assessments</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="crisis.html">Crisis Help</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. Evidence-based mental health support for men.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

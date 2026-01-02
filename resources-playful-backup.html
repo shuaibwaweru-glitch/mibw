@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resources Library - Free mental health guides, tools, and materials at Manwell">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Resources - Manwell</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <style>
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .resource-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .resource-header {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .resource-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #1a3a52;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .resource-type {
+      color: #d4af37;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin: 0 0 1rem 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .resource-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0 0 1.5rem 0;
+      flex: 1;
+    }
+
+    .resource-download {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4a9b8e;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: auto;
+    }
+
+    .resource-download:hover {
+      color: #d4af37;
+      transform: translateX(5px);
+    }
+
+    .category-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border: 2px solid #4a9b8e;
+      background: white;
+      color: #1a3a52;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background: #4a9b8e;
+      color: white;
+    }
+
+    .filter-btn:hover {
+      background: #4a9b8e;
+      color: white;
+    }
+
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #4a9b8e 100%);
+      margin: 3rem 0;
+    }
+
+    .downloads-count {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1507842485343-583f15270580?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Free Resources</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Tools & Materials to Support Your Journey</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">Download guides, worksheets, and resources designed to support your mental health and wellness journey.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <!-- Category Filters -->
+      <div style="margin: 4rem 0 2rem 0;">
+        <h2 style="text-align: center; color: #1a3a52; font-size: 1.8rem; margin-bottom: 2rem;">Browse Resources</h2>
+        <div class="category-filter">
+          <button class="filter-btn active" onclick="filterResources('all')">All Resources</button>
+          <button class="filter-btn" onclick="filterResources('guides')">Guides & E-Books</button>
+          <button class="filter-btn" onclick="filterResources('worksheets')">Worksheets</button>
+          <button class="filter-btn" onclick="filterResources('tools')">Tools & Apps</button>
+          <button class="filter-btn" onclick="filterResources('crisis')">Crisis Resources</button>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Resources Grid -->
+      <div class="resources-grid" id="resourcesGrid">
+        <!-- Guide 1 -->
+        <div class="resource-card" data-category="guides">
+          <div class="resource-header">📖</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Men's Mental Health Guide</h3>
+            <p class="resource-type">Guide & E-Book</p>
+            <p class="resource-description">Comprehensive guide to understanding men's mental health, common challenges, and evidence-based approaches to wellness.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">2,340 downloads</div>
+          </div>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="resource-card" data-category="guides">
+          <div class="resource-header">📚</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Depression: A Practical Handbook</h3>
+            <p class="resource-type">Guide & E-Book</p>
+            <p class="resource-description">Learn about depression symptoms, causes, and practical strategies for managing depressive episodes.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">1,820 downloads</div>
+          </div>
+        </div>
+
+        <!-- Worksheet 1 -->
+        <div class="resource-card" data-category="worksheets">
+          <div class="resource-header">✏️</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Thought Record Worksheet</h3>
+            <p class="resource-type">Worksheet</p>
+            <p class="resource-description">CBT-based worksheet for identifying and challenging unhelpful thought patterns that affect your mood.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">1,245 downloads</div>
+          </div>
+        </div>
+
+        <!-- Worksheet 2 -->
+        <div class="resource-card" data-category="worksheets">
+          <div class="resource-header">📋</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Anxiety Coping Strategy Planner</h3>
+            <p class="resource-type">Worksheet</p>
+            <p class="resource-description">Interactive worksheet to identify anxiety triggers and develop personalized coping strategies.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">998 downloads</div>
+          </div>
+        </div>
+
+        <!-- Tool 1 -->
+        <div class="resource-card" data-category="tools">
+          <div class="resource-header">🧭</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Mood Tracking Template</h3>
+            <p class="resource-type">Tool</p>
+            <p class="resource-description">Monthly mood tracking calendar to monitor emotional patterns and identify triggers over time.</p>
+            <a href="#" class="resource-download">Download Excel ↓</a>
+            <div class="downloads-count">1,567 downloads</div>
+          </div>
+        </div>
+
+        <!-- Tool 2 -->
+        <div class="resource-card" data-category="tools">
+          <div class="resource-header">📱</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Mental Health Apps Directory</h3>
+            <p class="resource-type">Tool</p>
+            <p class="resource-description">Curated list of recommended mental health apps for meditation, therapy, tracking, and support.</p>
+            <a href="#" class="resource-download">View Directory ↓</a>
+            <div class="downloads-count">3,421 downloads</div>
+          </div>
+        </div>
+
+        <!-- Crisis 1 -->
+        <div class="resource-card" data-category="crisis">
+          <div class="resource-header">🆘</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Crisis Support Hotlines & Text Lines</h3>
+            <p class="resource-type">Crisis Resource</p>
+            <p class="resource-description">Complete directory of crisis support services available 24/7 including hotlines and text-to-chat options.</p>
+            <a href="crisis.html" class="resource-download">View Resources →</a>
+            <div class="downloads-count">Frequently accessed</div>
+          </div>
+        </div>
+
+        <!-- Crisis 2 -->
+        <div class="resource-card" data-category="crisis">
+          <div class="resource-header">🚨</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Mental Health Emergency Plan</h3>
+            <p class="resource-type">Crisis Resource</p>
+            <p class="resource-description">Worksheet to create a personal emergency plan for mental health crises with contacts and coping strategies.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">876 downloads</div>
+          </div>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="resource-card" data-category="guides">
+          <div class="resource-header">💬</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Communication Skills for Relationships</h3>
+            <p class="resource-type">Guide & E-Book</p>
+            <p class="resource-description">Master authentic communication, active listening, and vulnerability in your relationships.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">1,456 downloads</div>
+          </div>
+        </div>
+
+        <!-- Worksheet 3 -->
+        <div class="resource-card" data-category="worksheets">
+          <div class="resource-header">🎯</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Recovery Goal Setting Worksheet</h3>
+            <p class="resource-type">Worksheet</p>
+            <p class="resource-description">SMART goal setting worksheet for establishing meaningful recovery and wellness objectives.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">834 downloads</div>
+          </div>
+        </div>
+
+        <!-- Tool 3 -->
+        <div class="resource-card" data-category="tools">
+          <div class="resource-header">💡</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Self-Care Activity Library</h3>
+            <p class="resource-type">Tool</p>
+            <p class="resource-description">Comprehensive list of self-care activities organized by category and time commitment.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">2,103 downloads</div>
+          </div>
+        </div>
+
+        <!-- Guide 4 -->
+        <div class="resource-card" data-category="guides">
+          <div class="resource-header">🔄</div>
+          <div class="resource-content">
+            <h3 class="resource-title">Recovery & Addiction Support Guide</h3>
+            <p class="resource-type">Guide & E-Book</p>
+            <p class="resource-description">Comprehensive guide to understanding addiction, recovery pathways, and building support networks.</p>
+            <a href="#" class="resource-download">Download PDF ↓</a>
+            <div class="downloads-count">1,702 downloads</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Featured Resource -->
+      <section style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.05) 0%, rgba(74, 155, 142, 0.05) 100%); border-radius: 12px; padding: 3rem; margin: 3rem 0; text-align: center;">
+        <h2 style="font-family: 'Playfair Display', serif; color: #1a3a52; font-size: 1.8rem; margin-bottom: 1rem;">New Resource: Men's Wellness Playbook</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; line-height: 1.8;">A complete guide to building sustainable wellness habits including exercise, nutrition, sleep, and stress management tailored for men.</p>
+        <a href="#" class="btn" style="background: #4a9b8e; color: white; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Download Free Guide</a>
+      </section>
+
+      <!-- CTA Section -->
+      <section style="background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%); border-radius: 12px; padding: 4rem 2rem; text-align: center; margin: 4rem 0 3rem 0;">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">More Support Available</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Connect with our community, take assessments, and find professional support.</p>
+        <a href="community.html" class="btn" style="background: #d4af37; color: #1a3a52; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease; margin-right: 1rem;">Join Community</a>
+        <a href="therapist-directory.html" class="btn" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Find Therapist</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ngo-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Manwell</h4>
+        <p>Dedicated to transforming men's mental health through accessible, compassionate support and community.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="therapist-directory.html">Find Therapist</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell - Supporting Men's Mental Health. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterResources(category) {
+      const resources = document.querySelectorAll('.resource-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      resources.forEach(resource => {
+        if (category === 'all' || resource.dataset.category === category) {
+          resource.style.display = 'block';
+        } else {
+          resource.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manwell Gallery - Real stories, real transformations, real community. Photo gallery showcasing our members' journeys.">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Gallery - Manwell | Men's Mental Health</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <style>
+    .gallery-filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+    }
+
+    .filter-btn {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #d4af37;
+      background: white;
+      color: #1a3a52;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #d4af37;
+      color: #1a3a52;
+    }
+
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      height: 300px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.12);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(26, 58, 82, 0.8), rgba(74, 155, 142, 0.8));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay h4 {
+      color: #d4af37;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+
+    .gallery-overlay p {
+      color: white;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Our Community Gallery</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Real Stories. Real Transformations. Real Community.</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">
+        Witness the power of community. These are the faces, spaces, and moments that define Manwell.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section style="padding: 4rem 2rem; background: white;">
+    <div class="section-container">
+      <div class="gallery-filter-buttons">
+        <button class="filter-btn active" onclick="filterGallery('all')">All</button>
+        <button class="filter-btn" onclick="filterGallery('events')">Events</button>
+        <button class="filter-btn" onclick="filterGallery('community')">Community</button>
+        <button class="filter-btn" onclick="filterGallery('spaces')">Spaces</button>
+        <button class="filter-btn" onclick="filterGallery('people')">People</button>
+      </div>
+
+      <div class="gallery-masonry">
+        <!-- 24 Gallery Items -->
+        <div class="gallery-item" data-category="events">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Community Workshop">
+          <div class="gallery-overlay">
+            <h4>Community Workshop</h4>
+            <p>Building strength together</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="people">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Member Profile">
+          <div class="gallery-overlay">
+            <h4>Member Journey</h4>
+            <p>Stories of transformation</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop" alt="Group Support">
+          <div class="gallery-overlay">
+            <h4>Support Groups</h4>
+            <p>Brotherhood and trust</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="spaces">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Manwell Space">
+          <div class="gallery-overlay">
+            <h4>Our Space</h4>
+            <p>Safe environment for growth</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Wellness Activity">
+          <div class="gallery-overlay">
+            <h4>Wellness Activity</h4>
+            <p>Physical and mental health</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="people">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Success Story">
+          <div class="gallery-overlay">
+            <h4>Success Story</h4>
+            <p>Life transformed</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop" alt="Team Building">
+          <div class="gallery-overlay">
+            <h4>Team Building</h4>
+            <p>Connections that matter</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="spaces">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Meeting Room">
+          <div class="gallery-overlay">
+            <h4>Meeting Space</h4>
+            <p>Where healing begins</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Workshop">
+          <div class="gallery-overlay">
+            <h4>Educational Workshop</h4>
+            <p>Learning together</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="people">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Mentor">
+          <div class="gallery-overlay">
+            <h4>Mentorship</h4>
+            <p>Guidance and support</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop" alt="Gathering">
+          <div class="gallery-overlay">
+            <h4>Community Gathering</h4>
+            <p>Strength in numbers</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="spaces">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Workspace">
+          <div class="gallery-overlay">
+            <h4>Workspace</h4>
+            <p>Environment for growth</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Event">
+          <div class="gallery-overlay">
+            <h4>Community Event</h4>
+            <p>Building connections</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="people">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Portrait">
+          <div class="gallery-overlay">
+            <h4>Member Portrait</h4>
+            <p>Every story matters</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop" alt="Discussion">
+          <div class="gallery-overlay">
+            <h4>Open Discussion</h4>
+            <p>Authentic conversations</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="spaces">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Facility">
+          <div class="gallery-overlay">
+            <h4>Our Facility</h4>
+            <p>Safe and welcoming</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Fitness">
+          <div class="gallery-overlay">
+            <h4>Fitness Program</h4>
+            <p>Health and wellness</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="people">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Speaker">
+          <div class="gallery-overlay">
+            <h4>Guest Speaker</h4>
+            <p>Wisdom and insight</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop" alt="Fellowship">
+          <div class="gallery-overlay">
+            <h4>Fellowship</h4>
+            <p>Bonds that strengthen</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="spaces">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Studio">
+          <div class="gallery-overlay">
+            <h4>Creative Space</h4>
+            <p>Expression and growth</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Celebration">
+          <div class="gallery-overlay">
+            <h4>Celebration</h4>
+            <p>Success and joy</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="people">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Advocate">
+          <div class="gallery-overlay">
+            <h4>Advocacy</h4>
+            <p>Making a difference</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="community">
+          <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop" alt="Network">
+          <div class="gallery-overlay">
+            <h4>Network Building</h4>
+            <p>Strong connections</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="spaces">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop" alt="Office">
+          <div class="gallery-overlay">
+            <h4>Office Environment</h4>
+            <p>Professional care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="image-section" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.7), rgba(74, 155, 142, 0.6)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop') center/cover; background-attachment: fixed;">
+    <div class="image-section-content">
+      <h2>Share Your Story</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">
+        Your journey matters. Submit your story and become part of the Manwell community gallery.
+      </p>
+      <a href="stories.html" class="cta-primary">Submit Your Story</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Manwell</h3>
+        <p>Supporting men's mental health through community, resources, and professional care.</p>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="mission.html">About</a>
+        <a href="activities.html">Programs</a>
+        <a href="therapist-directory.html">Find Help</a>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <a href="mental-health-hub.html">Education</a>
+        <a href="assessments.html">Self-Assessment</a>
+        <a href="community.html">Community</a>
+        <a href="crisis.html">Crisis</a>
+      </div>
+      <div class="footer-section">
+        <h3>Support</h3>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Manwell. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

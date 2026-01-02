@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community Forum - Peer support, discussion threads, and community for men's mental health">
+  <title>Community Forum | Manwell - Men's Mental Health</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"></head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html" class="nav-active">Community</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Community Forum</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Your Tribe. Your Safe Space. Your Support.</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">
+        Connect with thousands of men on similar journeys. Share your story, offer support, and find belonging.
+      </p>
+    </div>
+  </section>
+
+    <!-- Forum Overview -->
+    <section class="forum-overview">
+      <div class="container">
+        <div class="overview-stats">
+          <div class="stat-card">
+            <div class="stat-number">2,847</div>
+            <div class="stat-label">Active Members</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">12,394</div>
+            <div class="stat-label">Discussion Threads</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">48,201</div>
+            <div class="stat-label">Posts & Replies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Active Moderators</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Discussion CTA -->
+    <section class="start-discussion-cta">
+      <div class="container">
+        <h2>Have Something to Share?</h2>
+        <p>Start a conversation, ask for advice, or share your story with men who understand.</p>
+        <button class="btn btn-primary" onclick="document.getElementById('startThreadForm').scrollIntoView({behavior: 'smooth'})">Start a Discussion</button>
+      </div>
+    </section>
+
+    <!-- Forum Categories -->
+    <section class="forum-categories">
+      <div class="container">
+        <h2>Forum Categories</h2>
+        <div class="categories-grid">
+          <!-- Category 1: Mental Health -->
+          <div class="category-card" data-category="mental-health">
+            <div class="category-icon">ðŸ§ </div>
+            <h3>Mental Health & Wellness</h3>
+            <p>Discussions on depression, anxiety, trauma, stress management, and overall mental well-being</p>
+            <div class="category-stats">
+              <span class="thread-count">2,341 threads</span>
+              <span class="post-count">9,847 posts</span>
+            </div>
+            <a href="#" class="category-link">View Discussions â†’</a>
+          </div>
+
+          <!-- Category 2: Relationships -->
+          <div class="category-card" data-category="relationships">
+            <div class="category-icon">ðŸ‘¥</div>
+            <h3>Relationships & Communication</h3>
+            <p>Family dynamics, friendships, romantic relationships, vulnerability, and building connections</p>
+            <div class="category-stats">
+              <span class="thread-count">1,823 threads</span>
+              <span class="post-count">7,294 posts</span>
+            </div>
+            <a href="#" class="category-link">View Discussions â†’</a>
+          </div>
+
+          <!-- Category 3: Work & Identity -->
+          <div class="category-card" data-category="work-identity">
+            <div class="category-icon">ðŸ’¼</div>
+            <h3>Work, Career & Identity</h3>
+            <p>Work-related stress, career transitions, identity questions, masculinity, and purpose</p>
+            <div class="category-stats">
+              <span class="thread-count">1,567 threads</span>
+              <span class="post-count">6,234 posts</span>
+            </div>
+            <a href="#" class="category-link">View Discussions â†’</a>
+          </div>
+
+          <!-- Category 4: Recovery & Addiction -->
+          <div class="category-card" data-category="recovery">
+            <div class="category-icon">ðŸ”“</div>
+            <h3>Recovery & Addiction Support</h3>
+            <p>Substance use recovery, addiction support, sobriety journeys, and relapse prevention</p>
+            <div class="category-stats">
+              <span class="thread-count">892 threads</span>
+              <span class="post-count">4,123 posts</span>
+            </div>
+            <a href="#" class="category-link">View Discussions â†’</a>
+          </div>
+
+          <!-- Category 5: Grief & Loss -->
+          <div class="category-card" data-category="grief">
+            <div class="category-icon">ðŸ’”</div>
+            <h3>Grief & Loss</h3>
+            <p>Loss of loved ones, processing grief, bereavement support, and moving forward</p>
+            <div class="category-stats">
+              <span class="thread-count">412 threads</span>
+              <span class="post-count">1,876 posts</span>
+            </div>
+            <a href="#" class="category-link">View Discussions â†’</a>
+          </div>
+
+          <!-- Category 6: Success & Growth -->
+          <div class="category-card" data-category="growth">
+            <div class="category-icon">ðŸš€</div>
+            <h3>Success Stories & Growth</h3>
+            <p>Wins, breakthroughs, milestones reached, and celebrating progress on your mental health journey</p>
+            <div class="category-stats">
+              <span class="thread-count">1,359 threads</span>
+              <span class="post-count">7,827 posts</span>
+            </div>
+            <a href="#" class="category-link">View Discussions â†’</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Discussions -->
+    <section class="featured-discussions">
+      <div class="container">
+        <h2>Active Discussions</h2>
+        <div class="discussions-list">
+          <!-- Discussion 1 -->
+          <div class="discussion-thread">
+            <div class="thread-avatar">ðŸ‘¤</div>
+            <div class="thread-content">
+              <h3 class="thread-title">How do you handle anxiety when you're alone?</h3>
+              <p class="thread-excerpt">Been struggling with late-night anxiety spirals. What techniques do you all use to ground yourself when there's no one around to help?</p>
+              <div class="thread-meta">
+                <span class="thread-author">Started by David â€¢ 3 days ago</span>
+                <span class="thread-category-badge mental-health">Mental Health</span>
+                <span class="thread-activity">47 replies â€¢ Last active 2 hours ago</span>
+              </div>
+            </div>
+            <div class="thread-action">
+              <a href="#" class="btn btn-small">Join Discussion</a>
+            </div>
+          </div>
+
+          <!-- Discussion 2 -->
+          <div class="discussion-thread">
+            <div class="thread-avatar">ðŸ‘¤</div>
+            <div class="thread-content">
+              <h3 class="thread-title">One year sober today</h3>
+              <p class="thread-excerpt">Can't believe it's been a full year. This community has been instrumental in my recovery. Want to share some of the resources that helped me most.</p>
+              <div class="thread-meta">
+                <span class="thread-author">Started by Marcus â€¢ 1 day ago</span>
+                <span class="thread-category-badge recovery">Recovery</span>
+                <span class="thread-activity">89 replies â€¢ Last active 30 minutes ago</span>
+              </div>
+            </div>
+            <div class="thread-action">
+              <a href="#" class="btn btn-small">Join Discussion</a>
+            </div>
+          </div>
+
+          <!-- Discussion 3 -->
+          <div class="discussion-thread">
+            <div class="thread-avatar">ðŸ‘¤</div>
+            <div class="thread-content">
+              <h3 class="thread-title">Is it okay to talk about therapy with your partner?</h3>
+              <p class="thread-excerpt">My girlfriend wants to know what I'm working through in therapy. I'm hesitant to open up completely. How do you balance vulnerability with boundaries?</p>
+              <div class="thread-meta">
+                <span class="thread-author">Started by James â€¢ 2 days ago</span>
+                <span class="thread-category-badge relationships">Relationships</span>
+                <span class="thread-activity">62 replies â€¢ Last active 6 hours ago</span>
+              </div>
+            </div>
+            <div class="thread-action">
+              <a href="#" class="btn btn-small">Join Discussion</a>
+            </div>
+          </div>
+
+          <!-- Discussion 4 -->
+          <div class="discussion-thread">
+            <div class="thread-avatar">ðŸ‘¤</div>
+            <div class="thread-content">
+              <h3 class="thread-title">Dealing with work stress without burning out</h3>
+              <p class="thread-excerpt">How do you maintain boundaries at work when everyone expects you to be strong all the time? Asking for help feels like weakness in my field.</p>
+              <div class="thread-meta">
+                <span class="thread-author">Started by Kofi â€¢ 5 days ago</span>
+                <span class="thread-category-badge work-identity">Work & Career</span>
+                <span class="thread-activity">34 replies â€¢ Last active 1 day ago</span>
+              </div>
+            </div>
+            <div class="thread-action">
+              <a href="#" class="btn btn-small">Join Discussion</a>
+            </div>
+          </div>
+
+          <!-- Discussion 5 -->
+          <div class="discussion-thread">
+            <div class="thread-avatar">ðŸ‘¤</div>
+            <div class="thread-content">
+              <h3 class="thread-title">First time opening up about my depression</h3>
+              <p class="thread-excerpt">I finally told my best friend about what I've been dealing with. It was terrifying but also relieving. Anyone else had this experience?</p>
+              <div class="thread-meta">
+                <span class="thread-author">Started by Rashid â€¢ 4 days ago</span>
+                <span class="thread-category-badge mental-health">Mental Health</span>
+                <span class="thread-activity">71 replies â€¢ Last active 12 hours ago</span>
+              </div>
+            </div>
+            <div class="thread-action">
+              <a href="#" class="btn btn-small">Join Discussion</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Start New Thread Form -->
+    <section class="start-thread-section" id="startThreadForm">
+      <div class="container">
+        <h2>Start Your Own Discussion</h2>
+        <p>Share your thoughts, ask questions, or offer support to others in the community.</p>
+
+        <form class="thread-form" id="newThreadForm">
+          <div class="form-group">
+            <label for="thread-title">Discussion Title</label>
+            <input type="text" id="thread-title" name="thread-title" placeholder="What would you like to discuss?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="thread-category">Category</label>
+            <select id="thread-category" name="thread-category" required>
+              <option value="">Select a category...</option>
+              <option value="mental-health">Mental Health & Wellness</option>
+              <option value="relationships">Relationships & Communication</option>
+              <option value="work-identity">Work, Career & Identity</option>
+              <option value="recovery">Recovery & Addiction Support</option>
+              <option value="grief">Grief & Loss</option>
+              <option value="growth">Success Stories & Growth</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="thread-message">Your Message</label>
+            <textarea id="thread-message" name="thread-message" placeholder="Share your thoughts, question, or experience..." rows="6" required></textarea>
+          </div>
+
+          <div class="form-note">
+            <strong>Community Guidelines:</strong> Be respectful, supportive, and authentic. This is a safe space for vulnerability. Harassment, discrimination, and spam are not tolerated.
+          </div>
+
+          <button type="submit" class="btn btn-primary">Post Discussion</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Community Guidelines -->
+    <section class="community-guidelines">
+      <div class="container">
+        <h2>Community Guidelines</h2>
+        <div class="guidelines-grid">
+          <div class="guideline-card">
+            <div class="guideline-icon">ðŸ¤</div>
+            <h3>Be Respectful</h3>
+            <p>Treat all members with dignity and respect, even when you disagree. We come from different backgrounds and have different experiences.</p>
+          </div>
+
+          <div class="guideline-card">
+            <div class="guideline-icon">ðŸ’ª</div>
+            <h3>Support, Don't Judge</h3>
+            <p>Offer encouragement and shared experiences. We're all on a journey. Judgment has no place here.</p>
+          </div>
+
+          <div class="guideline-card">
+            <div class="guideline-icon">âœ‹</div>
+            <h3>Maintain Confidentiality</h3>
+            <p>What's shared in the forum stays in the forum. Don't share others' stories without permission.</p>
+          </div>
+
+          <div class="guideline-card">
+            <div class="guideline-icon">âŒ</div>
+            <h3>No Medical Advice</h3>
+            <p>Share experiences, not medical advice. Always recommend consulting with a mental health professional for clinical guidance.</p>
+          </div>
+
+          <div class="guideline-card">
+            <div class="guideline-icon">ðŸš«</div>
+            <h3>Zero Tolerance for Harm</h3>
+            <p>Harassment, discrimination, hate speech, and spam will result in immediate removal. We protect our community.</p>
+          </div>
+
+          <div class="guideline-card">
+            <div class="guideline-icon">ðŸ†˜</div>
+            <h3>Crisis Resources Available</h3>
+            <p>If you're in crisis, reach out to 988 (Suicide & Crisis Lifeline) or text 741741 (Crisis Text Line). Professional help is always available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moderation Notice -->
+    <section class="moderation-notice">
+      <div class="container">
+        <h2>We're Here to Keep This Safe</h2>
+        <p>Our team of trained moderators works 24/7 to ensure this community remains a safe, supportive space. We:</p>
+        <ul class="moderation-list">
+          <li><strong>Monitor all discussions</strong> to prevent harassment and harmful content</li>
+          <li><strong>Respond to reports</strong> within 2 hours of receipt</li>
+          <li><strong>Enforce guidelines consistently</strong> while respecting the complexity of mental health discussions</li>
+          <li><strong>Train moderators</strong> in mental health awareness and trauma-informed communication</li>
+          <li><strong>Prioritize crisis situations</strong> and connect members to emergency resources when needed</li>
+        </ul>
+        <p style="margin-top: 2rem;"><strong>Report a problem?</strong> Use the "Report" button on any post or contact our moderation team at <a href="mailto:support@manwell.org">support@manwell.org</a></p>
+      </div>
+    </section>
+
+    <!-- Expert Moderators -->
+    <section class="moderator-team">
+      <div class="container">
+        <h2>Meet Our Moderators</h2>
+        <p style="text-align: center; margin-bottom: 3rem; color: #6b7a8a;">Trained mental health professionals and experienced peer supporters keeping our community safe</p>
+        <div class="moderators-grid">
+          <div class="moderator-card">
+            <div class="moderator-avatar">ðŸ‘¨</div>
+            <h3>Dr. Samuel Okonkwo</h3>
+            <p class="moderator-title">Licensed Clinical Psychologist</p>
+            <p class="moderator-bio">15+ years experience in men's mental health, specializing in trauma and recovery</p>
+          </div>
+
+          <div class="moderator-card">
+            <div class="moderator-avatar">ðŸ‘¨</div>
+            <h3>James Kipchoge</h3>
+            <p class="moderator-title">Mental Health Counselor & Peer Advocate</p>
+            <p class="moderator-bio">In recovery, committed to supporting others on their sobriety journey</p>
+          </div>
+
+          <div class="moderator-card">
+            <div class="moderator-avatar">ðŸ‘¨</div>
+            <h3>Dr. Ahmed Hassan</h3>
+            <p class="moderator-title">Psychiatrist & Mental Health Educator</p>
+            <p class="moderator-bio">Specializes in depression and anxiety, passionate about accessible mental healthcare</p>
+          </div>
+
+          <div class="moderator-card">
+            <div class="moderator-avatar">ðŸ‘¨</div>
+            <h3>Kofi Mensah</h3>
+            <p class="moderator-title">Peer Moderator & Community Builder</p>
+            <p class="moderator-bio">Active member since day one, guides men through crisis with compassion</p>
+          </div>
+
+          <div class="moderator-card">
+            <div class="moderator-avatar">ðŸ‘¨</div>
+            <h3>Dr. Marcus Okafor</h3>
+            <p class="moderator-title">Grief & Loss Specialist</p>
+            <p class="moderator-bio">Expert in bereavement support and processing complex emotions</p>
+          </div>
+
+          <div class="moderator-card">
+            <div class="moderator-avatar">ðŸ‘¨</div>
+            <h3>Rashid Al-Omari</h3>
+            <p class="moderator-title">Community Advocate & Therapist</p>
+            <p class="moderator-bio">Promotes diversity and ensures all voices are heard and respected</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crisis Disclaimer -->
+    <section class="crisis-disclaimer-section">
+      <div class="container">
+        <h2>Crisis Support is Available 24/7</h2>
+        <p>While peer support is valuable, it is not a substitute for professional mental health care. If you are in crisis:</p>
+        
+        <div class="crisis-contacts">
+          <div class="crisis-contact">
+            <h3>988 Suicide & Crisis Lifeline</h3>
+            <p><strong>Call or text 988</strong> (available 24/7)</p>
+            <p>Free, confidential support from trained counselors</p>
+          </div>
+
+          <div class="crisis-contact">
+            <h3>Crisis Text Line</h3>
+            <p><strong>Text HOME to 741741</strong></p>
+            <p>Reach trained crisis counselors via text anytime</p>
+          </div>
+
+          <div class="crisis-contact">
+            <h3>Emergency Services</h3>
+            <p><strong>Call 911</strong></p>
+            <p>For immediate medical emergency or safety risk</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Crisis Footer Widget -->
+  <div id="crisisWidget" class="crisis-widget">
+    <button id="crisisToggle" class="crisis-toggle">
+      <span class="crisis-icon">ðŸ†˜</span>
+      <span class="crisis-label">In Crisis?</span>
+    </button>
+    
+    <div id="crisisMenu" class="crisis-menu hidden">
+      <a href="tel:988" class="crisis-link">
+        <strong>Call 988</strong><br>
+        <small>24/7 Suicide Prevention</small>
+      </a>
+      <a href="#" onclick="openCrisisChat()" class="crisis-link">
+        <strong>Text HOME to 741741</strong><br>
+        <small>Crisis Text Line</small>
+      </a>
+      <a href="tel:911" class="crisis-link">
+        <strong>Call 911</strong><br>
+        <small>Emergency Services</small>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Manwell. Supporting men's mental health every day.</p>
+    </div>
+  </footer>
+
+  <script>
+    // New Thread Form Submission
+    const newThreadForm = document.getElementById('newThreadForm');
+    if (newThreadForm) {
+      newThreadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = document.getElementById('thread-title').value;
+        alert(`Thank you for starting a discussion: "${title}"\n\nYour post has been submitted for moderation review and will appear within 24 hours.`);
+        newThreadForm.reset();
+      });
+    }
+
+    // Crisis Widget Toggle
+    const crisisToggle = document.getElementById('crisisToggle');
+    const crisisMenu = document.getElementById('crisisMenu');
+
+    if (crisisToggle) {
+      crisisToggle.addEventListener('click', () => {
+        crisisMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.crisis-widget')) {
+          crisisMenu.classList.add('hidden');
+        }
+      });
+    }
+
+    function openCrisisChat() {
+      alert('Crisis Text Line: Text HOME to 741741');
+    }
+  </script>
+</body>
+</html>
+

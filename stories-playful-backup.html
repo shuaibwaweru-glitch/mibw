@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Member Stories - Real journeys, real transformations at Manwell">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Member Stories - Manwell</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <style>
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .story-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .story-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      position: relative;
+    }
+
+    .story-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-author {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #1a3a52;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .story-category {
+      color: #d4af37;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .story-excerpt {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .read-more-link {
+      color: #4a9b8e;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: auto;
+      transition: all 0.3s ease;
+    }
+
+    .read-more-link:hover {
+      color: #1a3a52;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border: 2px solid #4a9b8e;
+      background: white;
+      color: #1a3a52;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background: #4a9b8e;
+      color: white;
+    }
+
+    .filter-btn:hover {
+      background: #4a9b8e;
+      color: white;
+    }
+
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #4a9b8e 100%);
+      margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Member Stories</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Real Journeys. Real Transformations.</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">Read inspiring stories from men who took their first step, found support, and are rebuilding their lives with purpose and hope.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div style="margin: 4rem 0 2rem 0;">
+        <h2 style="text-align: center; color: #1a3a52; font-size: 1.8rem; margin-bottom: 2rem;">Browse Stories</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" onclick="filterStories('all')">All Stories</button>
+          <button class="filter-btn" onclick="filterStories('recovery')">Recovery</button>
+          <button class="filter-btn" onclick="filterStories('depression')">Depression</button>
+          <button class="filter-btn" onclick="filterStories('relationships')">Relationships</button>
+          <button class="filter-btn" onclick="filterStories('anxiety')">Anxiety</button>
+          <button class="filter-btn" onclick="filterStories('grief')">Grief & Loss</button>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- Stories Grid -->
+      <div class="stories-grid" id="storiesGrid">
+        <!-- Story 1 -->
+        <div class="story-card" data-category="recovery">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=350&fit=crop" alt="James' Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">James M.</h3>
+            <p class="story-category">Recovery & Resilience</p>
+            <p class="story-excerpt">After 10 years of struggling with addiction, James found the courage to reach out. Today, he's 3 years sober, rebuilt his family relationships, and is working as a peer counselor.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="story-card" data-category="depression">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=350&fit=crop" alt="Marcus' Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Marcus T.</h3>
+            <p class="story-category">Depression & Healing</p>
+            <p class="story-excerpt">Marcus describes his journey out of severe depression that had isolated him for years. Through therapy and community support, he reconnected with life and purpose.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="story-card" data-category="relationships">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=350&fit=crop" alt="David's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">David K.</h3>
+            <p class="story-category">Relationships & Communication</p>
+            <p class="story-excerpt">David learned to break his emotional walls and communicate authentically. His marriage transformed when he finally let his partner in and asked for help.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 4 -->
+        <div class="story-card" data-category="anxiety">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=350&fit=crop" alt="Alex's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Alex R.</h3>
+            <p class="story-category">Anxiety & Courage</p>
+            <p class="story-excerpt">Panic attacks left Alex unable to work and isolate from society. With professional help and peer support, he now manages his anxiety and has returned to his career.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 5 -->
+        <div class="story-card" data-category="grief">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=350&fit=crop" alt="Robert's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Robert L.</h3>
+            <p class="story-category">Grief & Moving Forward</p>
+            <p class="story-excerpt">After losing his best friend to suicide, Robert channeled his grief into advocacy and support work, transforming his pain into purpose and helping countless others.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 6 -->
+        <div class="story-card" data-category="recovery">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=350&fit=crop" alt="Tyler's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Tyler W.</h3>
+            <p class="story-category">Addiction Recovery</p>
+            <p class="story-excerpt">From homelessness to stability, Tyler's recovery journey shows that it's never too late to turn your life around. Now 5 years sober, he mentors others in recovery.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 7 -->
+        <div class="story-card" data-category="depression">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=350&fit=crop" alt="Kevin's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Kevin C.</h3>
+            <p class="story-category">Depression & Community</p>
+            <p class="story-excerpt">Kevin's story shows how connecting with others who understand your struggle can be life-changing. The Manwell community became his lifeline during his darkest days.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 8 -->
+        <div class="story-card" data-category="relationships">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=350&fit=crop" alt="Chris's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Chris B.</h3>
+            <p class="story-category">Relationships & Vulnerability</p>
+            <p class="story-excerpt">Chris learned that vulnerability isn't weakness. By opening up about his struggles, he deepened his relationships and discovered his true strength.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+
+        <!-- Story 9 -->
+        <div class="story-card" data-category="anxiety">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=350&fit=crop" alt="Matthew's Story" class="story-image">
+          <div class="story-content">
+            <h3 class="story-author">Matthew J.</h3>
+            <p class="story-category">Anxiety & Growth</p>
+            <p class="story-excerpt">Matthew's social anxiety once prevented him from leaving his house. Today, he's leading support groups and helping others overcome their fears.</p>
+            <a href="#" class="read-more-link">Read Full Story →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- CTA Section -->
+      <section style="background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%); border-radius: 12px; padding: 4rem 2rem; text-align: center; margin: 4rem 0 3rem 0;">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Ready to Share Your Story?</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Your journey matters. Join our community and inspire others by sharing your story of resilience and growth.</p>
+        <a href="community.html" class="btn" style="background: #d4af37; color: #1a3a52; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Join the Community</a>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="ngo-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Manwell</h4>
+        <p>Dedicated to transforming men's mental health through accessible, compassionate support and community.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="therapist-directory.html">Find Therapist</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell - Supporting Men's Mental Health. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterStories(category) {
+      const stories = document.querySelectorAll('.story-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      stories.forEach(story => {
+        if (category === 'all' || story.dataset.category === category) {
+          story.style.display = 'block';
+        } else {
+          story.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
