@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessments | Manwell</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Manwell</h1>
+                <p>Men's Mental Health & Wellness</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Forge</a>
+                <a href="mission.html">Mission</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="stories.html">Stories</a>
+                <a href="mental-health-hub.html">Hub</a>
+                <a href="assessments.html" class="active">Assessments</a>
+                <a href="experts.html">Experts</a>
+                <a href="videos.html">Videos</a>
+                <a href="resources.html">Resources</a>
+                <a href="crisis.html">Crisis Help</a>
+                <a href="community.html">Community</a>
+                <a href="therapist-directory.html">Find a Therapist</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="assessment-hero">
+        <div class="container">
+            <h1>Mental Health Self-Assessments</h1>
+            <p>Take evidence-based screening tools to understand your mental health better. <strong>These are not diagnoses</strong> — professional evaluation is always recommended.</p>
+            <div class="assessment-disclaimer">
+                <strong>⚠️ Important Disclaimer:</strong> These tools are screening instruments only and cannot replace professional evaluation. If you're in crisis, call <strong>988</strong> (Suicide & Crisis Lifeline) or text HOME to <strong>741741</strong> (Crisis Text Line).
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Navigation -->
+    <section class="assessment-nav-section">
+        <div class="container">
+            <div class="assessment-nav-grid">
+                <div class="assessment-nav-card" data-assessment="phq9">
+                    <div class="assessment-icon">📋</div>
+                    <h3>Depression Screening</h3>
+                    <p>PHQ-9</p>
+                    <small>9 questions • 2-3 min</small>
+                </div>
+                <div class="assessment-nav-card" data-assessment="gad7">
+                    <div class="assessment-icon">😰</div>
+                    <h3>Anxiety Screening</h3>
+                    <p>GAD-7</p>
+                    <small>7 questions • 2 min</small>
+                </div>
+                <div class="assessment-nav-card" data-assessment="suicide">
+                    <div class="assessment-icon">🆘</div>
+                    <h3>Suicide Risk</h3>
+                    <p>Risk Screening</p>
+                    <small>5 questions • 1-2 min</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Forms Section -->
+    <section class="assessments-container">
+        <div class="container">
+
+            <!-- PHQ-9 Assessment -->
+            <div class="assessment-section" id="phq9-section" style="display: none;">
+                <div class="assessment-header">
+                    <h2>PHQ-9: Depression Screening</h2>
+                    <p class="assessment-subtitle">Patient Health Questionnaire-9</p>
+                    <div class="assessment-info-box">
+                        <p><strong>What is this?</strong> The PHQ-9 is a 9-item self-report questionnaire that assesses depressive symptoms over the past 2 weeks. Widely used in primary care and mental health settings.</p>
+                        <p><strong>Scoring:</strong> 0-4 (minimal), 5-9 (mild), 10-14 (moderate), 15-19 (moderately severe), 20-27 (severe)</p>
+                    </div>
+                </div>
+                <form id="phq9-form" class="assessment-form">
+                    <div class="phq9-instructions">
+                        <p>Over the last 2 weeks, how often have you been bothered by any of the following problems?</p>
+                        <div class="response-scale">
+                            <span>0 = Not at all</span>
+                            <span>1 = Several days</span>
+                            <span>2 = More than half the days</span>
+                            <span>3 = Nearly every day</span>
+                        </div>
+                    </div>
+
+                    <div class="phq9-items">
+                        <div class="assessment-item">
+                            <label>1. Little interest or pleasure in doing things</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_1" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_1" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_1" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_1" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>2. Feeling down, depressed, or hopeless</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_2" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_2" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_2" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_2" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>3. Trouble falling or staying asleep, or sleeping too much</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_3" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_3" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_3" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_3" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>4. Feeling tired or having little energy</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_4" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_4" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_4" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_4" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>5. Poor appetite or overeating</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_5" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_5" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_5" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_5" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>6. Feeling bad about yourself or that you're a failure</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_6" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_6" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_6" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_6" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>7. Trouble concentrating on things like reading or watching TV</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_7" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_7" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_7" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_7" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>8. Moving or speaking so slowly that others have noticed, or the opposite (restless/agitated)</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_8" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_8" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_8" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_8" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>9. Thoughts that you'd be better off dead or hurting yourself</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="phq9_9" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="phq9_9" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="phq9_9" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="phq9_9" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-secondary" onclick="resetAssessment('phq9')">Clear</button>
+                        <button type="button" class="btn-primary" onclick="scorePHQ9()">Score Assessment</button>
+                    </div>
+                </form>
+
+                <div id="phq9-results" class="assessment-results" style="display: none;">
+                    <div class="result-score">
+                        <span class="score-number" id="phq9-score">0</span>
+                        <span class="score-label">/ 27</span>
+                    </div>
+                    <div id="phq9-severity" class="result-severity"></div>
+                    <div id="phq9-guidance" class="result-guidance"></div>
+                    <div class="result-resources">
+                        <h4>Recommended Next Steps:</h4>
+                        <ul>
+                            <li>📞 Schedule an appointment with your primary care doctor or mental health professional</li>
+                            <li>💬 Consider therapy (CBT, behavioral activation, or interpersonal therapy)</li>
+                            <li>📱 Contact NAMI HelpLine: 1-800-950-NAMI (6264) for referrals</li>
+                            <li>🌐 Visit <a href="https://www.samhsa.gov/findhelp" target="_blank">SAMHSA Find Help</a> to locate treatment services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GAD-7 Assessment -->
+            <div class="assessment-section" id="gad7-section" style="display: none;">
+                <div class="assessment-header">
+                    <h2>GAD-7: Anxiety Screening</h2>
+                    <p class="assessment-subtitle">Generalized Anxiety Disorder-7</p>
+                    <div class="assessment-info-box">
+                        <p><strong>What is this?</strong> The GAD-7 is a 7-item self-report questionnaire that assesses generalized anxiety symptoms. It's validated for detecting anxiety disorders and monitoring treatment response.</p>
+                        <p><strong>Scoring:</strong> 0-4 (minimal), 5-9 (mild), 10-14 (moderate), 15+ (severe)</p>
+                    </div>
+                </div>
+                <form id="gad7-form" class="assessment-form">
+                    <div class="gad7-instructions">
+                        <p>Over the last 2 weeks, how often have you been bothered by the following?</p>
+                        <div class="response-scale">
+                            <span>0 = Not at all</span>
+                            <span>1 = Several days</span>
+                            <span>2 = More than half the days</span>
+                            <span>3 = Nearly every day</span>
+                        </div>
+                    </div>
+
+                    <div class="gad7-items">
+                        <div class="assessment-item">
+                            <label>1. Feeling nervous, anxious, or on edge</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_1" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_1" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_1" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_1" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>2. Not being able to stop or control worrying</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_2" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_2" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_2" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_2" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>3. Worrying too much about different things</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_3" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_3" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_3" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_3" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>4. Trouble relaxing</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_4" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_4" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_4" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_4" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>5. Being so restless that it's hard to sit still</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_5" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_5" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_5" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_5" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>6. Becoming easily annoyed or irritable</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_6" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_6" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_6" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_6" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>7. Feeling afraid as if something awful might happen</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gad7_7" value="0"> Not at all (0)</label>
+                                <label><input type="radio" name="gad7_7" value="1"> Several days (1)</label>
+                                <label><input type="radio" name="gad7_7" value="2"> More than half (2)</label>
+                                <label><input type="radio" name="gad7_7" value="3"> Nearly every day (3)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-secondary" onclick="resetAssessment('gad7')">Clear</button>
+                        <button type="button" class="btn-primary" onclick="scoreGAD7()">Score Assessment</button>
+                    </div>
+                </form>
+
+                <div id="gad7-results" class="assessment-results" style="display: none;">
+                    <div class="result-score">
+                        <span class="score-number" id="gad7-score">0</span>
+                        <span class="score-label">/ 21</span>
+                    </div>
+                    <div id="gad7-severity" class="result-severity"></div>
+                    <div id="gad7-guidance" class="result-guidance"></div>
+                    <div class="result-resources">
+                        <h4>Recommended Next Steps:</h4>
+                        <ul>
+                            <li>🧘 Try anxiety management techniques (breathing exercises, progressive muscle relaxation)</li>
+                            <li>👨‍⚕️ Consult with your doctor about therapy options (CBT is highly effective for anxiety)</li>
+                            <li>💬 Reach out to a therapist or counselor for professional support</li>
+                            <li>📱 NAMI HelpLine: 1-800-950-NAMI (6264) for peer support and referrals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suicide Risk Assessment -->
+            <div class="assessment-section" id="suicide-section" style="display: none;">
+                <div class="assessment-header">
+                    <h2>Suicide Risk Screening</h2>
+                    <p class="assessment-subtitle">Columbia-Suicide Severity Rating Scale (simplified)</p>
+                    <div class="assessment-info-box" style="background-color: #fff3cd; border-left: 4px solid #d32f2f;">
+                        <p><strong>🚨 If you are having thoughts of suicide, please reach out immediately:</strong></p>
+                        <p style="font-size: 1.1em; font-weight: 600; color: #d32f2f;">
+                            <strong>Call 988</strong> (Suicide & Crisis Lifeline) or <br>
+                            <strong>Text HOME to 741741</strong> (Crisis Text Line)
+                        </p>
+                        <p>These are free, confidential, 24/7 services. You don't have to face this alone.</p>
+                    </div>
+                </div>
+                <form id="suicide-form" class="assessment-form">
+                    <div class="suicide-instructions">
+                        <p>This screening asks about thoughts of suicide. Your honest answers help us understand your current state and recommend appropriate support.</p>
+                    </div>
+
+                    <div class="suicide-items">
+                        <div class="assessment-item">
+                            <label>1. Have you wished you were dead or wished you could go to sleep and not wake up?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="suicide_1" value="0"> No</label>
+                                <label><input type="radio" name="suicide_1" value="1"> Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>2. Have you actually had any thoughts about killing yourself?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="suicide_2" value="0"> No</label>
+                                <label><input type="radio" name="suicide_2" value="1"> Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>3. Have you been thinking about how you might do this?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="suicide_3" value="0"> No</label>
+                                <label><input type="radio" name="suicide_3" value="1"> Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>4. Have you started to work out or prepare the means to kill yourself (like saving up pills, getting a gun, etc.)?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="suicide_4" value="0"> No</label>
+                                <label><input type="radio" name="suicide_4" value="1"> Yes</label>
+                            </div>
+                        </div>
+
+                        <div class="assessment-item">
+                            <label>5. Have you seriously thought about when, where, or how you would do this? Do you intend to act on these thoughts?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="suicide_5" value="0"> No</label>
+                                <label><input type="radio" name="suicide_5" value="1"> Yes</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-secondary" onclick="resetAssessment('suicide')">Clear</button>
+                        <button type="button" class="btn-primary" onclick="scoreSuicide()">Score Assessment</button>
+                    </div>
+                </form>
+
+                <div id="suicide-results" class="assessment-results" style="display: none;">
+                    <div id="suicide-result-content"></div>
+                    <div class="result-resources" style="background-color: #fff3cd; border: 2px solid #d32f2f;">
+                        <h4 style="color: #d32f2f;">⚠️ Crisis Resources Available 24/7:</h4>
+                        <ul>
+                            <li><strong>988 Suicide & Crisis Lifeline:</strong> Call or text 988 (free, confidential)</li>
+                            <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+                            <li><strong>International Association for Suicide Prevention:</strong> <a href="https://www.iasp.info/resources/Crisis_Centres/" target="_blank">Crisis Centers</a></li>
+                            <li><strong>Emergency Services:</strong> Call 911 if you're in immediate danger</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer with Crisis Widget -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Manwell - Men's Mental Health & Wellness. All rights reserved.</p>
+            <p>We're here to support men's mental health. <a href="crisis.html">Crisis Help</a> | <a href="community.html">Community</a></p>
+        </div>
+    </footer>
+
+    <!-- Crisis Footer Widget -->
+    <div class="crisis-footer-widget">
+        <button class="sos-button" id="sos-button">🆘 SOS</button>
+        <div class="crisis-dropdown" id="crisis-dropdown" style="display: none;">
+            <div class="crisis-dropdown-content">
+                <p style="font-weight: 600; margin-bottom: 1rem;">In Crisis? Get Help Now</p>
+                <a href="tel:988" class="crisis-link">
+                    <span class="crisis-icon">📞</span>
+                    <div>
+                        <strong>Call 988</strong>
+                        <small>Suicide & Crisis Lifeline</small>
+                    </div>
+                </a>
+                <a href="sms:741741" class="crisis-link">
+                    <span class="crisis-icon">💬</span>
+                    <div>
+                        <strong>Text 741741</strong>
+                        <small>Crisis Text Line</small>
+                    </div>
+                </a>
+                <a href="tel:911" class="crisis-link">
+                    <span class="crisis-icon">🚨</span>
+                    <div>
+                        <strong>Call 911</strong>
+                        <small>Emergency Services</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Assessment Navigation
+        document.querySelectorAll('.assessment-nav-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const assessment = this.dataset.assessment;
+                showAssessment(assessment);
+            });
+        });
+
+        function showAssessment(type) {
+            // Hide all sections
+            document.querySelectorAll('.assessment-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show selected section
+            const section = document.getElementById(type + '-section');
+            if (section) {
+                section.style.display = 'block';
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Reset assessment
+        function resetAssessment(type) {
+            const form = document.getElementById(type + '-form');
+            if (form) form.reset();
+            
+            const results = document.getElementById(type + '-results');
+            if (results) results.style.display = 'none';
+        }
+
+        // PHQ-9 Scoring
+        function scorePHQ9() {
+            let score = 0;
+            for (let i = 1; i <= 9; i++) {
+                const value = document.querySelector(`input[name="phq9_${i}"]:checked`);
+                if (value) {
+                    score += parseInt(value.value);
+                } else {
+                    alert('Please answer all questions');
+                    return;
+                }
+            }
+
+            document.getElementById('phq9-score').textContent = score;
+
+            let severity = '';
+            let guidance = '';
+
+            if (score <= 4) {
+                severity = '<span class="severity-minimal">✅ Minimal Depression</span>';
+                guidance = '<p>Your responses suggest minimal depressive symptoms. Continue with healthy habits like exercise, sleep, and social connection.</p>';
+            } else if (score <= 9) {
+                severity = '<span class="severity-mild">⚠️ Mild Depression</span>';
+                guidance = '<p>Your responses suggest mild depressive symptoms. Consider reaching out to a healthcare provider for support and guidance.</p>';
+            } else if (score <= 14) {
+                severity = '<span class="severity-moderate">⚠️ Moderate Depression</span>';
+                guidance = '<p>Your responses suggest moderate depressive symptoms. Professional support is recommended. Therapy and/or medication may be helpful.</p>';
+            } else if (score <= 19) {
+                severity = '<span class="severity-severe">🔴 Moderately Severe Depression</span>';
+                guidance = '<p>Your responses suggest moderately severe depressive symptoms. Please contact a mental health professional or your doctor soon.</p>';
+            } else {
+                severity = '<span class="severity-severe">🔴 Severe Depression</span>';
+                guidance = '<p>Your responses suggest severe depressive symptoms. Please reach out to a mental health professional immediately. If in crisis, call 988.</p>';
+            }
+
+            document.getElementById('phq9-severity').innerHTML = severity;
+            document.getElementById('phq9-guidance').innerHTML = guidance;
+            document.getElementById('phq9-results').style.display = 'block';
+        }
+
+        // GAD-7 Scoring
+        function scoreGAD7() {
+            let score = 0;
+            for (let i = 1; i <= 7; i++) {
+                const value = document.querySelector(`input[name="gad7_${i}"]:checked`);
+                if (value) {
+                    score += parseInt(value.value);
+                } else {
+                    alert('Please answer all questions');
+                    return;
+                }
+            }
+
+            document.getElementById('gad7-score').textContent = score;
+
+            let severity = '';
+            let guidance = '';
+
+            if (score <= 4) {
+                severity = '<span class="severity-minimal">✅ Minimal Anxiety</span>';
+                guidance = '<p>Your responses suggest minimal anxiety symptoms. Maintain healthy coping strategies and reach out if symptoms increase.</p>';
+            } else if (score <= 9) {
+                severity = '<span class="severity-mild">⚠️ Mild Anxiety</span>';
+                guidance = '<p>Your responses suggest mild anxiety symptoms. Consider practicing relaxation techniques and speaking with a healthcare provider if concerns persist.</p>';
+            } else if (score <= 14) {
+                severity = '<span class="severity-moderate">⚠️ Moderate Anxiety</span>';
+                guidance = '<p>Your responses suggest moderate anxiety symptoms. Professional support such as therapy can be beneficial. Contact your doctor or a therapist.</p>';
+            } else {
+                severity = '<span class="severity-severe">🔴 Severe Anxiety</span>';
+                guidance = '<p>Your responses suggest severe anxiety symptoms. Please reach out to a mental health professional. Treatment options include therapy and medication.</p>';
+            }
+
+            document.getElementById('gad7-severity').innerHTML = severity;
+            document.getElementById('gad7-guidance').innerHTML = guidance;
+            document.getElementById('gad7-results').style.display = 'block';
+        }
+
+        // Suicide Risk Scoring
+        function scoreSuicide() {
+            let score = 0;
+            let answered = 0;
+            for (let i = 1; i <= 5; i++) {
+                const value = document.querySelector(`input[name="suicide_${i}"]:checked`);
+                if (value) {
+                    score += parseInt(value.value);
+                    answered++;
+                }
+            }
+
+            if (answered < 5) {
+                alert('Please answer all questions');
+                return;
+            }
+
+            let content = '';
+
+            if (score === 0) {
+                content = `
+                    <div style="background-color: #d4edda; border: 2px solid #28a745; padding: 1.5rem; border-radius: 8px;">
+                        <p style="font-size: 1.1em; color: #155724; margin-bottom: 1rem;">
+                            <strong>✅ Low Risk</strong>
+                        </p>
+                        <p>Your responses suggest you are not currently having suicidal thoughts. If that changes, or if you ever feel unsafe, please reach out for help:</p>
+                        <ul style="margin-top: 1rem;">
+                            <li>📞 Call 988 (Suicide & Crisis Lifeline)</li>
+                            <li>💬 Text HOME to 741741 (Crisis Text Line)</li>
+                            <li>👨‍⚕️ Schedule an appointment with a healthcare provider</li>
+                            <li>💭 Reach out to trusted friends or family members</li>
+                        </ul>
+                    </div>
+                `;
+            } else if (score <= 2) {
+                content = `
+                    <div style="background-color: #fff3cd; border: 2px solid #ffc107; padding: 1.5rem; border-radius: 8px;">
+                        <p style="font-size: 1.1em; color: #856404; margin-bottom: 1rem;">
+                            <strong>⚠️ Moderate Risk</strong>
+                        </p>
+                        <p>Your responses indicate some thoughts of suicide that warrant professional attention. Please reach out to a mental health professional:</p>
+                        <ul style="margin-top: 1rem;">
+                            <li>👨‍⚕️ Call your doctor or a mental health professional</li>
+                            <li>📞 Call 988 to speak with a crisis counselor</li>
+                            <li>💬 Text HOME to 741741 for immediate support</li>
+                            <li>🏥 Consider going to an emergency room if symptoms worsen</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                content = `
+                    <div style="background-color: #f8d7da; border: 2px solid #d32f2f; padding: 1.5rem; border-radius: 8px;">
+                        <p style="font-size: 1.2em; color: #721c24; margin-bottom: 1rem; font-weight: 600;">
+                            <strong>🔴 High Risk - Please Seek Help Now</strong>
+                        </p>
+                        <p style="margin-bottom: 1rem; color: #721c24;">Your responses indicate serious thoughts of suicide that require immediate professional attention. You are not alone, and help is available:</p>
+                        <ul style="margin: 1rem 0; font-weight: 600; color: #721c24;">
+                            <li>📞 <strong>Call 988</strong> (Suicide & Crisis Lifeline) - Available 24/7</li>
+                            <li>💬 <strong>Text HOME to 741741</strong> (Crisis Text Line)</li>
+                            <li>🚨 <strong>Call 911</strong> or go to your nearest emergency room</li>
+                            <li>👥 Tell someone you trust immediately - a friend, family member, or colleague</li>
+                        </ul>
+                        <p style="margin-top: 1rem; color: #721c24;"><strong>You matter. Your life has value. Professional support can help you through this.</strong></p>
+                    </div>
+                `;
+            }
+
+            document.getElementById('suicide-result-content').innerHTML = content;
+            document.getElementById('suicide-results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
