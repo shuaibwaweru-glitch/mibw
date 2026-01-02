@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Therapist Directory - Find licensed mental health professionals specializing in men's mental health">
+  <title>Find a Therapist | Manwell - Men's Mental Health</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Manwell</h1>
+        <p>The Forge for Men's Mental Health</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">The Forge</a></li>
+          <li><a href="mission.html">The Mission</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="mental-health-hub.html">Hub</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="experts.html">Experts</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find a Therapist</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="therapist-hero">
+      <div class="hero-content">
+        <h1>Find Your Therapist</h1>
+        <p class="therapist-tagline">Vetted licensed professionals specializing in men's mental health</p>
+      </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="therapist-search">
+      <div class="container">
+        <h2>Search Therapists</h2>
+        <div class="search-filters">
+          <div class="filter-group">
+            <label for="specialty-filter">Specialization</label>
+            <select id="specialty-filter">
+              <option value="">All Specializations</option>
+              <option value="depression">Depression</option>
+              <option value="anxiety">Anxiety</option>
+              <option value="trauma">Trauma & PTSD</option>
+              <option value="addiction">Addiction & Recovery</option>
+              <option value="relationships">Relationships</option>
+              <option value="grief">Grief & Loss</option>
+              <option value="work">Work & Career</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="modality-filter">Therapy Type</label>
+            <select id="modality-filter">
+              <option value="">All Types</option>
+              <option value="cbt">Cognitive Behavioral Therapy (CBT)</option>
+              <option value="emdr">EMDR</option>
+              <option value="psychodynamic">Psychodynamic Therapy</option>
+              <option value="acceptance">Acceptance & Commitment (ACT)</option>
+              <option value="somatic">Somatic Therapy</option>
+              <option value="existential">Existential Therapy</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="location-filter">Location / Format</label>
+            <select id="location-filter">
+              <option value="">All Locations</option>
+              <option value="online">Online Only</option>
+              <option value="in-person">In-Person Only</option>
+              <option value="hybrid">Hybrid (Online + In-Person)</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="insurance-filter">Insurance Accepted</label>
+            <select id="insurance-filter">
+              <option value="">All Insurance Options</option>
+              <option value="insurance">Accepts Insurance</option>
+              <option value="sliding">Sliding Scale Available</option>
+              <option value="private">Private Pay Only</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" onclick="filterTherapists()">Search</button>
+          <button class="btn btn-secondary" onclick="resetFilters()">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Therapists Grid -->
+    <section class="therapists-section">
+      <div class="container">
+        <div class="therapists-count">
+          <p id="result-count">Showing <strong>12</strong> licensed therapists</p>
+        </div>
+
+        <div class="therapists-grid" id="therapistsGrid">
+          <!-- Therapist 1 -->
+          <div class="therapist-card" data-specialty="depression,anxiety" data-modality="cbt,psychodynamic" data-location="online" data-insurance="insurance">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Samuel Okonkwo</h3>
+                <p class="credentials">Psy.D., Licensed Clinical Psychologist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in depression and anxiety in men. 15+ years experience with evidence-based CBT and psychodynamic approaches.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Depression</span>
+              <span class="specialty-tag">Anxiety</span>
+              <span class="specialty-tag">Trauma</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> CBT, Psychodynamic Therapy</p>
+              <p><strong>Format:</strong> Online Video Sessions</p>
+              <p><strong>Insurance:</strong> Accepts most major plans</p>
+              <p><strong>Availability:</strong> Evening & Weekend</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Okonkwo')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 2 -->
+          <div class="therapist-card" data-specialty="addiction,recovery" data-modality="cbt,somatic" data-location="in-person" data-insurance="sliding">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>James Kipchoge, M.A., LPCC</h3>
+                <p class="credentials">Licensed Professional Counselor</p>
+              </div>
+            </div>
+            <p class="therapist-bio">In personal recovery for 12 years. Specializes in addiction, substance use disorders, and recovery coaching for men.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Addiction</span>
+              <span class="specialty-tag">Recovery</span>
+              <span class="specialty-tag">Substance Use</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> CBT, Somatic Therapy</p>
+              <p><strong>Format:</strong> In-Person Sessions</p>
+              <p><strong>Insurance:</strong> Sliding Scale Available</p>
+              <p><strong>Availability:</strong> Weekdays 9am-6pm</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('James Kipchoge')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 3 -->
+          <div class="therapist-card" data-specialty="relationships,work" data-modality="acceptance,existential" data-location="hybrid" data-insurance="insurance">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Ahmed Hassan</h3>
+                <p class="credentials">Ph.D., Psychiatrist & Psychotherapist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Focuses on men's identity, relationships, and work-related stress. Integrates ACT and existential therapy approaches.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Relationships</span>
+              <span class="specialty-tag">Work & Career</span>
+              <span class="specialty-tag">Identity</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> ACT, Existential Therapy</p>
+              <p><strong>Format:</strong> Online & In-Person</p>
+              <p><strong>Insurance:</strong> Accepts most major plans</p>
+              <p><strong>Availability:</strong> Flexible (including weekends)</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Hassan')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 4 -->
+          <div class="therapist-card" data-specialty="trauma,grief" data-modality="emdr,somatic" data-location="in-person" data-insurance="insurance">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Marcus Okafor</h3>
+                <p class="credentials">Ph.D., Trauma Specialist & EMDR Practitioner</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in PTSD, trauma recovery, and grief processing. Uses evidence-based EMDR and somatic techniques.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Trauma</span>
+              <span class="specialty-tag">PTSD</span>
+              <span class="specialty-tag">Grief</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> EMDR, Somatic Therapy</p>
+              <p><strong>Format:</strong> In-Person Sessions</p>
+              <p><strong>Insurance:</strong> Accepts most major plans</p>
+              <p><strong>Availability:</strong> Monday-Thursday 10am-5pm</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Okafor')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 5 -->
+          <div class="therapist-card" data-specialty="anxiety,relationships" data-modality="cbt,acceptance" data-location="online" data-insurance="private">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Kofi Mensah, LMFT</h3>
+                <p class="credentials">Licensed Marriage & Family Therapist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Works with men on anxiety, communication, and relationship challenges. Specializes in couples and family dynamics.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Anxiety</span>
+              <span class="specialty-tag">Relationships</span>
+              <span class="specialty-tag">Communication</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> CBT, ACT, Family Systems</p>
+              <p><strong>Format:</strong> Online Video Only</p>
+              <p><strong>Insurance:</strong> Private Pay</p>
+              <p><strong>Availability:</strong> Evenings & Weekends Only</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Kofi Mensah')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 6 -->
+          <div class="therapist-card" data-specialty="depression,work" data-modality="psychodynamic,existential" data-location="hybrid" data-insurance="sliding">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Rashid Al-Omari</h3>
+                <p class="credentials">Ph.D., Clinical Psychologist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in depression, masculinity, and career transitions. Uses depth psychology and existential frameworks.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Depression</span>
+              <span class="specialty-tag">Work & Career</span>
+              <span class="specialty-tag">Masculinity</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> Psychodynamic, Existential Therapy</p>
+              <p><strong>Format:</strong> Online & In-Person</p>
+              <p><strong>Insurance:</strong> Sliding Scale</p>
+              <p><strong>Availability:</strong> By appointment</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Al-Omari')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 7 -->
+          <div class="therapist-card" data-specialty="anxiety,trauma" data-modality="cbt,emdr" data-location="online" data-insurance="insurance">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Ibrahim Adeyemi</h3>
+                <p class="credentials">Psy.D., EMDR Certified</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in anxiety disorders and trauma recovery. Evidence-based practitioner with focus on quick, effective results.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Anxiety</span>
+              <span class="specialty-tag">Trauma</span>
+              <span class="specialty-tag">Panic Disorders</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> CBT, EMDR</p>
+              <p><strong>Format:</strong> Online Video Sessions</p>
+              <p><strong>Insurance:</strong> Accepts most major plans</p>
+              <p><strong>Availability:</strong> Daily 8am-8pm</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Adeyemi')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 8 -->
+          <div class="therapist-card" data-specialty="relationships,grief" data-modality="somatic,acceptance" data-location="in-person" data-insurance="sliding">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>David Mensah, MA, LPC</h3>
+                <p class="credentials">Licensed Professional Counselor</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in bereavement, grief processing, and relational work. Uses somatic and body-based approaches.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Grief</span>
+              <span class="specialty-tag">Relationships</span>
+              <span class="specialty-tag">Vulnerability</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> Somatic Therapy, ACT</p>
+              <p><strong>Format:</strong> In-Person Sessions</p>
+              <p><strong>Insurance:</strong> Sliding Scale Available</p>
+              <p><strong>Availability:</strong> Tuesday-Saturday 10am-6pm</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('David Mensah')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 9 -->
+          <div class="therapist-card" data-specialty="addiction,relationships" data-modality="cbt,psychodynamic" data-location="hybrid" data-insurance="insurance">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Jamal Williams</h3>
+                <p class="credentials">Ph.D., Addictions Specialist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in substance use recovery and relational patterns that drive addiction. Compassionate, non-judgmental approach.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Addiction</span>
+              <span class="specialty-tag">Relationships</span>
+              <span class="specialty-tag">Family Therapy</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> CBT, Psychodynamic, Family Systems</p>
+              <p><strong>Format:</strong> Online & In-Person</p>
+              <p><strong>Insurance:</strong> Accepts most plans</p>
+              <p><strong>Availability:</strong> Weekdays 9am-5pm</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Williams')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 10 -->
+          <div class="therapist-card" data-specialty="work,anxiety" data-modality="acceptance,existential" data-location="online" data-insurance="private">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Yusuf Patel, M.S., LPC</h3>
+                <p class="credentials">Licensed Professional Counselor</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Focuses on high-performing men dealing with career stress, burnout, and existential questions. Results-oriented approach.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Work & Career</span>
+              <span class="specialty-tag">Burnout</span>
+              <span class="specialty-tag">Life Purpose</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> ACT, Existential Therapy</p>
+              <p><strong>Format:</strong> Online Video Only</p>
+              <p><strong>Insurance:</strong> Private Pay</p>
+              <p><strong>Availability:</strong> Flexible scheduling</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Yusuf Patel')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 11 -->
+          <div class="therapist-card" data-specialty="trauma,depression" data-modality="somatic,emdr" data-location="in-person" data-insurance="insurance">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Kwame Asante</h3>
+                <p class="credentials">Ph.D., Somatic & Trauma Therapist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Works with men processing complex trauma and depression through body-based, somatic approaches. Holistic healer.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Trauma</span>
+              <span class="specialty-tag">Depression</span>
+              <span class="specialty-tag">Somatic Healing</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> Somatic Therapy, EMDR</p>
+              <p><strong>Format:</strong> In-Person Sessions</p>
+              <p><strong>Insurance:</strong> Accepts most plans</p>
+              <p><strong>Availability:</strong> Monday-Friday 10am-4pm</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Asante')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+
+          <!-- Therapist 12 -->
+          <div class="therapist-card" data-specialty="anxiety,grief" data-modality="cbt,acceptance" data-location="hybrid" data-insurance="sliding">
+            <div class="therapist-header">
+              <div class="therapist-avatar">👨‍⚕️</div>
+              <div class="therapist-title-block">
+                <h3>Dr. Nonso Obi</h3>
+                <p class="credentials">Psy.D., Clinical Psychologist</p>
+              </div>
+            </div>
+            <p class="therapist-bio">Specializes in anxiety disorders and bereavement support. Warm, empathetic approach with evidence-based techniques.</p>
+            <div class="therapist-specialties">
+              <span class="specialty-tag">Anxiety</span>
+              <span class="specialty-tag">Grief</span>
+              <span class="specialty-tag">Depression</span>
+            </div>
+            <div class="therapist-details">
+              <p><strong>Modalities:</strong> CBT, ACT</p>
+              <p><strong>Format:</strong> Online & In-Person</p>
+              <p><strong>Insurance:</strong> Sliding Scale Available</p>
+              <p><strong>Availability:</strong> Flexible hours</p>
+            </div>
+            <div class="therapist-action">
+              <a href="#" class="btn btn-primary" onclick="scheduleConsultation('Dr. Obi')">Schedule Consultation</a>
+              <a href="#" class="btn btn-secondary">View Full Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose These Therapists -->
+    <section class="why-choose">
+      <div class="container">
+        <h2>Why Our Therapists</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Vetted & Licensed</h3>
+            <p>All therapists are licensed professionals with credentials verified and current.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Men's Mental Health Specialists</h3>
+            <p>Each therapist has specific training and experience working with men's issues.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Evidence-Based Methods</h3>
+            <p>Only using proven therapeutic approaches with documented effectiveness.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Flexible Scheduling</h3>
+            <p>Online and in-person options with evening and weekend availability.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Affordable Options</h3>
+            <p>Insurance accepted, sliding scale, and private pay options to fit your budget.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>No Judgment Zone</h3>
+            <p>Safe space to be vulnerable, authentic, and work through real challenges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How to Get Started</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Search & Filter</h3>
+            <p>Use our directory to find therapists by specialty, therapy type, location, and insurance. Read full profiles to learn about their approach.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Schedule Consultation</h3>
+            <p>Most therapists offer a free 15-minute consultation call to discuss your needs and see if it's a good fit before committing.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Start Therapy</h3>
+            <p>Once matched, you'll typically have your first session within 1-2 weeks. Many offer flexible scheduling including evenings.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Ongoing Support</h3>
+            <p>Work with your therapist on your timeline. Most sessions are weekly, but some flexible arrangements are available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost & Insurance Info -->
+    <section class="cost-info">
+      <div class="container">
+        <h2>Cost & Insurance</h2>
+        <div class="cost-grid">
+          <div class="cost-card">
+            <h3>Insurance Accepted</h3>
+            <p>Most therapists accept major insurance plans. Your out-of-pocket cost depends on your specific plan and deductible.</p>
+            <p><strong>Tip:</strong> Call your insurance to verify coverage before scheduling.</p>
+          </div>
+
+          <div class="cost-card">
+            <h3>Sliding Scale</h3>
+            <p>Many therapists offer sliding scale fees based on income. Rates typically range from $30-80 per session.</p>
+            <p><strong>Ask:</strong> About sliding scale options during your consultation call.</p>
+          </div>
+
+          <div class="cost-card">
+            <h3>Private Pay</h3>
+            <p>Self-pay sessions typically cost $100-250 per session, depending on therapist experience and location.</p>
+            <p><strong>Note:</strong> Some offer package discounts for committing to multiple sessions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How do I know if therapy is right for me?</h3>
+            <p>If you're struggling with your mental health, relationships, work stress, or just want to understand yourself better, therapy can help. There's no "right" time to start - you're ready whenever you decide you want support.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What if I don't click with my first therapist?</h3>
+            <p>That's normal! Therapy is a relationship, and finding the right fit matters. Most therapists understand if you decide it's not working and can help you find someone else.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is therapy confidential?</h3>
+            <p>Yes. Therapists are bound by confidentiality laws with very limited exceptions (imminent danger, abuse, court order). Your privacy is protected.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How often do I need to see a therapist?</h3>
+            <p>Most people start with weekly sessions (50 minutes). As you progress, you might space them out. Your therapist will help you determine the right frequency for your needs.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I do therapy online?</h3>
+            <p>Many of our therapists offer online video therapy, which is often just as effective as in-person. Check the "Format" on each profile to see their options.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What should I prepare for my first session?</h3>
+            <p>Be honest about what brings you in. Most therapists will take time to understand your background, challenges, and goals. It's OK if you're nervous or unsure what to say.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crisis Resources Reminder -->
+    <section class="crisis-reminder">
+      <div class="container">
+        <h2>In Crisis? Get Immediate Help</h2>
+        <p>If you're having thoughts of suicide or in acute crisis, therapy scheduling won't help you right now. Please reach out immediately:</p>
+        <div class="crisis-contacts">
+          <div class="crisis-contact">
+            <h3>988 Suicide & Crisis Lifeline</h3>
+            <p><strong>Call or text 988</strong> (available 24/7)</p>
+          </div>
+
+          <div class="crisis-contact">
+            <h3>Crisis Text Line</h3>
+            <p><strong>Text HOME to 741741</strong></p>
+          </div>
+
+          <div class="crisis-contact">
+            <h3>Emergency Services</h3>
+            <p><strong>Call 911</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Crisis Footer Widget -->
+  <div id="crisisWidget" class="crisis-widget">
+    <button id="crisisToggle" class="crisis-toggle">
+      <span class="crisis-icon">🆘</span>
+      <span class="crisis-label">In Crisis?</span>
+    </button>
+    
+    <div id="crisisMenu" class="crisis-menu hidden">
+      <a href="tel:988" class="crisis-link">
+        <strong>Call 988</strong><br>
+        <small>24/7 Suicide Prevention</small>
+      </a>
+      <a href="#" onclick="openCrisisChat()" class="crisis-link">
+        <strong>Text HOME to 741741</strong><br>
+        <small>Crisis Text Line</small>
+      </a>
+      <a href="tel:911" class="crisis-link">
+        <strong>Call 911</strong><br>
+        <small>Emergency Services</small>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Manwell. Supporting men's mental health every day.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Filter Therapists
+    function filterTherapists() {
+      const specialty = document.getElementById('specialty-filter').value;
+      const modality = document.getElementById('modality-filter').value;
+      const location = document.getElementById('location-filter').value;
+      const insurance = document.getElementById('insurance-filter').value;
+
+      let visibleCount = 0;
+      const cards = document.querySelectorAll('.therapist-card');
+
+      cards.forEach(card => {
+        let show = true;
+
+        if (specialty && !card.dataset.specialty.includes(specialty)) show = false;
+        if (modality && !card.dataset.modality.includes(modality)) show = false;
+        if (location && !card.dataset.location.includes(location)) show = false;
+        if (insurance && !card.dataset.insurance.includes(insurance)) show = false;
+
+        card.style.display = show ? 'block' : 'none';
+        if (show) visibleCount++;
+      });
+
+      document.getElementById('result-count').innerHTML = 
+        `Showing <strong>${visibleCount}</strong> therapist${visibleCount !== 1 ? 's' : ''}`;
+    }
+
+    // Reset Filters
+    function resetFilters() {
+      document.getElementById('specialty-filter').value = '';
+      document.getElementById('modality-filter').value = '';
+      document.getElementById('location-filter').value = '';
+      document.getElementById('insurance-filter').value = '';
+      
+      document.querySelectorAll('.therapist-card').forEach(card => {
+        card.style.display = 'block';
+      });
+
+      document.getElementById('result-count').innerHTML = 
+        `Showing <strong>12</strong> licensed therapists`;
+    }
+
+    // Schedule Consultation
+    function scheduleConsultation(therapistName) {
+      alert(`Thank you for your interest in ${therapistName}!\n\nYou'll be redirected to schedule a consultation. A confirmation email will be sent to you within 24 hours.`);
+    }
+
+    // Crisis Widget Toggle
+    const crisisToggle = document.getElementById('crisisToggle');
+    const crisisMenu = document.getElementById('crisisMenu');
+
+    if (crisisToggle) {
+      crisisToggle.addEventListener('click', () => {
+        crisisMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.crisis-widget')) {
+          crisisMenu.classList.add('hidden');
+        }
+      });
+    }
+
+    function openCrisisChat() {
+      alert('Crisis Text Line: Text HOME to 741741');
+    }
+  </script>
+</body>
+</html>

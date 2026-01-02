@@ -3114,6 +3114,410 @@ textarea:focus {
 }
 
 /* ====================================
+   THERAPIST DIRECTORY STYLES
+   ==================================== */
+
+.therapist-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #2d5a7a 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.therapist-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.therapist-tagline {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Search & Filter */
+.therapist-search {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.therapist-search h2 {
+  margin-bottom: 2rem;
+  color: #1a3a52;
+}
+
+.search-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  margin-bottom: 0.5rem;
+  color: #1a3a52;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.filter-group select {
+  padding: 0.75rem;
+  border: 1px solid #e8f0f5;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #1a3a52;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #4a9b8e;
+  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+}
+
+.search-filters .btn {
+  padding: 0.75rem 1.5rem;
+}
+
+/* Therapists Grid */
+.therapists-section {
+  padding: 4rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.therapists-count {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6b7a8a;
+}
+
+.therapists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.therapist-card {
+  background: white;
+  border: 1px solid #e8f0f5;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.therapist-card:hover {
+  box-shadow: 0 8px 24px rgba(26, 58, 82, 0.15);
+  border-color: #4a9b8e;
+  transform: translateY(-4px);
+}
+
+.therapist-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.therapist-avatar {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.therapist-title-block {
+  flex: 1;
+}
+
+.therapist-header h3 {
+  color: #1a3a52;
+  margin-bottom: 0.25rem;
+  font-size: 1.15rem;
+}
+
+.credentials {
+  color: #4a9b8e;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.therapist-bio {
+  color: #6b7a8a;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.therapist-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.specialty-tag {
+  display: inline-block;
+  background-color: #f0f5f8;
+  color: #4a9b8e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.therapist-details {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #e8f0f5;
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.therapist-details p {
+  color: #6b7a8a;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.therapist-details strong {
+  color: #1a3a52;
+}
+
+.therapist-action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.therapist-action .btn {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+}
+
+/* Why Choose Section */
+.why-choose {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.why-choose h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a3a52;
+  font-size: 2rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e8f0f5;
+  text-align: center;
+}
+
+.why-icon {
+  font-size: 2rem;
+  color: #4a9b8e;
+  margin-bottom: 1rem;
+}
+
+.why-card h3 {
+  color: #1a3a52;
+  margin-bottom: 0.75rem;
+}
+
+.why-card p {
+  color: #6b7a8a;
+  font-size: 0.95rem;
+}
+
+/* How It Works */
+.how-it-works {
+  padding: 4rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a3a52;
+  font-size: 2rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e8f0f5;
+  text-align: center;
+}
+
+.step-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #4a9b8e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.step-card h3 {
+  color: #1a3a52;
+  margin-bottom: 0.75rem;
+}
+
+.step-card p {
+  color: #6b7a8a;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Cost Info */
+.cost-info {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(74, 155, 142, 0.05), rgba(74, 155, 142, 0.02));
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.cost-info h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a3a52;
+  font-size: 2rem;
+}
+
+.cost-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cost-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e8f0f5;
+}
+
+.cost-card h3 {
+  color: #1a3a52;
+  margin-bottom: 1rem;
+}
+
+.cost-card p {
+  color: #6b7a8a;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.cost-card p strong {
+  color: #4a9b8e;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 4rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a3a52;
+  font-size: 2rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 3px solid #4a9b8e;
+}
+
+.faq-item h3 {
+  color: #1a3a52;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.faq-item p {
+  color: #6b7a8a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Crisis Reminder */
+.crisis-reminder {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(211, 47, 47, 0.05), rgba(211, 47, 47, 0.02));
+  border-bottom: 1px solid #e8f0f5;
+}
+
+.crisis-reminder h2 {
+  color: #1a3a52;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.crisis-reminder > .container > p {
+  color: #6b7a8a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ====================================
    COMMUNITY FORUM STYLES
    ==================================== */
 
