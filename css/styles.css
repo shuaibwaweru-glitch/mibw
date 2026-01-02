@@ -1160,3 +1160,675 @@ textarea:focus {
     max-width: 220px;
   }
 }
+
+/* ========== MENTAL HEALTH HUB SECTION ========== */
+.hub-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%);
+  min-height: 50vh;
+}
+
+.hub-hero .hero-content h1 {
+  color: #ffffff;
+  font-size: 2.8rem;
+}
+
+.hub-hero .hero-content .hero-subheading {
+  color: #f0f0f0;
+  font-size: 1.3rem;
+}
+
+/* Hub Navigation Section */
+.hub-nav-section {
+  padding: 3rem 0;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.hub-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hub-nav-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #4a9b8e;
+}
+
+.hub-nav-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-top-color: #1a3a52;
+}
+
+.hub-nav-card .nav-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.hub-nav-card h3 {
+  color: #1a3a52;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.hub-nav-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Topic Sections */
+.hub-topic-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hub-topic-section.alt-bg {
+  background: #f8f9fa;
+}
+
+.topic-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.topic-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.topic-header h2 {
+  font-size: 2.2rem;
+  color: #1a3a52;
+  margin-bottom: 0.5rem;
+}
+
+.topic-subtitle {
+  font-size: 1.1rem;
+  color: #4a9b8e;
+  font-weight: 600;
+}
+
+/* Topic Content */
+.content-block {
+  margin-bottom: 2.5rem;
+}
+
+.content-block h3 {
+  color: #1a3a52;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.content-block p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.info-box {
+  background: #e3f2fd;
+  border-left: 4px solid #1976d2;
+  padding: 1.2rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  color: #1565c0;
+}
+
+/* Symptoms Grid */
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.symptom-item {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #4a9b8e;
+}
+
+.symptom-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.symptom-item h4 {
+  color: #1a3a52;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.symptom-item p {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Barrier List */
+.barrier-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.barrier-list li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.barrier-list li:before {
+  content: "→ ";
+  position: absolute;
+  left: 0;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Treatment Cards */
+.treatment-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #4a9b8e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.treatment-card h4 {
+  color: #1a3a52;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.treatment-card p {
+  color: #555;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.treatment-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.8rem 0;
+}
+
+.treatment-card li {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.treatment-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4a9b8e;
+  font-weight: bold;
+}
+
+/* Action Box */
+.action-box {
+  background: #e8f5e9;
+  border-left: 4px solid #4a9b8e;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.action-box h3 {
+  color: #1b5e20;
+  margin-bottom: 1rem;
+}
+
+.action-steps {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.action-steps li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #1b5e20;
+  line-height: 1.6;
+}
+
+.action-steps li:before {
+  content: counter(list-item, decimal);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #4a9b8e;
+}
+
+/* Types Grid */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.type-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.type-card:hover {
+  border-color: #4a9b8e;
+  box-shadow: 0 4px 12px rgba(74, 155, 142, 0.2);
+}
+
+.type-card h4 {
+  color: #1a3a52;
+  margin-bottom: 0.8rem;
+}
+
+.type-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Symptom Checklist */
+.symptom-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.symptom-checklist li {
+  padding: 0.6rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+  color: #555;
+}
+
+.symptom-checklist li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4a9b8e;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* PTSD Symptoms */
+.ptsd-symptoms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.symptom-group {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #d32f2f;
+}
+
+.symptom-group h4 {
+  color: #1a3a52;
+  margin-bottom: 1rem;
+}
+
+.symptom-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.symptom-group li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.symptom-group li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Healing Practices */
+.healing-practices {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.healing-practices li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.healing-practices li:before {
+  content: "→ ";
+  position: absolute;
+  left: 0;
+  color: #4a9b8e;
+  font-weight: bold;
+}
+
+/* Warning List */
+.warning-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.warning-list li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.warning-list li:before {
+  content: "⚠️ ";
+  position: absolute;
+  left: 0;
+}
+
+/* Quick Relief */
+.quick-relief {
+  background: #fff3e0;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #ff9800;
+}
+
+.quick-relief h3 {
+  color: #e65100;
+  margin-bottom: 1.5rem;
+}
+
+.relief-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.relief-item {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 6px;
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.relief-number {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 30px;
+  height: 30px;
+  background: #ff9800;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.relief-item p {
+  color: #555;
+}
+
+/* Relationship Tips */
+.relationship-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.tip {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #4a9b8e;
+}
+
+.tip h4 {
+  color: #1a3a52;
+  margin-bottom: 0.8rem;
+}
+
+.tip p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Therapy Indicators */
+.therapy-indicators {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.therapy-indicators li {
+  padding: 0.6rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+  color: #555;
+}
+
+.therapy-indicators li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4a9b8e;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Wellness Tips */
+.wellness-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tip-item {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 6px;
+  border-left: 3px solid #4a9b8e;
+  color: #555;
+}
+
+/* Challenges Grid */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.challenge-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+  border-color: #d32f2f;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.1);
+}
+
+.challenge-card h4 {
+  color: #1a3a52;
+  margin-bottom: 0.8rem;
+}
+
+.challenge-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Principles Section */
+.principles-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principle {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 4px solid #4a9b8e;
+}
+
+.principle:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.principle-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.principle h3 {
+  color: #1a3a52;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.principle p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Resources Footer */
+.resources-footer {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+  border: 2px solid #e0e0e0;
+}
+
+.resources-footer h3 {
+  color: #1a3a52;
+  margin-bottom: 1.5rem;
+}
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.resource-links a {
+  padding: 0.8rem 1.5rem;
+  background: #4a9b8e;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.resource-links a:hover {
+  background: #2d6f64;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hub-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .symptoms-grid,
+  .types-grid,
+  .challenges-grid,
+  .ptsd-symptoms {
+    grid-template-columns: 1fr;
+  }
+
+  .relief-items,
+  .relationship-tips,
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .topic-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .resource-links {
+    flex-direction: column;
+  }
+
+  .resource-links a {
+    display: block;
+  }
+}
