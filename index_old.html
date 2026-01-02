@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manwell. A digital forge for modern masculinity. Confronting the silent crisis. Fathering yourself.">
+  <meta name="theme-color" content="#1a1a1a">
+  <title>Manwell - The Digital Forge</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Manwell Logo">
+        Manwell
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">The Forge</a></li>
+          <li><a href="mission.html">The Mission</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="mental-health-hub.html">Hub</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="experts.html">Experts</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="therapist-directory.html">Find a Therapist</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero">
+    <!-- Video backdrop (optional - replace with actual video URL) -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/videos/forge-hero.mp4" type="video/mp4">
+    </video>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <h1 class="hero-headline">The man you're pretending to be is killing the man you could become.</h1>
+      <p class="hero-subheading">Manwell. Not healed. Forged.</p>
+      <button class="cta-button" onclick="document.getElementById('pillars').scrollIntoView({behavior: 'smooth'})">Enter the Forge</button>
+    </div>
+  </section>
+
+  <!-- ========== TRIPTYCH SECTION ========== -->
+  <section class="triptych" id="pillars">
+    <div class="triptych-container">
+      <h2 class="triptych-headline reveal">The Poisons. The Antidote.</h2>
+      
+      <p class="triptych-subtext reveal">Three truths that shatter the performance.</p>
+      
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="pillar-icon">🎭</div>
+          <h3>The Performance</h3>
+          <p>You've learned to play a role. The curated self. The acceptable version. But the mask suffocates the man beneath it. What lies underneath the performance?</p>
+        </div>
+        
+        <div class="pillar reveal">
+          <div class="pillar-icon">⚖️</div>
+          <h3>Transactional Worth</h3>
+          <p>You are measured by what you produce, earn, and achieve. Your value is conditional. Your existence is justified only by utility. But you are not a machine. You are a man.</p>
+        </div>
+        
+        <div class="pillar reveal">
+          <div class="pillar-icon">⚔️</div>
+          <h3>The Unfought War</h3>
+          <p>You were made for battle, but there's no enemy. You have discipline with no purpose, strength with no meaning. The war you were born to fight is within.</p>
+        </div>
+      </div>
+      
+      <div class="triptych-footer reveal">
+        The path is sovereignty. The method is forging. The time is now.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED STORIES SECTION ========== -->
+  <section style="padding: 6rem 2rem; background: #f8f9fa; border-top: 1px solid #e8f0f5;">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 1rem;">Stories From The Forge</h2>
+      <p style="text-align: center; color: #6b7a8a; margin-bottom: 3rem; font-size: 1.05rem;">Real journeys. Real men. Real transformation.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <!-- Story 1 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08);" onclick="window.location.href='stories.html'">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=250&fit=crop" alt="Story" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 1.5rem;">
+            <span style="display: inline-block; background: #4a9b8e; color: white; padding: 0.3rem 0.8rem; font-size: 0.75rem; border-radius: 3px; margin-bottom: 1rem;">Sovereignty</span>
+            <h3 style="margin-bottom: 0.5rem; color: #1a3a52;">The Performance Shattered</h3>
+            <p style="color: #6b7a8a; font-size: 0.9rem; margin-bottom: 1rem;">Kamau - Nairobi, Kenya</p>
+            <p style="color: #4a5568; font-size: 0.95rem;">For 15 years, I played the role expected of me. Perfect job, perfect image, hollow inside...</p>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08);" onclick="window.location.href='stories.html'">
+          <img src="https://images.unsplash.com/photo-1507931957432-a881a62bd858?w=500&h=250&fit=crop" alt="Story" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 1.5rem;">
+            <span style="display: inline-block; background: #4a9b8e; color: white; padding: 0.3rem 0.8rem; font-size: 0.75rem; border-radius: 3px; margin-bottom: 1rem;">Fathering Himself</span>
+            <h3 style="margin-bottom: 0.5rem; color: #1a3a52;">Fathering the Boy I Was</h3>
+            <p style="color: #6b7a8a; font-size: 0.9rem; margin-bottom: 1rem;">Daniel - Kampala, Uganda</p>
+            <p style="color: #4a5568; font-size: 0.95rem;">Growing up without a father, I didn't know what it meant to be a man. Then I realized...</p>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="reveal" style="background: white; border: 1px solid #e8f0f5; border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.4s ease; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.08);" onclick="window.location.href='stories.html'">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=250&fit=crop" alt="Story" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 1.5rem;">
+            <span style="display: inline-block; background: #4a9b8e; color: white; padding: 0.3rem 0.8rem; font-size: 0.75rem; border-radius: 3px; margin-bottom: 1rem;">The Burden</span>
+            <h3 style="margin-bottom: 0.5rem; color: #1a3a52;">From Weight to Wisdom</h3>
+            <p style="color: #6b7a8a; font-size: 0.9rem; margin-bottom: 1rem;">Kofi - Accra, Ghana</p>
+            <p style="color: #4a5568; font-size: 0.95rem;">Carrying the weight of family expectations, I forgot to carry myself...</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="stories.html" style="display: inline-block; background: #4a9b8e; color: white; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid #4a9b8e;" onmouseover="this.style.background='transparent'; this.style.color='#4a9b8e'" onmouseout="this.style.background='#4a9b8e'; this.style.color='white'">Read All Stories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VIDEO PORTAL SECTION ========== -->
+  <section class="video-portal">
+    <div class="video-container">
+      <h2 class="portal-headline reveal">The Truth, In Motion.</h2>
+      <p class="portal-subtext reveal">Watch the real conversations. The hard truths. The call to sovereignty.</p>
+      
+      <div class="video-grid" id="video-portal">
+        <!-- Videos will be dynamically loaded here -->
+        <!-- Placeholder video cards for now -->
+        
+        <div class="video-card reveal">
+          <div class="video-theme">Sovereignty</div>
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Sovereignty"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        
+        <div class="video-card reveal">
+          <div class="video-theme">Fathering Yourself</div>
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Fathering Yourself"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        
+        <div class="video-card reveal">
+          <div class="video-theme">The Burden</div>
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="The Burden"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        
+        <div class="video-card reveal">
+          <div class="video-theme">The Unspoken</div>
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="The Unspoken"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        
+        <div class="video-card reveal">
+          <div class="video-theme">Sovereignty</div>
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="Sovereignty"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        
+        <div class="video-card reveal">
+          <div class="video-theme">The Call</div>
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0"
+            title="The Call"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      
+      <div class="portal-cta reveal" id="social">
+        <p style="width: 100%; text-align: center; margin-bottom: 2rem;">Follow the journey. Stand with us.</p>
+        <a href="https://instagram.com" class="social-link" title="Instagram" target="_blank" rel="noopener">📷</a>
+        <a href="https://tiktok.com" class="social-link" title="TikTok" target="_blank" rel="noopener">🎵</a>
+        <a href="https://youtube.com" class="social-link" title="YouTube" target="_blank" rel="noopener">▶️</a>
+        <a href="mailto:contact@manwell.com" class="social-link" title="Email">✉️</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crisis Footer Widget (Appears on all pages) -->
+  <div class="crisis-footer-widget">
+    <button class="widget-toggle" aria-label="Toggle crisis resources">
+      <span class="widget-icon">🆘</span>
+    </button>
+    <div class="widget-content">
+      <p><strong>Need Help?</strong></p>
+      <a href="tel:988" class="widget-link">Call 988</a>
+      <a href="sms:741741?body=HELLO" class="widget-link">Text 741741</a>
+      <a href="crisis.html" class="widget-link">More Resources</a>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p><strong>Manwell</strong>. © 2025. Father Yourself.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">A digital forge for men who refuse to perform.</p>
+  </footer>
+
+  <!-- Google Fonts Script (fallback) -->
+  <script src="js/script.js"></script>
+  
+  <!-- Crisis Widget Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const widgetToggle = document.querySelector('.widget-toggle');
+      const widgetContent = document.querySelector('.widget-content');
+      
+      if (widgetToggle) {
+        widgetToggle.addEventListener('click', function() {
+          widgetContent.classList.toggle('open');
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.crisis-footer-widget')) {
+            widgetContent.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

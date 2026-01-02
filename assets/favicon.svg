@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#1a3a52"/>
+  
+  <!-- Left circle (Black) -->
+  <circle cx="20" cy="32" r="12" fill="#000000"/>
+  
+  <!-- Right circle (White) -->
+  <circle cx="44" cy="32" r="12" fill="#FFFFFF"/>
+  
+  <!-- MiBW Text -->
+  <text x="32" y="52" font-family="Inter, Arial" font-size="10" font-weight="bold" fill="#4a9b8e" text-anchor="middle">MiBW</text>
+</svg>
