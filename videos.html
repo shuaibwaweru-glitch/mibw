@@ -1,12 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video & Podcast Series | Manwell</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mental Health Videos - Expert talks, tutorials, and educational content at Manwell">
+  <meta name="theme-color" content="#1a3a52">
+  <title>Videos - Manwell</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <style>
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin: 3rem 0;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-thumbnail::after {
+      content: '▶';
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .video-card:hover .video-thumbnail::after {
+      background: rgba(212, 175, 55, 0.8);
+      transform: scale(1.2);
+    }
+
+    .video-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #1a3a52;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .video-speaker {
+      color: #d4af37;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .video-description {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 1rem 0;
+      flex: 1;
+    }
+
+    .video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      color: #999;
+      font-size: 0.85rem;
+    }
+
+    .series-badge {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #1a3a52;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .series-section {
+      background: linear-gradient(135deg, rgba(26, 58, 82, 0.05) 0%, rgba(74, 155, 142, 0.05) 100%);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .series-title {
+      font-family: 'Playfair Display', serif;
+      color: #1a3a52;
+      font-size: 1.8rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .section-divider {
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37 0%, #4a9b8e 100%);
+      margin: 3rem 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,23 +150,20 @@
   <header>
     <div class="header-container">
       <div class="logo">
-        <img src="assets/images/logo.svg" alt="Manwell Logo">
-        Manwell
+        <span class="logo-icon">M</span>
+        <span class="logo-text">Manwell</span>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">The Forge</a></li>
-          <li><a href="mission.html">The Mission</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="stories.html">Stories</a></li>
-          <li><a href="mental-health-hub.html">Hub</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="activities.html">Programs</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
           <li><a href="assessments.html">Assessments</a></li>
-          <li><a href="experts.html">Experts</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="crisis.html">Crisis Help</a></li>
           <li><a href="community.html">Community</a></li>
-          <li><a href="therapist-directory.html">Find a Therapist</a></li>
+          <li><a href="therapist-directory.html">Find Help</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
         </ul>
       </nav>
       <button class="menu-toggle">☰</button>
@@ -38,347 +171,201 @@
   </header>
 
   <!-- ========== HERO SECTION ========== -->
-  <section class="videos-hero">
-    <div class="container">
-      <h1>Expert Interviews & Mental Health Content</h1>
-      <p>Deep conversations with leading mental health experts on topics that matter to men's wellbeing.</p>
-      <div class="videos-cta">
-        <button class="btn-primary" onclick="scrollToSection('featured')">Watch Now</button>
-        <button class="btn-secondary" onclick="showSubscribeModal()">Subscribe to Updates</button>
-      </div>
+  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(26, 58, 82, 0.75) 0%, rgba(74, 155, 142, 0.65) 100%), url('https://images.unsplash.com/photo-1611339555312-e607c04352fa?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
+    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
+      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">Educational Videos</h1>
+      <h2 class="hero-subtitle" style="color: #d4af37;">Expert Insights. Practical Strategies. Real Stories.</h2>
+      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">Learn from mental health professionals and community leaders about topics that matter to you.</p>
     </div>
   </section>
 
-  <!-- ========== CATEGORIES ========== -->
-  <section class="videos-categories">
+  <main>
     <div class="container">
-      <h2>Browse by Topic</h2>
-      <div class="category-filter-buttons">
-        <button class="category-btn active" data-category="all">All Episodes</button>
-        <button class="category-btn" data-category="depression">Depression</button>
-        <button class="category-btn" data-category="anxiety">Anxiety</button>
-        <button class="category-btn" data-category="relationships">Relationships</button>
-        <button class="category-btn" data-category="wellness">Wellness</button>
-        <button class="category-btn" data-category="recovery">Recovery</button>
-      </div>
+      <!-- Featured Video Series -->
+      <section class="series-section">
+        <h2 class="series-title">Featured Series: Mental Health Fundamentals</h2>
+        <p style="color: #666; margin-bottom: 2rem;">10-part video series covering essential mental health topics from basics to advanced coping strategies.</p>
+        <div class="series-grid">
+          <div class="video-card">
+            <div class="video-thumbnail">📺</div>
+            <div class="video-content">
+              <span class="series-badge">Series 1/10</span>
+              <h3 class="video-title">Understanding Mental Health Basics</h3>
+              <p class="video-speaker">Dr. Samuel Okonkwo</p>
+              <p class="video-description">What is mental health? Learn the fundamentals and how mental health affects all aspects of your life.</p>
+              <div class="video-meta">
+                <span>12:45</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">📺</div>
+            <div class="video-content">
+              <span class="series-badge">Series 2/10</span>
+              <h3 class="video-title">Recognizing Depression Symptoms</h3>
+              <p class="video-speaker">Dr. Maria Rodriguez</p>
+              <p class="video-description">Identify signs of depression in yourself and others. Learn when to seek professional help.</p>
+              <div class="video-meta">
+                <span>15:22</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">📺</div>
+            <div class="video-content">
+              <span class="series-badge">Series 3/10</span>
+              <h3 class="video-title">Anxiety: Causes & Coping Strategies</h3>
+              <p class="video-speaker">Dr. James Chen</p>
+              <p class="video-description">Understanding anxiety triggers and evidence-based techniques to manage anxious thoughts and feelings.</p>
+              <div class="video-meta">
+                <span>18:10</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Expert Talks Section -->
+      <section>
+        <h2 style="font-family: 'Playfair Display', serif; color: #1a3a52; font-size: 2rem; margin: 3rem 0 2rem 0;">Expert Talks</h2>
+        <div class="videos-grid">
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Healing from Trauma</h3>
+              <p class="video-speaker">Dr. David Patel</p>
+              <p class="video-description">Deep dive into trauma recovery, EMDR therapy, and somatic approaches to healing stored trauma.</p>
+              <div class="video-meta">
+                <span>28:45</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Relationship Skills for Men</h3>
+              <p class="video-speaker">Dr. James Chen</p>
+              <p class="video-description">Building authentic connections through vulnerable communication and emotional intelligence.</p>
+              <div class="video-meta">
+                <span>24:18</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Recovery from Addiction</h3>
+              <p class="video-speaker">Dr. Maria Rodriguez</p>
+              <p class="video-description">Understanding addiction, recovery pathways, and building a support network for long-term sobriety.</p>
+              <div class="video-meta">
+                <span>32:05</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Grief and Loss Navigation</h3>
+              <p class="video-speaker">Dr. Angela Williams</p>
+              <p class="video-description">Navigating the grief process and honoring your emotions while moving forward with meaning.</p>
+              <div class="video-meta">
+                <span>25:30</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Work Stress & Burnout</h3>
+              <p class="video-speaker">Dr. Michael Torres</p>
+              <p class="video-description">Managing work-related stress, recognizing burnout, and creating healthy boundaries at work.</p>
+              <div class="video-meta">
+                <span>20:14</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-thumbnail">🎤</div>
+            <div class="video-content">
+              <h3 class="video-title">Toxic Masculinity & Identity</h3>
+              <p class="video-speaker">Dr. Samuel Okonkwo</p>
+              <p class="video-description">Redefining masculinity, breaking stereotypes, and developing a healthy male identity.</p>
+              <div class="video-meta">
+                <span>29:42</span>
+                <a href="#" style="color: #4a9b8e; text-decoration: none; font-weight: 600;">Watch →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- CTA Section -->
+      <section style="background: linear-gradient(135deg, #1a3a52 0%, #4a9b8e 100%); border-radius: 12px; padding: 4rem 2rem; text-align: center; margin: 4rem 0 3rem 0;">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">More Support Available</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore our complete education library, assessments, and community support options.</p>
+        <a href="mental-health-hub.html" class="btn" style="background: #d4af37; color: #1a3a52; padding: 12px 40px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: all 0.3s ease;">Browse Education Hub</a>
+      </section>
     </div>
-  </section>
-
-  <!-- ========== FEATURED EPISODE ========== -->
-  <section class="featured-episode" id="featured">
-    <div class="container">
-      <h2>Featured Episode</h2>
-      <div class="featured-episode-content">
-        <div class="featured-video-container">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f70b504b0?w=800&h=450&fit=crop" alt="Featured Episode Thumbnail">
-          <div class="play-button">▶</div>
-        </div>
-        <div class="featured-episode-info">
-          <span class="episode-tag depression-tag">Depression</span>
-          <h3>Breaking Through: Understanding Male Depression Beyond the Stigma</h3>
-          <p class="episode-guest">With Dr. Marcus Johnson, PhD, LMFT</p>
-          <p class="episode-duration">📺 45 minutes | 🎙️ Podcast available</p>
-          <p class="episode-description">Dr. Johnson discusses why depression manifests differently in men, the cultural barriers that prevent men from seeking help, and practical strategies for breaking through stigma. Learn about the warning signs often missed, how depression impacts work and relationships, and evidence-based treatment approaches.</p>
-          
-          <div class="episode-details">
-            <div class="detail-item">
-              <strong>Key Topics:</strong>
-              <p>Male vulnerability, help-seeking behavior, family impact, treatment options, support strategies</p>
-            </div>
-            <div class="detail-item">
-              <strong>Resources Mentioned:</strong>
-              <p>NAMI HelpLine (1-800-950-NAMI), Psychology Today therapist finder, SAMHSA National Helpline (1-800-662-4357)</p>
-            </div>
-          </div>
-
-          <div class="episode-buttons">
-            <a href="#" class="btn-primary">▶ Watch on YouTube</a>
-            <a href="#" class="btn-secondary">🎙️ Listen on Spotify</a>
-            <a href="#" class="btn-secondary">📄 View Transcript</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EPISODE GRID ========== -->
-  <section class="episodes-section">
-    <div class="container">
-      <h2>All Episodes</h2>
-      <div class="episodes-grid">
-
-        <!-- Episode 1 -->
-        <div class="episode-card" data-category="depression">
-          <div class="episode-thumbnail">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=225&fit=crop" alt="Episode thumbnail">
-            <div class="play-badge">▶</div>
-            <span class="episode-duration-badge">38 min</span>
-          </div>
-          <div class="episode-card-content">
-            <span class="episode-tag depression-tag">Depression</span>
-            <h3>When Sadness Becomes Serious: Recognizing Depression in Your Own Life</h3>
-            <p class="episode-guest">with Dr. Elena Rodriguez, MD</p>
-            <p class="episode-summary">Learn to distinguish between normal sadness and clinical depression. Dr. Rodriguez explains symptoms, risk factors, and when to seek professional help.</p>
-            <div class="episode-meta">
-              <span>📅 Published Dec 2025</span>
-              <span>📺 Video + 🎙️ Podcast</span>
-            </div>
-            <a href="#" class="episode-link">Watch Episode →</a>
-          </div>
-        </div>
-
-        <!-- Episode 2 -->
-        <div class="episode-card" data-category="anxiety">
-          <div class="episode-thumbnail">
-            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=225&fit=crop" alt="Episode thumbnail">
-            <div class="play-badge">▶</div>
-            <span class="episode-duration-badge">42 min</span>
-          </div>
-          <div class="episode-card-content">
-            <span class="episode-tag anxiety-tag">Anxiety</span>
-            <h3>Anxiety at Work: Managing Stress Without Losing Your Edge</h3>
-            <p class="episode-guest">with Dr. David Chen, Sport Psychologist</p>
-            <p class="episode-summary">Practical strategies for managing workplace anxiety while maintaining performance. Includes breathing techniques, reframing thinking patterns, and workplace accommodation.</p>
-            <div class="episode-meta">
-              <span>📅 Published Dec 2025</span>
-              <span>📺 Video + 🎙️ Podcast</span>
-            </div>
-            <a href="#" class="episode-link">Watch Episode →</a>
-          </div>
-        </div>
-
-        <!-- Episode 3 -->
-        <div class="episode-card" data-category="relationships">
-          <div class="episode-thumbnail">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=225&fit=crop" alt="Episode thumbnail">
-            <div class="play-badge">▶</div>
-            <span class="episode-duration-badge">51 min</span>
-          </div>
-          <div class="episode-card-content">
-            <span class="episode-tag relationships-tag">Relationships</span>
-            <h3>Vulnerability in Relationships: Why Letting Your Guard Down Matters</h3>
-            <p class="episode-guest">with Dr. Sarah Williams, LMFT</p>
-            <p class="episode-summary">Exploring emotional intimacy, communication patterns, and how vulnerability strengthens relationships. Includes common barriers men face and practical ways to open up.</p>
-            <div class="episode-meta">
-              <span>📅 Published Nov 2025</span>
-              <span>📺 Video + 🎙️ Podcast</span>
-            </div>
-            <a href="#" class="episode-link">Watch Episode →</a>
-          </div>
-        </div>
-
-        <!-- Episode 4 -->
-        <div class="episode-card" data-category="recovery">
-          <div class="episode-thumbnail">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f70b504b0?w=400&h=225&fit=crop" alt="Episode thumbnail">
-            <div class="play-badge">▶</div>
-            <span class="episode-duration-badge">56 min</span>
-          </div>
-          <div class="episode-card-content">
-            <span class="episode-tag recovery-tag">Recovery</span>
-            <h3>From Addiction to Authenticity: A Recovery Journey</h3>
-            <p class="episode-guest">with James Mitchell, LCSW & Addiction Specialist</p>
-            <p class="episode-summary">An intimate conversation about recovery from substance use disorder, the role of support systems, and rebuilding life after addiction. James shares his personal journey.</p>
-            <div class="episode-meta">
-              <span>📅 Published Nov 2025</span>
-              <span>📺 Video + 🎙️ Podcast</span>
-            </div>
-            <a href="#" class="episode-link">Watch Episode →</a>
-          </div>
-        </div>
-
-        <!-- Episode 5 -->
-        <div class="episode-card" data-category="wellness">
-          <div class="episode-thumbnail">
-            <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=400&h=225&fit=crop" alt="Episode thumbnail">
-            <div class="play-badge">▶</div>
-            <span class="episode-duration-badge">39 min</span>
-          </div>
-          <div class="episode-card-content">
-            <span class="episode-tag wellness-tag">Wellness</span>
-            <h3>Sleep, Exercise & Mind: The Physical Foundation of Mental Health</h3>
-            <p class="episode-guest">with Dr. David Chen, Sport Psychologist</p>
-            <p class="episode-summary">How sleep quality, physical activity, and nutrition directly impact mental health. Practical tips for building sustainable healthy habits that support wellbeing.</p>
-            <div class="episode-meta">
-              <span>📅 Published Oct 2025</span>
-              <span>📺 Video + 🎙️ Podcast</span>
-            </div>
-            <a href="#" class="episode-link">Watch Episode →</a>
-          </div>
-        </div>
-
-        <!-- Episode 6 -->
-        <div class="episode-card" data-category="anxiety">
-          <div class="episode-thumbnail">
-            <img src="https://images.unsplash.com/photo-1488992783499-a29a194e76c0?w=400&h=225&fit=crop" alt="Episode thumbnail">
-            <div class="play-badge">▶</div>
-            <span class="episode-duration-badge">44 min</span>
-          </div>
-          <div class="episode-card-content">
-            <span class="episode-tag anxiety-tag">Anxiety</span>
-            <h3>The Worry Trap: Breaking Free from Rumination and Catastrophizing</h3>
-            <p class="episode-guest">with Dr. Priya Patel, PhD, LMHC</p>
-            <p class="episode-summary">Understanding anxious thought patterns and evidence-based techniques to interrupt the cycle. Includes cognitive restructuring, mindfulness, and when to seek professional support.</p>
-            <div class="episode-meta">
-              <span>📅 Published Oct 2025</span>
-              <span>📺 Video + 🎙️ Podcast</span>
-            </div>
-            <a href="#" class="episode-link">Watch Episode →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== UPCOMING EPISODES ========== -->
-  <section class="upcoming-episodes">
-    <div class="container">
-      <h2>Coming Soon</h2>
-      <p class="section-subtitle">New episodes releasing bi-weekly exploring men's mental health from every angle.</p>
-      
-      <div class="upcoming-grid">
-        <div class="upcoming-card">
-          <div class="upcoming-date">January 15</div>
-          <h3>Grief and Loss: Honoring What We've Lost</h3>
-          <p class="upcoming-guest">with Dr. Priya Patel, PhD</p>
-          <p class="upcoming-topic">Understanding grief, processing loss, and supporting others through difficult times.</p>
-        </div>
-
-        <div class="upcoming-card">
-          <div class="upcoming-date">January 29</div>
-          <h3>Fatherhood & Mental Health: Being Present While Managing Stress</h3>
-          <p class="upcoming-guest">with Dr. Marcus Johnson, PhD, LMFT</p>
-          <p class="upcoming-topic">Navigating parenting challenges, mental health as a father, and modeling wellness for kids.</p>
-        </div>
-
-        <div class="upcoming-card">
-          <div class="upcoming-date">February 12</div>
-          <h3>Masculinity Redefined: Modern Men & Emotional Health</h3>
-          <p class="upcoming-guest">with Dr. Elena Rodriguez, MD</p>
-          <p class="upcoming-topic">Challenging stereotypes about masculinity and building healthier definitions of being a man.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SUBSCRIBE SECTION ========== -->
-  <section class="subscribe-section">
-    <div class="container">
-      <div class="subscribe-content">
-        <h2>Never Miss an Episode</h2>
-        <p>Subscribe to get new episodes delivered to your inbox and favorite podcast apps.</p>
-        
-        <div class="subscribe-platforms">
-          <a href="#" class="platform-link youtube">
-            <span class="platform-icon">📺</span>
-            <span class="platform-name">YouTube</span>
-          </a>
-          <a href="#" class="platform-link spotify">
-            <span class="platform-icon">🎵</span>
-            <span class="platform-name">Spotify</span>
-          </a>
-          <a href="#" class="platform-link apple">
-            <span class="platform-icon">🎙️</span>
-            <span class="platform-name">Apple Podcasts</span>
-          </a>
-          <a href="#" class="platform-link email">
-            <span class="platform-icon">✉️</span>
-            <span class="platform-name">Email List</span>
-          </a>
-        </div>
-
-        <form class="email-subscribe-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit" class="btn-primary">Subscribe</button>
-        </form>
-        <p class="privacy-note">We respect your privacy. No spam, just new episode notifications.</p>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- ========== FOOTER ========== -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Manwell - Men's Mental Health & Wellness. All rights reserved.</p>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="mission.html">Mission</a>
-        <a href="mental-health-hub.html">Hub</a>
-        <a href="assessments.html">Assessments</a>
-        <a href="videos.html">Videos</a>
-        <a href="crisis.html">Crisis Help</a>
-        <a href="community.html">Community</a>
-      </nav>
+  <footer class="ngo-footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Manwell</h4>
+        <p>Dedicated to transforming men's mental health through accessible, compassionate support and community.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="mental-health-hub.html">Education</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="therapist-directory.html">Find Therapist</a></li>
+          <li><a href="crisis.html">Crisis Help</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell - Supporting Men's Mental Health. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Crisis Footer Widget -->
-  <div class="crisis-footer-widget">
-    <button class="sos-button" id="sos-button">🆘 SOS</button>
-    <div class="crisis-dropdown" id="crisis-dropdown" style="display: none;">
-      <div class="crisis-dropdown-content">
-        <p style="font-weight: 600; margin-bottom: 1rem;">In Crisis? Get Help Now</p>
-        <a href="tel:988" class="crisis-link">
-          <span class="crisis-icon">📞</span>
-          <div>
-            <strong>Call 988</strong>
-            <small>Suicide & Crisis Lifeline</small>
-          </div>
-        </a>
-        <a href="sms:741741" class="crisis-link">
-          <span class="crisis-icon">💬</span>
-          <div>
-            <strong>Text 741741</strong>
-            <small>Crisis Text Line</small>
-          </div>
-        </a>
-        <a href="tel:911" class="crisis-link">
-          <span class="crisis-icon">🚨</span>
-          <div>
-            <strong>Call 911</strong>
-            <small>Emergency Services</small>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/script.js"></script>
-  <script>
-    // Category filtering
-    document.querySelectorAll('.category-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        // Update active button
-        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
-        // Filter episodes
-        const category = this.dataset.category;
-        document.querySelectorAll('.episode-card').forEach(card => {
-          if (category === 'all' || card.dataset.category === category) {
-            card.style.display = 'block';
-            setTimeout(() => card.classList.add('visible'), 10);
-          } else {
-            card.classList.remove('visible');
-            setTimeout(() => card.style.display = 'none', 300);
-          }
-        });
-      });
-    });
-
-    // Scroll to section
-    function scrollToSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // Subscribe modal
-    function showSubscribeModal() {
-      alert('Subscribe functionality would connect to your email service (Mailchimp, ConvertKit, etc.)');
-    }
-  </script>
 </body>
 </html>
