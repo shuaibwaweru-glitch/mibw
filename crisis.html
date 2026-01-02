@@ -3,374 +3,521 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Crisis Resources for Men - Mental health support, suicide prevention, and emergency helplines.">
-  <meta name="theme-color" content="#1a3a52">
-  <title>Crisis Resources - Manwell</title>
+  <meta name="description" content="Crisis Resources - Immediate mental health support and emergency helplines">
+  <meta name="theme-color" content="#1a5f66">
+  <title>Crisis Support - Manwell</title>
   
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"></head>
-<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- ========== HEADER ========== -->
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e0e0e0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a5f66;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #666;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #E8B356;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(210, 47, 47, 0.85), rgba(210, 47, 47, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d32f2f" width="1200" height="600"/></svg>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 120px 2rem 80px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      background: white;
+      margin: 0;
+    }
+
+    section h2 {
+      font-family: 'Lora', serif;
+      font-size: 2.2rem;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    section h2:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #E8B356;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hotline-box {
+      background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border-radius: 0;
+    }
+
+    .hotline-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #E8B356;
+      margin: 1rem 0;
+      font-family: 'Lora', serif;
+    }
+
+    .hotline-label {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hotline-desc {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .warning-box {
+      background: #fff3e0;
+      border-left: 4px solid #d32f2f;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 0;
+    }
+
+    .warning-box h3 {
+      color: #d32f2f;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .warning-box p {
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .resource-card {
+      background: #f8f9fa;
+      border-left: 4px solid #E8B356;
+      padding: 2.5rem;
+      border-radius: 0;
+    }
+
+    .resource-title {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .resource-number {
+      font-size: 1.5rem;
+      color: #d32f2f;
+      font-weight: 700;
+      margin: 1rem 0;
+      font-family: monospace;
+    }
+
+    .resource-desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .warning-signs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .sign-column {
+      background: white;
+      border: 1px solid #e0e0e0;
+      padding: 2rem;
+      border-radius: 0;
+    }
+
+    .sign-column h3 {
+      color: #1a5f66;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      border-bottom: 2px solid #E8B356;
+      padding-bottom: 0.5rem;
+    }
+
+    .sign-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sign-column li {
+      color: #666;
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .sign-column li:before {
+      content: '•';
+      color: #E8B356;
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -0.25rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
+    }
+
+    .btn-crisis {
+      background: #d32f2f;
+    }
+
+    .btn-crisis:hover {
+      background: #b71c1c;
+    }
+
+    footer {
+      background: #1a5f66;
+      color: white;
+      padding: 4rem 0 1rem;
+      margin-top: 0;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: #E8B356;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      line-height: 2;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 1.8rem; }
+      section h2 { font-size: 1.5rem; }
+      .hotline-number { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
   <header>
     <div class="header-container">
-      <div class="logo">
-        <span class="logo-icon">M</span>
-        <span class="logo-text">Manwell</span>
-      </div>
+      <a href="index.html" class="logo">Manwell</a>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="mission.html">About Us</a></li>
-          <li><a href="activities.html">Programs</a></li>
           <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="assessments.html">Assessments</a></li>
-          <li><a href="community.html">Community</a></li>
           <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="crisis.html" class="nav-active">Crisis Support</a></li>
-          <li class="donate-nav"><a href="#donate" class="donate-btn">Donate</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="crisis.html" class="active">Crisis</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle">☰</button>
     </div>
   </header>
 
-  <!-- ========== HERO SECTION ========== -->
-  <section class="ngo-hero" style="background: linear-gradient(135deg, rgba(211, 47, 47, 0.8) 0%, rgba(192, 0, 0, 0.75) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=800&fit=crop') center/cover; background-attachment: fixed; margin-top: 80px;">
-    <div class="hero-content-wrapper" style="flex-direction: column; text-align: center; justify-content: center;">
-      <h1 class="hero-main-title" style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.3);">You Are Not Alone</h1>
-      <h2 class="hero-subtitle" style="color: #d4af37;">Immediate Support When You Need It Most</h2>
-      <p class="hero-description" style="color: rgba(255,255,255,0.95); max-width: 700px; margin: 1.5rem auto 0;">If you're in crisis, help is available 24/7. You deserve support and you will get through this.</p>
-    </div>
-  </section>
-
-  <!-- ========== CRISIS RESOURCES MAIN ========== -->
-  <section class="crisis-section">
+  <section class="hero">
     <div class="container">
-      
-      <!-- Emergency Numbers Banner -->
-      <div class="emergency-banner">
-        <div class="emergency-header">
-          <h2>ðŸš¨ IMMEDIATE CRISIS? GET HELP NOW</h2>
-        </div>
-        
-        <div class="crisis-buttons-grid">
-          <a href="tel:988" class="crisis-action-btn crisis-call">
-            <span class="btn-icon">â˜Žï¸</span>
-            <span class="btn-text">
-              <strong>CALL 988</strong>
-              <small>Suicide & Crisis Lifeline</small>
-            </span>
-          </a>
-          
-          <a href="sms:741741?body=HELLO" class="crisis-action-btn crisis-text">
-            <span class="btn-icon">ðŸ’¬</span>
-            <span class="btn-text">
-              <strong>TEXT 741741</strong>
-              <small>Crisis Text Line</small>
-            </span>
-          </a>
-          
-          <a href="tel:911" class="crisis-action-btn crisis-emergency">
-            <span class="btn-icon">ðŸš¨</span>
-            <span class="btn-text">
-              <strong>CALL 911</strong>
-              <small>Emergency Services</small>
-            </span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Available 24/7 Note -->
-      <div class="crisis-note">
-        <p><strong>All services are free, confidential, and available 24/7</strong>. You can reach out by phone, text, or online chat. No judgment. No pressure. Just support.</p>
-      </div>
-
-      <!-- Primary Crisis Resources -->
-      <div class="crisis-resources">
-        
-        <!-- 988 Suicide & Crisis Lifeline -->
-        <div class="crisis-card">
-          <div class="card-icon">â˜Žï¸</div>
-          <h3>988 Suicide & Crisis Lifeline</h3>
-          <p class="card-subtitle">The Original Crisis Helpline</p>
-          <p>Call or text <strong>988</strong> to reach trained counselors who understand what you're going through. Available 24/7 for anyone in emotional distress or suicidal crisis.</p>
-          <ul class="resource-highlights">
-            <li>Free and confidential</li>
-            <li>Trained crisis counselors</li>
-            <li>Available in multiple languages</li>
-            <li>Call or text anytime</li>
-          </ul>
-          <a href="tel:988" class="resource-link">Call 988 Now â†’</a>
-        </div>
-
-        <!-- Crisis Text Line -->
-        <div class="crisis-card">
-          <div class="card-icon">ðŸ’¬</div>
-          <h3>Crisis Text Line</h3>
-          <p class="card-subtitle">Text-Based Crisis Support</p>
-          <p>Text <strong>HOME</strong> to <strong>741741</strong> to connect with a crisis counselor. Perfect if you can't talk on the phone. Completely confidential.</p>
-          <ul class="resource-highlights">
-            <li>Free texting service</li>
-            <li>Talk to trained volunteers</li>
-            <li>Faster than calling sometimes</li>
-            <li>Works on any phone</li>
-          </ul>
-          <a href="sms:741741?body=HOME" class="resource-link">Text 741741 Now â†’</a>
-        </div>
-
-        <!-- International Association for Suicide Prevention -->
-        <div class="crisis-card">
-          <div class="card-icon">ðŸŒ</div>
-          <h3>International Suicide Prevention</h3>
-          <p class="card-subtitle">Global Crisis Resources</p>
-          <p>If you're outside the US, visit the International Association for Suicide Prevention (IASP) to find local helplines for your country.</p>
-          <ul class="resource-highlights">
-            <li>Support in 50+ countries</li>
-            <li>Localized phone numbers</li>
-            <li>Multiple languages</li>
-            <li>Trained professionals</li>
-          </ul>
-          <a href="https://www.iasp.info/resources/Crisis_Centres/" target="_blank" class="resource-link">Find Your Country's Helpline â†’</a>
-        </div>
-
-      </div>
-
-      <!-- Men-Specific Mental Health Resources -->
-      <div class="resources-section">
-        <h2>Men-Specific Mental Health Support</h2>
-        
-        <div class="resources-grid">
-          
-          <div class="resource-item">
-            <h3>ðŸ¤ NAMI - National Alliance on Mental Illness</h3>
-            <p>Peer-led support groups and education for men struggling with mental illness. Understand your condition and connect with others who get it.</p>
-            <a href="https://www.nami.org/support-education/support-groups" target="_blank" class="btn-link">Find Support Groups</a>
-          </div>
-
-          <div class="resource-item">
-            <h3>ðŸ’ª American Foundation for Suicide Prevention (AFSP)</h3>
-            <p>Suicide prevention organization with specific resources for male suicide prevention, support for survivors, and research funding.</p>
-            <a href="https://afsp.org/suicide-prevention/" target="_blank" class="btn-link">Learn Prevention Strategies</a>
-          </div>
-
-          <div class="resource-item">
-            <h3>ðŸš¶ Movember Foundation</h3>
-            <p>Global men's health organization focused on mental health, prostate cancer, and testicular cancer. Free mental health programs and support.</p>
-            <a href="https://movember.com" target="_blank" class="btn-link">Explore Mental Health Programs</a>
-          </div>
-
-          <div class="resource-item">
-            <h3>ðŸ‘¨ Man to Man Network</h3>
-            <p>Peer support for men living with depression. Confidential groups where men support each other through depression and emotional challenges.</p>
-            <a href="https://mantomannow.org" target="_blank" class="btn-link">Connect With Peers</a>
-          </div>
-
-          <div class="resource-item">
-            <h3>ðŸ’» BetterHelp / Talkspace (Online Therapy)</h3>
-            <p>Affordable online therapy with therapists specializing in men's mental health. Talk via video, phone, or text from anywhere.</p>
-            <a href="https://www.betterhelp.com" target="_blank" class="btn-link">Find a Therapist</a>
-          </div>
-
-          <div class="resource-item">
-            <h3>ðŸ§  Psychology Today Therapist Directory</h3>
-            <p>Search licensed therapists in your area. Filter by specialty, insurance, and approach. Read reviews and book appointments online.</p>
-            <a href="https://www.psychologytoday.com/us/basics/therapy" target="_blank" class="btn-link">Find Local Therapist</a>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Warning Signs & When to Reach Out -->
-      <div class="warning-section">
-        <h2>Warning Signs - When to Reach Out</h2>
-        
-        <div class="warning-grid">
-          <div class="warning-card">
-            <h3>ðŸš© You Might Need Support If:</h3>
-            <ul>
-              <li>Persistent sadness or emptiness that won't go away</li>
-              <li>Loss of interest in things you usually enjoy</li>
-              <li>Feelings of hopelessness or worthlessness</li>
-              <li>Difficulty concentrating or making decisions</li>
-              <li>Changes in sleep or appetite</li>
-              <li>Increased substance use (alcohol, drugs)</li>
-              <li>Withdrawing from friends and family</li>
-              <li>Thoughts of hurting yourself or suicide</li>
-            </ul>
-          </div>
-
-          <div class="warning-card">
-            <h3>âœ… What to Do:</h3>
-            <ul>
-              <li><strong>Reach out immediately</strong> - Call 988 or text 741741</li>
-              <li><strong>Tell someone</strong> - A friend, family member, or counselor</li>
-              <li><strong>Go to ER</strong> - If you're in immediate danger</li>
-              <li><strong>Remove access</strong> - To means of self-harm if possible</li>
-              <li><strong>Make a plan</strong> - Work with a professional on next steps</li>
-              <li><strong>Stay connected</strong> - Don't isolate. Reach out regularly</li>
-              <li><strong>Take medication</strong> - If prescribed by a doctor</li>
-              <li><strong>Practice self-care</strong> - Sleep, exercise, healthy eating</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- How to Help Someone Else -->
-      <div class="help-others-section">
-        <h2>How to Help Someone You Know</h2>
-        
-        <div class="help-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Listen Without Judgment</h3>
-            <p>If someone opens up to you, listen. Don't interrupt or try to "fix" them immediately. Sometimes people just need to be heard.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Ask Directly</h3>
-            <p>If you're concerned, ask: "Are you thinking about hurting yourself?" It won't plant the ideaâ€”it might save their life.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Encourage Professional Help</h3>
-            <p>Suggest therapy, counseling, or calling 988. Offer to help them find resources or make the first call together.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Stay Connected</h3>
-            <p>Check in regularly. Don't disappear. Small gesturesâ€”texts, calls, invitationsâ€”can make a real difference.</p>
-          </div>
-
-          <div class="step">
-            <div class="step-number">5</div>
-            <h3>Take Care of Yourself</h3>
-            <p>Supporting someone struggling can be emotionally draining. Lean on your own support network. You can't pour from an empty cup.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Professional Mental Health Glossary -->
-      <div class="glossary-section">
-        <h2>Understanding Mental Health Terms</h2>
-        
-        <div class="glossary-grid">
-          <div class="glossary-item">
-            <h4>Therapy / Counseling</h4>
-            <p>Talking with a trained professional (therapist, counselor) to work through emotional or mental health challenges. Confidential and evidence-based.</p>
-          </div>
-
-          <div class="glossary-item">
-            <h4>Depression</h4>
-            <p>A mood disorder causing persistent sadness, low energy, and loss of interest. It's treatable with therapy and/or medication.</p>
-          </div>
-
-          <div class="glossary-item">
-            <h4>Anxiety</h4>
-            <p>Excessive worry or fear about everyday things. Can include panic attacks. Highly treatable with therapy and lifestyle changes.</p>
-          </div>
-
-          <div class="glossary-item">
-            <h4>Suicide Risk Assessment</h4>
-            <p>A professional evaluation to understand if someone is at risk of suicide. Helps create a safety plan and treatment approach.</p>
-          </div>
-
-          <div class="glossary-item">
-            <h4>Crisis Intervention</h4>
-            <p>Immediate support for someone in acute mental health distress. Prevents escalation and connects to ongoing care.</p>
-          </div>
-
-          <div class="glossary-item">
-            <h4>Self-Harm / Self-Injury</h4>
-            <p>When someone intentionally harms themselves (cutting, burning, etc.). Usually a way to cope with emotional pain. Treatment is effective.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Action Items -->
-      <div class="action-section">
-        <h2>Take Action Today</h2>
-        <div class="action-items">
-          <div class="action-item">
-            <h3>ðŸ“ž Save These Numbers</h3>
-            <p>Add 988 and 741741 to your phone right now. You might need them someday, or you might help someone else.</p>
-          </div>
-
-          <div class="action-item">
-            <h3>ðŸ¤ Tell Someone</h3>
-            <p>If you're struggling, tell a friend, family member, or professional. Isolation makes everything worse.</p>
-          </div>
-
-          <div class="action-item">
-            <h3>ðŸ’¬ Check on Your Friends</h3>
-            <p>Text that friend you haven't heard from. You might check in at exactly the right moment.</p>
-          </div>
-
-          <div class="action-item">
-            <h3>ðŸ“š Learn More</h3>
-            <p>Education is power. Learn about mental health, warning signs, and how to help others.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Disclaimer -->
-      <div class="crisis-disclaimer">
-        <p><strong>Disclaimer:</strong> This is not professional medical advice. If you're in immediate danger, call 911 or go to your nearest emergency room. Resources on this page are educational and supportive, not a substitute for professional mental health care. Always consult with licensed healthcare providers for diagnosis and treatment.</p>
-      </div>
-
+      <h1>Crisis Support</h1>
+      <p>You're not alone. Get immediate help and support during your time of crisis.</p>
     </div>
   </section>
 
-  <!-- Crisis Footer Widget (Appears on all pages) -->
-  <div class="crisis-footer-widget">
-    <button class="widget-toggle" aria-label="Toggle crisis resources">
-      <span class="widget-icon">ðŸ†˜</span>
-    </button>
-    <div class="widget-content">
-      <p><strong>Need Help?</strong></p>
-      <a href="tel:988" class="widget-link">Call 988</a>
-      <a href="sms:741741?body=HELLO" class="widget-link">Text 741741</a>
-      <a href="crisis.html" class="widget-link">More Resources</a>
-    </div>
-  </div>
+  <main class="container">
+    <section>
+      <div class="hotline-box">
+        <div class="hotline-label">National Suicide Prevention Lifeline</div>
+        <div class="hotline-number">988</div>
+        <div class="hotline-desc">Call or text 988 • Available 24/7 • Free & Confidential</div>
+      </div>
 
-  <!-- ========== FOOTER ========== -->
+      <div class="warning-box">
+        <h3>⚠️ IMMEDIATE DANGER?</h3>
+        <p><strong>If you are in immediate danger, call 911 or go to your nearest emergency room.</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Crisis Resources</h2>
+
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-title">988 Suicide & Crisis Lifeline</div>
+          <div class="resource-number">988</div>
+          <div class="resource-desc">Call or text 988 to reach trained counselors who provide free, confidential support 24/7.</div>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-title">Crisis Text Line</div>
+          <div class="resource-number">Text HOME to 741741</div>
+          <div class="resource-desc">Text-based crisis support. Reach a crisis counselor via text message anytime.</div>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-title">SAMHSA National Helpline</div>
+          <div class="resource-number">1-800-662-4357</div>
+          <div class="resource-desc">Free, confidential, 24/7 treatment referral and information service for substance abuse and mental health.</div>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-title">National Domestic Violence Hotline</div>
+          <div class="resource-number">1-800-799-7233</div>
+          <div class="resource-desc">If you or someone you know is in an abusive relationship, call for support and resources.</div>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-title">Veterans Crisis Line</div>
+          <div class="resource-number">1-800-273-8255, then Press 1</div>
+          <div class="resource-desc">Specialized support for veterans in crisis. Call, text, or chat online.</div>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-title">International Association</div>
+          <div class="resource-number">findahelpline.com</div>
+          <div class="resource-desc">International directory of suicide prevention and mental health crisis helplines.</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #f8f9fa;">
+      <h2>Warning Signs</h2>
+      <p style="color: #666; margin-bottom: 2rem;">If you or someone you know shows these signs, reach out for help immediately.</p>
+
+      <div class="warning-signs-grid">
+        <div class="sign-column">
+          <h3>🧠 Emotional Signs</h3>
+          <ul>
+            <li>Hopelessness or despair</li>
+            <li>Severe anxiety or panic</li>
+            <li>Intense anger or rage</li>
+            <li>Feeling numb or disconnected</li>
+            <li>Overwhelming guilt or shame</li>
+            <li>Talking about being a burden</li>
+          </ul>
+        </div>
+
+        <div class="sign-column">
+          <h3>🔄 Behavioral Signs</h3>
+          <ul>
+            <li>Withdrawing from friends/family</li>
+            <li>Giving away possessions</li>
+            <li>Risky or reckless behavior</li>
+            <li>Increased substance use</li>
+            <li>Saying goodbye to people</li>
+            <li>Searching for ways to harm self</li>
+          </ul>
+        </div>
+
+        <div class="sign-column">
+          <h3>💪 Physical Signs</h3>
+          <ul>
+            <li>Sleeping too much or too little</li>
+            <li>Changes in appetite</li>
+            <li>Neglecting personal hygiene</li>
+            <li>Increased fatigue</li>
+            <li>Unexplained physical aches</li>
+            <li>Loss of interest in activities</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What to Do in a Crisis</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+        <div style="background: #fff3e0; padding: 2.5rem; border-left: 4px solid #d32f2f;">
+          <h3 style="color: #d32f2f; margin-top: 0;">If You're Having Suicidal Thoughts</h3>
+          <ul style="color: #666; list-style-position: inside; margin-top: 1rem; line-height: 2;">
+            <li>Call 988 or text HOME to 741741</li>
+            <li>Tell someone you trust how you're feeling</li>
+            <li>Remove means of self-harm if possible</li>
+            <li>Go to the nearest emergency room</li>
+            <li>Stay with someone you trust</li>
+            <li>Make a safety plan with a professional</li>
+            <li>Remember: These feelings can change with help</li>
+          </ul>
+        </div>
+
+        <div style="background: #fff3e0; padding: 2.5rem; border-left: 4px solid #d32f2f;">
+          <h3 style="color: #d32f2f; margin-top: 0;">If Someone Else Is in Crisis</h3>
+          <ul style="color: #666; list-style-position: inside; margin-top: 1rem; line-height: 2;">
+            <li>Take them seriously. Listen without judgment</li>
+            <li>Call 911 if there's immediate danger</li>
+            <li>Stay with them. Don't leave them alone</li>
+            <li>Remove any means of self-harm</li>
+            <li>Encourage them to call 988</li>
+            <li>Get professional help immediately</li>
+            <li>Take care of yourself too. You can help better when supported</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); color: white; text-align: center; padding: 4rem 2rem;">
+      <h2 style="color: white; margin-bottom: 0.5rem;">You Deserve Help & Support</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">Recovery is possible. Reach out today.</p>
+      <a href="therapist-directory.html" class="btn">Find a Therapist</a>
+      <button class="btn btn-crisis" style="margin-left: 1rem;">Call 988 Now</button>
+    </section>
+
+    <section style="text-align: center;">
+      <h2>Additional Resources</h2>
+      <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem;">
+        Whether you're in crisis or just need support, these organizations can help.
+      </p>
+      <a href="resources.html" class="btn">Browse All Resources</a>
+    </section>
+  </main>
+
   <footer>
-    <p><strong>Manwell</strong>. Â© 2025. Your mental health matters.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Crisis support available 24/7. You are not alone.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Crisis Support</h4>
+          <ul style="list-style: none;">
+            <li><a href="#">988 Lifeline</a></li>
+            <li><a href="#">Crisis Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul style="list-style: none;">
+            <li><a href="therapist-directory.html">Find Therapist</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul style="list-style: none;">
+            <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. Crisis support for men's mental health.</p>
+    </div>
   </footer>
-
-  <!-- Main JavaScript -->
-  <script src="js/script.js"></script>
-  
-  <!-- Crisis Widget Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const widgetToggle = document.querySelector('.widget-toggle');
-      const widgetContent = document.querySelector('.widget-content');
-      
-      if (widgetToggle) {
-        widgetToggle.addEventListener('click', function() {
-          widgetContent.classList.toggle('open');
-        });
-
-        // Close widget when clicking outside
-        document.addEventListener('click', function(e) {
-          if (!e.target.closest('.crisis-footer-widget')) {
-            widgetContent.classList.remove('open');
-          }
-        });
-      }
-    });
-  </script>
-
 </body>
 </html>
 

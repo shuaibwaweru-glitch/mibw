@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Community Forum - Connect with other men on mental health journeys">
-  <meta name="theme-color" content="#1a3a52">
+  <meta name="theme-color" content="#1a5f66">
   <title>Community - Manwell</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   
-  <style>
+    <style>
     * {
       margin: 0;
       padding: 0;
@@ -19,10 +19,11 @@
     body {
       font-family: 'Source Sans Pro', sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: #2c3e50;
       background-color: #f8f9fa;
     }
 
+    /* ========== HEADER ========== */
     header {
       background: white;
       border-bottom: 1px solid #e0e0e0;
@@ -45,8 +46,9 @@
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #1a3a52;
+      color: #1a5f66;
       text-decoration: none;
+      letter-spacing: -0.5px;
     }
 
     nav ul {
@@ -57,50 +59,147 @@
 
     nav a {
       text-decoration: none;
-      color: #555;
+      color: #666;
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.3s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
     }
 
     nav a:hover,
     nav a.active {
-      color: #1a3a52;
+      color: #E8B356;
+      border-bottom-color: #E8B356;
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ========== CONTAINER ========== */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
+    /* ========== HERO SECTION ========== */
     .hero {
-      background: linear-gradient(135deg, #1a3a52 0%, #2d5a7f 100%);
+      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 120px 2rem 60px;
+      padding: 120px 2rem 80px;
+      margin-top: 60px;
       text-align: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .hero h1 {
       font-family: 'Lora', serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
     }
 
-    section {
-      padding: 4rem 0;
+    .hero p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      padding: 12px 30px;
+      border-radius: 0;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #E8B356;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
       background: white;
-      margin: 2rem 0;
+      color: #1a5f66;
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 4rem 2rem;
+      background: white;
+      margin: 0;
+    }
+
+    section.alt {
+      background: #f8f9fa;
     }
 
     section h2 {
       font-family: 'Lora', serif;
-      font-size: 2rem;
-      color: #1a3a52;
-      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
     }
 
+    section h2:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #E8B356;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    section h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin: 1.5rem 0 1rem;
+      font-weight: 600;
+    }
+
+    /* ========== GRIDS ========== */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -109,97 +208,75 @@
     }
 
     .stat-card {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 4px;
+      background: #1a5f66;
+      color: white;
+      padding: 2.5rem;
+      border-radius: 0;
       text-align: center;
-      border-top: 3px solid #1a3a52;
     }
 
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      color: #1a3a52;
+      color: #E8B356;
       margin-bottom: 0.5rem;
     }
 
     .stat-label {
-      color: #666;
+      color: rgba(255,255,255,0.9);
       font-weight: 500;
+      font-size: 0.95rem;
     }
 
-    .category-grid {
+    .features-grid,
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      margin: 2rem 0;
     }
 
-    .category-card {
-      background: white;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+    .feature-card,
+    .card {
+      background: #f8f9fa;
+      border: none;
+      border-left: 4px solid #E8B356;
+      border-radius: 0;
       padding: 2.5rem;
       transition: all 0.3s;
     }
 
-    .category-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border-color: #1a3a52;
+    .feature-card:hover,
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
+      transform: translateY(-2px);
     }
 
-    .category-icon {
+    .feature-icon {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
-    .category-card h3 {
-      color: #1a3a52;
+    .feature-card h3,
+    .card h3 {
+      color: #1a5f66;
       margin-top: 0;
       margin-bottom: 0.5rem;
+      font-size: 1.2rem;
     }
 
-    .category-stats {
-      color: #999;
-      font-size: 0.9rem;
-      margin: 1rem 0;
+    .feature-card p,
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #1a3a52;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #2d5a7f;
-    }
-
-    .community-guidelines {
-      background: #f8f9fa;
-      padding: 2.5rem;
-      border-radius: 4px;
-      border-left: 4px solid #1a3a52;
-      margin: 2rem 0;
-    }
-
-    .community-guidelines h3 {
-      color: #1a3a52;
-      margin-top: 0;
-    }
-
+    /* ========== FOOTER ========== */
     footer {
-      background: #1a3a52;
+      background: #1a5f66;
       color: white;
       padding: 4rem 0 1rem;
-      margin-top: 4rem;
+      margin-top: 0;
     }
 
     .footer-content {
@@ -209,23 +286,51 @@
       margin-bottom: 2rem;
     }
 
+    .footer-section {
+      padding: 0 2rem;
+    }
+
+    .footer-section h4 {
+      color: #E8B356;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
     .footer-section a {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
       line-height: 2;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
     }
 
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 2rem;
+      padding: 2rem;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       opacity: 0.8;
     }
 
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       nav ul {
         display: none;
+      }
+
+      .menu-toggle {
+        display: block;
       }
 
       .hero h1 {
@@ -234,6 +339,14 @@
 
       section h2 {
         font-size: 1.5rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
       }
     }
   </style>
@@ -366,33 +479,33 @@
       <h2>Why Join Our Community?</h2>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
-          <h3 style="margin-top: 0; color: #1a3a52; font-size: 1.1rem;">Find Belonging</h3>
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
+          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Find Belonging</h3>
           <p style="color: #666;">Connect with thousands of men who understand what you're going through.</p>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
-          <h3 style="margin-top: 0; color: #1a3a52; font-size: 1.1rem;">Peer Support</h3>
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
+          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Peer Support</h3>
           <p style="color: #666;">Get advice and encouragement from people with lived experience.</p>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
-          <h3 style="margin-top: 0; color: #1a3a52; font-size: 1.1rem;">Reduce Isolation</h3>
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
+          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Reduce Isolation</h3>
           <p style="color: #666;">Share your story and know you're not alone in your struggles.</p>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
-          <h3 style="margin-top: 0; color: #1a3a52; font-size: 1.1rem;">Safe Space</h3>
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
+          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Safe Space</h3>
           <p style="color: #666;">Moderated discussions ensure respect, confidentiality, and support.</p>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
-          <h3 style="margin-top: 0; color: #1a3a52; font-size: 1.1rem;">Shared Resources</h3>
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
+          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Shared Resources</h3>
           <p style="color: #666;">Learn from others and share helpful resources and strategies.</p>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a3a52;">
-          <h3 style="margin-top: 0; color: #1a3a52; font-size: 1.1rem;">24/7 Access</h3>
+        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
+          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">24/7 Access</h3>
           <p style="color: #666;">Find support anytime, day or night, from your own pace.</p>
         </div>
       </div>

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Video Library - Educational mental health videos">
-  <meta name="theme-color" content="#1a5f66">
-  <title>Videos - Manwell</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
-    <style>
+#!/usr/bin/env python3
+"""
+Apply Elderly Home template styling to all Manwell pages
+Color scheme: Teal (#1a5f66), Orange (#E8B356)
+"""
+
+import os
+import re
+
+# Define the new comprehensive CSS
+NEW_CSS = '''  <style>
     * {
       margin: 0;
       padding: 0;
@@ -349,136 +348,63 @@
         width: 100%;
       }
     }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html">Crisis</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  </style>'''
 
-  <section class="hero">
-    <div class="container">
-      <h1>Video Library</h1>
-      <p>Learn from mental health experts. Watch videos on topics that matter to you.</p>
-    </div>
-  </section>
+# Pages to update
+PAGES = [
+    'index.html',
+    'mental-health-hub.html',
+    'assessments.html',
+    'therapist-directory.html',
+    'crisis.html',
+    'community.html',
+    'resources.html',
+    'mission.html',
+    'stories.html',
+    'videos.html',
+    'experts.html',
+    'activities.html',
+    'gallery.html'
+]
 
-  <main class="container">
-    <section>
-      <h2>Featured Videos</h2>
+def apply_theme(filepath):
+    """Apply theme colors to a page"""
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Extract the style section
+        style_match = re.search(r'<style>.*?</style>', content, re.DOTALL)
+        if style_match:
+            # Replace style section
+            old_style = style_match.group(0)
+            new_content = content.replace(old_style, NEW_CSS)
+            
+            # Replace color codes
+            new_content = new_content.replace('#1a3a52', '#1a5f66')
+            new_content = new_content.replace('#2d5a7f', '#1a5f66')
+            new_content = new_content.replace('#b71c1c', '#1a5f66')
+            
+            # Update theme color meta tag
+            new_content = new_content.replace('content="#1a3a52"', 'content="#1a5f66"')
+            new_content = new_content.replace('content="#d32f2f"', 'content="#E8B356"')
+            
+            with open(filepath, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            return True
+        return False
+    except Exception as e:
+        print(f"Error processing {filepath}: {e}")
+        return False
 
-      <div class="video-grid">
-        <div class="video-card">
-          <div class="video-thumbnail">🎬</div>
-          <div class="video-info">
-            <div class="video-title">Understanding Depression</div>
-            <div class="video-meta">Dr. Sarah Mitchell • 12 mins</div>
-            <div class="video-desc">Learn the signs, symptoms, and evidence-based treatments for depression in men.</div>
-            <button class="btn">Watch Now</button>
-          </div>
-        </div>
+# Apply theme to all pages
+os.chdir('f:\\Manwell')
+success_count = 0
+for page in PAGES:
+    if apply_theme(page):
+        print(f"✓ Updated {page}")
+        success_count += 1
+    else:
+        print(f"✗ Failed {page}")
 
-        <div class="video-card">
-          <div class="video-thumbnail">🧘</div>
-          <div class="video-info">
-            <div class="video-title">Mindfulness for Beginners</div>
-            <div class="video-meta">James Chen • 8 mins</div>
-            <div class="video-desc">Simple mindfulness techniques you can practice anywhere, anytime.</div>
-            <button class="btn">Watch Now</button>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-thumbnail">💬</div>
-          <div class="video-info">
-            <div class="video-title">Communication in Relationships</div>
-            <div class="video-meta">Dr. Emily Park • 15 mins</div>
-            <div class="video-desc">Build stronger relationships through vulnerable and authentic communication.</div>
-            <button class="btn">Watch Now</button>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-thumbnail">😴</div>
-          <div class="video-info">
-            <div class="video-title">Sleep Optimization Guide</div>
-            <div class="video-meta">Dr. Michael Torres • 10 mins</div>
-            <div class="video-desc">Science-backed strategies to improve your sleep quality and duration.</div>
-            <button class="btn">Watch Now</button>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-thumbnail">🚀</div>
-          <div class="video-info">
-            <div class="video-title">Anxiety Management Techniques</div>
-            <div class="video-meta">Dr. Lisa Anderson • 11 mins</div>
-            <div class="video-desc">Practical CBT and grounding techniques to manage anxiety in the moment.</div>
-            <button class="btn">Watch Now</button>
-          </div>
-        </div>
-
-        <div class="video-card">
-          <div class="video-thumbnail">💪</div>
-          <div class="video-info">
-            <div class="video-title">Resilience & Growth</div>
-            <div class="video-meta">Dr. Robert Johnson • 14 mins</div>
-            <div class="video-desc">How to build resilience and grow stronger through life's challenges.</div>
-            <button class="btn">Watch Now</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background: #f8f9fa; text-align: center;">
-      <h2>More Videos Coming</h2>
-      <p style="color: #666; font-size: 1.05rem; margin-bottom: 2rem;">
-        We're constantly adding new content. Subscribe to get notified about new videos.
-      </p>
-      <button class="btn">Subscribe</button>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Videos</h4>
-          <ul>
-            <li><a href="#">Video Library</a></li>
-            <li><a href="#">Subscribe</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find Therapist</a></li>
-            <li><a href="resources.html">Resources</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Educational videos for mental health.</p>
-    </div>
-  </footer>
-</body>
-</html>
+print(f"\n✓ Theme applied to {success_count}/{len(PAGES)} pages")
