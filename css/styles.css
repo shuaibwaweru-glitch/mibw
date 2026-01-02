@@ -2213,3 +2213,288 @@ textarea:focus {
     font-size: 2.5rem;
   }
 }
+
+/* ====================================
+   EXPERT ADVISORY BOARD STYLES
+   ==================================== */
+
+.expert-hero {
+  background: linear-gradient(135deg, #1a3a52 0%, #2d5a6f 100%);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.expert-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.expert-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expert-tagline {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #4a9b8e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Expert Profiles Grid */
+.expert-profiles-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.expert-profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Expert Profile Card */
+.expert-profile-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.expert-profile-card:hover {
+  box-shadow: 0 8px 24px rgba(74, 155, 142, 0.2);
+  transform: translateY(-4px);
+}
+
+.expert-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #4a9b8e 0%, #357f73 100%);
+}
+
+.expert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expert-info {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.expert-name {
+  color: #1a3a52;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.expert-credentials {
+  color: #4a9b8e;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f7f6;
+}
+
+.expert-section {
+  margin-bottom: 1.5rem;
+}
+
+.expert-section-title {
+  color: #1a3a52;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.expert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expert-tag {
+  background-color: #f0f7f6;
+  color: #357f73;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #d4eae7;
+}
+
+.expert-bio {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.expert-detail {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.expert-contact-btn {
+  display: inline-block;
+  background-color: #4a9b8e;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.expert-contact-btn:hover {
+  background-color: #357f73;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 155, 142, 0.3);
+}
+
+/* Board Philosophy Section */
+.board-philosophy {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.board-philosophy h2 {
+  color: #1a3a52;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.philosophy-intro {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.philosophy-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.philosophy-item {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #4a9b8e;
+  transition: all 0.3s ease;
+}
+
+.philosophy-item:hover {
+  background-color: #f0f7f6;
+  box-shadow: 0 4px 12px rgba(74, 155, 142, 0.1);
+}
+
+.philosophy-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.philosophy-item h3 {
+  color: #1a3a52;
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.philosophy-item p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .expert-profiles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .expert-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .board-philosophy h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .expert-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .expert-hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .expert-hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .expert-profiles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .expert-image {
+    height: 220px;
+  }
+
+  .expert-info {
+    padding: 1.5rem;
+  }
+
+  .expert-name {
+    font-size: 1.2rem;
+  }
+
+  .philosophy-principles {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .board-philosophy {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .board-philosophy h2 {
+    font-size: 1.8rem;
+  }
+}
