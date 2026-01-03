@@ -105,8 +105,8 @@ header {
 }
 
 .logo-img {
-  width: 30px;        /* Reduced from 32px */
-  height: 23px;       /* Reduced from 32px */
+  width: 300px;        /* Increased from 32px */
+  height: 100px;       /* Increased from 32px */
   display: block;
   flex-shrink: 0;
   object-fit: contain;
