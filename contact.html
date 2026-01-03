@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Manwell - Get in touch with our mental health support team. We're here to help.">
+  <meta name="theme-color" content="#1a5f66">
+  <title>Contact Us - Manwell</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #ffffff;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a5f66;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: #1a5f66;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #E8B356;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(rgba(26,95,102,0.5), rgba(26,95,102,0.5)), 
+                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop') center/cover;
+      color: white;
+      padding: 120px 2rem 80px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========== CONTACT GRID ========== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-info {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-left: 4px solid #E8B356;
+    }
+
+    .contact-info h3 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .contact-info a {
+      color: #1a5f66;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #E8B356;
+    }
+
+    /* ========== FORM ========== */
+    .contact-form {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-left: 4px solid #E8B356;
+    }
+
+    .contact-form h3 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #1a5f66;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #E8B356;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn {
+      background-color: #E8B356;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background-color: #d4a051;
+      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #E8B356;
+    }
+
+    .section-intro {
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    /* ========== LOCATIONS ========== */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .location-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-left: 4px solid #E8B356;
+    }
+
+    .location-card h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+    }
+
+    .location-card p {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #1a5f66;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #E8B356;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 100px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      nav {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .section-header {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        Manwell
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="mission.html">About</a>
+        <a href="mental-health-hub.html">Services</a>
+        <a href="community.html">Facilities</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Get in Touch</h1>
+    <p>We're here to answer your questions and support your journey to wellness</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <h2 class="section-header">Contact Information</h2>
+    <p class="section-intro">Reach out to us through any of the following channels. We're committed to responding to all inquiries promptly.</p>
+
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div>
+        <div class="contact-info">
+          <h3>Phone</h3>
+          <p><a href="tel:+1-800-123-4567">+1 (800) 123-4567</a></p>
+          <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Available Monday - Friday, 9AM - 6PM</p>
+        </div>
+
+        <div class="contact-info" style="margin-top: 1.5rem;">
+          <h3>Email</h3>
+          <p><a href="mailto:support@manwell.com">support@manwell.com</a></p>
+          <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">We'll respond within 24 hours</p>
+        </div>
+
+        <div class="contact-info" style="margin-top: 1.5rem;">
+          <h3>Crisis Support</h3>
+          <p><a href="tel:988">Call 988 (24/7)</a></p>
+          <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">National Suicide Prevention Lifeline</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <h3>Send us a Message</h3>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number (Optional)</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Locations Section -->
+    <h2 class="section-header" style="margin-top: 3rem;">Our Locations</h2>
+    <p class="section-intro">Visit us at one of our conveniently located offices.</p>
+
+    <div class="locations-grid">
+      <div class="location-card">
+        <h4>Main Office</h4>
+        <p><strong>Address:</strong></p>
+        <p>123 Wellness Street<br>New York, NY 10001</p>
+        <p style="margin-top: 1rem;"><strong>Hours:</strong></p>
+        <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM<br>Sunday: Closed</p>
+      </div>
+
+      <div class="location-card">
+        <h4>East Side Clinic</h4>
+        <p><strong>Address:</strong></p>
+        <p>456 Care Avenue<br>New York, NY 10002</p>
+        <p style="margin-top: 1rem;"><strong>Hours:</strong></p>
+        <p>Monday - Friday: 10AM - 7PM<br>Saturday: 11AM - 3PM<br>Sunday: Closed</p>
+      </div>
+
+      <div class="location-card">
+        <h4>Telehealth Services</h4>
+        <p><strong>Available:</strong></p>
+        <p>Online appointments via secure video call</p>
+        <p style="margin-top: 1rem;"><strong>Hours:</strong></p>
+        <p>Monday - Friday: 8AM - 8PM<br>Saturday - Sunday: 10AM - 6PM</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Mental Health Hub</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li><a href="therapist-directory.html">Find a Therapist</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="experts.html">Our Team</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Manwell. All rights reserved. Compassion in every interaction.</p>
+    </div>
+  </footer>
+</body>
+</html>
