@@ -37,6 +37,63 @@
     .stat { padding: 2rem; }
     .stat-number { font-size: 2.5rem; font-weight: 700; color: #1a5f66; font-family: 'Lora', serif; }
     .stat-label { color: #666; margin-top: 0.5rem; font-size: 0.9rem; }
+
+    /* ========== TIMELINE ========== */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+      margin: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #E8B356;
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+      margin-left: 80px;
+      position: relative;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -70px;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: #1a5f66;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .timeline-content {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-left: 4px solid #E8B356;
+    }
+
+    .timeline-content h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content p {
+      color: #666;
+      margin: 0;
+    }
+
     footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
     .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
@@ -169,13 +226,75 @@
   <section class="hero"><h1>About Us</h1></section>
 
   <div class="container">
+    <!-- Our Story Section -->
     <section class="content-row">
       <div class="content-text">
-        <h3>Our Mission</h3>
-        <p>Manwell is dedicated to providing accessible, evidence-based mental health care that empowers individuals to thrive. We believe that everyone deserves compassionate, professional support on their mental health journey.</p>
-        <p>Founded on the principle that mental health care should be professional, warm, and accessible, Manwell combines clinical excellence with genuine human connection.</p>
+        <h2 class="section-header">Our Story</h2>
+        <p>Manwell was born from a courageous conversation between individuals who recognized a critical gap: men suffer in silence. Too often, masculine identity becomes a barrier to healing rather than a bridge to wholeness.</p>
+        <p>What began as a WhatsApp group of men sharing vulnerabilities evolved into a movement. Today, Manwell stands as a beacon for men's holistic wellness—addressing mental health, emotional growth, physical vitality, and societal impact across Africa and beyond.</p>
+        <p>We don't just treat symptoms; we heal roots. We don't just patch wounds; we nurture transformation. Because every man deserves safe spaces to speak, heal, and thrive.</p>
       </div>
-      <div class="content-image"><img src="https://images.unsplash.com/photo-1560264357-8d9766d32b5f?w=600&h=400&fit=crop" alt="Our Mission"></div>
+      <div class="content-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Our Story"></div>
+    </section>
+
+    <!-- Timeline Section -->
+    <h2 class="section-header" style="margin-top: 3rem;">Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">2019</div>
+        <div class="timeline-content">
+          <h4>Seeds of Brotherhood</h4>
+          <p>A courageous conversation. A dream identified. The foundation for something powerful.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">2020</div>
+        <div class="timeline-content">
+          <h4>First Therapy Circles</h4>
+          <p>Digital conversations inspired in-person therapy circles. Men gathered, shared silence, pain, and healing. A brotherhood was born.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">2021</div>
+        <div class="timeline-content">
+          <h4>Growing Movement</h4>
+          <p>From Nairobi to regions across Africa. Mentorship programs launched. Communities awakened to men's wellness.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">2023</div>
+        <div class="timeline-content">
+          <h4>Formalization & Identity</h4>
+          <p>Registered as an official NGO. Strategic frameworks developed. Advocacy at policy levels. Manwell becomes a national voice.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-marker">2025+</div>
+        <div class="timeline-content">
+          <h4>Global Impact</h4>
+          <p>Continental expansion. Research partnerships. Digital wellness hubs. We're rewriting the story of masculinity, one man at a time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission & Vision Section -->
+    <section class="content-row" style="margin-top: 3rem;">
+      <div class="content-text">
+        <h2 class="section-header">Our Mission</h2>
+        <p style="font-size: 1.2rem; font-weight: 600; color: #1a5f66; margin-bottom: 1rem;">To transform the lives of men globally through bold advocacy, inclusive education, strong support networks, and access to holistic wellness services that meet men where they are and uplift them into who they can be.</p>
+        <p>We tackle men's crises through targeted programs: mental health counseling, addiction recovery with job training, mentorship networks, domestic violence interventions, and financial empowerment—all supported by physical wellness. Every initiative addresses root causes, not just symptoms, to create lasting change.</p>
+      </div>
+      <div class="content-image"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Our Mission"></div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="content-row reverse">
+      <div class="content-text">
+        <h2 class="section-header">Our Vision</h2>
+        <p style="font-size: 1.2rem; font-weight: 600; color: #E8B356; margin-bottom: 1rem;">Emotionally balanced, mentally strong, and physically healthy men.</p>
+        <p>Men who move through the world with vulnerability as strength. Men who show up for themselves and their communities. Men whose stories inspire transformation. This is not a campaign—it's a call to action. It's about rewriting masculinity in Africa and beyond.</p>
+      </div>
+      <div class="content-image"><img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=400&fit=crop" alt="Our Vision"></div>
     </section>
 
     <section class="content-row reverse">
