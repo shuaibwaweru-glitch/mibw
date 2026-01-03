@@ -64,8 +64,31 @@
       font-weight: 700;
     }
 
+    /* ========== DONATE BUTTON ========== */
+    .donate-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      margin-left: 1rem;
+    }
 
+    .donate-btn:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.4);
+      transform: translateY(-2px);
+    }
 
+    .donate-btn:active {
+      transform: translateY(0);
+    }
 
 
     nav a:hover,
@@ -759,6 +782,7 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
@@ -767,6 +791,9 @@
   <section class="hero">
     <h1>The Silence is Deafening. It's Time for Change.</h1>
     <p>Men suffer in silence far too often. At Manwell, we're breaking that cycle through safe spaces, evidence-based care, and bold advocacy that transforms how our world understands men's wellness.</p>
+    <div style="margin-top: 2rem;">
+      <a href="/donate" class="btn" style="display: inline-block;">💚 Support Our Mission - Donate Now</a>
+    </div>
   </section>
 
   <!-- INFO BOXES -->

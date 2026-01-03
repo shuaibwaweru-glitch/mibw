@@ -64,6 +64,34 @@
       font-weight: bold;
     }
 
+    /* ========== DONATE BUTTON ========== */
+    .donate-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      margin-left: 1rem;
+    }
+
+    .donate-btn:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .donate-btn:active {
+      transform: translateY(0);
+    }
+
+
+
     nav {
       display: flex;
       gap: 2rem;
@@ -478,6 +506,7 @@
             <a href="/contact" class="active">Contact Us</a>
           </div>
         </div>
+              <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>

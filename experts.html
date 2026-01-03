@@ -13,6 +13,34 @@
     .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
     .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+
+    /* ========== DONATE BUTTON ========== */
+    .donate-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      margin-left: 1rem;
+    }
+
+    .donate-btn:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .donate-btn:active {
+      transform: translateY(0);
+    }
+
+
     nav ul { list-style: none; display: flex; gap: 2rem; }
     nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
     nav a:hover, nav a.active { color: #E8B356; }
@@ -158,6 +186,7 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
+              <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
