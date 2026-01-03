@@ -3,558 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mental Health Education - Evidence-based information on depression, anxiety, trauma, and more">
   <meta name="theme-color" content="#1a5f66">
-  <title>Mental Health Education - Manwell</title>
-  
+  <title>Mental Health Hub - Manwell</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    /* ========== HEADER ========== */
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
-      border-bottom-color: #E8B356;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ========== BUTTONS ========== */
-    .btn {
-      padding: 12px 30px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #E8B356;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1a5f66;
-    }
-
-    /* ========== SECTIONS ========== */
-    section {
-      padding: 4rem 2rem;
-      background: white;
-      margin: 0;
-    }
-
-    section.alt {
-      background: #f8f9fa;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    section h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin: 1.5rem 0 1rem;
-      font-weight: 600;
-    }
-
-    /* ========== GRIDS ========== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .stat-card {
-      background: #1a5f66;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 0;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .features-grid,
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card,
-    .card {
-      background: #f8f9fa;
-      border: none;
-      border-left: 4px solid #E8B356;
-      border-radius: 0;
-      padding: 2.5rem;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover,
-    .card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3,
-    .card h3 {
-      color: #1a5f66;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p,
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section {
-      padding: 0 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; line-height: 1.6; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; margin-bottom: 1rem; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .content-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin: 4rem 0; }
+    .content-row.reverse { direction: rtl; }
+    .content-row.reverse > * { direction: ltr; }
+    .content-image { width: 100%; height: 400px; background: linear-gradient(135deg, #1a5f66, #E8B356); border-radius: 4px; overflow: hidden; }
+    .content-image img { width: 100%; height: 100%; object-fit: cover; }
+    .content-text h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; }
+    .content-text p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+    .card { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; transition: 0.3s; }
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; }
+    .card p { color: #666; font-size: 0.9rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .content-row { grid-template-columns: 1fr; } .card-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html" class="active">Education</a></li>
-          <li><a href="assessments.html">Assessments</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html">Crisis Support</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html" class="active">Services</a></li>
+        <li><a href="therapist-directory.html">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Mental Health Education</h1>
-      <p>Evidence-based information to help you understand mental health conditions and develop coping strategies.</p>
+  <section class="hero"><h1>Mental Health Hub</h1></section>
+
+  <div class="container">
+    <section class="content-row">
+      <div class="content-text">
+        <h3>Comprehensive Mental Health Services</h3>
+        <p>Our Mental Health Hub provides access to a comprehensive range of evidence-based therapeutic services designed to support your mental wellness journey. Whether you're dealing with anxiety, depression, trauma, or other mental health challenges, our team of licensed professionals is here to help.</p>
+        <p>We offer individual therapy, group sessions, psychiatric services, and holistic wellness programs tailored to your specific needs.</p>
+      </div>
+      <div class="content-image"><img src="https://images.unsplash.com/photo-1537694712202-7d71cb32f1b7?w=600&h=400&fit=crop" alt="Mental Health Services"></div>
+    </section>
+
+    <div class="section-header">
+      <h2>Our Therapeutic Approaches</h2>
     </div>
-  </section>
 
-  <main class="container">
-    <section>
-      <h2>Understanding Mental Health Conditions</h2>
-      <p style="font-size: 1.05rem; color: #666; max-width: 800px;">
-        Mental health conditions are medical conditions that affect how people think, feel, and behave. They're common, treatable, 
-        and with proper support and treatment, people can manage their symptoms and lead fulfilling lives.
-      </p>
-
-      <div class="topics-grid">
-        <div class="topic-card">
-          <div class="topic-icon">😔</div>
-          <h3>Depression</h3>
-          <p>Persistent sadness, loss of interest, and feelings of hopelessness affecting daily functioning.</p>
-          <a href="#" class="topic-link">Learn More →</a>
-        </div>
-
-        <div class="topic-card">
-          <div class="topic-icon">😰</div>
-          <h3>Anxiety Disorders</h3>
-          <p>Excessive worry, fear, and physical symptoms that interfere with work, school, or relationships.</p>
-          <a href="#" class="topic-link">Learn More →</a>
-        </div>
-
-        <div class="topic-card">
-          <div class="topic-icon">💔</div>
-          <h3>Trauma & PTSD</h3>
-          <p>Distressing memories and reactions following traumatic events, affecting safety and trust.</p>
-          <a href="#" class="topic-link">Learn More →</a>
-        </div>
-
-        <div class="topic-card">
-          <div class="topic-icon">💊</div>
-          <h3>Substance Use</h3>
-          <p>Problematic use of alcohol or drugs as a coping mechanism, with potential for dependency.</p>
-          <a href="#" class="topic-link">Learn More →</a>
-        </div>
-
-        <div class="topic-card">
-          <div class="topic-icon">💬</div>
-          <h3>Relationship Issues</h3>
-          <p>Difficulties in communication, trust, and intimacy affecting personal relationships.</p>
-          <a href="#" class="topic-link">Learn More →</a>
-        </div>
-
-        <div class="topic-card">
-          <div class="topic-icon">😴</div>
-          <h3>Sleep Disorders</h3>
-          <p>Insomnia, sleep apnea, and other conditions affecting sleep quality and daytime functioning.</p>
-          <a href="#" class="topic-link">Learn More →</a>
-        </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Cognitive Behavioral Therapy</h4>
+        <p>Proven techniques to identify and change unhelpful thought patterns and behaviors.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Evidence-Based Treatment Approaches</h2>
-      
-      <div class="content-grid">
-        <div class="content-box">
-          <h3>Cognitive Behavioral Therapy (CBT)</h3>
-          <p>Helps identify and change negative thought patterns and behaviors that contribute to mental health issues. 
-          Highly effective for depression, anxiety, and PTSD.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>Dialectical Behavior Therapy (DBT)</h3>
-          <p>Combines CBT with mindfulness and acceptance strategies. Particularly effective for emotional regulation and 
-          crisis management.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>Psychodynamic Therapy</h3>
-          <p>Explores unconscious patterns and past experiences to understand current difficulties and promote lasting change.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>Acceptance & Commitment Therapy (ACT)</h3>
-          <p>Focuses on accepting difficult thoughts and feelings while committing to values-aligned actions and lifestyle changes.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>Medication Management</h3>
-          <p>Psychiatric medications can help manage symptoms of depression, anxiety, and other conditions when combined with therapy.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>Mindfulness & Meditation</h3>
-          <p>Practices that increase awareness of thoughts and feelings, reduce stress, and improve overall wellbeing.</p>
-        </div>
+      <div class="card">
+        <h4>Dialectical Behavior Therapy</h4>
+        <p>Specialized treatment for emotion regulation and distress tolerance skills.</p>
       </div>
-    </section>
-
-    <section>
-      <div class="cta-section">
-        <h3>Ready for Professional Support?</h3>
-        <p>Our licensed therapists are ready to help you develop personalized treatment plans based on evidence-based approaches.</p>
-        <a href="therapist-directory.html" class="btn">Find a Therapist</a>
+      <div class="card">
+        <h4>Psychodynamic Therapy</h4>
+        <p>Explore underlying patterns and unconscious factors affecting your mental health.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Coping Strategies & Self-Care</h2>
-      <p style="font-size: 1.05rem; color: #666; max-width: 800px; margin-bottom: 2rem;">
-        While professional treatment is important, there are also effective strategies you can use daily to support your mental health.
-      </p>
-
-      <div class="sidebar">
-        <h3>Daily Practices</h3>
-        <ul>
-          <li><strong>Exercise:</strong> Physical activity reduces stress and improves mood through natural endorphin release.</li>
-          <li><strong>Sleep Hygiene:</strong> Consistent sleep schedules and healthy sleep environments are essential for mental health.</li>
-          <li><strong>Nutrition:</strong> A balanced diet supports brain function and emotional regulation.</li>
-          <li><strong>Social Connection:</strong> Meaningful relationships provide support and reduce isolation.</li>
-          <li><strong>Mindfulness:</strong> Daily meditation and breathing exercises reduce anxiety and increase awareness.</li>
-          <li><strong>Stress Management:</strong> Identify your stress triggers and develop healthy coping mechanisms.</li>
-        </ul>
+      <div class="card">
+        <h4>Mindfulness & Meditation</h4>
+        <p>Develop awareness and present-moment skills for inner peace and resilience.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Resources & Support</h2>
-      <p style="font-size: 1.05rem; color: #666; max-width: 800px; margin-bottom: 2rem;">
-        Explore our comprehensive collection of educational materials, worksheets, and tools to support your mental health journey.
-      </p>
-
-      <div class="content-grid">
-        <div class="content-box">
-          <h3>📖 Guides & E-Books</h3>
-          <p>Download comprehensive guides on depression, anxiety, recovery, relationships, and other mental health topics.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>📹 Video Library</h3>
-          <p>Expert talks and educational videos from licensed psychologists and mental health professionals.</p>
-        </div>
-
-        <div class="content-box">
-          <h3>✏️ Worksheets & Tools</h3>
-          <p>Interactive worksheets for mood tracking, goal setting, and evidence-based techniques like CBT exercises.</p>
-        </div>
+      <div class="card">
+        <h4>Family Therapy</h4>
+        <p>Improve relationships and communication within your family system.</p>
       </div>
+      <div class="card">
+        <h4>Group Therapy</h4>
+        <p>Connect with others, share experiences, and grow together in supportive groups.</p>
+      </div>
+    </div>
+
+    <section class="content-row reverse">
+      <div class="content-text">
+        <h3>Personalized Treatment Plans</h3>
+        <p>Every individual's mental health needs are unique. That's why we create personalized treatment plans based on comprehensive assessments and your specific goals. Our multidisciplinary team works collaboratively to ensure you receive coordinated, integrated care.</p>
+        <button class="btn">Schedule a Consultation</button>
+      </div>
+      <div class="content-image"><img src="https://images.unsplash.com/photo-1576091160533-112173e7d48f?w=600&h=400&fit=crop" alt="Treatment Plans"></div>
     </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Education Hub</a></li>
-            <li><a href="#">Video Library</a></li>
-            <li><a href="resources.html">Free Resources</a></li>
-            <li><a href="#">Reading List</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find a Therapist</a></li>
-            <li><a href="assessments.html">Assessments</a></li>
-            <li><a href="community.html">Community Forum</a></li>
-            <li><a href="crisis.html">Crisis Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Evidence-based mental health support for men.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
-
 </body>
 </html>

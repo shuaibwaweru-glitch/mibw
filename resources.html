@@ -3,585 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resources Library - Evidence-based guides, articles, and tools for mental health">
   <meta name="theme-color" content="#1a5f66">
   <title>Resources - Manwell</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    /* ========== HEADER ========== */
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
-      border-bottom-color: #E8B356;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ========== BUTTONS ========== */
-    .btn {
-      padding: 12px 30px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #E8B356;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1a5f66;
-    }
-
-    /* ========== SECTIONS ========== */
-    section {
-      padding: 4rem 2rem;
-      background: white;
-      margin: 0;
-    }
-
-    section.alt {
-      background: #f8f9fa;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    section h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin: 1.5rem 0 1rem;
-      font-weight: 600;
-    }
-
-    /* ========== GRIDS ========== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .stat-card {
-      background: #1a5f66;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 0;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .features-grid,
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card,
-    .card {
-      background: #f8f9fa;
-      border: none;
-      border-left: 4px solid #E8B356;
-      border-radius: 0;
-      padding: 2.5rem;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover,
-    .card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3,
-    .card h3 {
-      color: #1a5f66;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p,
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section {
-      padding: 0 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1507842217343-583f20270319?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .content-section { margin: 3rem 0; }
+    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
+    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .resource-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
+    .resource-item { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
+    .resource-item h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .resource-item p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .resource-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html">Crisis</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html">Services</a></li>
+        <li><a href="therapist-directory.html">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Resources Library</h1>
-      <p>Free evidence-based guides, articles, worksheets, and tools to support your mental health journey.</p>
+  <section class="hero"><h1>Resources & Support</h1></section>
+
+  <div class="container">
+    <section class="content-section">
+      <h3>Mental Health Resources at Your Fingertips</h3>
+      <p>We provide comprehensive resources to support your mental health journey. From educational materials to self-help tools, our resource library is designed to empower you with knowledge and practical strategies.</p>
+    </section>
+
+    <div class="section-header">
+      <h2>Available Resources</h2>
     </div>
-  </section>
 
-  <main class="container">
-    <section>
-      <h2>Browse by Category</h2>
-
-      <div class="category-grid">
-        <div class="category-box">
-          <h3>📚 Guides & Articles</h3>
-          <p>Comprehensive guides on mental health topics, treatment options, and self-care strategies.</p>
-          <span class="resource-count">47 resources</span>
-        </div>
-
-        <div class="category-box">
-          <h3>📝 Worksheets & Tools</h3>
-          <p>Practical worksheets and tools for journaling, tracking, and managing mental health.</p>
-          <span class="resource-count">34 resources</span>
-        </div>
-
-        <div class="category-box">
-          <h3>🎥 Videos</h3>
-          <p>Educational videos on mental health topics, coping strategies, and expert insights.</p>
-          <span class="resource-count">52 resources</span>
-        </div>
-
-        <div class="category-box">
-          <h3>🎧 Podcasts</h3>
-          <p>Listen to conversations with experts and men sharing their mental health stories.</p>
-          <span class="resource-count">28 resources</span>
-        </div>
-
-        <div class="category-box">
-          <h3>📖 Book Recommendations</h3>
-          <p>Curated list of books on mental health, recovery, and personal growth.</p>
-          <span class="resource-count">41 resources</span>
-        </div>
-
-        <div class="category-box">
-          <h3>🔗 External Resources</h3>
-          <p>Vetted external websites, apps, and organizations for additional support.</p>
-          <span class="resource-count">67 resources</span>
-        </div>
+    <div class="resource-grid">
+      <div class="resource-item">
+        <h4>Mental Health Guides</h4>
+        <p>Comprehensive guides covering common mental health conditions, symptoms, and evidence-based treatment approaches.</p>
       </div>
-    </section>
-
-    <section style="background: #f8f9fa;">
-      <h2>Featured Resources</h2>
-
-      <div class="filter-bar">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">Guides</button>
-        <button class="filter-btn">Worksheets</button>
-        <button class="filter-btn">Videos</button>
-        <button class="filter-btn">Books</button>
+      <div class="resource-item">
+        <h4>Self-Help Tools</h4>
+        <p>Interactive worksheets, journals, and exercises for managing anxiety, depression, stress, and other challenges.</p>
       </div>
-
-      <div class="resources-grid">
-        <div class="resource-card">
-          <div class="resource-icon">📚</div>
-          <span class="resource-type">GUIDE</span>
-          <h3>Understanding Depression in Men</h3>
-          <p>Comprehensive guide to recognizing depression symptoms, treatment options, and recovery strategies tailored for men.</p>
-          <a href="#" class="btn">Read Guide</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">📝</div>
-          <span class="resource-type">WORKSHEET</span>
-          <h3>Mood & Anxiety Tracking Journal</h3>
-          <p>Daily tracking worksheet to monitor mood patterns, anxiety triggers, and identify helpful coping strategies over time.</p>
-          <a href="#" class="btn">Download PDF</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">🎥</div>
-          <span class="resource-type">VIDEO</span>
-          <h3>CBT Techniques for Daily Anxiety</h3>
-          <p>10-minute video walking through practical cognitive behavioral therapy techniques you can use immediately.</p>
-          <a href="#" class="btn">Watch Video</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">📖</div>
-          <span class="resource-type">BOOK</span>
-          <h3>Emotional Wellness for Men</h3>
-          <p>Recommended book exploring emotional intelligence, vulnerability, and building resilience as a man.</p>
-          <a href="#" class="btn">View Details</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">📚</div>
-          <span class="resource-type">GUIDE</span>
-          <h3>Sleep Improvement Strategies</h3>
-          <p>Evidence-based guide to sleep hygiene, managing insomnia, and understanding sleep's role in mental health.</p>
-          <a href="#" class="btn">Read Guide</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">🎧</div>
-          <span class="resource-type">PODCAST</span>
-          <h3>Men's Mental Health Stories</h3>
-          <p>Podcast series featuring real stories from men discussing their mental health journey and recovery.</p>
-          <a href="#" class="btn">Listen Now</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">📝</div>
-          <span class="resource-type">WORKSHEET</span>
-          <h3>Stress Management Toolkit</h3>
-          <p>Collection of worksheets for identifying stressors, planning coping strategies, and building resilience.</p>
-          <a href="#" class="btn">Download PDF</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">🎥</div>
-          <span class="resource-type">VIDEO</span>
-          <h3>Mindfulness Meditation Guide</h3>
-          <p>15-minute guided meditation video for stress reduction and developing mindfulness practice.</p>
-          <a href="#" class="btn">Watch Video</a>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-icon">📖</div>
-          <span class="resource-type">BOOK</span>
-          <h3>The Courage to Heal</h3>
-          <p>Essential reading on trauma recovery, processing emotions, and finding strength through adversity.</p>
-          <a href="#" class="btn">View Details</a>
-        </div>
+      <div class="resource-item">
+        <h4>Meditation & Mindfulness</h4>
+        <p>Guided meditations, breathing exercises, and mindfulness activities to reduce stress and improve mental clarity.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Popular Resource Collections</h2>
-
-      <div class="resources-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-        <div style="background: #f8f9fa; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Getting Started with Mental Health</h3>
-          <p style="color: #666;">New to mental health support? Start here with our beginner-friendly resources.</p>
-          <ul style="color: #666; list-style-position: inside; margin: 1rem 0;">
-            <li>Mental Health Basics Guide</li>
-            <li>Finding Professional Help</li>
-            <li>Understanding Your First Therapy Session</li>
-          </ul>
-        </div>
-
-        <div style="background: #f8f9fa; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Coping & Daily Practices</h3>
-          <p style="color: #666;">Practical tools and techniques for daily stress management and self-care.</p>
-          <ul style="color: #666; list-style-position: inside; margin: 1rem 0;">
-            <li>Meditation & Mindfulness</li>
-            <li>Exercise & Physical Health</li>
-            <li>Sleep & Recovery</li>
-          </ul>
-        </div>
-
-        <div style="background: #f8f9fa; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Specific Conditions</h3>
-          <p style="color: #666;">Deeper resources for specific mental health conditions and challenges.</p>
-          <ul style="color: #666; list-style-position: inside; margin: 1rem 0;">
-            <li>Depression & Anxiety</li>
-            <li>Trauma & PTSD</li>
-            <li>Substance Use & Recovery</li>
-          </ul>
-        </div>
+      <div class="resource-item">
+        <h4>Educational Videos</h4>
+        <p>Video resources explaining mental health concepts, coping strategies, and treatment options in accessible formats.</p>
       </div>
-    </section>
+      <div class="resource-item">
+        <h4>Articles & Blog</h4>
+        <p>Expert articles on mental health topics, wellness tips, and stories from our community members.</p>
+      </div>
+      <div class="resource-item">
+        <h4>Wellness Apps</h4>
+        <p>Recommendations for evidence-based mobile applications for meditation, mood tracking, and mental wellness.</p>
+      </div>
+      <div class="resource-item">
+        <h4>Support Communities</h4>
+        <p>Connections to online and in-person support groups for various mental health conditions and life experiences.</p>
+      </div>
+      <div class="resource-item">
+        <h4>Insurance Information</h4>
+        <p>Resources to help you navigate insurance coverage for mental health services and treatment options.</p>
+      </div>
+    </div>
 
-    <section style="text-align: center;">
-      <h2>Can't Find What You're Looking For?</h2>
-      <p style="color: #666; max-width: 600px; margin: 0 auto 2rem;">
-        Our resource library is constantly growing. If you have suggestions for resources we should add, please let us know.
-      </p>
-      <button class="btn">Suggest a Resource</button>
+    <section class="content-section">
+      <h3>Additional Support</h3>
+      <p>All of our resources are free to access. We believe that education and support should be available to everyone. If you need personalized assistance, our team is always ready to help.</p>
+      <button class="btn">Contact Our Team</button>
     </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Guides</a></li>
-            <li><a href="#">Worksheets</a></li>
-            <li><a href="#">Videos</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find Therapist</a></li>
-            <li><a href="crisis.html">Crisis Help</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Evidence-based mental health resources for men.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
-
 </body>
 </html>

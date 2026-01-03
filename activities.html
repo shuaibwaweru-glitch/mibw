@@ -3,551 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Activities & Programs - Organized activities and support groups">
   <meta name="theme-color" content="#1a5f66">
-  <title>Activities - Manwell</title>
-  
+  <title>Programs - Manwell</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    /* ========== HEADER ========== */
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
-      border-bottom-color: #E8B356;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ========== BUTTONS ========== */
-    .btn {
-      padding: 12px 30px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #E8B356;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1a5f66;
-    }
-
-    /* ========== SECTIONS ========== */
-    section {
-      padding: 4rem 2rem;
-      background: white;
-      margin: 0;
-    }
-
-    section.alt {
-      background: #f8f9fa;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    section h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin: 1.5rem 0 1rem;
-      font-weight: 600;
-    }
-
-    /* ========== GRIDS ========== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .stat-card {
-      background: #1a5f66;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 0;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .features-grid,
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card,
-    .card {
-      background: #f8f9fa;
-      border: none;
-      border-left: 4px solid #E8B356;
-      border-radius: 0;
-      padding: 2.5rem;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover,
-    .card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3,
-    .card h3 {
-      color: #1a5f66;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p,
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section {
-      padding: 0 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .content-section { margin: 3rem 0; }
+    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
+    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
+    .program-item { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
+    .program-item h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .program-item ul { color: #666; font-size: 0.9rem; line-height: 1.8; margin-left: 1.5rem; }
+    .program-item li { margin-bottom: 0.5rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .program-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html">Crisis</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html">Services</a></li>
+        <li><a href="therapist-directory.html">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Activities & Programs</h1>
-      <p>Join organized activities and support programs designed to help you thrive.</p>
+  <section class="hero"><h1>Our Programs</h1></section>
+
+  <div class="container">
+    <section class="content-section">
+      <h3>Comprehensive Mental Health Programs</h3>
+      <p>Manwell offers a wide range of specialized programs designed to address specific mental health needs and life circumstances. Each program is developed by our clinical team and delivered with compassion and expertise.</p>
+    </section>
+
+    <div class="section-header">
+      <h2>Featured Programs</h2>
     </div>
-  </section>
 
-  <main class="container">
-    <section>
-      <h2>Available Programs</h2>
-      <p style="color: #666; font-size: 1.05rem; margin-bottom: 2rem;">
-        Explore our range of evidence-based programs and activities for mental health support and personal growth.
-      </p>
-
-      <div class="activities-grid">
-        <div class="activity-card">
-          <div class="activity-icon">🧠</div>
-          <div class="activity-title">Weekly Support Groups</div>
-          <div class="activity-type">Peer Support • Online</div>
-          <div class="activity-desc">
-            Join weekly facilitated groups focused on specific topics like anxiety, depression, recovery, and life transitions.
-          </div>
-          <div class="activity-details">
-            <strong>Schedule:</strong> Multiple times weekly<br>
-            <strong>Format:</strong> Virtual (Zoom)<br>
-            <strong>Size:</strong> 8-12 members
-          </div>
-          <button class="btn">Learn More</button>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-icon">🏃</div>
-          <div class="activity-title">Fitness & Wellness</div>
-          <div class="activity-type">Health Program • In-Person & Online</div>
-          <div class="activity-desc">
-            Movement and exercise programs designed to improve physical and mental health. All fitness levels welcome.
-          </div>
-          <div class="activity-details">
-            <strong>Schedule:</strong> Ongoing<br>
-            <strong>Format:</strong> Classes & Communities<br>
-            <strong>Cost:</strong> Free
-          </div>
-          <button class="btn">Learn More</button>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-icon">🎨</div>
-          <div class="activity-title">Creative Expression</div>
-          <div class="activity-type">Therapeutic Activity • Online</div>
-          <div class="activity-desc">
-            Art, music, and writing workshops as therapeutic tools for self-expression and emotional processing.
-          </div>
-          <div class="activity-details">
-            <strong>Schedule:</strong> Bi-weekly<br>
-            <strong>Format:</strong> Virtual workshops<br>
-            <strong>Level:</strong> No experience needed
-          </div>
-          <button class="btn">Learn More</button>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-icon">📚</div>
-          <div class="activity-title">Book Club & Discussion</div>
-          <div class="activity-type">Educational • Online</div>
-          <div class="activity-desc">
-            Thoughtful discussions about books on mental health, personal growth, and the men's experience.
-          </div>
-          <div class="activity-details">
-            <strong>Schedule:</strong> Monthly<br>
-            <strong>Format:</strong> Virtual meetings<br>
-            <strong>Books:</strong> Pre-selected
-          </div>
-          <button class="btn">Learn More</button>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-icon">🧘</div>
-          <div class="activity-title">Mindfulness Retreat</div>
-          <div class="activity-type">Intensive Program • In-Person</div>
-          <div class="activity-desc">
-            Weekend retreats focusing on mindfulness, meditation, and building community with other men.
-          </div>
-          <div class="activity-details">
-            <strong>Schedule:</strong> Quarterly<br>
-            <strong>Format:</strong> Weekend (Fri-Sun)<br>
-            <strong>Location:</strong> Nature setting
-          </div>
-          <button class="btn">Learn More</button>
-        </div>
-
-        <div class="activity-card">
-          <div class="activity-icon">💪</div>
-          <div class="activity-title">Accountability Partners</div>
-          <div class="activity-type">One-on-One • Virtual</div>
-          <div class="activity-desc">
-            Connect with an accountability partner to support your recovery and wellness goals.
-          </div>
-          <div class="activity-details">
-            <strong>Schedule:</strong> Self-determined<br>
-            <strong>Format:</strong> Virtual check-ins<br>
-            <strong>Duration:</strong> Flexible
-          </div>
-          <button class="btn">Learn More</button>
-        </div>
+    <div class="program-grid">
+      <div class="program-item">
+        <h4>Individual Therapy</h4>
+        <ul>
+          <li>One-on-one counseling with licensed therapists</li>
+          <li>Personalized treatment plans</li>
+          <li>Flexible scheduling and teletherapy options</li>
+          <li>Evidence-based therapeutic approaches</li>
+        </ul>
       </div>
-    </section>
-
-    <section style="background: #f8f9fa;">
-      <h2>Why Join a Program?</h2>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <div style="background: white; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Build Community</h3>
-          <p style="color: #666; font-size: 0.95rem;">Connect with other men on similar journeys. You're not alone.</p>
-        </div>
-
-        <div style="background: white; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Develop Skills</h3>
-          <p style="color: #666; font-size: 0.95rem;">Learn coping strategies and tools for managing mental health.</p>
-        </div>
-
-        <div style="background: white; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Accountability</h3>
-          <p style="color: #666; font-size: 0.95rem;">Stay committed to your recovery and wellness goals with group support.</p>
-        </div>
-
-        <div style="background: white; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Structured Support</h3>
-          <p style="color: #666; font-size: 0.95rem;">Participate in evidence-based programs designed specifically for men.</p>
-        </div>
-
-        <div style="background: white; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Safe Environment</h3>
-          <p style="color: #666; font-size: 0.95rem;">Share openly in groups that prioritize confidentiality and respect.</p>
-        </div>
-
-        <div style="background: white; padding: 2.5rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Growth Opportunity</h3>
-          <p style="color: #666; font-size: 0.95rem;">Invest in yourself and build a stronger, more resilient future.</p>
-        </div>
+      <div class="program-item">
+        <h4>Group Therapy</h4>
+        <ul>
+          <li>Supportive group sessions led by licensed therapists</li>
+          <li>Topic-specific groups (anxiety, depression, trauma)</li>
+          <li>Build connections with others facing similar challenges</li>
+          <li>Develop coping skills in a supportive community</li>
+        </ul>
       </div>
-    </section>
+      <div class="program-item">
+        <h4>Intensive Outpatient Program (IOP)</h4>
+        <ul>
+          <li>Structured multi-hour sessions for more intensive support</li>
+          <li>Ideal for those needing more than weekly therapy</li>
+          <li>Includes individual, group, and skill-building sessions</li>
+          <li>Crisis management and relapse prevention</li>
+        </ul>
+      </div>
+      <div class="program-item">
+        <h4>Psychiatric Services</h4>
+        <ul>
+          <li>Medication evaluation and management</li>
+          <li>Psychiatric assessment and diagnosis</li>
+          <li>Medication adjustment and monitoring</li>
+          <li>Integration with therapy for holistic care</li>
+        </ul>
+      </div>
+      <div class="program-item">
+        <h4>Wellness & Recovery Programs</h4>
+        <ul>
+          <li>Substance abuse recovery support</li>
+          <li>Wellness coaching and life skills training</li>
+          <li>Mindfulness and meditation programs</li>
+          <li>Exercise and nutrition for mental health</li>
+        </ul>
+      </div>
+      <div class="program-item">
+        <h4>Family Programs</h4>
+        <ul>
+          <li>Family therapy and couples counseling</li>
+          <li>Psychoeducation for families and caregivers</li>
+          <li>Support groups for family members</li>
+          <li>Communication and conflict resolution skills</li>
+        </ul>
+      </div>
+    </div>
 
-    <section style="text-align: center;">
-      <h2>Ready to Get Started?</h2>
-      <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem;">
-        Explore our programs and find one that fits your needs. Register today and join a supportive community.
-      </p>
-      <button class="btn">Browse All Programs</button>
+    <section class="content-section">
+      <h3>Get Started Today</h3>
+      <p>Our team is ready to help you find the right program for your needs. Contact us for a consultation to discuss which program would be the best fit for your mental health journey.</p>
+      <button class="btn">Schedule a Consultation</button>
     </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Programs</h4>
-          <ul>
-            <li><a href="#">Activities</a></li>
-            <li><a href="#">Support Groups</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find Therapist</a></li>
-            <li><a href="community.html">Community</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Programs and activities for men's mental health.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
 </body>
 </html>

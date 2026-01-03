@@ -3,520 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Crisis Resources - Immediate mental health support and emergency helplines">
   <meta name="theme-color" content="#1a5f66">
   <title>Crisis Support - Manwell</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover, nav a.active {
-      color: #E8B356;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero {
-      background: linear-gradient(rgba(210, 47, 47, 0.85), rgba(210, 47, 47, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d32f2f" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    section {
-      padding: 4rem 0;
-      background: white;
-      margin: 0;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hotline-box {
-      background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      margin: 2rem 0;
-      border-radius: 0;
-    }
-
-    .hotline-number {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin: 1rem 0;
-      font-family: 'Lora', serif;
-    }
-
-    .hotline-label {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hotline-desc {
-      font-size: 0.95rem;
-      opacity: 0.95;
-    }
-
-    .warning-box {
-      background: #fff3e0;
-      border-left: 4px solid #d32f2f;
-      padding: 2rem;
-      margin: 2rem 0;
-      border-radius: 0;
-    }
-
-    .warning-box h3 {
-      color: #d32f2f;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .warning-box p {
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .resource-card {
-      background: #f8f9fa;
-      border-left: 4px solid #E8B356;
-      padding: 2.5rem;
-      border-radius: 0;
-    }
-
-    .resource-title {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .resource-number {
-      font-size: 1.5rem;
-      color: #d32f2f;
-      font-weight: 700;
-      margin: 1rem 0;
-      font-family: monospace;
-    }
-
-    .resource-desc {
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    .warning-signs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .sign-column {
-      background: white;
-      border: 1px solid #e0e0e0;
-      padding: 2rem;
-      border-radius: 0;
-    }
-
-    .sign-column h3 {
-      color: #1a5f66;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      border-bottom: 2px solid #E8B356;
-      padding-bottom: 0.5rem;
-    }
-
-    .sign-column ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sign-column li {
-      color: #666;
-      margin-bottom: 0.75rem;
-      padding-left: 1.5rem;
-      position: relative;
-      font-size: 0.95rem;
-    }
-
-    .sign-column li:before {
-      content: '•';
-      color: #E8B356;
-      font-size: 1.5rem;
-      position: absolute;
-      left: 0;
-      top: -0.25rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #E8B356;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 0;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-    }
-
-    .btn-crisis {
-      background: #d32f2f;
-    }
-
-    .btn-crisis:hover {
-      background: #b71c1c;
-    }
-
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      nav ul { display: none; }
-      .hero h1 { font-size: 1.8rem; }
-      section h2 { font-size: 1.5rem; }
-      .hotline-number { font-size: 2.5rem; }
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(179, 68, 68, 0.6), rgba(179, 68, 68, 0.6)), url('https://images.unsplash.com/photo-1516214104703-3efca4275514?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .hotline-box { background: #d32f2f; color: white; padding: 3rem 2rem; text-align: center; margin: 3rem 0; border-radius: 2px; }
+    .hotline-box .number { font-size: 3rem; font-weight: 700; margin: 1rem 0; color: #E8B356; font-family: 'Lora', serif; }
+    .content-section { margin: 3rem 0; }
+    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
+    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .resource-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
+    .resource-card { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
+    .resource-card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .resource-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .resource-cards { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html" class="active">Crisis</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html">Services</a></li>
+        <li><a href="therapist-directory.html">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Crisis Support</h1>
-      <p>You're not alone. Get immediate help and support during your time of crisis.</p>
+  <section class="hero"><h1>Crisis Support Available 24/7</h1></section>
+
+  <div class="container">
+    <div class="hotline-box">
+      <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">NATIONAL CRISIS HOTLINE</p>
+      <div class="number">988</div>
+      <p style="font-size: 0.95rem;">Call or text anytime, day or night. Free. Confidential. Always there.</p>
     </div>
-  </section>
 
-  <main class="container">
-    <section>
-      <div class="hotline-box">
-        <div class="hotline-label">National Suicide Prevention Lifeline</div>
-        <div class="hotline-number">988</div>
-        <div class="hotline-desc">Call or text 988 • Available 24/7 • Free & Confidential</div>
+    <section class="content-section">
+      <h3>You Are Not Alone</h3>
+      <p>If you are experiencing a mental health crisis, suicidal thoughts, or overwhelming emotional distress, help is available immediately. Our crisis support services are here to provide immediate assistance, guidance, and compassionate care when you need it most.</p>
+      <p>Crisis situations require immediate, professional support. Manwell's crisis team is trained in emergency intervention and trauma response.</p>
+    </section>
+
+    <div class="resource-cards">
+      <div class="resource-card">
+        <h4>National Suicide Prevention Lifeline</h4>
+        <p><strong>988</strong><br>Call or text 988. Available 24/7. Free and confidential support for people in suicidal crisis and their loved ones.</p>
       </div>
-
-      <div class="warning-box">
-        <h3>⚠️ IMMEDIATE DANGER?</h3>
-        <p><strong>If you are in immediate danger, call 911 or go to your nearest emergency room.</strong></p>
+      <div class="resource-card">
+        <h4>Crisis Text Line</h4>
+        <p><strong>Text HOME to 741741</strong><br>Free, confidential support available 24/7 via text message from trained crisis counselors.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Crisis Resources</h2>
-
-      <div class="resources-grid">
-        <div class="resource-card">
-          <div class="resource-title">988 Suicide & Crisis Lifeline</div>
-          <div class="resource-number">988</div>
-          <div class="resource-desc">Call or text 988 to reach trained counselors who provide free, confidential support 24/7.</div>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-title">Crisis Text Line</div>
-          <div class="resource-number">Text HOME to 741741</div>
-          <div class="resource-desc">Text-based crisis support. Reach a crisis counselor via text message anytime.</div>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-title">SAMHSA National Helpline</div>
-          <div class="resource-number">1-800-662-4357</div>
-          <div class="resource-desc">Free, confidential, 24/7 treatment referral and information service for substance abuse and mental health.</div>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-title">National Domestic Violence Hotline</div>
-          <div class="resource-number">1-800-799-7233</div>
-          <div class="resource-desc">If you or someone you know is in an abusive relationship, call for support and resources.</div>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-title">Veterans Crisis Line</div>
-          <div class="resource-number">1-800-273-8255, then Press 1</div>
-          <div class="resource-desc">Specialized support for veterans in crisis. Call, text, or chat online.</div>
-        </div>
-
-        <div class="resource-card">
-          <div class="resource-title">International Association</div>
-          <div class="resource-number">findahelpline.com</div>
-          <div class="resource-desc">International directory of suicide prevention and mental health crisis helplines.</div>
-        </div>
+      <div class="resource-card">
+        <h4>SAMHSA National Helpline</h4>
+        <p><strong>1-800-662-4357</strong><br>Free, confidential referral and information service for people with mental illness and substance use disorders.</p>
       </div>
-    </section>
-
-    <section style="background: #f8f9fa;">
-      <h2>Warning Signs</h2>
-      <p style="color: #666; margin-bottom: 2rem;">If you or someone you know shows these signs, reach out for help immediately.</p>
-
-      <div class="warning-signs-grid">
-        <div class="sign-column">
-          <h3>🧠 Emotional Signs</h3>
-          <ul>
-            <li>Hopelessness or despair</li>
-            <li>Severe anxiety or panic</li>
-            <li>Intense anger or rage</li>
-            <li>Feeling numb or disconnected</li>
-            <li>Overwhelming guilt or shame</li>
-            <li>Talking about being a burden</li>
-          </ul>
-        </div>
-
-        <div class="sign-column">
-          <h3>🔄 Behavioral Signs</h3>
-          <ul>
-            <li>Withdrawing from friends/family</li>
-            <li>Giving away possessions</li>
-            <li>Risky or reckless behavior</li>
-            <li>Increased substance use</li>
-            <li>Saying goodbye to people</li>
-            <li>Searching for ways to harm self</li>
-          </ul>
-        </div>
-
-        <div class="sign-column">
-          <h3>💪 Physical Signs</h3>
-          <ul>
-            <li>Sleeping too much or too little</li>
-            <li>Changes in appetite</li>
-            <li>Neglecting personal hygiene</li>
-            <li>Increased fatigue</li>
-            <li>Unexplained physical aches</li>
-            <li>Loss of interest in activities</li>
-          </ul>
-        </div>
+      <div class="resource-card">
+        <h4>National Domestic Violence Hotline</h4>
+        <p><strong>1-800-799-7233</strong><br>Confidential support for people experiencing domestic violence, 24 hours a day, 7 days a week.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>What to Do in a Crisis</h2>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
-        <div style="background: #fff3e0; padding: 2.5rem; border-left: 4px solid #d32f2f;">
-          <h3 style="color: #d32f2f; margin-top: 0;">If You're Having Suicidal Thoughts</h3>
-          <ul style="color: #666; list-style-position: inside; margin-top: 1rem; line-height: 2;">
-            <li>Call 988 or text HOME to 741741</li>
-            <li>Tell someone you trust how you're feeling</li>
-            <li>Remove means of self-harm if possible</li>
-            <li>Go to the nearest emergency room</li>
-            <li>Stay with someone you trust</li>
-            <li>Make a safety plan with a professional</li>
-            <li>Remember: These feelings can change with help</li>
-          </ul>
-        </div>
-
-        <div style="background: #fff3e0; padding: 2.5rem; border-left: 4px solid #d32f2f;">
-          <h3 style="color: #d32f2f; margin-top: 0;">If Someone Else Is in Crisis</h3>
-          <ul style="color: #666; list-style-position: inside; margin-top: 1rem; line-height: 2;">
-            <li>Take them seriously. Listen without judgment</li>
-            <li>Call 911 if there's immediate danger</li>
-            <li>Stay with them. Don't leave them alone</li>
-            <li>Remove any means of self-harm</li>
-            <li>Encourage them to call 988</li>
-            <li>Get professional help immediately</li>
-            <li>Take care of yourself too. You can help better when supported</li>
-          </ul>
-        </div>
+      <div class="resource-card">
+        <h4>Veterans Crisis Line</h4>
+        <p><strong>988 then press 1</strong><br>Free, confidential crisis support for veterans and their families, 24/7.</p>
       </div>
-    </section>
+      <div class="resource-card">
+        <h4>International Association for Suicide Prevention</h4>
+        <p>Visit iasp.info/resources for crisis centers worldwide and international suicide prevention resources.</p>
+      </div>
+    </div>
 
-    <section style="background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); color: white; text-align: center; padding: 4rem 2rem;">
-      <h2 style="color: white; margin-bottom: 0.5rem;">You Deserve Help & Support</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95;">Recovery is possible. Reach out today.</p>
-      <a href="therapist-directory.html" class="btn">Find a Therapist</a>
-      <button class="btn btn-crisis" style="margin-left: 1rem;">Call 988 Now</button>
+    <section class="content-section">
+      <h3>Warning Signs to Look For</h3>
+      <p>It's important to recognize warning signs in yourself and others. Some common indicators of crisis include persistent thoughts of death or suicide, extreme mood changes, dramatic personality changes, withdrawal from friends and activities, or extreme behavior changes.</p>
+      <p style="margin-top: 2rem;"><button class="btn">Get Help Now</button></p>
     </section>
-
-    <section style="text-align: center;">
-      <h2>Additional Resources</h2>
-      <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem;">
-        Whether you're in crisis or just need support, these organizations can help.
-      </p>
-      <a href="resources.html" class="btn">Browse All Resources</a>
-    </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Crisis Support</h4>
-          <ul style="list-style: none;">
-            <li><a href="#">988 Lifeline</a></li>
-            <li><a href="#">Crisis Resources</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul style="list-style: none;">
-            <li><a href="therapist-directory.html">Find Therapist</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="resources.html">Resources</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul style="list-style: none;">
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Crisis support for men's mental health.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
 </body>
 </html>

@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manwell - Professional mental health support for men. Evidence-based treatment, clinical expertise, and community support.">
+  <meta name="description" content="Manwell - Professional mental health support. Evidence-based care, clinical expertise, and compassionate support.">
   <meta name="theme-color" content="#1a5f66">
-  <title>Manwell - Men's Mental Health Support</title>
+  <title>Manwell - Mental Health Support</title>
   
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   
-    <style>
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -21,18 +20,17 @@
       font-family: 'Source Sans Pro', sans-serif;
       line-height: 1.6;
       color: #2c3e50;
-      background-color: #f8f9fa;
+      background-color: #ffffff;
     }
 
     /* ========== HEADER ========== */
     header {
       background: white;
-      border-bottom: 1px solid #e0e0e0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     .header-container {
@@ -45,33 +43,44 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #1a5f66;
       text-decoration: none;
-      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: #1a5f66;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2.5rem;
+      gap: 2rem;
     }
 
     nav a {
       text-decoration: none;
       color: #666;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
     }
 
     nav a:hover,
     nav a.active {
       color: #E8B356;
-      border-bottom-color: #E8B356;
     }
 
     .menu-toggle {
@@ -82,6 +91,32 @@
       cursor: pointer;
     }
 
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1576091160550-112173e7d48f?w=1200&h=400&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 180px 2rem 100px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     /* ========== CONTAINER ========== */
     .container {
       max-width: 1200px;
@@ -89,225 +124,373 @@
       padding: 0 2rem;
     }
 
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
+    /* ========== INFO BOXES ========== */
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: -60px 2rem 4rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .info-box {
+      padding: 2rem;
+      border-radius: 4px;
+    }
+
+    .info-box.dark {
+      background: rgba(44, 62, 80, 0.8);
       color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
     }
 
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
+    .info-box.dark h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
       font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
     }
 
-    .hero p {
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.95;
+    .info-box.dark p {
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .info-box.dark .phone {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      color: #E8B356;
     }
 
-    /* ========== BUTTONS ========== */
-    .btn {
-      padding: 12px 30px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
+    .info-box.orange {
       background: #E8B356;
       color: white;
     }
 
-    .btn-primary:hover {
+    .info-box.orange h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-family: 'Lora', serif;
+    }
+
+    .info-box.orange .stat {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-box.orange p {
+      font-size: 0.85rem;
+    }
+
+    .info-box.teal {
+      background: #1a5f66;
+      color: white;
+    }
+
+    .info-box.teal h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-family: 'Lora', serif;
+    }
+
+    .info-box.teal p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #E8B356;
+    }
+
+    .section-header p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* ========== SERVICES SECTION ========== */
+    .services {
+      padding: 4rem 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      text-align: center;
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #E8B356;
+    }
+
+    .service-card h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+
+    .btn:hover {
       background: #d4a051;
       box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
       transform: translateY(-2px);
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
+    /* ========== FEATURED SECTIONS ========== */
+    .featured-items {
+      padding: 4rem 0;
+      border-top: 1px solid #e0e0e0;
     }
 
-    .btn-secondary:hover {
-      background: white;
-      color: #1a5f66;
+    .featured-item {
+      margin-bottom: 3rem;
     }
 
-    /* ========== SECTIONS ========== */
-    section {
-      padding: 4rem 2rem;
-      background: white;
-      margin: 0;
-    }
-
-    section.alt {
-      background: #f8f9fa;
-    }
-
-    section h2 {
+    .featured-item h3 {
       font-family: 'Lora', serif;
-      font-size: 2.2rem;
       color: #1a5f66;
+      font-size: 1.3rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
-      letter-spacing: -0.5px;
     }
 
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
+    .featured-item p {
+      color: #666;
+      line-height: 1.8;
+      font-size: 0.95rem;
     }
 
-    section h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin: 1.5rem 0 1rem;
-      font-weight: 600;
+    /* ========== STATS SECTION ========== */
+    .stats {
+      padding: 3rem 0;
+      border-top: 1px solid #e0e0e0;
     }
 
-    /* ========== GRIDS ========== */
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
-      margin: 2rem 0;
+      margin-top: 2rem;
     }
 
     .stat-card {
-      background: #1a5f66;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 0;
       text-align: center;
     }
 
     .stat-number {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
+      color: #1a5f66;
+      font-family: 'Lora', serif;
     }
 
     .stat-label {
-      color: rgba(255,255,255,0.9);
+      color: #666;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      font-size: 0.95rem;
     }
 
-    .features-grid,
-    .grid {
+    /* ========== MISSION SECTION ========== */
+    .mission-section {
+      padding: 4rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .mission-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
     }
 
-    .feature-card,
-    .card {
-      background: #f8f9fa;
-      border: none;
-      border-left: 4px solid #E8B356;
-      border-radius: 0;
-      padding: 2.5rem;
-      transition: all 0.3s;
+    .mission-text h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
 
-    .feature-card:hover,
-    .card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
+    .mission-text p {
+      color: #666;
+      line-height: 1.8;
       margin-bottom: 1rem;
     }
 
-    .feature-card h3,
-    .card h3 {
-      color: #1a5f66;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+    .mission-image {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #1a5f66, #E8B356);
+      border-radius: 4px;
+      overflow: hidden;
     }
 
-    .feature-card p,
-    .card p {
+    .mission-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      padding: 4rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .cta-content h2 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .cta-content p {
       color: #666;
+      margin-bottom: 2rem;
       font-size: 0.95rem;
+    }
+
+    /* ========== CONTACT FORM ========== */
+    .contact-form {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 4px;
+      margin-top: 3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: border 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #E8B356;
+      box-shadow: 0 0 0 3px rgba(232, 179, 86, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+      grid-column: 1 / -1;
     }
 
     /* ========== FOOTER ========== */
     footer {
       background: #1a5f66;
       color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
     }
 
     .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    .footer-section {
-      padding: 0 2rem;
-    }
-
-    .footer-section h4 {
+    .footer-section h3 {
       color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
     }
 
     .footer-section ul {
       list-style: none;
     }
 
+    .footer-section li {
+      margin-bottom: 0.6rem;
+    }
+
     .footer-section a {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.8);
       text-decoration: none;
-      line-height: 2;
       font-size: 0.9rem;
       transition: color 0.3s;
     }
@@ -317,305 +500,297 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
       text-align: center;
       font-size: 0.85rem;
-      opacity: 0.8;
+      color: rgba(255,255,255,0.7);
     }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
+      .hero {
+        padding: 120px 1rem 80px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
       nav ul {
-        display: none;
+        gap: 1rem;
+      }
+
+      nav a {
+        font-size: 0.85rem;
       }
 
       .menu-toggle {
         display: block;
       }
 
-      .hero h1 {
-        font-size: 1.8rem;
+      .info-boxes {
+        grid-template-columns: 1fr;
+        margin: 0 1rem 2rem;
       }
 
-      section h2 {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mission-content {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
         font-size: 1.5rem;
       }
 
-      .cta-buttons {
-        flex-direction: column;
+      nav ul {
+        display: none;
       }
 
-      .btn {
-        width: 100%;
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- ========== HEADER ========== -->
+  <!-- HEADER -->
   <header>
     <div class="header-container">
-      <a href="#" class="logo">Manwell</a>
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <span>Manwell</span>
+      </a>
       <nav>
         <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#support">Support</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><button class="donate-btn">Donate</button></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="mission.html">About</a></li>
+          <li><a href="mental-health-hub.html">Services</a></li>
+          <li><a href="therapist-directory.html">Facilities</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <button class="menu-toggle">☰</button>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
+  <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Professional Mental Health Support for Men</h1>
-      <p class="hero-subtitle">Evidence-based treatment. Licensed professionals. Supportive community.</p>
-      <div class="cta-buttons">
-        <a href="therapist-directory.html" class="btn btn-primary">Find a Therapist</a>
-        <a href="#services" class="btn btn-secondary">Learn More</a>
-      </div>
-    </div>
+    <h1>Compassion is at the Heart of Our Care.</h1>
   </section>
 
-  <!-- ========== ABOUT ========== -->
-  <section id="about">
+  <!-- INFO BOXES -->
+  <div class="container">
+    <div class="info-boxes">
+      <div class="info-box dark">
+        <h3>Our Approach</h3>
+        <p>Manwell provides compassionate, evidence-based mental health support. Our team of clinical experts is dedicated to helping you achieve better mental wellness and overall quality of life.</p>
+        <div class="phone">1-800-MANWELL</div>
+        <p style="font-size: 0.8rem;">123 Care Avenue, New York, NY 10001</p>
+      </div>
+      <div class="info-box orange">
+        <div class="stat">24/7</div>
+        <p>Support Available</p>
+        <br>
+        <div class="stat" style="font-size: 2rem; margin-bottom: 0.5rem;">✓</div>
+        <p>Crisis Support Line</p>
+      </div>
+      <div class="info-box teal">
+        <h3>Why Choose Manwell</h3>
+        <p>We are accredited by leading mental health organizations, providing the highest standard of clinical care with a compassionate, client-centered approach to treatment and wellness.</p>
+      </div>
+      <div class="info-box orange" style="background: #E8B356;">
+        <h3>Our Commitment</h3>
+        <div class="stat" style="font-size: 2rem;">98%</div>
+        <p>Client Satisfaction</p>
+        <br>
+        <p>Dedicated to your mental health journey</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES SECTION -->
+  <section class="services">
     <div class="container">
-      <h2>About Manwell</h2>
-      <p class="section-intro">
-        Manwell is a comprehensive mental health platform dedicated to providing professional, evidence-based support for men. 
-        We connect individuals with licensed therapists, educational resources, and community support tailored to men's mental health needs.
-      </p>
-      
-      <h3>Our Mission</h3>
-      <p>
-        To transform men's mental health by providing accessible, professional, and compassionate mental health care that integrates 
-        clinical expertise with community support. We believe that mental health is essential health, and every man deserves access to 
-        quality therapeutic services.
-      </p>
-
-      <h3>Our Values</h3>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Evidence-Based</h3>
-          <p>All our services and recommendations are grounded in peer-reviewed research and clinical best practices.</p>
+      <div class="section-header">
+        <h2>Our Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <h3>Clinical Therapy</h3>
+          <p>Evidence-based therapeutic approaches including CBT, DBT, and psychodynamic therapy</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>Professional Standards</h3>
-          <p>Our therapists are licensed professionals who maintain the highest standards of clinical practice and ethics.</p>
+        <div class="service-card">
+          <div class="service-icon">👥</div>
+          <h3>Group Sessions</h3>
+          <p>Supportive group therapy and peer support programs for shared healing</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Privacy & Confidentiality</h3>
-          <p>We maintain strict privacy standards and HIPAA compliance to protect your personal information and health data.</p>
+        <div class="service-card">
+          <div class="service-icon">🛑</div>
+          <h3>Crisis Support</h3>
+          <p>24/7 crisis intervention and emergency mental health services</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">♿</div>
-          <h3>Accessibility</h3>
-          <p>Mental health support should be accessible to all. We offer flexible formats and affordable options.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>Inclusive</h3>
-          <p>We serve men of all backgrounds, orientations, and identities with culturally competent, affirming care.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💡</div>
-          <h3>Holistic Approach</h3>
-          <p>We address mental health comprehensively, integrating therapy, education, community, and lifestyle factors.</p>
+        <div class="service-card">
+          <div class="service-icon">💊</div>
+          <h3>Medication Management</h3>
+          <p>Psychiatric medication evaluation and ongoing management services</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== STATISTICS ========== -->
-  <section class="stats-section">
+  <!-- FEATURED ITEMS -->
+  <section class="featured-items">
+    <div class="container">
+      <div class="featured-item">
+        <h3>Featured Item 01</h3>
+        <h2 style="font-family: 'Lora', serif; color: #1a5f66; font-size: 1.8rem; margin-top: 0.5rem;">Helping you find mental wellness</h2>
+        <p>Our comprehensive mental health assessment tools help identify specific areas where you might benefit from additional support. We offer personalized treatment plans tailored to your unique needs and circumstances.</p>
+      </div>
+
+      <div class="featured-item">
+        <h3>Featured Item 02</h3>
+        <h2 style="font-family: 'Lora', serif; color: #1a5f66; font-size: 1.8rem; margin-top: 0.5rem;">Providing integrated care</h2>
+        <p>We believe in treating the whole person. Our integrated approach combines therapy, psychiatric services, and wellness activities to create a comprehensive treatment plan that addresses all aspects of your mental health.</p>
+      </div>
+
+      <div class="featured-item">
+        <h3>Featured Item 03</h3>
+        <h2 style="font-family: 'Lora', serif; color: #1a5f66; font-size: 1.8rem; margin-top: 0.5rem;">Building strong communities</h2>
+        <p>Mental health doesn't exist in isolation. We foster supportive communities where individuals can connect, share experiences, and grow together. Our community programs are designed to reduce stigma and build resilience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">50K+</div>
-          <div class="stat-label">Members Supported</div>
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Clients Served</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">200+</div>
-          <div class="stat-label">Licensed Professionals</div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Licensed Clinicians</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Support Available</div>
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
         </div>
-        <div class="stat-item">
+        <div class="stat-card">
           <div class="stat-number">98%</div>
-          <div class="stat-label">Client Satisfaction</div>
+          <div class="stat-label">Satisfaction Rate</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== SERVICES ========== -->
-  <section id="services">
+  <!-- CTA SECTION -->
+  <section class="cta-section">
     <div class="container">
-      <h2>Our Services</h2>
-      <p class="section-intro">
-        Comprehensive mental health services designed to meet men at every stage of their mental health journey.
-      </p>
-
-      <div class="content-grid">
-        <div class="content-box">
-          <h3>Individual Therapy</h3>
-          <p>One-on-one sessions with licensed therapists specializing in men's mental health. Available online, in-person, or hybrid formats with flexible scheduling.</p>
-        </div>
-        <div class="content-box">
-          <h3>Assessment & Diagnosis</h3>
-          <p>Comprehensive mental health assessments including screening for depression, anxiety, trauma, and other conditions with professional evaluation.</p>
-        </div>
-        <div class="content-box">
-          <h3>Group Support</h3>
-          <p>Facilitated peer support groups covering depression, anxiety, addiction recovery, grief, relationships, and other relevant topics.</p>
-        </div>
-        <div class="content-box">
-          <h3>Crisis Support</h3>
-          <p>Immediate support for mental health crises. 24/7 crisis line, emergency resources, and rapid access to professional help.</p>
-        </div>
-        <div class="content-box">
-          <h3>Educational Programs</h3>
-          <p>Evidence-based educational content, workshops, and training programs to increase mental health literacy and coping skills.</p>
-        </div>
-        <div class="content-box">
-          <h3>Community Resources</h3>
-          <p>Curated resources, guides, worksheets, and materials to support your mental health journey between sessions.</p>
+      <div class="cta-content">
+        <h2>Get in Touch and Let us Care for your Mental Health.</h2>
+        
+        <div class="contact-form">
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== RESOURCES ========== -->
-  <section id="resources">
-    <div class="container">
-      <h2>Resources</h2>
-      <p class="section-intro">
-        Free resources and educational materials designed to support your mental health and wellness.
-      </p>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📖</div>
-          <h3>Guides & E-Books</h3>
-          <p>Comprehensive guides covering depression, anxiety, addiction recovery, relationships, and other mental health topics.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📹</div>
-          <h3>Video Library</h3>
-          <p>Expert talks, educational videos, and recorded presentations from mental health professionals on key topics.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">✏️</div>
-          <h3>Worksheets & Tools</h3>
-          <p>Interactive worksheets for mood tracking, goal setting, cognitive behavioral therapy, and other evidence-based techniques.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">💬</div>
-          <h3>Community Forum</h3>
-          <p>Connect with other men on similar journeys. Share experiences, ask questions, and offer peer support.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Self-Assessments</h3>
-          <p>Screening tools for depression, anxiety, substance use, and other conditions to help assess your mental health.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📚</div>
-          <h3>Reading List</h3>
-          <p>Curated list of recommended books, articles, and research on men's mental health topics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SUPPORT ========== -->
-  <section id="support">
-    <div class="container">
-      <h2>Get Support</h2>
-      <p class="section-intro">
-        Whether you're seeking professional therapy, educational resources, or peer support, Manwell has options for you.
-      </p>
-
-      <div class="content-grid">
-        <div class="content-box">
-          <h3>Mental Health Crisis?</h3>
-          <p><strong>Call 988 (Suicide & Crisis Lifeline)</strong><br>Available 24/7 via phone or text for immediate support.</p>
-        </div>
-        <div class="content-box">
-          <h3>Find a Therapist</h3>
-          <p>Browse our directory of 200+ licensed therapists specializing in men's mental health. Search by specialty, location, and insurance.</p>
-        </div>
-        <div class="content-box">
-          <h3>Join the Community</h3>
-          <p>Connect with thousands of men through our forums and support groups. Share your story and find belonging.</p>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="therapist-directory.html" class="btn btn-primary">Find a Therapist</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="#about">About Manwell</a></li>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Leadership</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find a Therapist</a></li>
-            <li><a href="mental-health-hub.html">Education</a></li>
-            <li><a href="assessments.html">Assessments</a></li>
-            <li><a href="community.html">Community</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="resources.html">Free Resources</a></li>
-            <li><a href="crisis.html">Crisis Support</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Accessibility</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue<br>New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. All rights reserved. Professional mental health support for men.</p>
+      <p>&copy; 2024 Manwell. All rights reserved. | Powered by Manwell</p>
     </div>
   </footer>
 
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      if (name && email && message) {
+        alert('Thank you for contacting us! We will respond shortly.');
+        event.target.reset();
+      }
+    }
+  </script>
 </body>
 </html>

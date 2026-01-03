@@ -3,488 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find a Therapist - Licensed mental health professionals specializing in men's mental health">
   <meta name="theme-color" content="#1a5f66">
-  <title>Find a Therapist - Manwell</title>
-  
+  <title>Therapist Directory - Manwell</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover, nav a.active {
-      color: #E8B356;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    section {
-      padding: 4rem 0;
-      background: white;
-      margin: 0;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .filter-section {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 0;
-      margin-bottom: 2rem;
-    }
-
-    .filter-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .filter-group label {
-      display: block;
-      color: #1a5f66;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .filter-group select, .filter-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 0;
-      font-size: 0.95rem;
-    }
-
-    .therapists-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .therapist-card {
-      background: white;
-      border: 1px solid #e0e0e0;
-      border-radius: 0;
-      padding: 2rem;
-      transition: all 0.3s;
-    }
-
-    .therapist-card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .therapist-name {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      color: #1a5f66;
-      margin-bottom: 0.25rem;
-      font-weight: 600;
-    }
-
-    .therapist-credentials {
-      color: #999;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .therapist-bio {
-      color: #666;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    .therapist-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .tag {
-      background: #f8f9fa;
-      color: #1a5f66;
-      padding: 4px 12px;
-      border-radius: 0;
-      font-size: 0.8rem;
-      border-left: 3px solid #E8B356;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #E8B356;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 0;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-    }
-
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-      nav ul { display: none; }
-      .hero h1 { font-size: 1.8rem; }
-      section h2 { font-size: 1.5rem; }
-      .therapists-grid { grid-template-columns: 1fr; }
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5e2?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .therapist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+    .therapist-card { background: #f8f9fa; border-left: 4px solid #E8B356; padding: 2rem; border-radius: 2px; text-align: center; }
+    .therapist-name { color: #1a5f66; font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .therapist-title { color: #E8B356; font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .therapist-bio { color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .therapist-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="therapist-directory.html" class="active">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html">Crisis</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html">Services</a></li>
+        <li><a href="therapist-directory.html" class="active">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Find a Therapist</h1>
-      <p>Browse our network of licensed mental health professionals specializing in men's mental health</p>
-    </div>
-  </section>
+  <section class="hero"><h1>Our Therapists</h1></section>
 
-  <main class="container">
-    <section>
+  <div class="container">
+    <section class="section-header">
       <h2>Find Your Perfect Match</h2>
-
-      <div class="filter-section">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-          <div class="filter-group">
-            <label for="specialization">Specialization</label>
-            <select id="specialization">
-              <option>All Specializations</option>
-              <option>Depression</option>
-              <option>Anxiety</option>
-              <option>PTSD & Trauma</option>
-              <option>Addiction</option>
-              <option>Relationships</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="therapy-type">Therapy Type</label>
-            <select id="therapy-type">
-              <option>All Types</option>
-              <option>CBT</option>
-              <option>DBT</option>
-              <option>Psychodynamic</option>
-              <option>Mindfulness</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="format">Format</label>
-            <select id="format">
-              <option>All Formats</option>
-              <option>In-Person</option>
-              <option>Virtual/Online</option>
-              <option>Hybrid</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="insurance">Insurance</label>
-            <select id="insurance">
-              <option>All Insurance</option>
-              <option>No Insurance Needed</option>
-              <option>Blue Cross</option>
-              <option>Aetna</option>
-            </select>
-          </div>
-        </div>
-        <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-          <button class="btn">Search</button>
-          <button style="background: white; color: #1a5f66; border: 2px solid #1a5f66;" class="btn">Reset</button>
-        </div>
-      </div>
-
-      <div class="therapists-grid">
-        <div class="therapist-card">
-          <div class="therapist-name">Dr. Sarah Mitchell</div>
-          <div class="therapist-credentials">Licensed Clinical Psychologist (PhD)</div>
-          <div class="therapist-bio">Specializes in anxiety and depression with 12+ years of experience. Trauma-informed approach.</div>
-          <div class="therapist-tags">
-            <span class="tag">Anxiety</span>
-            <span class="tag">Depression</span>
-            <span class="tag">Virtual</span>
-          </div>
-          <button class="btn">Schedule Consultation</button>
-        </div>
-
-        <div class="therapist-card">
-          <div class="therapist-name">James Rodriguez</div>
-          <div class="therapist-credentials">Licensed Marriage & Family Therapist</div>
-          <div class="therapist-bio">Expert in relationship issues and communication. Works with couples and individuals.</div>
-          <div class="therapist-tags">
-            <span class="tag">Relationships</span>
-            <span class="tag">Identity</span>
-            <span class="tag">In-Person</span>
-          </div>
-          <button class="btn">Schedule Consultation</button>
-        </div>
-
-        <div class="therapist-card">
-          <div class="therapist-name">Dr. Michael Chen</div>
-          <div class="therapist-credentials">Psychiatrist & Medication Specialist</div>
-          <div class="therapist-bio">Provides comprehensive psychiatric care and medication management.</div>
-          <div class="therapist-tags">
-            <span class="tag">Medication</span>
-            <span class="tag">Psychiatry</span>
-            <span class="tag">Virtual</span>
-          </div>
-          <button class="btn">Schedule Consultation</button>
-        </div>
-
-        <div class="therapist-card">
-          <div class="therapist-name">David Thompson</div>
-          <div class="therapist-credentials">Licensed Clinical Social Worker (LCSW)</div>
-          <div class="therapist-bio">Specializes in trauma recovery and PTSD using evidence-based approaches.</div>
-          <div class="therapist-tags">
-            <span class="tag">PTSD</span>
-            <span class="tag">Trauma</span>
-            <span class="tag">Hybrid</span>
-          </div>
-          <button class="btn">Schedule Consultation</button>
-        </div>
-
-        <div class="therapist-card">
-          <div class="therapist-name">Dr. Robert Williams</div>
-          <div class="therapist-credentials">Addiction Specialist & Recovery Coach</div>
-          <div class="therapist-bio">20+ years treating substance use. Specializes in recovery and relapse prevention.</div>
-          <div class="therapist-tags">
-            <span class="tag">Addiction</span>
-            <span class="tag">Recovery</span>
-            <span class="tag">In-Person</span>
-          </div>
-          <button class="btn">Schedule Consultation</button>
-        </div>
-
-        <div class="therapist-card">
-          <div class="therapist-name">Dr. Emily Park</div>
-          <div class="therapist-credentials">Mindfulness & Wellness Therapist</div>
-          <div class="therapist-bio">Integrates mindfulness and holistic approaches for sustainable wellness.</div>
-          <div class="therapist-tags">
-            <span class="tag">Mindfulness</span>
-            <span class="tag">Wellness</span>
-            <span class="tag">Virtual</span>
-          </div>
-          <button class="btn">Schedule Consultation</button>
-        </div>
-      </div>
     </section>
 
-    <section style="background: #f8f9fa;">
-      <h2>Why Choose Our Therapists</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <div style="background: white; padding: 2.5rem; border-left: 4px solid #E8B356;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Licensed & Credentialed</h3>
-          <p style="color: #666;">All therapists are fully licensed professionals.</p>
-        </div>
-        <div style="background: white; padding: 2.5rem; border-left: 4px solid #E8B356;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Evidence-Based</h3>
-          <p style="color: #666;">Research-backed treatment methods only.</p>
-        </div>
-        <div style="background: white; padding: 2.5rem; border-left: 4px solid #E8B356;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Specialists</h3>
-          <p style="color: #666;">Our therapists specialize in men's mental health.</p>
-        </div>
-        <div style="background: white; padding: 2.5rem; border-left: 4px solid #E8B356;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Flexible Options</h3>
-          <p style="color: #666;">In-person, virtual, or hybrid therapy available.</p>
-        </div>
-        <div style="background: white; padding: 2.5rem; border-left: 4px solid #E8B356;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Affordable Care</h3>
-          <p style="color: #666;">Insurance accepted or sliding scale fees.</p>
-        </div>
-        <div style="background: white; padding: 2.5rem; border-left: 4px solid #E8B356;">
-          <h3 style="color: #1a5f66; margin-top: 0;">Confidential & Safe</h3>
-          <p style="color: #666;">Your privacy and safety are our priority.</p>
-        </div>
-      </div>
-    </section>
+    <p style="color: #666; margin: 2rem 0; line-height: 1.8;">Our team of experienced, licensed mental health professionals are dedicated to providing compassionate, evidence-based care. Each therapist brings unique expertise and a commitment to your mental health journey.</p>
 
-    <section style="text-align: center;">
-      <h2>Still Looking for Help?</h2>
-      <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem;">
-        If you need immediate crisis support, call 988 or text HOME to 741741.
-      </p>
-      <a href="crisis.html" class="btn">Crisis Resources</a>
-    </section>
-  </main>
+    <div class="therapist-grid">
+      <div class="therapist-card">
+        <div class="therapist-name">Dr. Sarah Mitchell</div>
+        <div class="therapist-title">Licensed Clinical Psychologist</div>
+        <div class="therapist-bio">Specializes in anxiety, depression, and CBT. Over 12 years of clinical experience helping individuals achieve their wellness goals.</div>
+        <button class="btn">View Profile</button>
+      </div>
+      <div class="therapist-card">
+        <div class="therapist-name">James Rodriguez</div>
+        <div class="therapist-title">Licensed Marriage and Family Therapist</div>
+        <div class="therapist-bio">Expert in couples therapy and family dynamics. Helps families improve communication and strengthen relationships.</div>
+        <button class="btn">View Profile</button>
+      </div>
+      <div class="therapist-card">
+        <div class="therapist-name">Dr. Emily Chen</div>
+        <div class="therapist-title">Psychiatric Nurse Specialist</div>
+        <div class="therapist-bio">Focuses on medication management and mental health disorders. Provides comprehensive psychiatric evaluation and support.</div>
+        <button class="btn">View Profile</button>
+      </div>
+      <div class="therapist-card">
+        <div class="therapist-name">Michael Thompson</div>
+        <div class="therapist-title">Licensed Professional Counselor</div>
+        <div class="therapist-bio">Specializes in trauma-informed care and PTSD treatment. Brings compassion and expertise to crisis and trauma support.</div>
+        <button class="btn">View Profile</button>
+      </div>
+      <div class="therapist-card">
+        <div class="therapist-name">Dr. Patricia Gonzalez</div>
+        <div class="therapist-title">Clinical Therapist</div>
+        <div class="therapist-bio">Expert in behavioral health and wellness coaching. Helps clients develop lasting positive behavioral changes.</div>
+        <button class="btn">View Profile</button>
+      </div>
+      <div class="therapist-card">
+        <div class="therapist-name">David Harrison</div>
+        <div class="therapist-title">Addiction Specialist</div>
+        <div class="therapist-bio">Specializes in substance use disorders and recovery. Provides evidence-based treatment and ongoing support.</div>
+        <button class="btn">View Profile</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Therapists</h4>
-          <ul style="list-style: none;">
-            <li><a href="#">Find Therapist</a></li>
-            <li><a href="#">How It Works</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul style="list-style: none;">
-            <li><a href="mental-health-hub.html">Education</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="crisis.html">Crisis</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul style="list-style: none;">
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Professional mental health care for men.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
 </body>
 </html>

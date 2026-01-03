@@ -3,556 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Community Forum - Connect with other men on mental health journeys">
   <meta name="theme-color" content="#1a5f66">
   <title>Community - Manwell</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    /* ========== HEADER ========== */
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
-      border-bottom-color: #E8B356;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ========== BUTTONS ========== */
-    .btn {
-      padding: 12px 30px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #E8B356;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1a5f66;
-    }
-
-    /* ========== SECTIONS ========== */
-    section {
-      padding: 4rem 2rem;
-      background: white;
-      margin: 0;
-    }
-
-    section.alt {
-      background: #f8f9fa;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    section h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin: 1.5rem 0 1rem;
-      font-weight: 600;
-    }
-
-    /* ========== GRIDS ========== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .stat-card {
-      background: #1a5f66;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 0;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .features-grid,
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card,
-    .card {
-      background: #f8f9fa;
-      border: none;
-      border-left: 4px solid #E8B356;
-      border-radius: 0;
-      padding: 2.5rem;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover,
-    .card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3,
-    .card h3 {
-      color: #1a5f66;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p,
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section {
-      padding: 0 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .content-section { margin: 3rem 0; }
+    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
+    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .program-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
+    .program-card { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
+    .program-card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .program-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .program-cards { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html" class="active">Community</a></li>
-          <li><a href="crisis.html">Crisis</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html">Services</a></li>
+        <li><a href="therapist-directory.html">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Community Forum</h1>
-      <p>Connect with thousands of men on similar journeys. Share experiences, find support, and build meaningful connections.</p>
+  <section class="hero"><h1>Our Community</h1></section>
+
+  <div class="container">
+    <section class="content-section">
+      <h3>Building Connections, Supporting Growth</h3>
+      <p>Mental health is not a solitary journey. At Manwell, we believe in the power of community to heal, support, and inspire. Our community programs bring people together to share experiences, build connections, and support one another in their mental health journey.</p>
+    </section>
+
+    <div class="section-header">
+      <h2>Community Programs</h2>
     </div>
-  </section>
 
-  <main class="container">
-    <section>
-      <h2>Welcome to Manwell Community</h2>
-      <p style="color: #666; font-size: 1.05rem;">
-        Our community is a safe, supportive space where men can share their experiences, ask questions, and offer peer support 
-        on mental health topics. All discussions are moderated to ensure respect and safety.
-      </p>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">2,847</div>
-          <div class="stat-label">Active Members</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">12,394</div>
-          <div class="stat-label">Discussion Threads</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">48,201</div>
-          <div class="stat-label">Posts & Replies</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Active Moderators</div>
-        </div>
+    <div class="program-cards">
+      <div class="program-card">
+        <h4>Support Groups</h4>
+        <p>Weekly peer-led support groups for various conditions and life challenges. Share experiences in a safe, confidential environment.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Forum Categories</h2>
-      <p style="color: #666; margin-bottom: 2rem;">
-        Find discussions related to your interests and concerns:
-      </p>
-
-      <div class="category-grid">
-        <div class="category-card">
-          <div class="category-icon">🧠</div>
-          <h3>Mental Health & Wellness</h3>
-          <p>Discussions on depression, anxiety, trauma, stress management, and overall mental wellbeing.</p>
-          <div class="category-stats">2,341 threads • 9,847 posts</div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">💬</div>
-          <h3>Relationships & Communication</h3>
-          <p>Family dynamics, friendships, romantic relationships, vulnerability, and building connections.</p>
-          <div class="category-stats">1,823 threads • 7,294 posts</div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">💼</div>
-          <h3>Work, Career & Identity</h3>
-          <p>Work-related stress, career transitions, identity questions, masculinity, and finding purpose.</p>
-          <div class="category-stats">1,567 threads • 6,234 posts</div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">🔄</div>
-          <h3>Recovery & Addiction Support</h3>
-          <p>Substance use recovery, addiction support, sobriety journeys, and relapse prevention.</p>
-          <div class="category-stats">892 threads • 4,123 posts</div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">💔</div>
-          <h3>Grief & Loss</h3>
-          <p>Loss of loved ones, processing grief, bereavement support, and moving forward.</p>
-          <div class="category-stats">412 threads • 1,876 posts</div>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">🚀</div>
-          <h3>Success & Growth Stories</h3>
-          <p>Celebrate progress, share victories, and inspire others with your recovery story.</p>
-          <div class="category-stats">523 threads • 2,341 posts</div>
-        </div>
+      <div class="program-card">
+        <h4>Wellness Workshops</h4>
+        <p>Attend educational workshops on topics like stress management, mindfulness, and building resilience.</p>
       </div>
-    </section>
-
-    <section>
-      <h2>Community Guidelines</h2>
-
-      <div class="community-guidelines">
-        <h3>Our Commitment to Safety</h3>
-        <p style="color: #666; margin-bottom: 1.5rem;">
-          Manwell is dedicated to creating a safe, respectful, and supportive community. We ask all members to follow these guidelines:
-        </p>
-
-        <ul style="color: #666; line-height: 2;">
-          <li><strong>Be respectful:</strong> Treat all members with dignity and kindness</li>
-          <li><strong>Listen actively:</strong> Hear others without judgment</li>
-          <li><strong>Share authentically:</strong> Your honest experiences help others</li>
-          <li><strong>Maintain confidentiality:</strong> Don't share others' personal information</li>
-          <li><strong>No harassment:</strong> Bullying, discrimination, and hate speech are not tolerated</li>
-          <li><strong>Seek professional help:</strong> Community support supplements but doesn't replace professional treatment</li>
-          <li><strong>Follow moderation:</strong> Report inappropriate content to moderators</li>
-        </ul>
+      <div class="program-card">
+        <h4>Social Activities</h4>
+        <p>Participate in community events, recreational activities, and social gatherings designed to foster connection.</p>
       </div>
-    </section>
-
-    <section style="background: #f8f9fa;">
-      <h2>Why Join Our Community?</h2>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Find Belonging</h3>
-          <p style="color: #666;">Connect with thousands of men who understand what you're going through.</p>
-        </div>
-
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Peer Support</h3>
-          <p style="color: #666;">Get advice and encouragement from people with lived experience.</p>
-        </div>
-
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Reduce Isolation</h3>
-          <p style="color: #666;">Share your story and know you're not alone in your struggles.</p>
-        </div>
-
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Safe Space</h3>
-          <p style="color: #666;">Moderated discussions ensure respect, confidentiality, and support.</p>
-        </div>
-
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">Shared Resources</h3>
-          <p style="color: #666;">Learn from others and share helpful resources and strategies.</p>
-        </div>
-
-        <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #1a5f66;">
-          <h3 style="margin-top: 0; color: #1a5f66; font-size: 1.1rem;">24/7 Access</h3>
-          <p style="color: #666;">Find support anytime, day or night, from your own pace.</p>
-        </div>
+      <div class="program-card">
+        <h4>Peer Mentoring</h4>
+        <p>Get paired with a peer mentor who has lived experience with similar challenges and can provide support.</p>
       </div>
-    </section>
+      <div class="program-card">
+        <h4>Online Community</h4>
+        <p>Access our secure online platform to connect with community members and access resources 24/7.</p>
+      </div>
+      <div class="program-card">
+        <h4>Volunteer Opportunities</h4>
+        <p>Get involved as a volunteer and help support others while contributing to our vibrant community.</p>
+      </div>
+    </div>
 
-    <section style="text-align: center;">
-      <h2>Join Our Community Today</h2>
-      <p style="color: #666; font-size: 1.05rem; max-width: 600px; margin: 0 auto 2rem;">
-        You don't have to navigate your mental health journey alone. Join thousands of men finding support and connection in our community.
-      </p>
-      <button class="btn">Sign Up Now</button>
+    <section class="content-section">
+      <h3>Why Join Our Community?</h3>
+      <p>Our community provides a safe space where you can be authentic, supported, and valued. You'll connect with others who understand your journey, learn from shared experiences, and discover that you are not alone. Community members consistently report increased resilience, stronger support networks, and improved mental health outcomes.</p>
+      <button class="btn">Join Our Community Today</button>
     </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="community.html">Forums</a></li>
-            <li><a href="#">Guidelines</a></li>
-            <li><a href="#">Moderators</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find Therapist</a></li>
-            <li><a href="crisis.html">Crisis Help</a></li>
-            <li><a href="#">Report Abuse</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Community support for men's mental health.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
-
 </body>
 </html>

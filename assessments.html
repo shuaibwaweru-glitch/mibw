@@ -3,542 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Self-Assessment Tools - Validated screening instruments for depression, anxiety, and other conditions">
   <meta name="theme-color" content="#1a5f66">
   <title>Assessments - Manwell</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-  
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      line-height: 1.6;
-      color: #2c3e50;
-      background-color: #f8f9fa;
-    }
-
-    /* ========== HEADER ========== */
-    header {
-      background: white;
-      border-bottom: 1px solid #e0e0e0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a5f66;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
-      border-bottom-color: #E8B356;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.7), rgba(26, 95, 102, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5f66" width="1200" height="600"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 120px 2rem 80px;
-      margin-top: 60px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-family: 'Lora', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ========== BUTTONS ========== */
-    .btn {
-      padding: 12px 30px;
-      border-radius: 0;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #E8B356;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #1a5f66;
-    }
-
-    /* ========== SECTIONS ========== */
-    section {
-      padding: 4rem 2rem;
-      background: white;
-      margin: 0;
-    }
-
-    section.alt {
-      background: #f8f9fa;
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 2.2rem;
-      color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    section h2:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #E8B356;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    section h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin: 1.5rem 0 1rem;
-      font-weight: 600;
-    }
-
-    /* ========== GRIDS ========== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .stat-card {
-      background: #1a5f66;
-      color: white;
-      padding: 2.5rem;
-      border-radius: 0;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .features-grid,
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card,
-    .card {
-      background: #f8f9fa;
-      border: none;
-      border-left: 4px solid #E8B356;
-      border-radius: 0;
-      padding: 2.5rem;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover,
-    .card:hover {
-      box-shadow: 0 6px 16px rgba(26, 95, 102, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3,
-    .card h3 {
-      color: #1a5f66;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p,
-    .card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background: #1a5f66;
-      color: white;
-      padding: 4rem 0 1rem;
-      margin-top: 0;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section {
-      padding: 0 2rem;
-    }
-
-    .footer-section h4 {
-      color: #E8B356;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      line-height: 2;
-      font-size: 0.9rem;
-      transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
+    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
+    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+    nav a:hover, nav a.active { color: #E8B356; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1631217314831-c6227db76b6e?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
+    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
+    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
+    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
+    .content-section { margin: 3rem 0; }
+    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
+    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
+    .assessment-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
+    .assessment-card { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
+    .assessment-card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .assessment-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
+    .btn:hover { background: #d4a051; }
+    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+    .footer-section ul { list-style: none; }
+    .footer-section li { margin-bottom: 0.6rem; }
+    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+    .footer-section a:hover { color: #E8B356; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .assessment-cards { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">Manwell</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="mental-health-hub.html">Education</a></li>
-          <li><a href="assessments.html" class="active">Assessments</a></li>
-          <li><a href="therapist-directory.html">Find Help</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="crisis.html">Crisis</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <nav><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">About</a></li>
+        <li><a href="mental-health-hub.html">Services</a></li>
+        <li><a href="therapist-directory.html">Facilities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Mental Health Assessments</h1>
-      <p>Validated screening tools to help you understand your mental health and determine if professional support is needed.</p>
+  <section class="hero"><h1>Mental Health Assessments</h1></section>
+
+  <div class="container">
+    <section class="content-section">
+      <h2 class="section-header" style="display: inline-block;"><span>Understanding Your Mental Health</span></h2>
+      <p>Our comprehensive mental health assessments are designed to provide you with a clear understanding of your emotional wellbeing, identify potential challenges, and create a foundation for personalized treatment planning.</p>
+    </section>
+
+    <div class="assessment-cards">
+      <div class="assessment-card">
+        <h4>Depression Screening</h4>
+        <p>A comprehensive evaluation of depressive symptoms, severity, and impact on daily functioning. Our assessment identifies patterns and potential underlying causes.</p>
+      </div>
+      <div class="assessment-card">
+        <h4>Anxiety Assessment</h4>
+        <p>Thorough evaluation of anxiety symptoms including generalized anxiety, social anxiety, and panic disorder. Helps determine the most effective treatment approach.</p>
+      </div>
+      <div class="assessment-card">
+        <h4>Trauma Screening</h4>
+        <p>Specialized assessment for trauma-related conditions including PTSD. Uses evidence-based tools to evaluate trauma exposure and related symptoms.</p>
+      </div>
+      <div class="assessment-card">
+        <h4>Personality Assessment</h4>
+        <p>In-depth evaluation of personality traits and patterns that may influence mental health and relationships. Supports self-awareness and personal growth.</p>
+      </div>
+      <div class="assessment-card">
+        <h4>Substance Use Evaluation</h4>
+        <p>Comprehensive assessment of substance use patterns, dependence risk, and co-occurring mental health conditions.</p>
+      </div>
+      <div class="assessment-card">
+        <h4>Cognitive Functioning</h4>
+        <p>Assessment of memory, attention, executive function, and other cognitive abilities to identify any concerns or cognitive strengths.</p>
+      </div>
     </div>
-  </section>
 
-  <main class="container">
-    <section>
-      <h2>Self-Assessment Tools</h2>
-      <p style="font-size: 1.05rem; color: #666; max-width: 800px; margin-bottom: 2rem;">
-        These evidence-based screening tools can help you assess symptoms of common mental health conditions. 
-        While not diagnostic, they provide valuable information to discuss with a healthcare provider.
-      </p>
-
-      <div class="assessment-grid">
-        <div class="assessment-card">
-          <div class="assessment-icon">😔</div>
-          <h3>PHQ-9 Depression Screening</h3>
-          <p>The Patient Health Questionnaire-9 (PHQ-9) is a validated tool for assessing depression severity.</p>
-          <div class="assessment-meta">9 questions • 5 minutes</div>
-          <button class="btn">Take Assessment</button>
-        </div>
-
-        <div class="assessment-card">
-          <div class="assessment-icon">😰</div>
-          <h3>GAD-7 Anxiety Screening</h3>
-          <p>The Generalized Anxiety Disorder-7 (GAD-7) assesses anxiety symptoms and severity.</p>
-          <div class="assessment-meta">7 questions • 3 minutes</div>
-          <button class="btn">Take Assessment</button>
-        </div>
-
-        <div class="assessment-card">
-          <div class="assessment-icon">😣</div>
-          <h3>DASS-21 Stress Assessment</h3>
-          <p>Measures depression, anxiety, and stress across three separate scales.</p>
-          <div class="assessment-meta">21 questions • 10 minutes</div>
-          <button class="btn">Take Assessment</button>
-        </div>
-
-        <div class="assessment-card">
-          <div class="assessment-icon">💤</div>
-          <h3>Sleep Quality Assessment</h3>
-          <p>Evaluate your sleep patterns and identify potential sleep disorders.</p>
-          <div class="assessment-meta">8 questions • 5 minutes</div>
-          <button class="btn">Take Assessment</button>
-        </div>
-
-        <div class="assessment-card">
-          <div class="assessment-icon">💊</div>
-          <h3>AUDIT Substance Use Screening</h3>
-          <p>Assess problematic alcohol or substance use patterns.</p>
-          <div class="assessment-meta">10 questions • 5 minutes</div>
-          <button class="btn">Take Assessment</button>
-        </div>
-
-        <div class="assessment-card">
-          <div class="assessment-icon">💪</div>
-          <h3>Overall Wellness Assessment</h3>
-          <p>Comprehensive evaluation of physical and mental wellbeing.</p>
-          <div class="assessment-meta">15 questions • 8 minutes</div>
-          <button class="btn">Take Assessment</button>
-        </div>
-      </div>
+    <section class="content-section">
+      <h3>Assessment Process</h3>
+      <p>Our assessment process is thorough, respectful, and tailored to your specific needs. We begin with a detailed clinical interview, followed by standardized assessment tools and questionnaires. The results are compiled into a comprehensive report with recommendations for treatment or further evaluation.</p>
+      <button class="btn">Schedule Your Assessment</button>
     </section>
-
-    <section>
-      <h2>About Mental Health Screening</h2>
-      
-      <div class="info-grid">
-        <div class="info-box">
-          <h3>Why Assess?</h3>
-          <p>Self-assessment helps you recognize symptoms, track changes over time, and decide if professional help is needed. Many conditions are highly treatable when caught early.</p>
-        </div>
-
-        <div class="info-box">
-          <h3>Confidential & Private</h3>
-          <p>Your assessment results are completely private and confidential. They're stored securely and not shared with anyone without your consent.</p>
-        </div>
-
-        <div class="info-box">
-          <h3>Not a Diagnosis</h3>
-          <p>These tools are screening instruments, not diagnostic. Only a licensed healthcare provider can diagnose a mental health condition.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Understanding Your Results</h2>
-      
-      <div class="results-guide">
-        <p style="color: #666; margin-bottom: 2rem;">
-          Assessment results typically fall into severity ranges. Here's what they generally mean:
-        </p>
-
-        <div class="severity-level minimal">
-          <div class="severity-label">Minimal Severity</div>
-          <p>Symptoms are present but may not significantly impact daily functioning. Continue with self-care and preventive practices.</p>
-        </div>
-
-        <div class="severity-level mild">
-          <div class="severity-label">Mild to Moderate Severity</div>
-          <p>Symptoms are affecting daily life. Consider speaking with a healthcare provider to explore treatment options.</p>
-        </div>
-
-        <div class="severity-level moderate">
-          <div class="severity-label">Moderate to Severe</div>
-          <p>Symptoms are significantly impacting functioning. Professional treatment is strongly recommended. Consider reaching out to a therapist or physician.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="cta-section">
-        <h3>Ready for Professional Support?</h3>
-        <p>If you've completed an assessment or are struggling with your mental health, our licensed therapists are here to help.</p>
-        <a href="therapist-directory.html" class="btn" style="background: white; color: #1a5f66; margin-top: 1rem;">Find a Therapist</a>
-      </div>
-    </section>
-
-    <section>
-      <h2>When to Seek Professional Help</h2>
-      <p style="color: #666; margin-bottom: 2rem;">
-        You should consider reaching out to a mental health professional if:
-      </p>
-
-      <ul style="color: #666; line-height: 2;">
-        <li>Symptoms persist for more than 2 weeks</li>
-        <li>Symptoms interfere with work, school, or relationships</li>
-        <li>You're having thoughts of self-harm or suicide</li>
-        <li>You're using alcohol or drugs to cope</li>
-        <li>Symptoms are getting worse despite self-care efforts</li>
-        <li>You have a family history of mental health conditions</li>
-      </ul>
-    </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="mental-health-hub.html">Education</a></li>
-            <li><a href="resources.html">Free Resources</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="therapist-directory.html">Find a Therapist</a></li>
-            <li><a href="community.html">Community</a></li>
-            <li><a href="crisis.html">Crisis Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul>
-            <li><a href="mission.html">Our Mission</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Clinical Therapy</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="community.html">Group Programs</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18001111111">1-800-MANWELL</a></li>
+          <li><a href="mailto:info@manwell.org">info@manwell.org</a></li>
+          <li>123 Care Avenue, New York, NY 10001</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Manwell. Evidence-based mental health support for men.</p>
-    </div>
+    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
   </footer>
-
 </body>
 </html>
