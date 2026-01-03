@@ -4,8 +4,72 @@
   "framework": null,
   "rewrites": [
     {
-      "source": "/:path*",
-      "destination": "/:path*"
+      "source": "/home",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/mission.html"
+    },
+    {
+      "source": "/strategy",
+      "destination": "/pillars.html"
+    },
+    {
+      "source": "/mental-health",
+      "destination": "/mental-health-hub.html"
+    },
+    {
+      "source": "/assessments",
+      "destination": "/assessments.html"
+    },
+    {
+      "source": "/find-therapist",
+      "destination": "/therapist-directory.html"
+    },
+    {
+      "source": "/crisis",
+      "destination": "/crisis.html"
+    },
+    {
+      "source": "/community",
+      "destination": "/community.html"
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources.html"
+    },
+    {
+      "source": "/stories",
+      "destination": "/stories.html"
+    },
+    {
+      "source": "/videos",
+      "destination": "/videos.html"
+    },
+    {
+      "source": "/experts",
+      "destination": "/experts.html"
+    },
+    {
+      "source": "/programs",
+      "destination": "/activities.html"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery.html"
+    },
+    {
+      "source": "/marketplace",
+      "destination": "/therapy-marketplace.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/:path((?!.*\\.).*)",
+      "destination": "/:path.html"
     }
   ]
 }
