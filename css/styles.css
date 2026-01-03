@@ -105,11 +105,11 @@ header {
 }
 
 .logo-img {
-  width: 15px;
-  height: 15px;
+  width: 22px;        /* Reduced from 32px */
+  height: 22px;       /* Reduced from 32px */
   display: block;
   flex-shrink: 0;
-  object-fit: contain; /* Keeps logo proportional */
+  object-fit: contain;
 }
 
 .logo-text {
