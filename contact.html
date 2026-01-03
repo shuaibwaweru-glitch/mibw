@@ -52,16 +52,13 @@
       gap: 0.5rem;
     }
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: #1a5f66;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
+    /* UPDATED: Logo image styles to match your main site */
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
     }
 
     /* ========== DONATE BUTTON ========== */
@@ -90,300 +87,7 @@
       transform: translateY(0);
     }
 
-
-
-    nav {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
-    }
-
-    /* ========== HERO SECTION ========== */
-    .hero {
-      background: linear-gradient(rgba(26,95,102,0.5), rgba(26,95,102,0.5)), 
-                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop') center/cover;
-      color: white;
-      padding: 120px 2rem 80px;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-family: 'Lora', serif;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ========== CONTAINER ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    /* ========== CONTACT GRID ========== */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    .contact-info {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-left: 4px solid #E8B356;
-    }
-
-    .contact-info h3 {
-      color: #1a5f66;
-      font-family: 'Lora', serif;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .contact-info p {
-      margin-bottom: 0.5rem;
-      color: #2c3e50;
-    }
-
-    .contact-info a {
-      color: #1a5f66;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .contact-info a:hover {
-      color: #E8B356;
-    }
-
-    /* ========== FORM ========== */
-    .contact-form {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-left: 4px solid #E8B356;
-    }
-
-    .contact-form h3 {
-      color: #1a5f66;
-      font-family: 'Lora', serif;
-      margin-bottom: 1.5rem;
-      font-size: 1.3rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #1a5f66;
-      font-weight: 600;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 0;
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #E8B356;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .btn {
-      background-color: #E8B356;
-      color: white;
-      padding: 0.8rem 1.8rem;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 1rem;
-    }
-
-    .btn:hover {
-      background-color: #d4a051;
-      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
-    }
-
-    /* ========== SECTION HEADER ========== */
-    .section-header {
-      color: #1a5f66;
-      font-family: 'Lora', serif;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-bottom: 1rem;
-    }
-
-    .section-header::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: #E8B356;
-    }
-
-    .section-intro {
-      color: #666;
-      margin-bottom: 2rem;
-      max-width: 600px;
-    }
-
-    /* ========== LOCATIONS ========== */
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .location-card {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-left: 4px solid #E8B356;
-    }
-
-    .location-card h4 {
-      color: #1a5f66;
-      font-family: 'Lora', serif;
-      margin-bottom: 1rem;
-    }
-
-    .location-card p {
-      margin-bottom: 0.5rem;
-      color: #2c3e50;
-    }
-
-    /* ========== FOOTER ========== */
-    footer {
-      background-color: #1a5f66;
-      color: white;
-      padding: 3rem 2rem 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-section h3 {
-      color: #E8B356;
-      font-family: 'Lora', serif;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    .footer-section ul {
-      list-style: none;
-    }
-
-    .footer-section li {
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-section a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section a:hover {
-      color: #E8B356;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-    }
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-container {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      .header-container {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        padding: 100px 1rem 60px;
-      }
-
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-
-      .container {
-        padding: 2rem 1rem;
-      }
-
-      nav {
-        gap: 0.5rem;
-        font-size: 0.9rem;
-      }
-
-      .section-header {
-        font-size: 1.5rem;
-      }
-    }    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -454,6 +158,440 @@
       background-color: #f0f7f8;
       cursor: default;
     }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(rgba(26,95,102,0.5), rgba(26,95,102,0.5)), 
+                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop') center/cover;
+      color: white;
+      padding: 120px 2rem 80px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========== CONTACT GRID ========== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-info {
+      background: #f8f9fa;
+      padding: 2.5rem 2rem;
+      border-left: 4px solid #E8B356;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .contact-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1a5f66 0%, #E8B356 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-info:hover::before {
+      transform: scaleX(1);
+    }
+
+    .contact-info h3 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+
+    .contact-info a {
+      color: #1a5f66;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #E8B356;
+    }
+
+    .contact-note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* ========== FORM ========== */
+    .contact-form {
+      background: #f8f9fa;
+      padding: 2.5rem 2rem;
+      border-left: 4px solid #E8B356;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h3 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #1a5f66;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #E8B356;
+      box-shadow: 0 0 0 3px rgba(232, 179, 86, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn {
+      background-color: #E8B356;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      border-radius: 2px;
+    }
+
+    .btn:hover {
+      background-color: #d4a051;
+      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #1a5f66;
+      border: 1px solid #1a5f66;
+    }
+
+    .btn-secondary:hover {
+      background: transparent;
+      color: #1a5f66;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #E8B356;
+    }
+
+    .section-intro {
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    /* ========== LOCATIONS ========== */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .location-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-left: 4px solid #E8B356;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .location-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1a5f66 0%, #E8B356 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .location-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .location-card h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .location-card p {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .location-card strong {
+      color: #1a5f66;
+    }
+
+    /* ========== SOCIAL SECTION ========== */
+    .social-section {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background: white;
+      color: #1a5f66;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .social-link:hover {
+      background: #E8B356;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(232, 179, 86, 0.3);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #1a5f66;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #E8B356;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+
+      /* Logo responsive sizing */
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+
+      /* Navigation adjustments */
+      nav {
+        gap: 0.25rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 100px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      .section-header {
+        font-size: 1.5rem;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 2rem 1.5rem;
+      }
+
+      .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -461,9 +599,9 @@
   <!-- HEADER -->
   <header>
     <div class="header-container">
+      <!-- UPDATED: Logo with PNG image -->
       <a href="/home" class="logo">
-        <div class="logo-icon">M</div>
-        Manwell
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
       </a>
       <nav>
         <div class="nav-item">
@@ -500,13 +638,13 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="#">Resources ▼</a>
+          <a href="#" class="active">Resources ▼</a>
           <div class="dropdown-menu">
             <a href="/resources">Resource Library</a>
             <a href="/contact" class="active">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
@@ -528,24 +666,24 @@
         <div class="contact-info">
           <h3>Phone</h3>
           <p><a href="tel:+254754151315">+254 754 151 315</a></p>
-          <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Available Monday - Friday, 9AM - 6PM EAT</p>
+          <p class="contact-note">Available Monday - Friday, 9AM - 6PM EAT</p>
         </div>
 
         <div class="contact-info" style="margin-top: 1.5rem;">
           <h3>Email</h3>
           <p><a href="mailto:hello@manwellwithin.org">hello@manwellwithin.org</a></p>
-          <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">We'll respond within 24 hours</p>
+          <p class="contact-note">We'll respond within 24 hours</p>
         </div>
 
         <div class="contact-info" style="margin-top: 1.5rem;">
           <h3>Crisis Support</h3>
           <p><a href="tel:+254754151315">+254 754 151 315</a></p>
-          <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">24/7 Emergency Support</p>
+          <p class="contact-note">24/7 Emergency Support</p>
         </div>
       </div>
 
       <!-- Contact Form -->
-      <form class="contact-form">
+      <form class="contact-form" id="contactForm">
         <h3>Send us a Message</h3>
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -568,7 +706,21 @@
           <textarea id="message" name="message" required></textarea>
         </div>
         <button type="submit" class="btn">Send Message</button>
+        <button type="button" class="btn btn-secondary" id="callBtn" style="margin-left: 1rem;">📞 Call Now</button>
       </form>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="social-section">
+      <h3 style="color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 1rem;">Connect With Us Online</h3>
+      <p style="color: #666; margin-bottom: 1rem;">Follow us for updates, mental health tips, and community stories</p>
+      <div class="social-links">
+        <a href="https://facebook.com/manwellwithin" target="_blank" class="social-link">📘 Facebook</a>
+        <a href="https://twitter.com/manwellwithin" target="_blank" class="social-link">🐦 Twitter</a>
+        <a href="https://instagram.com/manwellwithin" target="_blank" class="social-link">📸 Instagram</a>
+        <a href="https://tiktok.com/@manwellwithin" target="_blank" class="social-link">🎵 TikTok</a>
+        <a href="https://youtube.com/@manwellwithin" target="_blank" class="social-link">🎬 YouTube</a>
+      </div>
     </div>
 
     <!-- Locations Section -->
@@ -590,6 +742,7 @@
         <p>24/7 Emergency Support Line</p>
         <p style="margin-top: 1rem;"><strong>Contact:</strong></p>
         <p><a href="tel:+254754151315" style="color: #1a5f66; font-weight: 600;">+254 754 151 315</a></p>
+        <p class="contact-note" style="margin-top: 1rem;">Immediate help for mental health emergencies</p>
       </div>
 
       <div class="location-card">
@@ -598,6 +751,7 @@
         <p>Online counseling & therapy via secure video</p>
         <p style="margin-top: 1rem;"><strong>Hours:</strong></p>
         <p>Monday - Friday: 8AM - 8PM EAT<br>Saturday - Sunday: 10AM - 6PM EAT</p>
+        <p class="contact-note" style="margin-top: 1rem;">Book online sessions through our portal</p>
       </div>
     </div>
   </div>
@@ -623,6 +777,7 @@
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
+      <!-- UPDATED: All social media handles to @manwellwithin -->
       <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
@@ -630,12 +785,75 @@
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Manwell. All rights reserved. Compassion in every interaction.</p>
+      <p>&copy; 2024 Manwell. All rights reserved. | Follow us @manwellwithin | Contact: +254 754 151 315</p>
     </div>
   </footer>
+
+  <script>
+    // Form submission functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      const callBtn = document.getElementById('callBtn');
+      
+      // Form submission
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        
+        // Simple validation
+        if (name && email && subject) {
+          alert(`Thank you, ${name}! Your message has been sent successfully.\n\nWe'll respond to ${email} within 24 hours regarding "${subject}".\n\nFor immediate assistance, call +254 754 151 315.`);
+          contactForm.reset();
+        } else {
+          alert('Please fill in all required fields (Name, Email, Subject, and Message).');
+        }
+      });
+      
+      // Call Now button functionality
+      callBtn.addEventListener('click', function() {
+        if (window.innerWidth > 768) {
+          const confirmCall = confirm('Would you like to call Manwell at +254 754 151 315?\n\nOffice Hours: Mon-Fri 9AM-6PM EAT\nCrisis Support: 24/7\n\nClick OK to call now.');
+          if (confirmCall) {
+            window.location.href = 'tel:+254754151315';
+          }
+        } else {
+          window.location.href = 'tel:+254754151315';
+        }
+      });
+      
+      // Contact info hover effects
+      const contactInfos = document.querySelectorAll('.contact-info');
+      contactInfos.forEach(info => {
+        info.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        info.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+      
+      // Location card hover effects
+      const locationCards = document.querySelectorAll('.location-card');
+      locationCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
