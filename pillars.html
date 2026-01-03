@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manwell's Strategic Pillars - Our comprehensive approach to men's holistic wellness.">
+  <meta name="description" content="Manwell's Strategic Pillars - Our comprehensive framework for men's holistic wellness, mental health, and community transformation.">
   <meta name="theme-color" content="#1a5f66">
-  <title>Our Pillars - Manwell</title>
+  <title>Strategic Pillars - Manwell's Holistic Approach</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     * {
@@ -21,6 +22,7 @@
       line-height: 1.6;
       color: #2c3e50;
       background-color: #ffffff;
+      overflow-x: hidden;
     }
 
     /* ========== HEADER ========== */
@@ -52,16 +54,12 @@
       gap: 0.5rem;
     }
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: #1a5f66;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
     }
 
     /* ========== DONATE BUTTON ========== */
@@ -90,9 +88,7 @@
       transform: translateY(0);
     }
 
-
-
-    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -166,25 +162,69 @@
 
     /* ========== HERO SECTION ========== */
     .hero {
-      background: linear-gradient(rgba(26,95,102,0.5), rgba(26,95,102,0.5)), 
-                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop') center/cover;
+      background: linear-gradient(135deg, rgba(26,95,102,0.9), rgba(232,179,86,0.9)), 
+                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop') center/cover;
       color: white;
-      padding: 120px 2rem 80px;
+      padding: 140px 2rem 80px;
       text-align: center;
       margin-top: 60px;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-family: 'Lora', serif;
       margin-bottom: 1rem;
       font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+      line-height: 1.8;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Lora', serif;
+      color: white;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
     }
 
     /* ========== CONTAINER ========== */
@@ -196,78 +236,217 @@
 
     /* ========== SECTION HEADER ========== */
     .section-header {
-      color: #1a5f66;
-      font-family: 'Lora', serif;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      text-align: center;
     }
 
-    .section-header::after {
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #E8B356;
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      color: #666;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+    }
+
+    /* ========== PILLARS INTRO ========== */
+    .pillars-intro {
+      background: linear-gradient(135deg, rgba(26,95,102,0.05), rgba(232,179,86,0.05));
+      padding: 3rem;
+      border-radius: 12px;
+      margin: 3rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillars-intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
       left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: #E8B356;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1a5f66 0%, #E8B356 100%);
+    }
+
+    .pillars-intro h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .pillars-intro p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
     }
 
     /* ========== PILLARS GRID ========== */
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
     }
 
-    .pillar {
+    @media (max-width: 1100px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pillar-card {
       background: white;
-      border: 1px solid #eee;
-      padding: 2.5rem;
-      transition: all 0.3s ease;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      height: 100%;
+      border-top: 4px solid #E8B356;
+      opacity: 0;
+      transform: translateY(30px);
     }
 
-    .pillar:hover {
-      box-shadow: 0 8px 24px rgba(26,95,102,0.1);
-      transform: translateY(-4px);
+    .pillar-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .pillar-card:hover .pillar-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .pillar-header {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(232,179,86,0.3), transparent);
     }
 
     .pillar-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #E8B356;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.2);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
       line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .pillar h3 {
-      color: #1a5f66;
       font-family: 'Lora', serif;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      border-bottom: 3px solid #E8B356;
-      padding-bottom: 0.8rem;
     }
 
-    .pillar p {
+    .pillar-header-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .pillar-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #E8B356;
+      transition: transform 0.4s ease;
+      flex-shrink: 0;
+      border: 2px solid rgba(232,179,86,0.3);
+    }
+
+    .pillar-header-text {
+      flex: 1;
+    }
+
+    .pillar-header h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .pillar-tagline {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    .pillar-content {
+      padding: 2rem;
+    }
+
+    .pillar-description {
       color: #666;
-      line-height: 1.8;
-      margin-bottom: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
     }
 
     .pillar-features {
       background: #f8f9fa;
       padding: 1.5rem;
-      border-left: 4px solid #E8B356;
+      border-radius: 8px;
       margin-top: 1.5rem;
+      border-left: 4px solid #E8B356;
     }
 
     .pillar-features h4 {
       color: #1a5f66;
-      font-size: 0.95rem;
-      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pillar-features h4 i {
+      color: #E8B356;
     }
 
     .pillar-features ul {
@@ -277,29 +456,280 @@
 
     .pillar-features li {
       color: #666;
-      padding: 0.3rem 0;
-      font-size: 0.9rem;
+      padding: 0.4rem 0;
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 1.5rem;
     }
 
-    .pillar-features li:before {
-      content: "✓ ";
-      color: #E8B356;
-      font-weight: bold;
-      margin-right: 0.5rem;
+    .pillar-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: #E8B356;
+      border-radius: 50%;
     }
 
-    /* ========== INTRO SECTION ========== */
-    .intro-section {
-      background: #f0f7f8;
-      padding: 2rem;
-      border-left: 4px solid #1a5f66;
-      margin-bottom: 3rem;
+    .pillar-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
     }
 
-    .intro-section p {
+    .stat {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 700;
       color: #1a5f66;
+      font-family: 'Lora', serif;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.3rem;
+    }
+
+    /* ========== PILLARS VISUALIZATION ========== */
+    .pillars-visualization {
+      background: linear-gradient(135deg, rgba(26,95,102,0.03), rgba(232,179,86,0.03));
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .visualization-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .pillars-circle {
+      width: 400px;
+      height: 400px;
+      margin: 0 auto 3rem;
+      position: relative;
+    }
+
+    .center-circle {
+      width: 120px;
+      height: 120px;
+      background: #1a5f66;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      z-index: 2;
+      box-shadow: 0 5px 15px rgba(26,95,102,0.3);
+    }
+
+    .pillar-node {
+      width: 80px;
+      height: 80px;
+      background: #E8B356;
+      border-radius: 50%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(232,179,86,0.3);
+    }
+
+    .pillar-node:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(232,179,86,0.5);
+    }
+
+    .node-1 { top: 50px; left: 160px; }
+    .node-2 { top: 50px; right: 160px; }
+    .node-3 { top: 160px; left: 50px; }
+    .node-4 { top: 160px; right: 50px; }
+    .node-5 { bottom: 160px; left: 50px; }
+    .node-6 { bottom: 160px; right: 50px; }
+
+    .connecting-line {
+      position: absolute;
+      background: rgba(232,179,86,0.3);
+      height: 2px;
+      transform-origin: 0 0;
+      z-index: 1;
+    }
+
+    .visualization-info {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .visualization-info h4 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .visualization-info p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* ========== IMPACT SECTION ========== */
+    .impact-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, rgba(26,95,102,0.05), rgba(232,179,86,0.05));
+      border-radius: 12px;
+      margin: 4rem 0;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .impact-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      border-top: 4px solid #1a5f66;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .impact-icon {
+      width: 70px;
+      height: 70px;
+      background: #E8B356;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      margin: 0 auto 1.5rem;
+    }
+
+    .impact-card h4 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .impact-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop&q=10') center/cover;
+      opacity: 0.1;
+    }
+
+    .cta-section h3 {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+      position: relative;
+    }
+
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
       font-size: 1.1rem;
-      line-height: 1.8;
+      position: relative;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .cta-btn {
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .cta-btn-primary {
+      background: #E8B356;
+      color: white;
+    }
+
+    .cta-btn-primary:hover {
+      background: #d4a051;
+      box-shadow: 0 8px 20px rgba(232,179,86,0.3);
+      transform: translateY(-3px);
+    }
+
+    .cta-btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-btn-secondary:hover {
+      background: white;
+      color: #1a5f66;
     }
 
     /* ========== FOOTER ========== */
@@ -307,7 +737,7 @@
       background-color: #1a5f66;
       color: white;
       padding: 3rem 2rem 1.5rem;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
 
     .footer-container {
@@ -353,49 +783,206 @@
     }
 
     /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pillars-circle {
+        width: 300px;
+        height: 300px;
+      }
+      
+      .pillar-node {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .node-1 { top: 40px; left: 120px; }
+      .node-2 { top: 40px; right: 120px; }
+      .node-3 { top: 120px; left: 40px; }
+      .node-4 { top: 120px; right: 40px; }
+      .node-5 { bottom: 120px; left: 40px; }
+      .node-6 { bottom: 120px; right: 40px; }
+    }
+
     @media (max-width: 768px) {
       .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+
+      nav {
+        gap: 0.25rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .section-header h2 {
         font-size: 2rem;
       }
 
-      .pillars-grid {
-        grid-template-columns: 1fr;
+      .pillar-header {
+        padding: 1.5rem;
+      }
+
+      .pillar-header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      .pillar-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+
+      .pillar-header h3 {
+        font-size: 1.4rem;
+      }
+
+      .pillar-content {
+        padding: 1.5rem;
       }
 
       .footer-container {
         grid-template-columns: 1fr;
       }
 
-      nav {
-        gap: 0.2rem;
+      .container {
+        padding: 2rem 1rem;
       }
 
-      .nav-item > a {
-        padding: 0.5rem 0.7rem;
-        font-size: 0.8rem;
+      .pillars-intro {
+        padding: 2rem;
+      }
+
+      .pillars-visualization {
+        padding: 3rem 1rem;
+      }
+
+      .pillars-circle {
+        width: 250px;
+        height: 250px;
+      }
+
+      .center-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 1rem;
+      }
+
+      .pillar-node {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+      }
+
+      .node-1 { top: 30px; left: 100px; }
+      .node-2 { top: 30px; right: 100px; }
+      .node-3 { top: 100px; left: 30px; }
+      .node-4 { top: 100px; right: 30px; }
+      .node-5 { bottom: 100px; left: 30px; }
+      .node-6 { bottom: 100px; right: 30px; }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section h3 {
+        font-size: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-btn {
+        width: 100%;
+        max-width: 300px;
       }
     }
 
     @media (max-width: 480px) {
       .hero {
-        padding: 100px 1rem 60px;
+        padding: 120px 1rem 60px;
       }
 
       .hero h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
 
-      .container {
-        padding: 2rem 1rem;
-      }
-
-      .pillars-grid {
+      .hero-stats {
         gap: 1.5rem;
       }
 
-      .pillar {
+      .stat-number {
+        font-size: 1.5rem;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+
+      .pillar-header {
+        padding: 1.5rem 1rem;
+      }
+
+      .pillar-number {
+        font-size: 2.5rem;
+      }
+
+      .pillars-intro {
         padding: 1.5rem;
       }
+
+      .pillars-circle {
+        width: 200px;
+        height: 200px;
+      }
+
+      .center-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 0.9rem;
+      }
+
+      .pillar-node {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+      }
+
+      .node-1 { top: 25px; left: 80px; }
+      .node-2 { top: 25px; right: 80px; }
+      .node-3 { top: 80px; left: 25px; }
+      .node-4 { top: 80px; right: 25px; }
+      .node-5 { bottom: 80px; left: 25px; }
+      .node-6 { bottom: 80px; right: 25px; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -405,15 +992,14 @@
   <header>
     <div class="header-container">
       <a href="/home" class="logo">
-        <div class="logo-icon">M</div>
-        Manwell
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
       </a>
       <nav>
         <div class="nav-item">
           <a href="/home">Home</a>
         </div>
         <div class="nav-item">
-          <a href="#">About ▼</a>
+          <a href="#" class="active">About ▼</a>
           <div class="dropdown-menu">
             <a href="/about">Our Mission & Values</a>
             <a href="/strategy" class="active">Our Strategy</a>
@@ -449,7 +1035,7 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
@@ -457,118 +1043,397 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <h1>Our Strategic Pillars</h1>
-    <p>A comprehensive framework for holistic men's wellness and transformation</p>
+    <p>A comprehensive framework for holistic men's wellness and transformation, built on six interconnected foundations</p>
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Interconnected Pillars</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">360°</div>
+        <div class="stat-label">Holistic Approach</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5000+</div>
+        <div class="stat-label">Lives Transformed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Community Partners</div>
+      </div>
+    </div>
   </section>
 
   <!-- MAIN CONTENT -->
   <div class="container">
-    <div class="intro-section">
+    <!-- Introduction -->
+    <div class="pillars-intro">
+      <h3>Our Holistic Framework</h3>
       <p>Manwell's approach is grounded in six interconnected pillars that address the full spectrum of men's wellbeing. Rather than treating symptoms in isolation, we recognize that lasting transformation requires holistic support across mental, emotional, physical, and societal dimensions.</p>
+      <p>Each pillar represents a critical domain of wellness, but their true power emerges when they work together—creating an ecosystem where healing in one area reinforces progress in others, leading to sustainable, systemic change in men's lives and communities.</p>
+    </div>
+
+    <!-- Pillars Grid -->
+    <div class="section-header">
+      <h2>The Six Pillars</h2>
+      <p>Discover how each component of our framework contributes to comprehensive men's wellness</p>
     </div>
 
     <div class="pillars-grid">
       <!-- Pillar 1 -->
-      <div class="pillar">
-        <div class="pillar-number">01</div>
-        <h3>Mental Wellness & Therapy</h3>
-        <p>Creating safe spaces where men can speak openly about their struggles without judgment. We provide evidence-based therapeutic interventions tailored to men's unique experiences.</p>
-        <div class="pillar-features">
-          <h4>Core Programs:</h4>
-          <ul>
-            <li>Individual counseling & group therapy</li>
-            <li>Trauma-focused interventions</li>
-            <li>Crisis support & suicide prevention</li>
-            <li>Mental health assessments</li>
-          </ul>
+      <div class="pillar-card" data-pillar="1">
+        <div class="pillar-header">
+          <div class="pillar-number">01</div>
+          <div class="pillar-header-content">
+            <div class="pillar-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="pillar-header-text">
+              <h3>Mental Wellness & Therapy</h3>
+              <p class="pillar-tagline">Creating safe spaces for healing and growth</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillar-content">
+          <p class="pillar-description">Creating safe, judgment-free spaces where men can speak openly about their struggles. We provide evidence-based therapeutic interventions specifically tailored to men's unique experiences and communication styles.</p>
+          
+          <div class="pillar-features">
+            <h4><i class="fas fa-list-check"></i> Core Programs</h4>
+            <ul>
+              <li>Individual counseling & group therapy</li>
+              <li>Trauma-focused interventions & EMDR</li>
+              <li>24/7 crisis support & suicide prevention</li>
+              <li>Comprehensive mental health assessments</li>
+              <li>Mindfulness & stress management workshops</li>
+            </ul>
+          </div>
+          
+          <div class="pillar-stats">
+            <div class="stat">
+              <div class="stat-value">2000+</div>
+              <div class="stat-label">Therapy Sessions</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">95%</div>
+              <div class="stat-label">Report Improvement</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">12</div>
+              <div class="stat-label">Therapists</div>
+            </div>
+          </div>
         </div>
       </div>
-
+      
       <!-- Pillar 2 -->
-      <div class="pillar">
-        <div class="pillar-number">02</div>
-        <h3>Advocacy & Engagement</h3>
-        <p>Challenging stigma and shifting narratives around men's mental health. We advocate at policy levels, mobilize communities, and influence corporate wellness practices.</p>
-        <div class="pillar-features">
-          <h4>Core Initiatives:</h4>
-          <ul>
-            <li>Community dialogue forums & barazas</li>
-            <li>Policy influence & coalition building</li>
-            <li>Digital campaigns & storytelling</li>
-            <li>Corporate wellness partnerships</li>
-          </ul>
+      <div class="pillar-card" data-pillar="2">
+        <div class="pillar-header">
+          <div class="pillar-number">02</div>
+          <div class="pillar-header-content">
+            <div class="pillar-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div class="pillar-header-text">
+              <h3>Advocacy & Engagement</h3>
+              <p class="pillar-tagline">Challenging stigma, shifting narratives</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillar-content">
+          <p class="pillar-description">Transforming how society perceives and supports men's mental health through strategic advocacy, community mobilization, and narrative change. We work at policy, corporate, and grassroots levels to create systemic impact.</p>
+          
+          <div class="pillar-features">
+            <h4><i class="fas fa-bullseye"></i> Core Initiatives</h4>
+            <ul>
+              <li>Community dialogue forums & barazas</li>
+              <li>Policy influence & coalition building</li>
+              <li>Digital campaigns & storytelling</li>
+              <li>Corporate wellness partnerships</li>
+              <li>Media engagement & public awareness</li>
+            </ul>
+          </div>
+          
+          <div class="pillar-stats">
+            <div class="stat">
+              <div class="stat-value">50+</div>
+              <div class="stat-label">Campaigns</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">1M+</div>
+              <div class="stat-label">People Reached</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">15</div>
+              <div class="stat-label">Policy Engagements</div>
+            </div>
+          </div>
         </div>
       </div>
-
+      
       <!-- Pillar 3 -->
-      <div class="pillar">
-        <div class="pillar-number">03</div>
-        <h3>Nurture Brotherhood</h3>
-        <p>Building peer-led circles and mentorship networks that combat isolation. We foster spaces where men support each other through vulnerability and shared growth.</p>
-        <div class="pillar-features">
-          <h4>Core Components:</h4>
-          <ul>
-            <li>Recovery brotherhood circles</li>
-            <li>Boys to Men mentorship programs</li>
-            <li>Intergenerational support networks</li>
-            <li>Rites of passage & dignity rituals</li>
-          </ul>
+      <div class="pillar-card" data-pillar="3">
+        <div class="pillar-header">
+          <div class="pillar-number">03</div>
+          <div class="pillar-header-content">
+            <div class="pillar-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <div class="pillar-header-text">
+              <h3>Nurture Brotherhood</h3>
+              <p class="pillar-tagline">Building community, ending isolation</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillar-content">
+          <p class="pillar-description">Cultivating peer-led circles and mentorship networks that combat isolation and foster genuine connection. We create spaces where men support each other through vulnerability, accountability, and shared growth journeys.</p>
+          
+          <div class="pillar-features">
+            <h4><i class="fas fa-users"></i> Core Components</h4>
+            <ul>
+              <li>Recovery brotherhood circles</li>
+              <li>Boys to Men mentorship programs</li>
+              <li>Intergenerational support networks</li>
+              <li>Rites of passage & dignity rituals</li>
+              <li>Weekly men's circles & support groups</li>
+            </ul>
+          </div>
+          
+          <div class="pillar-stats">
+            <div class="stat">
+              <div class="stat-value">40+</div>
+              <div class="stat-label">Brotherhood Circles</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">150</div>
+              <div class="stat-label">Mentorship Pairs</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">1000+</div>
+              <div class="stat-label">Circle Participants</div>
+            </div>
+          </div>
         </div>
       </div>
-
+      
       <!-- Pillar 4 -->
-      <div class="pillar">
-        <div class="pillar-number">04</div>
-        <h3>Training & Economic Empowerment</h3>
-        <p>Equipping men with practical skills and economic independence. Strength isn't silence—it's tools, skills, and voice that help men reclaim their lives.</p>
-        <div class="pillar-features">
-          <h4>Development Areas:</h4>
-          <ul>
-            <li>Job training & employment support</li>
-            <li>Financial literacy & skills development</li>
-            <li>Entrepreneurship programs</li>
-            <li>Life skills & practical wellness</li>
-          </ul>
+      <div class="pillar-card" data-pillar="4">
+        <div class="pillar-header">
+          <div class="pillar-number">04</div>
+          <div class="pillar-header-content">
+            <div class="pillar-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="pillar-header-text">
+              <h3>Training & Economic Empowerment</h3>
+              <p class="pillar-tagline">Tools for independence and dignity</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillar-content">
+          <p class="pillar-description">Equipping men with practical skills and economic independence. We believe strength isn't silence—it's having the tools, skills, and economic stability that enable men to reclaim their lives and support their families with dignity.</p>
+          
+          <div class="pillar-features">
+            <h4><i class="fas fa-tools"></i> Development Areas</h4>
+            <ul>
+              <li>Job training & employment support</li>
+              <li>Financial literacy & skills development</li>
+              <li>Entrepreneurship programs</li>
+              <li>Life skills & practical wellness</li>
+              <li>Digital literacy & tech training</li>
+            </ul>
+          </div>
+          
+          <div class="pillar-stats">
+            <div class="stat">
+              <div class="stat-value">300+</div>
+              <div class="stat-label">Men Trained</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">75%</div>
+              <div class="stat-label">Employment Rate</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">50</div>
+              <div class="stat-label">Businesses Started</div>
+            </div>
+          </div>
         </div>
       </div>
-
+      
       <!-- Pillar 5 -->
-      <div class="pillar">
-        <div class="pillar-number">05</div>
-        <h3>Research & Policy</h3>
-        <p>Building the evidence base for men's wellness initiatives. We conduct research, document impact, and influence national mental health frameworks with data-driven advocacy.</p>
-        <div class="pillar-features">
-          <h4>Strategic Focuses:</h4>
-          <ul>
-            <li>Male wellness data & impact metrics</li>
-            <li>Policy research & recommendations</li>
-            <li>Partnership with research institutions</li>
-            <li>Wellness index & assessment tools</li>
-          </ul>
+      <div class="pillar-card" data-pillar="5">
+        <div class="pillar-header">
+          <div class="pillar-number">05</div>
+          <div class="pillar-header-content">
+            <div class="pillar-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="pillar-header-text">
+              <h3>Research & Policy</h3>
+              <p class="pillar-tagline">Evidence-based, data-driven impact</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillar-content">
+          <p class="pillar-description">Building the evidence base for effective men's wellness initiatives through rigorous research and policy advocacy. We document impact, measure outcomes, and influence national mental health frameworks with data-driven recommendations.</p>
+          
+          <div class="pillar-features">
+            <h4><i class="fas fa-search"></i> Strategic Focuses</h4>
+            <ul>
+              <li>Male wellness data & impact metrics</li>
+              <li>Policy research & recommendations</li>
+              <li>Academic partnerships & studies</li>
+              <li>Wellness index & assessment tools</li>
+              <li>Best practices documentation</li>
+            </ul>
+          </div>
+          
+          <div class="pillar-stats">
+            <div class="stat">
+              <div class="stat-value">8</div>
+              <div class="stat-label">Research Studies</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">25+</div>
+              <div class="stat-label">Policy Briefs</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3</div>
+              <div class="stat-label">University Partners</div>
+            </div>
+          </div>
         </div>
       </div>
-
+      
       <!-- Pillar 6 -->
-      <div class="pillar">
-        <div class="pillar-number">06</div>
-        <h3>Physical Wellness & Holistic Health</h3>
-        <p>Recognizing that mental health cannot be separated from physical wellbeing. We integrate fitness, nutrition, and body awareness into comprehensive wellness programming.</p>
-        <div class="pillar-features">
-          <h4>Wellness Programs:</h4>
-          <ul>
-            <li>Physical fitness & sports programs</li>
-            <li>Nutrition & wellness education</li>
-            <li>Addiction recovery support</li>
-            <li>Domestic violence prevention</li>
-          </ul>
+      <div class="pillar-card" data-pillar="6">
+        <div class="pillar-header">
+          <div class="pillar-number">06</div>
+          <div class="pillar-header-content">
+            <div class="pillar-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="pillar-header-text">
+              <h3>Physical Wellness & Holistic Health</h3>
+              <p class="pillar-tagline">Integrating body, mind, and spirit</p>
+            </div>
+          </div>
+        </div>
+        <div class="pillar-content">
+          <p class="pillar-description">Recognizing that mental health cannot be separated from physical wellbeing. We integrate fitness, nutrition, addiction recovery, and body awareness into comprehensive wellness programming that addresses the whole person.</p>
+          
+          <div class="pillar-features">
+            <h4><i class="fas fa-dumbbell"></i> Wellness Programs</h4>
+            <ul>
+              <li>Physical fitness & sports programs</li>
+              <li>Nutrition & wellness education</li>
+              <li>Addiction recovery support</li>
+              <li>Domestic violence prevention</li>
+              <li>Sleep & stress management</li>
+            </ul>
+          </div>
+          
+          <div class="pillar-stats">
+            <div class="stat">
+              <div class="stat-value">1000+</div>
+              <div class="stat-label">Fitness Sessions</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">200</div>
+              <div class="stat-label">Recovery Journeys</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">15</div>
+              <div class="stat-label">Wellness Workshops</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- How They Work Together -->
-    <section style="margin-top: 4rem;">
-      <h2 class="section-header">How They Work Together</h2>
-      <p style="font-size: 1.05rem; color: #666; margin-top: 1.5rem; line-height: 1.8;">These pillars are not isolated initiatives—they form an integrated ecosystem. A man entering through mental health therapy may discover community through brotherhood circles. Someone gaining economic empowerment becomes an advocate. Those engaged in research contribute to policy change. Every pathway reinforces the others, creating lasting transformation that goes beyond individual wellness to reshape how our society understands and supports men.</p>
-    </section>
+    <!-- Pillars Visualization -->
+    <div class="pillars-visualization">
+      <div class="section-header">
+        <h2>How They Work Together</h2>
+        <p>An interconnected ecosystem where each pillar reinforces the others</p>
+      </div>
+      
+      <div class="visualization-container">
+        <div class="pillars-circle">
+          <div class="center-circle">Holistic Wellness</div>
+          
+          <!-- Connecting lines (dynamically created in JS) -->
+          
+          <!-- Pillar nodes -->
+          <div class="pillar-node node-1" data-pillar="1">01</div>
+          <div class="pillar-node node-2" data-pillar="2">02</div>
+          <div class="pillar-node node-3" data-pillar="3">03</div>
+          <div class="pillar-node node-4" data-pillar="4">04</div>
+          <div class="pillar-node node-5" data-pillar="5">05</div>
+          <div class="pillar-node node-6" data-pillar="6">06</div>
+        </div>
+        
+        <div class="visualization-info">
+          <h4>An Integrated Ecosystem</h4>
+          <p>These pillars are not isolated initiatives—they form a dynamic, interconnected ecosystem. A man entering through mental health therapy may discover community through brotherhood circles. Someone gaining economic empowerment becomes an advocate. Research informs policy, which shapes community programs. Physical wellness supports mental resilience. Every pathway reinforces the others, creating sustainable transformation that goes beyond individual healing to reshape how our society understands and supports men's holistic wellbeing.</p>
+          <p style="margin-top: 1rem; font-style: italic; color: #1a5f66;">Click on any pillar number in the visualization to learn more about that specific area.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Section -->
+    <div class="impact-section">
+      <div class="section-header">
+        <h2>Our Collective Impact</h2>
+        <p>Real-world results from our integrated approach to men's wellness</p>
+      </div>
+      
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <h4>Lives Transformed</h4>
+          <p>5,000+ men have accessed our services, with 89% reporting significant improvements in their mental health and overall wellbeing.</p>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h4>Community Built</h4>
+          <p>40+ brotherhood circles and support groups creating safe spaces for vulnerability, connection, and mutual support.</p>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h4>Economic Empowerment</h4>
+          <p>300+ men trained in job skills, with 75% securing employment or starting businesses within 6 months of completing programs.</p>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4>Partnerships Formed</h4>
+          <p>25+ community and corporate partners collaborating to expand access to men's wellness services across Kenya.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h3>Join Our Movement</h3>
+      <p>Be part of transforming how society supports men's mental health and holistic wellbeing. Whether you need support, want to volunteer, or wish to partner with us—your journey starts here.</p>
+      <div class="cta-buttons">
+        <button class="cta-btn cta-btn-primary" id="getSupportBtn">Get Support</button>
+        <button class="cta-btn cta-btn-secondary" id="volunteerBtn">Volunteer With Us</button>
+        <button class="cta-btn cta-btn-secondary" id="partnerBtn">Become a Partner</button>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -592,19 +1457,292 @@
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-            <div class="footer-section">
+      <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
           <li><a href="https://facebook.com/manwellwithin" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Manwell. All rights reserved. Transforming lives through holistic wellness.</p>
+      <p>&copy; 2024 Manwell. All rights reserved. | Building holistic wellness through six strategic pillars | Transforming men's lives across Kenya | Support: +254 754 151 315</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const pillarCards = document.querySelectorAll('.pillar-card');
+      const pillarNodes = document.querySelectorAll('.pillar-node');
+      const getSupportBtn = document.getElementById('getSupportBtn');
+      const volunteerBtn = document.getElementById('volunteerBtn');
+      const partnerBtn = document.getElementById('partnerBtn');
+      const pillarsCircle = document.querySelector('.pillars-circle');
+      
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      
+      // Observe pillar cards
+      pillarCards.forEach(card => {
+        observer.observe(card);
+      });
+      
+      // Pillar node click handlers
+      pillarNodes.forEach(node => {
+        node.addEventListener('click', function() {
+          const pillarNumber = this.getAttribute('data-pillar');
+          scrollToPillar(pillarNumber);
+        });
+        
+        node.addEventListener('mouseenter', function() {
+          const pillarNumber = this.getAttribute('data-pillar');
+          highlightPillar(pillarNumber);
+        });
+        
+        node.addEventListener('mouseleave', function() {
+          resetPillarHighlights();
+        });
+      });
+      
+      // Function to scroll to specific pillar
+      function scrollToPillar(pillarNumber) {
+        const targetPillar = document.querySelector(`.pillar-card[data-pillar="${pillarNumber}"]`);
+        if (targetPillar) {
+          // Add highlight effect
+          pillarCards.forEach(card => {
+            card.style.boxShadow = '0 5px 20px rgba(0,0,0,0.08)';
+            card.style.transform = 'translateY(0)';
+          });
+          
+          targetPillar.style.boxShadow = '0 15px 35px rgba(232,179,86,0.3)';
+          targetPillar.style.transform = 'translateY(-10px)';
+          
+          // Scroll to pillar
+          targetPillar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Remove highlight after 3 seconds
+          setTimeout(() => {
+            targetPillar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.08)';
+            targetPillar.style.transform = 'translateY(0)';
+          }, 3000);
+        }
+      }
+      
+      // Function to highlight pillar on hover
+      function highlightPillar(pillarNumber) {
+        pillarCards.forEach(card => {
+          if (card.getAttribute('data-pillar') === pillarNumber) {
+            card.style.boxShadow = '0 15px 35px rgba(232,179,86,0.3)';
+            card.style.transform = 'translateY(-10px)';
+          }
+        });
+      }
+      
+      // Function to reset highlights
+      function resetPillarHighlights() {
+        pillarCards.forEach(card => {
+          if (!card.classList.contains('visible')) return;
+          card.style.boxShadow = '0 5px 20px rgba(0,0,0,0.08)';
+          card.style.transform = 'translateY(0)';
+        });
+      }
+      
+      // Create connecting lines for visualization
+      function createConnectingLines() {
+        const centerX = pillarsCircle.offsetWidth / 2;
+        const centerY = pillarsCircle.offsetHeight / 2;
+        const nodes = document.querySelectorAll('.pillar-node');
+        
+        nodes.forEach(node => {
+          const nodeRect = node.getBoundingClientRect();
+          const parentRect = pillarsCircle.getBoundingClientRect();
+          
+          const nodeX = nodeRect.left - parentRect.left + node.offsetWidth / 2;
+          const nodeY = nodeRect.top - parentRect.top + node.offsetHeight / 2;
+          
+          // Calculate distance and angle
+          const dx = nodeX - centerX;
+          const dy = nodeY - centerY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+          
+          // Create line element
+          const line = document.createElement('div');
+          line.className = 'connecting-line';
+          line.style.width = distance + 'px';
+          line.style.left = centerX + 'px';
+          line.style.top = centerY + 'px';
+          line.style.transform = `rotate(${angle}deg)`;
+          
+          pillarsCircle.appendChild(line);
+        });
+      }
+      
+      // Wait for images to load before creating lines
+      window.addEventListener('load', createConnectingLines);
+      
+      // CTA Button Actions
+      getSupportBtn.addEventListener('click', function() {
+        const supportInfo = `
+Get Support from Manwell
+
+🤝 **Support Options:**
+1. **Mental Health Hub:** Individual and group therapy
+2. **Crisis Support:** 24/7 helpline for immediate help
+3. **Brotherhood Circles:** Peer support groups
+4. **Wellness Programs:** Holistic health services
+
+📞 **Immediate Help:**
+- Crisis Line: +254 754 151 315
+- Available 24/7, confidential
+- Free initial consultation
+
+🕒 **Office Hours:**
+Monday-Friday: 8AM-6PM
+Saturday: 9AM-1PM
+
+📍 **Locations:**
+- Syscraft Place, Westlands, Nairobi
+- Online sessions available nationwide
+
+Click OK to visit our Mental Health Hub, or Cancel to stay on this page.
+        `;
+        
+        const proceed = confirm(supportInfo);
+        if (proceed) {
+          // In a real implementation, this would redirect
+          window.location.href = '/mental-health';
+        }
+      });
+      
+      volunteerBtn.addEventListener('click', function() {
+        const volunteerInfo = `
+Volunteer with Manwell
+
+❤️ **Volunteer Opportunities:**
+1. **Peer Support:** Facilitate brotherhood circles
+2. **Event Support:** Help organize wellness events
+3. **Skills-Based:** Offer professional skills
+4. **Administrative:** Office and admin support
+5. **Outreach:** Community awareness campaigns
+
+📋 **Requirements:**
+- Passion for men's mental health
+- Minimum 6-month commitment
+- Training provided
+- Background check required
+
+📝 **Application Process:**
+1. Submit online application
+2. Initial screening interview
+3. Training & orientation
+4. Start volunteering!
+
+✉️ **Contact:**
+volunteer@manwellwithin.org
++254 754 151 315
+
+Click OK to apply now, or Cancel to stay on this page.
+        `;
+        
+        const proceed = confirm(volunteerInfo);
+        if (proceed) {
+          // In a real implementation, this would open application form
+          alert('Opening volunteer application form...\n\n(In a live site, this would open the application page)');
+        }
+      });
+      
+      partnerBtn.addEventListener('click', function() {
+        const partnerInfo = `
+Partner with Manwell
+
+🤝 **Partnership Types:**
+1. **Corporate Partnerships:** Employee wellness programs
+2. **Community Partners:** Collaborative programs
+3. **Research Partners:** Academic collaborations
+4. **Funding Partners:** Grants and donations
+5. **Media Partners:** Awareness campaigns
+
+🎯 **Benefits:**
+- Access to our men's wellness expertise
+- Positive social impact
+- Employee engagement opportunities
+- Brand alignment with mental health advocacy
+- Customized partnership packages
+
+📊 **Our Partners Include:**
+- Healthcare institutions
+- Educational organizations
+- Corporate wellness programs
+- Community-based organizations
+- Government agencies
+
+📞 **Contact Partnership Team:**
+partnerships@manwellwithin.org
++254 754 151 315
+
+Click OK to discuss partnership opportunities, or Cancel to stay on this page.
+        `;
+        
+        const proceed = confirm(partnerInfo);
+        if (proceed) {
+          // In a real implementation, this would open contact form
+          alert('Opening partnership inquiry form...\n\n(In a live site, this would open the contact form)');
+        }
+      });
+      
+      // Pillar card hover effects
+      pillarCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          const pillarNumber = this.getAttribute('data-pillar');
+          highlightNode(pillarNumber);
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          resetNodeHighlights();
+        });
+      });
+      
+      // Highlight corresponding node
+      function highlightNode(pillarNumber) {
+        pillarNodes.forEach(node => {
+          if (node.getAttribute('data-pillar') === pillarNumber) {
+            node.style.transform = 'scale(1.2)';
+            node.style.boxShadow = '0 8px 20px rgba(232,179,86,0.7)';
+          }
+        });
+      }
+      
+      // Reset node highlights
+      function resetNodeHighlights() {
+        pillarNodes.forEach(node => {
+          node.style.transform = '';
+          node.style.boxShadow = '0 4px 10px rgba(232,179,86,0.3)';
+        });
+      }
+      
+      // Initialize with a slight delay for animations
+      setTimeout(() => {
+        pillarCards.forEach(card => {
+          card.style.transition = 'all 0.4s ease';
+        });
+      }, 100);
+    });
+  </script>
 </body>
 </html>
