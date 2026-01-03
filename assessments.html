@@ -7,13 +7,56 @@
   <title>Assessments - Manwell</title>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
-    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
-    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
-
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    body { 
+      font-family: 'Source Sans Pro', sans-serif; 
+      color: #2c3e50; 
+      background: white; 
+    }
+    
+    /* ========== HEADER ========== */
+    header { 
+      background: white; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+    }
+    
+    .header-container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 1rem 2rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    
+    .logo { 
+      font-size: 1.3rem; 
+      font-weight: 700; 
+      color: #1a5f66; 
+      text-decoration: none; 
+      display: flex; 
+      align-items: center;
+      gap: 0.5rem; 
+    }
+    
+    /* UPDATED: Logo image styles to match your main site */
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+    
     /* ========== DONATE BUTTON ========== */
     .donate-btn {
       display: inline-block;
@@ -40,34 +83,7 @@
       transform: translateY(0);
     }
 
-
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
-    nav a:hover, nav a.active { color: #E8B356; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1631217314831-c6227db76b6e?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
-    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
-    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
-    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
-    .content-section { margin: 3rem 0; }
-    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
-    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
-    .assessment-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
-    .assessment-card { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
-    .assessment-card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
-    .assessment-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
-    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
-    .btn:hover { background: #d4a051; }
-    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
-    .footer-section ul { list-style: none; }
-    .footer-section li { margin-bottom: 0.6rem; }
-    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .footer-section a:hover { color: #E8B356; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .assessment-cards { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -138,13 +154,400 @@
       background-color: #f0f7f8;
       cursor: default;
     }
+
+    /* ========== HERO SECTION ========== */
+    .hero { 
+      background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), 
+                  url('https://images.unsplash.com/photo-1631217314831-c6227db76b6e?w=1200&h=400&fit=crop'); 
+      background-size: cover; 
+      background-position: center; 
+      color: white; 
+      padding: 180px 2rem 100px; 
+      margin-top: 60px; 
+      text-align: center; 
+    }
+    
+    .hero h1 { 
+      font-size: 3.5rem; 
+      font-family: 'Lora', serif; 
+      font-weight: 600; 
+    }
+    
+    /* ========== CONTENT CONTAINER ========== */
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 2rem; 
+    }
+    
+    /* ========== SECTION HEADER ========== */
+    .section-header { 
+      margin-bottom: 3rem; 
+      padding-top: 2rem; 
+    }
+    
+    .section-header h2 { 
+      font-size: 2.2rem; 
+      font-family: 'Lora', serif; 
+      color: #1a5f66; 
+      margin-bottom: 0.5rem; 
+      font-weight: 600; 
+      position: relative; 
+      display: inline-block; 
+    }
+    
+    .section-header h2:after { 
+      content: ''; 
+      position: absolute; 
+      bottom: -8px; 
+      left: 0; 
+      width: 60px; 
+      height: 3px; 
+      background: #E8B356; 
+    }
+    
+    /* ========== CONTENT SECTIONS ========== */
+    .content-section { 
+      margin: 3rem 0; 
+    }
+    
+    .content-section h3 { 
+      font-family: 'Lora', serif; 
+      color: #1a5f66; 
+      font-size: 1.3rem; 
+      margin: 2rem 0 1rem; 
+      font-weight: 600; 
+    }
+    
+    .content-section p { 
+      color: #666; 
+      line-height: 1.8; 
+      margin-bottom: 1rem; 
+    }
+    
+    /* ========== ASSESSMENT CARDS ========== */
+    .assessment-cards { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 2rem; 
+      margin: 3rem 0; 
+    }
+    
+    .assessment-card { 
+      background: #f8f9fa; 
+      padding: 2rem; 
+      border-left: 4px solid #E8B356; 
+      border-radius: 2px; 
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .assessment-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .assessment-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #1a5f66;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .assessment-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .assessment-card h4 { 
+      color: #1a5f66; 
+      font-family: 'Lora', serif; 
+      margin-bottom: 0.8rem; 
+      font-size: 1.1rem; 
+    }
+    
+    .assessment-card p { 
+      color: #666; 
+      font-size: 0.9rem; 
+      line-height: 1.6; 
+    }
+    
+    /* ========== PROCESS STEPS ========== */
+    .process-section {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      border-radius: 4px;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .step-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 4px;
+      text-align: center;
+      border: 1px solid rgba(26, 95, 102, 0.1);
+    }
+    
+    .step-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #E8B356;
+      color: white;
+      border-radius: 50%;
+      line-height: 40px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .step-card h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    .step-card p {
+      color: #666;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    
+    /* ========== BENEFITS SECTION ========== */
+    .benefits-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .benefit-icon {
+      color: #E8B356;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .benefit-item h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+    
+    .benefit-item p {
+      color: #666;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    
+    /* ========== BUTTONS ========== */
+    .btn { 
+      display: inline-block; 
+      padding: 0.8rem 1.8rem; 
+      background: #E8B356; 
+      color: white; 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      border: none; 
+      cursor: pointer; 
+      transition: 0.3s; 
+      border-radius: 2px; 
+      margin-top: 1rem;
+    }
+    
+    .btn:hover { 
+      background: #d4a051; 
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(232, 179, 86, 0.3);
+    }
+    
+    .btn-secondary {
+      background: #1a5f66;
+      border: 1px solid #1a5f66;
+    }
+    
+    .btn-secondary:hover {
+      background: transparent;
+      color: #1a5f66;
+    }
+    
+    .cta-section {
+      text-align: center;
+      margin: 4rem 0;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.1), rgba(232, 179, 86, 0.1));
+      border-radius: 4px;
+    }
+    
+    /* ========== FOOTER ========== */
+    footer { 
+      background: #1a5f66; 
+      color: white; 
+      padding: 3rem 2rem 1.5rem; 
+      margin-top: 4rem; 
+    }
+    
+    .footer-content { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 3rem; 
+      padding-bottom: 2rem; 
+      border-bottom: 1px solid rgba(255,255,255,0.1); 
+    }
+    
+    .footer-section h3 { 
+      color: #E8B356; 
+      font-family: 'Lora', serif; 
+      font-size: 1.1rem; 
+      margin-bottom: 1rem; 
+      font-weight: 600; 
+    }
+    
+    .footer-section ul { 
+      list-style: none; 
+    }
+    
+    .footer-section li { 
+      margin-bottom: 0.6rem; 
+    }
+    
+    .footer-section a { 
+      color: rgba(255,255,255,0.8); 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      transition: 0.3s; 
+    }
+    
+    .footer-section a:hover { 
+      color: #E8B356; 
+    }
+    
+    .footer-bottom { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding-top: 2rem; 
+      text-align: center; 
+      font-size: 0.85rem; 
+      color: rgba(255,255,255,0.7); 
+    }
+    
+    /* ========== RESPONSIVE DESIGN ========== */
+    @media (max-width: 768px) { 
+      .hero h1 { 
+        font-size: 2rem; 
+      } 
+      
+      .hero {
+        padding: 150px 1rem 80px;
+        margin-top: 80px;
+      }
+      
+      .assessment-cards { 
+        grid-template-columns: 1fr; 
+      } 
+      
+      .footer-content { 
+        grid-template-columns: 1fr; 
+      }
+      
+      /* Logo responsive sizing */
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+      
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+      
+      /* Navigation adjustments */
+      nav {
+        gap: 0.25rem;
+      }
+      
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+      
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+      
+      .process-steps,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-section {
+        padding: 2rem 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+      
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+      
+      .assessment-card {
+        padding: 1.5rem;
+      }
+      
+      .benefit-item {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="/home" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <!-- UPDATED: Logo with PNG image -->
+      <a href="/home" class="logo">
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
+      </a>
+      
       <nav>
         <div class="nav-item">
           <a href="/home">Home</a>
@@ -158,11 +561,11 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="#">Services ▼</a>
+          <a href="#" class="active">Services ▼</a>
           <div class="dropdown-menu">
             <div class="section-title">Mental Health</div>
             <a href="/mental-health">Mental Health Hub</a>
-            <a href="/assessments">Assessments</a>
+            <a href="/assessments" class="active">Assessments</a>
             <a href="/crisis">Crisis Support</a>
             <div class="section-title">Programs</div>
             <a href="/programs">Programs & Activities</a>
@@ -185,16 +588,20 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero"><h1>Mental Health Assessments</h1></section>
+  <section class="hero">
+    <h1>Mental Health Assessments</h1>
+  </section>
 
   <div class="container">
     <section class="content-section">
-      <h2 class="section-header" style="display: inline-block;"><span>Understanding Your Mental Health</span></h2>
+      <div class="section-header">
+        <h2>Understanding Your Mental Health</h2>
+      </div>
       <p>Our comprehensive mental health assessments are designed to provide you with a clear understanding of your emotional wellbeing, identify potential challenges, and create a foundation for personalized treatment planning.</p>
     </section>
 
@@ -225,11 +632,75 @@
       </div>
     </div>
 
-    <section class="content-section">
-      <h3>Assessment Process</h3>
-      <p>Our assessment process is thorough, respectful, and tailored to your specific needs. We begin with a detailed clinical interview, followed by standardized assessment tools and questionnaires. The results are compiled into a comprehensive report with recommendations for treatment or further evaluation.</p>
-      <button class="btn">Schedule Your Assessment</button>
-    </section>
+    <!-- Process Steps Section -->
+    <div class="process-section">
+      <h3 style="color: #1a5f66; font-family: 'Lora', serif; text-align: center; margin-bottom: 1rem;">Our Assessment Process</h3>
+      <div class="process-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Initial Consultation</h4>
+          <p>45-minute session to understand your concerns, history, and assessment goals.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Standardized Testing</h4>
+          <p>Evidence-based assessment tools administered by our clinical team.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Comprehensive Analysis</h4>
+          <p>Detailed review of results by our multidisciplinary team.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Results & Recommendations</h4>
+          <p>Personalized report with findings and treatment recommendations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits-section">
+      <h3 style="color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 1rem;">Benefits of Professional Assessment</h3>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">✓</div>
+          <div>
+            <h4>Accurate Diagnosis</h4>
+            <p>Clear understanding of your mental health condition for appropriate treatment.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">✓</div>
+          <div>
+            <h4>Personalized Treatment</h4>
+            <p>Customized treatment plans based on your specific assessment results.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">✓</div>
+          <div>
+            <h4>Early Intervention</h4>
+            <p>Identify concerns early for more effective treatment outcomes.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">✓</div>
+          <div>
+            <h4>Peace of Mind</h4>
+            <p>Clarity about your mental health and a clear path forward.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h3 style="color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 1rem;">Ready to Understand Your Mental Health?</h3>
+      <p style="color: #666; margin-bottom: 2rem;">Take the first step toward clarity and personalized care with our comprehensive assessment.</p>
+      <button class="btn" id="scheduleBtn">Schedule Your Assessment</button>
+      <a href="tel:+254754151315" class="btn btn-secondary" style="margin-left: 1rem;">📞 Call to Learn More</a>
+    </div>
   </div>
 
   <footer>
@@ -251,17 +722,53 @@
           <li>Syscraft Place, Sports Road, Westlands, Nairobi</li>
         </ul>
       </div>
-            <div class="footer-section">
+      <!-- UPDATED: All social media handles to @manwellwithin -->
+      <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
           <li><a href="https://facebook.com/manwellwithin" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. All rights reserved. | Follow us @manwellwithin</p>
+    </div>
   </footer>
+  
+  <script>
+    // Button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Schedule Assessment Button
+      const scheduleBtn = document.getElementById('scheduleBtn');
+      scheduleBtn.addEventListener('click', function() {
+        alert('Thank you for your interest in our mental health assessments. Please call +254 754 151 315 to schedule an appointment with our assessment team.');
+      });
+      
+      // Call Button functionality for desktop
+      const callBtn = document.querySelector('a[href="tel:+254754151315"]');
+      callBtn.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) {
+          e.preventDefault();
+          alert('Call +254 754 151 315 to speak with our assessment coordinator.');
+        }
+      });
+      
+      // Assessment card hover effects
+      const assessmentCards = document.querySelectorAll('.assessment-card');
+      assessmentCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
