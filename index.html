@@ -398,8 +398,9 @@
 
     /* ========== STATS SECTION ========== */
     .stats {
-      padding: 3rem 0;
+      padding: 4rem 0;
       border-top: 1px solid #e0e0e0;
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
     }
 
     .stats-grid {
@@ -411,20 +412,32 @@
 
     .stat-card {
       text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 4px;
+      border-top: 4px solid #E8B356;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      box-shadow: 0 4px 16px rgba(26, 95, 102, 0.15);
+      transform: translateY(-4px);
     }
 
     .stat-number {
       font-size: 3rem;
       font-weight: 700;
-      color: #1a5f66;
+      color: #E8B356;
       font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
     }
 
     .stat-label {
-      color: #666;
+      color: #1a5f66;
       margin-top: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Lora', serif;
     }
 
     /* ========== MISSION SECTION ========== */
@@ -881,23 +894,34 @@
   <!-- STATS SECTION -->
   <section class="stats">
     <div class="container">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem;">Our Impact This Year</h2>
+        <p style="color: #666; font-size: 0.95rem;">Transforming men's lives through compassionate, evidence-based mental health support</p>
+      </div>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Clients Served</div>
+          <div class="stat-number">2,847</div>
+          <div class="stat-label">Men Served</div>
+          <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem;">Individuals receiving support</p>
         </div>
         <div class="stat-card">
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Licensed Clinicians</div>
+          <div class="stat-number">1,256</div>
+          <div class="stat-label">Crisis Calls Answered</div>
+          <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem;">24/7 emergency support</p>
         </div>
         <div class="stat-card">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Years Experience</div>
+          <div class="stat-number">89</div>
+          <div class="stat-label">Support Groups</div>
+          <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem;">Active peer support programs</p>
         </div>
         <div class="stat-card">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Satisfaction Rate</div>
+          <div class="stat-number">KES 4.2M</div>
+          <div class="stat-label">Impact Donated</div>
+          <p style="font-size: 0.8rem; color: #999; margin-top: 0.5rem;">Generously contributed</p>
         </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/donate" class="btn">Help Us Reach More Men - Donate Today</a>
       </div>
     </div>
   </section>
