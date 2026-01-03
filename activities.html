@@ -9,10 +9,58 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
-    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
-    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    
+    /* ========== HEADER ========== */
+    header { 
+      background: white; 
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+    }
+    
+    .header-container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 1rem 2rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    
+    .logo { 
+      font-size: 1.3rem; 
+      font-weight: 700; 
+      color: #1a5f66; 
+      text-decoration: none; 
+      display: flex; 
+      align-items: center;
+      gap: 0.5rem; 
+    }
+    
+    /* UPDATED: Logo image styles to match your main site */
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+    
+    /* REMOVED: Old logo-icon styles
+    .logo-icon { 
+      width: 32px; 
+      height: 32px; 
+      background: #1a5f66; 
+      border-radius: 4px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: white; 
+      font-weight: 700; 
+    }
+    */
 
     /* ========== DONATE BUTTON ========== */
     .donate-btn {
@@ -40,35 +88,7 @@
       transform: translateY(0);
     }
 
-
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
-    nav a:hover, nav a.active { color: #E8B356; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
-    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
-    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
-    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
-    .content-section { margin: 3rem 0; }
-    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
-    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
-    .program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
-    .program-item { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
-    .program-item h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
-    .program-item ul { color: #666; font-size: 0.9rem; line-height: 1.8; margin-left: 1.5rem; }
-    .program-item li { margin-bottom: 0.5rem; }
-    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
-    .btn:hover { background: #d4a051; }
-    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
-    .footer-section ul { list-style: none; }
-    .footer-section li { margin-bottom: 0.6rem; }
-    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .footer-section a:hover { color: #E8B356; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .program-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -139,13 +159,258 @@
       background-color: #f0f7f8;
       cursor: default;
     }
+
+    /* ========== HERO SECTION ========== */
+    .hero { 
+      background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), 
+                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop'); 
+      background-size: cover; 
+      background-position: center; 
+      color: white; 
+      padding: 180px 2rem 100px; 
+      margin-top: 60px; 
+      text-align: center; 
+    }
+    
+    .hero h1 { 
+      font-size: 3.5rem; 
+      font-family: 'Lora', serif; 
+      font-weight: 600; 
+    }
+    
+    /* ========== CONTENT CONTAINER ========== */
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 2rem; 
+    }
+    
+    /* ========== SECTION HEADER ========== */
+    .section-header { 
+      margin-bottom: 3rem; 
+      padding-top: 2rem; 
+    }
+    
+    .section-header h2 { 
+      font-size: 2.2rem; 
+      font-family: 'Lora', serif; 
+      color: #1a5f66; 
+      margin-bottom: 0.5rem; 
+      font-weight: 600; 
+      position: relative; 
+      display: inline-block; 
+    }
+    
+    .section-header h2:after { 
+      content: ''; 
+      position: absolute; 
+      bottom: -8px; 
+      left: 0; 
+      width: 60px; 
+      height: 3px; 
+      background: #E8B356; 
+    }
+    
+    /* ========== CONTENT SECTIONS ========== */
+    .content-section { 
+      margin: 3rem 0; 
+    }
+    
+    .content-section h3 { 
+      font-family: 'Lora', serif; 
+      color: #1a5f66; 
+      font-size: 1.3rem; 
+      margin: 2rem 0 1rem; 
+      font-weight: 600; 
+    }
+    
+    .content-section p { 
+      color: #666; 
+      line-height: 1.8; 
+      margin-bottom: 1rem; 
+    }
+    
+    /* ========== PROGRAM GRID ========== */
+    .program-grid { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 2rem; 
+      margin: 3rem 0; 
+    }
+    
+    .program-item { 
+      background: #f8f9fa; 
+      padding: 2rem; 
+      border-left: 4px solid #E8B356; 
+      border-radius: 2px; 
+    }
+    
+    .program-item h4 { 
+      color: #1a5f66; 
+      font-family: 'Lora', serif; 
+      margin-bottom: 0.8rem; 
+      font-size: 1.1rem; 
+    }
+    
+    .program-item ul { 
+      color: #666; 
+      font-size: 0.9rem; 
+      line-height: 1.8; 
+      margin-left: 1.5rem; 
+    }
+    
+    .program-item li { 
+      margin-bottom: 0.5rem; 
+    }
+    
+    /* ========== BUTTONS ========== */
+    .btn { 
+      display: inline-block; 
+      padding: 0.8rem 1.8rem; 
+      background: #E8B356; 
+      color: white; 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      border: none; 
+      cursor: pointer; 
+      transition: 0.3s; 
+      border-radius: 2px; 
+    }
+    
+    .btn:hover { 
+      background: #d4a051; 
+    }
+    
+    /* ========== FOOTER ========== */
+    footer { 
+      background: #1a5f66; 
+      color: white; 
+      padding: 3rem 2rem 1.5rem; 
+      margin-top: 4rem; 
+    }
+    
+    .footer-content { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 3rem; 
+      padding-bottom: 2rem; 
+      border-bottom: 1px solid rgba(255,255,255,0.1); 
+    }
+    
+    .footer-section h3 { 
+      color: #E8B356; 
+      font-family: 'Lora', serif; 
+      font-size: 1.1rem; 
+      margin-bottom: 1rem; 
+      font-weight: 600; 
+    }
+    
+    .footer-section ul { 
+      list-style: none; 
+    }
+    
+    .footer-section li { 
+      margin-bottom: 0.6rem; 
+    }
+    
+    .footer-section a { 
+      color: rgba(255,255,255,0.8); 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      transition: 0.3s; 
+    }
+    
+    .footer-section a:hover { 
+      color: #E8B356; 
+    }
+    
+    .footer-bottom { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding-top: 2rem; 
+      text-align: center; 
+      font-size: 0.85rem; 
+      color: rgba(255,255,255,0.7); 
+    }
+    
+    /* ========== RESPONSIVE DESIGN ========== */
+    @media (max-width: 768px) { 
+      .hero h1 { 
+        font-size: 2rem; 
+      } 
+      
+      .hero {
+        padding: 150px 1rem 80px;
+        margin-top: 80px;
+      }
+      
+      .program-grid { 
+        grid-template-columns: 1fr; 
+      } 
+      
+      .footer-content { 
+        grid-template-columns: 1fr; 
+      }
+      
+      /* Logo responsive sizing */
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+      
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+      
+      /* Navigation adjustments */
+      nav {
+        gap: 0.25rem;
+      }
+      
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+      
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+      
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+      
+      .program-item {
+        padding: 1.5rem;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="/home" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <!-- UPDATED: Logo with PNG image -->
+      <a href="/home" class="logo">
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
+      </a>
+      
       <nav>
         <div class="nav-item">
           <a href="/home">Home</a>
@@ -159,14 +424,14 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="#">Services ▼</a>
+          <a href="#" class="active">Services ▼</a>
           <div class="dropdown-menu">
             <div class="section-title">Mental Health</div>
             <a href="/mental-health">Mental Health Hub</a>
             <a href="/assessments">Assessments</a>
             <a href="/crisis">Crisis Support</a>
             <div class="section-title">Programs</div>
-            <a href="/programs">Programs & Activities</a>
+            <a href="/programs" class="active">Programs & Activities</a>
             <a href="/marketplace">Therapy Marketplace</a>
           </div>
         </div>
@@ -186,12 +451,14 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero"><h1>Our Programs</h1></section>
+  <section class="hero">
+    <h1>Our Programs</h1>
+  </section>
 
   <div class="container">
     <section class="content-section">
@@ -286,17 +553,27 @@
           <li>Syscraft Place, Sports Road, Westlands, Nairobi</li>
         </ul>
       </div>
-            <div class="footer-section">
+      <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
           <li><a href="https://facebook.com/manwellwithin" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. All rights reserved.</p>
+    </div>
   </footer>
+  
+  <script>
+    // Simple button functionality
+    document.querySelector('.btn').addEventListener('click', function() {
+      alert('Thank you for your interest! Please call +254 754 151 315 to schedule a consultation.');
+    });
+  </script>
 </body>
 </html>
