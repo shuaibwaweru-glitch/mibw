@@ -3,16 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manwell Resource Library - Free mental health guides, self-help tools, meditation resources, and educational materials.">
   <meta name="theme-color" content="#1a5f66">
   <title>Resources - Manwell</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
-    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
-    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #ffffff;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a5f66;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
 
     /* ========== DONATE BUTTON ========== */
     .donate-btn {
@@ -40,34 +86,7 @@
       transform: translateY(0);
     }
 
-
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
-    nav a:hover, nav a.active { color: #E8B356; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1507842217343-583f20270319?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
-    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
-    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
-    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
-    .content-section { margin: 3rem 0; }
-    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
-    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
-    .resource-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin: 3rem 0; }
-    .resource-item { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
-    .resource-item h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.8rem; font-size: 1.1rem; }
-    .resource-item p { color: #666; font-size: 0.9rem; line-height: 1.6; }
-    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
-    .btn:hover { background: #d4a051; }
-    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
-    .footer-section ul { list-style: none; }
-    .footer-section li { margin-bottom: 0.6rem; }
-    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .footer-section a:hover { color: #E8B356; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .resource-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -138,13 +157,570 @@
       background-color: #f0f7f8;
       cursor: default;
     }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(135deg, rgba(26,95,102,0.8), rgba(232,179,86,0.8)), 
+                  url('https://images.unsplash.com/photo-1507842217343-583f20270319?w=1200&h=500&fit=crop') center/cover;
+      color: white;
+      padding: 140px 2rem 80px;
+      text-align: center;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #E8B356;
+    }
+
+    /* ========== CONTENT SECTION ========== */
+    .content-section {
+      margin: 3rem 0;
+    }
+
+    .content-section h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      font-weight: 600;
+    }
+
+    .content-section p {
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ========== RESOURCE FILTER ========== */
+    .resource-filter {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      background: white;
+      color: #1a5f66;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .filter-btn:hover {
+      border-color: #E8B356;
+      color: #E8B356;
+    }
+
+    .filter-btn.active {
+      background: #E8B356;
+      color: white;
+      border-color: #E8B356;
+    }
+
+    /* ========== RESOURCE GRID ========== */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .resource-item {
+      background: #f8f9fa;
+      padding: 2.5rem 2rem;
+      border-left: 4px solid #E8B356;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .resource-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1a5f66 0%, #E8B356 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .resource-item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .resource-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1a5f66;
+    }
+
+    .resource-item h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .resource-item p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    /* ========== RESOURCE TAGS ========== */
+    .resource-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .resource-tag {
+      background: rgba(232, 179, 86, 0.1);
+      color: #1a5f66;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .btn:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #1a5f66;
+    }
+
+    .btn-secondary:hover {
+      background: #154a4e;
+      box-shadow: 0 4px 12px rgba(26,95,102,0.3);
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .btn-full {
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .resource-btn {
+      background: rgba(26, 95, 102, 0.1);
+      color: #1a5f66;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      align-self: flex-start;
+    }
+
+    .resource-btn:hover {
+      background: #1a5f66;
+      color: white;
+    }
+
+    /* ========== DOWNLOAD SECTION ========== */
+    .download-section {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+    }
+
+    .download-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .download-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .download-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .download-icon {
+      font-size: 2rem;
+      color: #1a5f66;
+      flex-shrink: 0;
+    }
+
+    .download-info h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .download-info p {
+      color: #666;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .download-size {
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    /* ========== QUICK SUPPORT ========== */
+    .quick-support {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 4px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .quick-support h3 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .support-options {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .support-option {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      flex: 1;
+      min-width: 200px;
+      max-width: 300px;
+    }
+
+    .support-option:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .support-option h4 {
+      color: #E8B356;
+      margin-bottom: 0.5rem;
+      font-family: 'Lora', serif;
+    }
+
+    /* ========== FAQ SECTION ========== */
+    .faq-section {
+      margin: 3rem 0;
+    }
+
+    .faq-item {
+      background: #f8f9fa;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #1a5f66;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(26, 95, 102, 0.05);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      max-height: 500px;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #1a5f66;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #E8B356;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .download-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+
+      nav {
+        gap: 0.25rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .resource-grid,
+      .download-items {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      .content-section h3 {
+        font-size: 1.5rem;
+      }
+
+      .support-options {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .support-option {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 120px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+
+      .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+      }
+
+      .resource-filter {
+        justify-content: center;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="header-container">
-      <a href="/home" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <a href="/home" class="logo">
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
+      </a>
       <nav>
         <div class="nav-item">
           <a href="/home">Home</a>
@@ -153,6 +729,7 @@
           <a href="#">About ▼</a>
           <div class="dropdown-menu">
             <a href="/about">Our Mission & Values</a>
+            <a href="/strategy">Our Strategy</a>
             <a href="/experts">Our Experts</a>
             <a href="/stories">Member Stories</a>
           </div>
@@ -179,101 +756,540 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="#">Resources ▼</a>
+          <a href="#" class="active">Resources ▼</a>
           <div class="dropdown-menu">
-            <a href="/resources">Resource Library</a>
+            <a href="/resources" class="active">Resource Library</a>
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero"><h1>Resources & Support</h1></section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Resources & Support</h1>
+    <p>Free Mental Health Tools, Guides, and Educational Materials</p>
+  </section>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
     <section class="content-section">
       <h3>Mental Health Resources at Your Fingertips</h3>
-      <p>We provide comprehensive resources to support your mental health journey. From educational materials to self-help tools, our resource library is designed to empower you with knowledge and practical strategies.</p>
+      <p>We provide comprehensive, evidence-based resources to support your mental health journey. From educational materials to self-help tools, our resource library is designed to empower you with knowledge and practical strategies. All resources are free and accessible to everyone.</p>
+      <p>Browse our collection, download helpful tools, and find the support you need to thrive.</p>
     </section>
 
-    <div class="section-header">
-      <h2>Available Resources</h2>
+    <!-- Resource Filter -->
+    <div class="resource-filter" id="resourceFilter">
+      <button class="filter-btn active" data-filter="all">All Resources</button>
+      <button class="filter-btn" data-filter="guides">Guides</button>
+      <button class="filter-btn" data-filter="tools">Self-Help Tools</button>
+      <button class="filter-btn" data-filter="mindfulness">Mindfulness</button>
+      <button class="filter-btn" data-filter="articles">Articles</button>
+      <button class="filter-btn" data-filter="support">Support</button>
     </div>
 
-    <div class="resource-grid">
-      <div class="resource-item">
+    <!-- Resource Grid -->
+    <div class="resource-grid" id="resourceGrid">
+      <!-- Mental Health Guides -->
+      <div class="resource-item" data-category="guides">
+        <div class="resource-icon">📚</div>
         <h4>Mental Health Guides</h4>
-        <p>Comprehensive guides covering common mental health conditions, symptoms, and evidence-based treatment approaches.</p>
+        <p>Comprehensive guides covering common mental health conditions, symptoms, evidence-based treatments, and recovery pathways.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">PDF</span>
+          <span class="resource-tag">Comprehensive</span>
+          <span class="resource-tag">Educational</span>
+        </div>
+        <button class="resource-btn" data-resource="mental-health-guide">Download Guide</button>
       </div>
-      <div class="resource-item">
-        <h4>Self-Help Tools</h4>
-        <p>Interactive worksheets, journals, and exercises for managing anxiety, depression, stress, and other challenges.</p>
+      
+      <!-- Self-Help Tools -->
+      <div class="resource-item" data-category="tools">
+        <div class="resource-icon">📝</div>
+        <h4>Self-Help Worksheets</h4>
+        <p>Interactive worksheets, journals, and exercises for managing anxiety, depression, stress, and building emotional resilience.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Interactive</span>
+          <span class="resource-tag">Printable</span>
+          <span class="resource-tag">Practical</span>
+        </div>
+        <button class="resource-btn" data-resource="worksheets">View Worksheets</button>
       </div>
-      <div class="resource-item">
+      
+      <!-- Meditation & Mindfulness -->
+      <div class="resource-item" data-category="mindfulness">
+        <div class="resource-icon">🧘</div>
         <h4>Meditation & Mindfulness</h4>
         <p>Guided meditations, breathing exercises, and mindfulness activities to reduce stress and improve mental clarity.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Audio</span>
+          <span class="resource-tag">Guided</span>
+          <span class="resource-tag">Daily Practice</span>
+        </div>
+        <button class="resource-btn" data-resource="meditation">Access Audio</button>
       </div>
-      <div class="resource-item">
+      
+      <!-- Educational Videos -->
+      <div class="resource-item" data-category="articles">
+        <div class="resource-icon">🎬</div>
         <h4>Educational Videos</h4>
         <p>Video resources explaining mental health concepts, coping strategies, and treatment options in accessible formats.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Video</span>
+          <span class="resource-tag">Educational</span>
+          <span class="resource-tag">Expert-Led</span>
+        </div>
+        <button class="resource-btn" data-resource="videos">Watch Videos</button>
       </div>
-      <div class="resource-item">
+      
+      <!-- Articles & Blog -->
+      <div class="resource-item" data-category="articles">
+        <div class="resource-icon">📰</div>
         <h4>Articles & Blog</h4>
-        <p>Expert articles on mental health topics, wellness tips, and stories from our community members.</p>
+        <p>Expert articles on mental health topics, wellness tips, research updates, and inspiring stories from our community.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Articles</span>
+          <span class="resource-tag">Research</span>
+          <span class="resource-tag">Stories</span>
+        </div>
+        <button class="resource-btn" data-resource="articles">Read Articles</button>
       </div>
-      <div class="resource-item">
-        <h4>Wellness Apps</h4>
-        <p>Recommendations for evidence-based mobile applications for meditation, mood tracking, and mental wellness.</p>
+      
+      <!-- Wellness Apps -->
+      <div class="resource-item" data-category="tools">
+        <div class="resource-icon">📱</div>
+        <h4>Wellness Apps Guide</h4>
+        <p>Curated recommendations for evidence-based mobile applications for meditation, mood tracking, and mental wellness.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Apps</span>
+          <span class="resource-tag">Mobile</span>
+          <span class="resource-tag">Reviews</span>
+        </div>
+        <button class="resource-btn" data-resource="apps">View Recommendations</button>
       </div>
-      <div class="resource-item">
+      
+      <!-- Support Communities -->
+      <div class="resource-item" data-category="support">
+        <div class="resource-icon">🤝</div>
         <h4>Support Communities</h4>
         <p>Connections to online and in-person support groups for various mental health conditions and life experiences.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Community</span>
+          <span class="resource-tag">Support Groups</span>
+          <span class="resource-tag">Peer Support</span>
+        </div>
+        <button class="resource-btn" data-resource="communities">Find Groups</button>
       </div>
-      <div class="resource-item">
-        <h4>Insurance Information</h4>
-        <p>Resources to help you navigate insurance coverage for mental health services and treatment options.</p>
+      
+      <!-- Insurance Information -->
+      <div class="resource-item" data-category="guides">
+        <div class="resource-icon">💼</div>
+        <h4>Insurance Guide</h4>
+        <p>Resources to help you navigate insurance coverage for mental health services and understand treatment options.</p>
+        <div class="resource-tags">
+          <span class="resource-tag">Insurance</span>
+          <span class="resource-tag">Financial</span>
+          <span class="resource-tag">Guide</span>
+        </div>
+        <button class="resource-btn" data-resource="insurance">Download Guide</button>
       </div>
     </div>
 
-    <section class="content-section">
-      <h3>Additional Support</h3>
-      <p>All of our resources are free to access. We believe that education and support should be available to everyone. If you need personalized assistance, our team is always ready to help.</p>
-      <button class="btn">Contact Our Team</button>
+    <!-- Download Section -->
+    <div class="download-section">
+      <div class="section-header">
+        <h2>Popular Downloads</h2>
+      </div>
+      <div class="download-items">
+        <div class="download-item">
+          <div class="download-icon">📥</div>
+          <div class="download-info">
+            <h4>Anxiety Workbook</h4>
+            <p>30-day anxiety management program</p>
+            <p class="download-size">PDF • 2.4 MB</p>
+            <button class="btn btn-small" data-download="anxiety-workbook">Download</button>
+          </div>
+        </div>
+        <div class="download-item">
+          <div class="download-icon">📥</div>
+          <div class="download-info">
+            <h4>Sleep Hygiene Guide</h4>
+            <p>Improve sleep quality naturally</p>
+            <p class="download-size">PDF • 1.8 MB</p>
+            <button class="btn btn-small" data-download="sleep-guide">Download</button>
+          </div>
+        </div>
+        <div class="download-item">
+          <div class="download-icon">📥</div>
+          <div class="download-info">
+            <h4>Mindfulness Journal</h4>
+            <p>30-day mindfulness practice journal</p>
+            <p class="download-size">PDF • 3.1 MB</p>
+            <button class="btn btn-small" data-download="mindfulness-journal">Download</button>
+          </div>
+        </div>
+        <div class="download-item">
+          <div class="download-icon">📥</div>
+          <div class="download-info">
+            <h4>Stress Relief Toolkit</h4>
+            <p>Immediate stress reduction techniques</p>
+            <p class="download-size">PDF • 2.7 MB</p>
+            <button class="btn btn-small" data-download="stress-toolkit">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Support Section -->
+    <div class="quick-support">
+      <h3>Need Immediate Help?</h3>
+      <p>We're here for you 24/7. Don't hesitate to reach out for support.</p>
+      <div class="support-options">
+        <div class="support-option">
+          <h4>Crisis Support</h4>
+          <p><a href="tel:+254754151315" style="color: #E8B356; text-decoration: none; font-weight: 600;">+254 754 151 315</a></p>
+          <p style="font-size: 0.9rem; opacity: 0.9;">24/7 Emergency Line</p>
+        </div>
+        <div class="support-option">
+          <h4>Chat Support</h4>
+          <p><a href="javascript:void(0)" id="chatSupportBtn" style="color: #E8B356; text-decoration: none; font-weight: 600;">Start Chat</a></p>
+          <p style="font-size: 0.9rem; opacity: 0.9;">Online 9AM-9PM Daily</p>
+        </div>
+        <div class="support-option">
+          <h4>Email Support</h4>
+          <p><a href="mailto:hello@manwellwithin.org" style="color: #E8B356; text-decoration: none; font-weight: 600;">hello@manwellwithin.org</a></p>
+          <p style="font-size: 0.9rem; opacity: 0.9;">Response within 24 hours</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            Are these resources really free?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! All resources in our library are completely free. We believe mental health support should be accessible to everyone. You don't need to create an account or provide payment information to access any of our materials.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Who creates the resources?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Our resources are created by licensed mental health professionals, including psychologists, therapists, and counselors on our team. All materials are evidence-based and regularly reviewed to ensure accuracy and effectiveness.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Can I share these resources with others?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! We encourage you to share our resources with friends, family, or anyone who might benefit from them. You can print worksheets, forward links, or share downloads. The more people who access mental health support, the better.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            How often are new resources added?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We add new resources monthly. Subscribe to our newsletter or follow us on social media @manwellwithin to stay updated on new materials, workshops, and support options.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            Are these resources a substitute for therapy?
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>While our resources can support mental wellness, they are not a substitute for professional therapy. If you're experiencing significant distress, please contact a mental health professional. We can help you find a therapist through our Find a Therapist service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="content-section" style="text-align: center;">
+      <h3>Can't Find What You Need?</h3>
+      <p>If you're looking for specific resources or have questions about mental health support, our team is here to help. Contact us for personalized assistance.</p>
+      <button class="btn btn-secondary" id="contactTeamBtn">Contact Our Team</button>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">Response within 24 hours | Free consultations available</p>
     </section>
   </div>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
+    <div class="footer-container">
       <div class="footer-section">
-        <h3>Our Services</h3>
+        <h3>Services</h3>
         <ul>
-          <li><a href="/mental-health">Clinical Therapy</a></li>
+          <li><a href="/mental-health">Mental Health Hub</a></li>
           <li><a href="/assessments">Assessments</a></li>
-          <li><a href="/community">Group Programs</a></li>
           <li><a href="/crisis">Crisis Support</a></li>
+          <li><a href="/find-therapist">Find a Therapist</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3>Contact</h3>
+        <h3>Company</h3>
         <ul>
-          <li><a href="tel:+254754151315">+254 754 151 315</a></li>
-          <li><a href="mailto:hello@mibw.org">hello@mibw.org</a></li>
-          <li>Syscraft Place, Sports Road, Westlands, Nairobi</li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/experts">Our Team</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-            <div class="footer-section">
+      <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
           <li><a href="https://facebook.com/manwellwithin" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. All rights reserved. | Free mental health resources | Follow @manwellwithin | Support: +254 754 151 315</p>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const resourceItems = document.querySelectorAll('.resource-item');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const resourceButtons = document.querySelectorAll('.resource-btn');
+      const downloadButtons = document.querySelectorAll('[data-download]');
+      const chatSupportBtn = document.getElementById('chatSupportBtn');
+      const contactTeamBtn = document.getElementById('contactTeamBtn');
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      // Resource Filtering
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Filter resource items
+          resourceItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = 'flex';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Resource Button Clicks
+      resourceButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const resource = this.getAttribute('data-resource');
+          const resourceTitle = this.closest('.resource-item').querySelector('h4').textContent;
+          
+          const resourceInfo = {
+            'mental-health-guide': {
+              title: 'Mental Health Guide',
+              description: 'Download our comprehensive mental health guide covering common conditions and treatment options.',
+              size: '3.2 MB',
+              format: 'PDF'
+            },
+            'worksheets': {
+              title: 'Self-Help Worksheets',
+              description: 'Access interactive worksheets for anxiety, depression, and stress management.',
+              size: '1.8 MB',
+              format: 'PDF'
+            },
+            'meditation': {
+              title: 'Meditation Audio',
+              description: 'Listen to guided meditation sessions for stress relief and mindfulness.',
+              size: 'Audio Collection',
+              format: 'MP3'
+            },
+            'videos': {
+              title: 'Educational Videos',
+              description: 'Watch expert-led videos on mental health topics and coping strategies.',
+              size: 'Video Library',
+              format: 'Online'
+            },
+            'articles': {
+              title: 'Articles & Blog',
+              description: 'Read evidence-based articles and inspiring community stories.',
+              size: 'Regular Updates',
+              format: 'Online'
+            },
+            'apps': {
+              title: 'Wellness Apps Guide',
+              description: 'Get curated recommendations for mental wellness mobile applications.',
+              size: '1.5 MB',
+              format: 'PDF'
+            },
+            'communities': {
+              title: 'Support Communities',
+              description: 'Find online and in-person support groups for various experiences.',
+              size: 'Directory',
+              format: 'Online'
+            },
+            'insurance': {
+              title: 'Insurance Guide',
+              description: 'Navigate mental health insurance coverage and financial options.',
+              size: '2.1 MB',
+              format: 'PDF'
+            }
+          };
+          
+          const info = resourceInfo[resource] || {
+            title: resourceTitle,
+            description: 'Access this resource to support your mental health journey.',
+            size: 'Available',
+            format: 'Multiple Formats'
+          };
+          
+          const confirmAccess = confirm(`Access ${info.title}\n\n${info.description}\n\nFormat: ${info.format}\nSize: ${info.size}\n\nClick OK to access this resource, or Cancel to browse others.`);
+          
+          if (confirmAccess) {
+            // In a real implementation, this would redirect to the resource
+            alert(`Thank you for your interest in "${info.title}"!\n\nThis resource will open in a new window. If nothing happens, please contact us at hello@manwellwithin.org for assistance.\n\nRemember, all our resources are free and accessible to everyone.`);
+            // window.open(`/resources/${resource}`, '_blank');
+          }
+        });
+      });
+      
+      // Download Buttons
+      downloadButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const download = this.getAttribute('data-download');
+          const fileName = this.closest('.download-info').querySelector('h4').textContent;
+          const fileSize = this.closest('.download-info').querySelector('.download-size').textContent;
+          
+          const confirmDownload = confirm(`Download ${fileName}\n\n${fileSize}\n\nClick OK to download this file, or Cancel to browse other resources.`);
+          
+          if (confirmDownload) {
+            // Simulate download
+            this.textContent = 'Downloading...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+              this.textContent = 'Downloaded ✓';
+              setTimeout(() => {
+                this.textContent = 'Download';
+                this.disabled = false;
+                alert(`"${fileName}" has been downloaded!\n\nCheck your downloads folder. If you have any issues, contact hello@manwellwithin.org for assistance.`);
+              }, 1000);
+            }, 1500);
+          }
+        });
+      });
+      
+      // Chat Support
+      chatSupportBtn.addEventListener('click', function() {
+        const chatHours = "9:00 AM - 9:00 PM Daily";
+        const chatConfirm = confirm(`Start Live Chat Support\n\nAvailable: ${chatHours}\n\nOur trained support staff are ready to help with:\n• Resource questions\n• Mental health information\n• Support options\n\nClick OK to start chat, or Cancel to call +254 754 151 315`);
+        
+        if (chatConfirm) {
+          // In real implementation, this would open chat widget
+          alert('Chat Support\n\nOur chat support will open in a new window. If nothing happens, please refresh the page or call +254 754 151 315 for immediate assistance.\n\nThank you for reaching out for support!');
+          // Open chat widget here
+        }
+      });
+      
+      // Contact Team Button
+      contactTeamBtn.addEventListener('click', function() {
+        const contactOptions = `
+Contact Options:
+• Call: +254 754 151 315
+• Email: hello@manwellwithin.org
+• Visit: Syscraft Place, Westlands
+• Hours: Mon-Fri 9AM-6PM
+
+Our team can help with:
+• Resource recommendations
+• Therapy referrals
+• Program information
+• General questions
+        `;
+        
+        alert(contactOptions);
+      });
+      
+      // FAQ Accordion
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+          // Close other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      });
+      
+      // Resource item hover effects
+      resourceItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          if (!this.style.display || this.style.display !== 'none') {
+            this.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      
+      // Download item hover effects
+      const downloadItems = document.querySelectorAll('.download-item');
+      downloadItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-3px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+      
+      // Support option hover effects
+      const supportOptions = document.querySelectorAll('.support-option');
+      supportOptions.forEach(option => {
+        option.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-3px)';
+        });
+        
+        option.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
