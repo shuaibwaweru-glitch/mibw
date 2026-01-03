@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Therapy Marketplace - Connect with certified therapists. Find your perfect match today.">
+  <meta name="theme-color" content="#1a5f66">
+  <title>Therapy Marketplace - Manwell</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #ffffff;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a5f66;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: #1a5f66;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* ========== DROPDOWN NAVIGATION ========== */
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item > a {
+      display: block;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item > a:hover {
+      color: #E8B356;
+    }
+
+    .nav-item > a.active {
+      color: #E8B356;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      min-width: 220px;
+      z-index: 1001;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      text-decoration: none;
+      color: #666;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #E8B356;
+    }
+
+    .dropdown-menu .section-title {
+      padding: 0.8rem 1.2rem;
+      color: #1a5f66;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      background-color: #f0f7f8;
+      cursor: default;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(rgba(26,95,102,0.5), rgba(26,95,102,0.5)), 
+                  url('https://images.unsplash.com/photo-1576091160550-112173e7d48f?w=1200&h=400&fit=crop') center/cover;
+      color: white;
+      padding: 120px 2rem 80px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #E8B356;
+    }
+
+    /* ========== THERAPIST CARDS ========== */
+    .therapist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .therapist-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-left: 4px solid #E8B356;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .therapist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(26,95,102,0.1);
+    }
+
+    .therapist-card h3 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .therapist-card .specialty {
+      color: #E8B356;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .therapist-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .therapy-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .therapy-tag {
+      background: #1a5f66;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      border-radius: 20px;
+    }
+
+    .btn {
+      background-color: #E8B356;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #d4a051;
+      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
+    }
+
+    /* ========== FILTERS ========== */
+    .filter-section {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-left: 4px solid #E8B356;
+      margin-bottom: 2rem;
+    }
+
+    .filter-section h3 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+    }
+
+    .filter-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .filter-group input,
+    .filter-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #1a5f66;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #E8B356;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .therapist-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+      }
+
+      .nav-item:hover .dropdown-menu {
+        display: none;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 100px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      nav {
+        gap: 0.2rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.8rem;
+      }
+    }    /* ========== DROPDOWN NAVIGATION ========== */
+    nav {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item > a {
+      display: block;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-item > a:hover,
+    .nav-item > a.active {
+      color: #E8B356;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      min-width: 220px;
+      z-index: 1001;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 0.8rem 1.2rem;
+      text-decoration: none;
+      color: #666;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #E8B356;
+    }
+
+    .dropdown-menu .section-title {
+      padding: 0.8rem 1.2rem;
+      color: #1a5f66;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      background-color: #f0f7f8;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        Manwell
+      </a>
+      <nav>
+        <div class="nav-item">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">About ▼</a>
+          <div class="dropdown-menu">
+            <a href="mission.html">Our Mission & Values</a>
+            <a href="experts.html">Our Experts</a>
+            <a href="stories.html">Member Stories</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#">Services ▼</a>
+          <div class="dropdown-menu">
+            <div class="section-title">Mental Health</div>
+            <a href="mental-health-hub.html">Mental Health Hub</a>
+            <a href="assessments.html">Assessments</a>
+            <a href="crisis.html">Crisis Support</a>
+            <div class="section-title">Programs</div>
+            <a href="activities.html">Programs & Activities</a>
+            <a href="therapy-marketplace.html">Therapy Marketplace</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#">Community ▼</a>
+          <div class="dropdown-menu">
+            <a href="community.html">Community Programs</a>
+            <a href="therapist-directory.html">Find a Therapist</a>
+            <a href="gallery.html">Our Gallery</a>
+            <a href="videos.html">Educational Videos</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#">Resources ▼</a>
+          <div class="dropdown-menu">
+            <a href="resources.html">Resource Library</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Therapy Marketplace</h1>
+    <p>Find and connect with licensed therapists that match your needs</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <h2 class="section-header">Find Your Perfect Therapist</h2>
+    
+    <!-- Filters -->
+    <div class="filter-section">
+      <h3>Filter by Specialty</h3>
+      <div class="filter-group">
+        <label for="specialty">Specialty</label>
+        <select id="specialty">
+          <option value="">All Specialties</option>
+          <option value="anxiety">Anxiety Disorders</option>
+          <option value="depression">Depression</option>
+          <option value="trauma">Trauma & PTSD</option>
+          <option value="family">Family Therapy</option>
+          <option value="couples">Couples Therapy</option>
+          <option value="addiction">Addiction</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="approach">Therapeutic Approach</label>
+        <select id="approach">
+          <option value="">All Approaches</option>
+          <option value="cbt">Cognitive Behavioral Therapy (CBT)</option>
+          <option value="dbt">Dialectical Behavior Therapy (DBT)</option>
+          <option value="psychodynamic">Psychodynamic Therapy</option>
+          <option value="mindfulness">Mindfulness-Based</option>
+          <option value="emdr">EMDR</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Therapist Grid -->
+    <div class="therapist-grid">
+      <div class="therapist-card">
+        <h3>Dr. Sarah Mitchell</h3>
+        <div class="specialty">Clinical Psychologist</div>
+        <p>Specializing in anxiety, depression, and life transitions. 10+ years of experience with evidence-based therapies.</p>
+        <div class="therapy-types">
+          <span class="therapy-tag">CBT</span>
+          <span class="therapy-tag">Mindfulness</span>
+          <span class="therapy-tag">Anxiety</span>
+        </div>
+        <button class="btn">View Profile</button>
+      </div>
+
+      <div class="therapist-card">
+        <h3>James Rodriguez</h3>
+        <div class="specialty">Marriage & Family Therapist</div>
+        <p>Expert in couples counseling and family dynamics. Helps improve communication and strengthen relationships.</p>
+        <div class="therapy-types">
+          <span class="therapy-tag">Family Therapy</span>
+          <span class="therapy-tag">Couples</span>
+          <span class="therapy-tag">Communication</span>
+        </div>
+        <button class="btn">View Profile</button>
+      </div>
+
+      <div class="therapist-card">
+        <h3>Dr. Emily Chen</h3>
+        <div class="specialty">Psychiatric Nurse Specialist</div>
+        <p>Combines medication management with therapy. Specializes in mood disorders and psychiatric care coordination.</p>
+        <div class="therapy-types">
+          <span class="therapy-tag">Psychiatry</span>
+          <span class="therapy-tag">Depression</span>
+          <span class="therapy-tag">Medication</span>
+        </div>
+        <button class="btn">View Profile</button>
+      </div>
+
+      <div class="therapist-card">
+        <h3>Michael Thompson</h3>
+        <div class="specialty">Trauma Specialist</div>
+        <p>Certified in EMDR and trauma-focused CBT. Dedicated to helping clients heal from trauma and PTSD.</p>
+        <div class="therapy-types">
+          <span class="therapy-tag">EMDR</span>
+          <span class="therapy-tag">Trauma</span>
+          <span class="therapy-tag">PTSD</span>
+        </div>
+        <button class="btn">View Profile</button>
+      </div>
+
+      <div class="therapist-card">
+        <h3>Dr. Patricia Gonzalez</h3>
+        <div class="specialty">Child & Adolescent Psychologist</div>
+        <p>Specializes in working with children and teens. Expert in behavioral issues, school challenges, and development.</p>
+        <div class="therapy-types">
+          <span class="therapy-tag">Child Therapy</span>
+          <span class="therapy-tag">Adolescent</span>
+          <span class="therapy-tag">Development</span>
+        </div>
+        <button class="btn">View Profile</button>
+      </div>
+
+      <div class="therapist-card">
+        <h3>David Harrison</h3>
+        <div class="specialty">Addiction Counselor</div>
+        <p>Licensed addiction specialist with 15+ years in substance abuse recovery. Compassionate and evidence-based approach.</p>
+        <div class="therapy-types">
+          <span class="therapy-tag">Addiction</span>
+          <span class="therapy-tag">Recovery</span>
+          <span class="therapy-tag">Substance Abuse</span>
+        </div>
+        <button class="btn">View Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="mental-health-hub.html">Mental Health Hub</a></li>
+          <li><a href="assessments.html">Assessments</a></li>
+          <li><a href="crisis.html">Crisis Support</a></li>
+          <li><a href="therapy-marketplace.html">Therapy Marketplace</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="mission.html">About Us</a></li>
+          <li><a href="experts.html">Our Team</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Manwell. All rights reserved. Compassion in every interaction.</p>
+    </div>
+  </footer>
+</body>
+</html>
