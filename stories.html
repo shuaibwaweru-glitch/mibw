@@ -3,16 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manwell Member Stories - Inspiring journeys of healing, hope, and transformation from our community.">
   <meta name="theme-color" content="#1a5f66">
   <title>Member Stories - Manwell</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
-    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
-    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #ffffff;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a5f66;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
 
     /* ========== DONATE BUTTON ========== */
     .donate-btn {
@@ -40,34 +86,7 @@
       transform: translateY(0);
     }
 
-
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
-    nav a:hover, nav a.active { color: #E8B356; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
-    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
-    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
-    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
-    .stories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin: 3rem 0; }
-    .story-card { background: #f8f9fa; padding: 2rem; border-left: 4px solid #E8B356; border-radius: 2px; }
-    .story-card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.5rem; font-size: 1.1rem; }
-    .story-card .story-title { color: #E8B356; font-size: 0.85rem; margin-bottom: 1rem; font-style: italic; }
-    .story-card p { color: #666; font-size: 0.9rem; line-height: 1.8; }
-    .cta-box { background: #1a5f66; color: white; padding: 3rem 2rem; text-align: center; margin: 3rem 0; border-radius: 2px; }
-    .cta-box h3 { font-family: 'Lora', serif; margin-bottom: 1rem; font-size: 1.5rem; }
-    .btn { display: inline-block; padding: 0.8rem 1.8rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
-    .btn:hover { background: #d4a051; }
-    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
-    .footer-section ul { list-style: none; }
-    .footer-section li { margin-bottom: 0.6rem; }
-    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .footer-section a:hover { color: #E8B356; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .stories-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -138,23 +157,744 @@
       background-color: #f0f7f8;
       cursor: default;
     }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(135deg, rgba(26,95,102,0.85), rgba(232,179,86,0.85)), 
+                  url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop') center/cover;
+      color: white;
+      padding: 140px 2rem 80px;
+      text-align: center;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #E8B356;
+      border-radius: 2px;
+    }
+
+    /* ========== STORIES FILTER ========== */
+    .stories-filter {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      background: white;
+      color: #1a5f66;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .filter-btn:hover {
+      border-color: #E8B356;
+      color: #E8B356;
+    }
+
+    .filter-btn.active {
+      background: #E8B356;
+      color: white;
+      border-color: #E8B356;
+    }
+
+    /* ========== STORIES GRID ========== */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .story-card {
+      background: #f8f9fa;
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      border-left: 4px solid #E8B356;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1a5f66 0%, #E8B356 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .story-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .story-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 3px solid rgba(232, 179, 86, 0.3);
+    }
+
+    .story-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story-info h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .story-title {
+      color: #E8B356;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .story-quote {
+      font-size: 2.5rem;
+      color: rgba(26, 95, 102, 0.2);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .story-content {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .story-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .story-tag {
+      background: rgba(232, 179, 86, 0.1);
+      color: #1a5f66;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .story-read-more {
+      background: rgba(26, 95, 102, 0.1);
+      color: #1a5f66;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      align-self: flex-start;
+    }
+
+    .story-read-more:hover {
+      background: #1a5f66;
+      color: white;
+    }
+
+    /* ========== FEATURED STORY ========== */
+    .featured-story {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem;
+      border-radius: 8px;
+      margin: 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .featured-story-content {
+      padding-right: 2rem;
+    }
+
+    .featured-story-content h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .featured-story-image {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .featured-story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .featured-story-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ========== STORY MODAL ========== */
+    .story-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .story-modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 8px;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 2rem;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .modal-body {
+      padding: 2.5rem;
+    }
+
+    .modal-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: -60px auto 1.5rem;
+      border: 4px solid white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .modal-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-body h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .modal-subtitle {
+      color: #E8B356;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .modal-text {
+      color: #666;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ========== STATS SECTION ========== */
+    .stats-section {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ========== CALL TO ACTION ========== */
+    .cta-section {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 8px;
+      margin: 3rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop&q=10') center/cover;
+      opacity: 0.1;
+    }
+
+    .cta-section h3 {
+      font-family: 'Lora', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: white;
+      position: relative;
+    }
+
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      font-family: 'Source Sans Pro', sans-serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn:hover {
+      background: #d4a051;
+      box-shadow: 0 8px 20px rgba(232,179,86,0.3);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      margin-left: 1rem;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #1a5f66;
+    }
+
+    /* ========== SHARE YOUR STORY ========== */
+    .share-story-section {
+      background: linear-gradient(135deg, rgba(232, 179, 86, 0.1), rgba(232, 179, 86, 0.05));
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .share-story-section h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .share-options {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .share-option {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      min-width: 200px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .share-option:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .share-option-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1a5f66;
+    }
+
+    .share-option h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #1a5f66;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #E8B356;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .featured-story {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .featured-story-content {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+
+      nav {
+        gap: 0.25rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stories-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      .featured-story {
+        padding: 2rem;
+      }
+
+      .modal-content {
+        margin: 1rem;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+
+      .share-options {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .share-option {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 120px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+
+      .btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .story-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .cta-section .btn {
+        display: block;
+        margin: 1rem auto;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="header-container">
-      <a href="/home" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <a href="/home" class="logo">
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
+      </a>
       <nav>
         <div class="nav-item">
           <a href="/home">Home</a>
         </div>
         <div class="nav-item">
-          <a href="#">About ▼</a>
+          <a href="#" class="active">About ▼</a>
           <div class="dropdown-menu">
             <a href="/about">Our Mission & Values</a>
+            <a href="/strategy">Our Strategy</a>
             <a href="/experts">Our Experts</a>
-            <a href="/stories">Member Stories</a>
+            <a href="/stories" class="active">Member Stories</a>
           </div>
         </div>
         <div class="nav-item">
@@ -185,80 +925,716 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero"><h1>Member Stories</h1></section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Member Stories</h1>
+    <p>Real Stories of Healing, Hope, and Transformation from Our Community</p>
+  </section>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
-    <section class="section-header">
+    <div class="section-header">
       <h2>Inspiring Stories of Hope</h2>
-    </section>
+      <p style="color: #666; margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        These are real journeys of individuals who found healing, hope, and community with Manwell. 
+        Their stories remind us that no one is alone in their mental health journey.
+      </p>
+    </div>
 
-    <p style="color: #666; margin: 2rem 0; line-height: 1.8; text-align: center;">Real people share their journeys with mental health and how they found hope, healing, and connection with Manwell.</p>
+    <!-- Stories Filter -->
+    <div class="stories-filter" id="storiesFilter">
+      <button class="filter-btn active" data-filter="all">All Stories</button>
+      <button class="filter-btn" data-filter="depression">Depression</button>
+      <button class="filter-btn" data-filter="anxiety">Anxiety</button>
+      <button class="filter-btn" data-filter="trauma">Trauma</button>
+      <button class="filter-btn" data-filter="family">Family</button>
+      <button class="filter-btn" data-filter="addiction">Addiction</button>
+      <button class="filter-btn" data-filter="men">Men's Wellness</button>
+    </div>
 
-    <div class="stories-grid">
-      <div class="story-card">
-        <h4>Sarah's Journey to Recovery</h4>
-        <div class="story-title">Overcoming Depression</div>
-        <p>"When I hit my lowest point, I didn't think I'd ever feel normal again. Working with Dr. Mitchell at Manwell changed everything. Through consistent therapy and support, I've rebuilt my life and found real hope. Now I'm helping others on their own journeys."</p>
+    <!-- Featured Story -->
+    <div class="featured-story">
+      <div class="featured-story-content">
+        <h3>Featured Story: Brian's Journey</h3>
+        <div class="story-quote">"</div>
+        <p style="color: #666; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+          "For years, I believed that real men don't talk about their feelings. I suffered in silence, 
+          thinking my depression and anxiety were signs of weakness. Manwell taught me that vulnerability 
+          is strength. Today, I'm not just surviving—I'm thriving, and I'm helping other men do the same."
+        </p>
+        <div class="story-tags">
+          <span class="story-tag">Depression</span>
+          <span class="story-tag">Anxiety</span>
+          <span class="story-tag">Men's Wellness</span>
+        </div>
+        <button class="story-read-more" data-story="brian">Read Full Story</button>
       </div>
-      <div class="story-card">
-        <h4>James' Path Forward</h4>
-        <div class="story-title">Managing Anxiety</div>
-        <p>"My anxiety used to control my life. Manwell's therapists taught me practical tools and coping strategies that actually work. I can now face challenges with confidence instead of fear. The community support has been invaluable."</p>
-      </div>
-      <div class="story-card">
-        <h4>Maria's Transformation</h4>
-        <div class="story-title">Breaking Free from Trauma</div>
-        <p>"I thought my past trauma would haunt me forever. But working with Manwell's trauma specialists, I've learned to process my experiences and reclaim my power. I'm stronger than my trauma, and that's a beautiful realization."</p>
-      </div>
-      <div class="story-card">
-        <h4>David's Family Healing</h4>
-        <div class="story-title">Family Therapy Success</div>
-        <p>"Family therapy with Manwell helped us break destructive patterns and communicate with love and respect. Our relationships are stronger now, and we actually enjoy spending time together. It's been transformative."</p>
+      <div class="featured-story-image">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Brian's story">
       </div>
     </div>
 
-    <div class="cta-box">
+    <!-- Stories Grid -->
+    <div class="stories-grid" id="storiesGrid">
+      <!-- Story 1 -->
+      <div class="story-card" data-category="depression women">
+        <div class="story-header">
+          <div class="story-avatar">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616c113a1c0?w=150&h=150&fit=crop" alt="Sarah">
+          </div>
+          <div class="story-info">
+            <h4>Sarah K.</h4>
+            <div class="story-title">Overcoming Depression</div>
+          </div>
+        </div>
+        <div class="story-quote">"</div>
+        <div class="story-content">
+          "When I hit my lowest point, I didn't think I'd ever feel normal again. Working with my therapist at Manwell changed everything. Through consistent therapy and the support group, I've rebuilt my life and found real hope."
+        </div>
+        <div class="story-tags">
+          <span class="story-tag">Depression</span>
+          <span class="story-tag">Support Groups</span>
+          <span class="story-tag">2 Years</span>
+        </div>
+        <button class="story-read-more" data-story="sarah">Read Sarah's Story</button>
+      </div>
+      
+      <!-- Story 2 -->
+      <div class="story-card" data-category="anxiety men">
+        <div class="story-header">
+          <div class="story-avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="James">
+          </div>
+          <div class="story-info">
+            <h4>James M.</h4>
+            <div class="story-title">Managing Anxiety</div>
+          </div>
+        </div>
+        <div class="story-quote">"</div>
+        <div class="story-content">
+          "My anxiety used to control my life. Manwell's therapists taught me practical tools and coping strategies that actually work. I can now face challenges with confidence instead of fear."
+        </div>
+        <div class="story-tags">
+          <span class="story-tag">Anxiety</span>
+          <span class="story-tag">CBT</span>
+          <span class="story-tag">18 Months</span>
+        </div>
+        <button class="story-read-more" data-story="james">Read James's Story</button>
+      </div>
+      
+      <!-- Story 3 -->
+      <div class="story-card" data-category="trauma women">
+        <div class="story-header">
+          <div class="story-avatar">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop" alt="Maria">
+          </div>
+          <div class="story-info">
+            <h4>Maria A.</h4>
+            <div class="story-title">Healing from Trauma</div>
+          </div>
+        </div>
+        <div class="story-quote">"</div>
+        <div class="story-content">
+          "I thought my past trauma would haunt me forever. Working with Manwell's trauma specialists, I've learned to process my experiences and reclaim my power. I'm stronger than my trauma."
+        </div>
+        <div class="story-tags">
+          <span class="story-tag">Trauma</span>
+          <span class="story-tag">EMDR</span>
+          <span class="story-tag">3 Years</span>
+        </div>
+        <button class="story-read-more" data-story="maria">Read Maria's Story</button>
+      </div>
+      
+      <!-- Story 4 -->
+      <div class="story-card" data-category="family men">
+        <div class="story-header">
+          <div class="story-avatar">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" alt="David">
+          </div>
+          <div class="story-info">
+            <h4>David O.</h4>
+            <div class="story-title">Family Healing</div>
+          </div>
+        </div>
+        <div class="story-quote">"</div>
+        <div class="story-content">
+          "Family therapy with Manwell helped us break destructive patterns and communicate with love and respect. Our relationships are stronger now, and we actually enjoy spending time together."
+        </div>
+        <div class="story-tags">
+          <span class="story-tag">Family Therapy</span>
+          <span class="story-tag">Communication</span>
+          <span class="story-tag">1 Year</span>
+        </div>
+        <button class="story-read-more" data-story="david">Read David's Story</button>
+      </div>
+      
+      <!-- Story 5 -->
+      <div class="story-card" data-category="addiction men">
+        <div class="story-header">
+          <div class="story-avatar">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="John">
+          </div>
+          <div class="story-info">
+            <h4>John P.</h4>
+            <div class="story-title">Addiction Recovery</div>
+          </div>
+        </div>
+        <div class="story-quote">"</div>
+        <div class="story-content">
+          "After 10 years of addiction, I thought I was beyond help. Manwell's recovery program gave me the tools and support I needed. I'm now 2 years sober and rebuilding my life."
+        </div>
+        <div class="story-tags">
+          <span class="story-tag">Addiction</span>
+          <span class="story-tag">Recovery</span>
+          <span class="story-tag">2 Years Sober</span>
+        </div>
+        <button class="story-read-more" data-story="john">Read John's Story</button>
+      </div>
+      
+      <!-- Story 6 -->
+      <div class="story-card" data-category="anxiety women">
+        <div class="story-header">
+          <div class="story-avatar">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop" alt="Fatima">
+          </div>
+          <div class="story-info">
+            <h4>Fatima R.</h4>
+            <div class="story-title">Postpartum Support</div>
+          </div>
+        </div>
+        <div class="story-quote">"</div>
+        <div class="story-content">
+          "After my baby was born, I felt overwhelmed and isolated. Manwell's postpartum support group saved me. I found community and learned that what I was experiencing was normal and treatable."
+        </div>
+        <div class="story-tags">
+          <span class="story-tag">Postpartum</span>
+          <span class="story-tag">Anxiety</span>
+          <span class="story-tag">Support Group</span>
+        </div>
+        <button class="story-read-more" data-story="fatima">Read Fatima's Story</button>
+      </div>
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="stats-section">
+      <h3 style="color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 1rem;">Stories of Impact</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Stories Shared</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Report Feeling Hopeful</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Lives Impacted</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Community Support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share Your Story -->
+    <div class="share-story-section">
       <h3>Your Story Matters</h3>
-      <p style="margin-bottom: 1.5rem;">Join our community of individuals finding healing and hope. Your mental health journey is unique, and we're here to support every step of it.</p>
-      <button class="btn">Start Your Journey Today</button>
+      <p style="color: #666; max-width: 600px; margin: 0 auto 1.5rem;">
+        Every journey is unique, and every story has the power to inspire others. 
+        Share your experience and become part of our community of hope.
+      </p>
+      <div class="share-options">
+        <div class="share-option">
+          <div class="share-option-icon">📝</div>
+          <h4>Submit Your Story</h4>
+          <p style="color: #666; font-size: 0.9rem;">Share your journey anonymously or with your name</p>
+          <button class="story-read-more" style="margin-top: 1rem;" id="submitStoryBtn">Submit Story</button>
+        </div>
+        <div class="share-option">
+          <div class="share-option-icon">🎙️</div>
+          <h4>Podcast Interview</h4>
+          <p style="color: #666; font-size: 0.9rem;">Share your story on our mental health podcast</p>
+          <button class="story-read-more" style="margin-top: 1rem;" id="podcastBtn">Learn More</button>
+        </div>
+        <div class="share-option">
+          <div class="share-option-icon">👥</div>
+          <h4>Support Groups</h4>
+          <p style="color: #666; font-size: 0.9rem;">Join a group and share in a safe, supportive space</p>
+          <button class="story-read-more" style="margin-top: 1rem;" id="supportGroupBtn">Find a Group</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <h3>Start Your Healing Journey</h3>
+      <p>Your story of healing and hope could be next. Take the first step toward wellness today.</p>
+      <button class="btn" id="startJourneyBtn">Start Your Journey Today</button>
+      <button class="btn btn-secondary" id="contactSupportBtn">Contact Support</button>
     </div>
   </div>
 
+  <!-- STORY MODAL -->
+  <div class="story-modal" id="storyModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <h3 id="modalName"></h3>
+        <div class="modal-subtitle" id="modalSubtitle"></div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-avatar">
+          <img id="modalAvatar" src="" alt="">
+        </div>
+        <div id="modalContent">
+          <!-- Story content will be inserted here -->
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <button class="btn" id="getHelpBtn">Get Help for Similar Issues</button>
+          <button class="btn btn-secondary" style="margin-left: 1rem;" id="closeModalBtn">Close Story</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
+    <div class="footer-container">
       <div class="footer-section">
-        <h3>Our Services</h3>
+        <h3>Services</h3>
         <ul>
-          <li><a href="/mental-health">Clinical Therapy</a></li>
+          <li><a href="/mental-health">Mental Health Hub</a></li>
           <li><a href="/assessments">Assessments</a></li>
-          <li><a href="/community">Group Programs</a></li>
           <li><a href="/crisis">Crisis Support</a></li>
+          <li><a href="/find-therapist">Find a Therapist</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3>Contact</h3>
+        <h3>Company</h3>
         <ul>
-          <li><a href="tel:+254754151315">+254 754 151 315</a></li>
-          <li><a href="mailto:hello@mibw.org">hello@mibw.org</a></li>
-          <li>Syscraft Place, Sports Road, Westlands, Nairobi</li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/experts">Our Team</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-            <div class="footer-section">
+      <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
           <li><a href="https://facebook.com/manwellwithin" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. All rights reserved. | Stories of Hope & Healing | Follow @manwellwithin | Support: +254 754 151 315</p>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const storyCards = document.querySelectorAll('.story-card');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const readMoreButtons = document.querySelectorAll('.story-read-more');
+      const modal = document.getElementById('storyModal');
+      const modalClose = document.getElementById('modalClose');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const getHelpBtn = document.getElementById('getHelpBtn');
+      const submitStoryBtn = document.getElementById('submitStoryBtn');
+      const podcastBtn = document.getElementById('podcastBtn');
+      const supportGroupBtn = document.getElementById('supportGroupBtn');
+      const startJourneyBtn = document.getElementById('startJourneyBtn');
+      const contactSupportBtn = document.getElementById('contactSupportBtn');
+      
+      // Story data for modal
+      const stories = {
+        'sarah': {
+          name: 'Sarah K.',
+          subtitle: 'Overcoming Depression - 2 Years with Manwell',
+          avatar: 'https://images.unsplash.com/photo-1494790108755-2616c113a1c0?w=150&h=150&fit=crop',
+          content: `
+            <p>"When I hit my lowest point, I didn't think I'd ever feel normal again. The darkness was so overwhelming that getting out of bed felt impossible. I had lost all hope and was convinced that this was just how my life would be."</p>
+            
+            <p>"My journey with Manwell began with a single phone call. From that first conversation, I felt heard and understood in a way I never had before. My therapist helped me understand that depression wasn't a personal failing—it was a treatable condition."</p>
+            
+            <p>"Through consistent therapy sessions, I learned coping strategies that actually worked. The cognitive behavioral therapy techniques gave me tools to challenge negative thought patterns. The medication management helped stabilize my mood. But most importantly, I found community in the support groups."</p>
+            
+            <p>"Today, I'm not just surviving—I'm thriving. I've returned to my passion for painting, rebuilt relationships with my family, and even started mentoring other women struggling with depression. Manwell didn't just give me back my life; they helped me build a better one."</p>
+            
+            <p><strong>Sarah's Advice:</strong> "Reach out, even when every part of you wants to isolate. That first step is the hardest, but it leads to healing. You are not alone, and there is hope."</p>
+          `,
+          tags: ['Depression', 'Support Groups', 'CBT', '2 Years Recovery']
+        },
+        'james': {
+          name: 'James M.',
+          subtitle: 'Managing Anxiety - 18 Months Progress',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
+          content: `
+            <p>"My anxiety used to control every aspect of my life. As a software engineer, the pressure was constant, but my anxiety made it unbearable. Panic attacks during meetings, sleepless nights worrying about deadlines, and constant physical tension became my normal."</p>
+            
+            <p>"I came to Manwell thinking I just needed some 'stress management tips.' What I found was a comprehensive approach to understanding and managing my anxiety. My therapist helped me identify the root causes—perfectionism, fear of failure, and unresolved childhood patterns."</p>
+            
+            <p>"We worked on practical tools: breathing techniques for panic attacks, mindfulness practices for daily stress, and exposure therapy for social anxiety. The breakthrough came when I joined the men's anxiety group. Hearing other men share similar struggles broke the isolation I felt."</p>
+            
+            <p>"Now, I still feel anxiety—it's part of being human—but it no longer controls me. I've been promoted at work, rebuilt my social life, and even started dating again. Most importantly, I've learned to be kind to myself."</p>
+            
+            <p><strong>James's Advice:</strong> "Anxiety lies to you. It tells you you can't handle things. Start with small challenges and build your confidence. Every small victory matters."</p>
+          `,
+          tags: ['Anxiety', 'CBT', 'Men\'s Group', '18 Months']
+        },
+        'maria': {
+          name: 'Maria A.',
+          subtitle: 'Healing from Trauma - 3 Year Journey',
+          avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop',
+          content: `
+            <p>"For decades, I carried trauma that shaped every aspect of my life. The nightmares, the hypervigilance, the emotional numbness—I thought this was just how I had to live. I had tried therapy before, but nothing seemed to help."</p>
+            
+            <p>"Manwell's trauma-informed approach was different from the start. My therapist specialized in trauma work and used EMDR therapy, which was transformative. For the first time, I could process memories without being retraumatized."</p>
+            
+            <p>"The journey wasn't linear. There were setbacks and difficult sessions. But my therapist created a safe container for me to explore the pain. We worked on building my window of tolerance, developing grounding techniques, and creating a safety plan for difficult moments."</p>
+            
+            <p>"Today, I can talk about my past without being consumed by it. The nightmares have stopped. I've reclaimed parts of myself I thought were lost forever. I'm now training to become a peer support specialist to help others with similar experiences."</p>
+            
+            <p><strong>Maria's Advice:</strong> "Healing from trauma takes time and courage. Find a therapist who specializes in trauma. Be patient with yourself—healing isn't about forgetting, it's about integrating."</p>
+          `,
+          tags: ['Trauma', 'EMDR', '3 Years', 'Peer Support']
+        },
+        'david': {
+          name: 'David O.',
+          subtitle: 'Family Healing - 1 Year Transformation',
+          avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop',
+          content: `
+            <p>"Our family was falling apart. Constant arguments, silent treatments, and resentment had become our normal. We loved each other, but we didn't know how to be together without hurting each other."</p>
+            
+            <p>"Family therapy at Manwell helped us understand our patterns. Our therapist helped us see how our communication styles were creating cycles of conflict. We learned that it wasn't about who was right, but about understanding each other's perspectives."</p>
+            
+            <p>"We practiced active listening, learned to express needs without criticism, and developed family rituals that brought us together. The therapist created a safe space where everyone could speak without fear of judgment."</p>
+            
+            <p>"The transformation has been remarkable. We still have disagreements, but now we have tools to resolve them. We actually enjoy family dinners again. Our children have seen what healthy conflict resolution looks like, and that's a gift that will last generations."</p>
+            
+            <p><strong>David's Advice:</strong> "Don't wait until things are at breaking point. Seeking help is a sign of strength, not failure. Every family has patterns—therapy helps you see them and change them."</p>
+          `,
+          tags: ['Family Therapy', 'Communication', '1 Year', 'Parenting']
+        },
+        'john': {
+          name: 'John P.',
+          subtitle: 'Addiction Recovery - 2 Years Sober',
+          avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop',
+          content: `
+            <p>"I spent 10 years in the grip of addiction. I lost jobs, relationships, and nearly my life. I had been through multiple rehab programs, but nothing stuck. I had given up on myself."</p>
+            
+            <p>"Manwell's recovery program was different because it addressed the underlying issues. We didn't just talk about staying sober—we worked on the depression, trauma, and loneliness that fueled my addiction."</p>
+            
+            <p>"The combination of individual therapy, group support, and medication management created a comprehensive recovery plan. My therapist helped me develop a relapse prevention plan that worked for my specific triggers and situations."</p>
+            
+            <p>"Today, I'm 2 years sober. I have a stable job, rebuilt relationships with my family, and found purpose in helping others in recovery. I still attend weekly support groups at Manwell—not because I have to, but because I want to."</p>
+            
+            <p><strong>John's Advice:</strong> "Recovery isn't about willpower alone. It's about building a life you don't want to escape from. Find your why, build your support system, and take it one day at a time."</p>
+          `,
+          tags: ['Addiction', 'Recovery', '2 Years Sober', 'Support Groups']
+        },
+        'fatima': {
+          name: 'Fatima R.',
+          subtitle: 'Postpartum Support - New Mother Wellness',
+          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop',
+          content: `
+            <p>"After my beautiful baby was born, everyone expected me to be overjoyed. Instead, I felt overwhelmed, anxious, and completely isolated. I was afraid to admit how much I was struggling—what kind of mother feels this way?"</p>
+            
+            <p>"The postpartum support group at Manwell saved me. Hearing other new mothers share similar experiences made me realize I wasn't alone or 'broken.' The group was led by a therapist who specialized in perinatal mental health."</p>
+            
+            <p>"We learned about postpartum anxiety and depression, practiced self-care strategies that actually worked with a newborn, and developed coping skills for the intense emotions of new motherhood. The group became my village."</p>
+            
+            <p>"Now, I can enjoy motherhood without constant anxiety. I've learned to ask for help, set boundaries, and prioritize my mental health alongside my baby's needs. I'm now a peer facilitator for the group, helping other new mothers find their footing."</p>
+            
+            <p><strong>Fatima's Advice:</strong> "Motherhood is beautiful and hard. It's okay to not be okay. Reach out for support—you don't have to do this alone. Taking care of yourself is taking care of your baby."</p>
+          `,
+          tags: ['Postpartum', 'Anxiety', 'New Mother', 'Support Group']
+        },
+        'brian': {
+          name: 'Brian W.',
+          subtitle: 'Men\'s Mental Health - Breaking the Silence',
+          avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
+          content: `
+            <p>"For most of my life, I believed that 'real men' don't talk about their feelings. I suffered in silence through depression, anxiety, and relationship struggles. I thought asking for help was a sign of weakness."</p>
+            
+            <p>"Manwell's men's wellness program changed everything. For the first time, I was in a room with other men who were honest about their struggles. We talked about pressure, expectations, loss, and hope."</p>
+            
+            <p>"The program combined individual therapy with men's groups and physical wellness components. We learned emotional literacy skills that weren't taught to us growing up. We explored what healthy masculinity looks like beyond stereotypes."</p>
+            
+            <p>"Today, I'm not just managing my mental health—I'm thriving. I've become a better partner, father, and friend. I'm now leading men's circles at Manwell, creating spaces where men can be vulnerable and strong at the same time."</p>
+            
+            <p><strong>Brian's Advice:</strong> "Vulnerability is not weakness—it's the foundation of true strength. Find your tribe, break the silence, and remember that healing is a courageous act."</p>
+          `,
+          tags: ['Men\'s Wellness', 'Depression', 'Anxiety', 'Leadership']
+        }
+      };
+      
+      // Stories Filtering
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Filter story cards
+          storyCards.forEach(card => {
+            const categories = card.getAttribute('data-category').split(' ');
+            
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = 'flex';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Story Modal Functions
+      function openStoryModal(storyId) {
+        const story = stories[storyId];
+        if (!story) return;
+        
+        document.getElementById('modalName').textContent = story.name;
+        document.getElementById('modalSubtitle').textContent = story.subtitle;
+        document.getElementById('modalAvatar').src = story.avatar;
+        document.getElementById('modalContent').innerHTML = story.content;
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeStoryModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Read More Button Clicks
+      readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const storyId = this.getAttribute('data-story');
+          openStoryModal(storyId);
+        });
+      });
+      
+      // Modal Close Buttons
+      modalClose.addEventListener('click', closeStoryModal);
+      closeModalBtn.addEventListener('click', closeStoryModal);
+      
+      // Close modal on background click
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeStoryModal();
+        }
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (modal.classList.contains('active') && e.key === 'Escape') {
+          closeStoryModal();
+        }
+      });
+      
+      // Get Help Button
+      getHelpBtn.addEventListener('click', function() {
+        const storyName = document.getElementById('modalName').textContent;
+        alert(`Get Help for Similar Issues\n\nIf you're experiencing challenges similar to ${storyName}'s story:\n\n1. Call our support line: +254 754 151 315\n2. Book an assessment through our website\n3. Join a support group for similar experiences\n4. Access our free mental health resources\n\nWe're here to help you start your healing journey.`);
+      });
+      
+      // Submit Story Button
+      submitStoryBtn.addEventListener('click', function() {
+        const submitOptions = `
+Submit Your Story to Manwell:
+
+📝 **How to Submit:**
+1. Email your story to stories@manwellwithin.org
+2. Include your name (or indicate if anonymous)
+3. Share what you're comfortable sharing
+4. Let us know if you're open to being contacted
+
+🔒 **Confidentiality:**
+- You can remain anonymous
+- We'll protect your privacy
+- You control what details are shared
+- We'll contact you before publishing
+
+🎯 **Why Share:**
+- Inspire others on similar journeys
+- Break mental health stigma
+- Become part of our community
+- Help others feel less alone
+
+✉️ Contact: stories@manwellwithin.org
+        `;
+        
+        alert(submitOptions);
+      });
+      
+      // Podcast Button
+      podcastBtn.addEventListener('click', function() {
+        alert(`Share Your Story on Our Podcast\n\n🎙️ **Manwell Mental Health Podcast**\n\nWe feature inspiring stories of healing and hope. If you're interested:\n\n1. Email: podcast@manwellwithin.org\n2. Share a brief overview of your story\n3. Our team will contact you for an interview\n4. Interviews can be anonymous or with your name\n\nAll interviews are conducted with care and respect for your journey.`);
+      });
+      
+      // Support Group Button
+      supportGroupBtn.addEventListener('click', function() {
+        const groupOptions = `
+Find a Support Group at Manwell:
+
+👥 **Available Groups:**
+- Depression Support (Weekly)
+- Anxiety Management (Bi-weekly)
+- Trauma Healing (Weekly)
+- Men's Wellness (Weekly)
+- Women's Circles (Weekly)
+- Family Support (Monthly)
+- Addiction Recovery (Daily)
+- Postpartum Support (Weekly)
+
+📅 **How to Join:**
+1. Call: +254 754 151 315
+2. Email: groups@manwellwithin.org
+3. Visit our Westlands office
+4. Register through our website
+
+💬 All groups are led by trained facilitators
+🔒 Confidential and safe spaces
+❤️ Free for all participants
+        `;
+        
+        alert(groupOptions);
+      });
+      
+      // Start Journey Button
+      startJourneyBtn.addEventListener('click', function() {
+        const journeyOptions = `
+Start Your Healing Journey Today:
+
+🌟 **First Steps:**
+1. Call our intake line: +254 754 151 315
+2. Schedule a free consultation
+3. Complete a brief assessment
+4. Meet with a therapist to create your plan
+
+💼 **Services Available:**
+- Individual Therapy
+- Group Therapy
+- Crisis Support
+- Medication Management
+- Family Counseling
+- Specialized Programs
+
+💰 **Cost & Insurance:**
+- Sliding scale fees available
+- Insurance accepted
+- Payment plans
+- Some free services available
+
+📍 **Locations:**
+- Westlands Office
+- Online Therapy
+- Community Centers
+        `;
+        
+        if (window.innerWidth > 768) {
+          const confirmStart = confirm('Start Your Healing Journey\n\nReady to take the first step toward wellness?\n\nClick OK to learn about our services, or Cancel to call +254 754 151 315 directly.');
+          
+          if (confirmStart) {
+            alert(journeyOptions);
+          } else {
+            window.location.href = 'tel:+254754151315';
+          }
+        } else {
+          alert(journeyOptions);
+        }
+      });
+      
+      // Contact Support Button
+      contactSupportBtn.addEventListener('click', function() {
+        const contactInfo = `
+Contact Manwell Support:
+
+📞 **Phone Support:**
+- General Inquiries: +254 754 151 315
+- Crisis Line: +254 754 151 315 (24/7)
+- Appointment Booking: +254 754 151 315
+
+✉️ **Email:**
+- General: hello@manwellwithin.org
+- Support: support@manwellwithin.org
+- Stories: stories@manwellwithin.org
+- Media: media@manwellwithin.org
+
+📍 **Office:**
+Syscraft Place, Sports Road
+Westlands, Nairobi
+Mon-Fri: 9AM-6PM
+Sat: 10AM-4PM
+
+💻 **Online:**
+Website: manwellwithin.org
+Social: @manwellwithin
+        `;
+        
+        alert(contactInfo);
+      });
+      
+      // Story card hover effects
+      storyCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          if (!this.style.display || this.style.display !== 'none') {
+            this.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      
+      // Share option hover effects
+      const shareOptions = document.querySelectorAll('.share-option');
+      shareOptions.forEach(option => {
+        option.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px)';
+        });
+        
+        option.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+      
+      // Featured story image hover
+      const featuredImage = document.querySelector('.featured-story-image');
+      if (featuredImage) {
+        featuredImage.addEventListener('mouseenter', function() {
+          this.querySelector('img').style.transform = 'scale(1.05)';
+        });
+        
+        featuredImage.addEventListener('mouseleave', function() {
+          this.querySelector('img').style.transform = 'scale(1)';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
