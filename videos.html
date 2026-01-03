@@ -3,16 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manwell Educational Videos - Learn about mental health, wellness strategies, and coping techniques from our expert-led video library.">
   <meta name="theme-color" content="#1a5f66">
-  <title>Videos - Manwell</title>
+  <title>Educational Videos - Manwell</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Source Sans Pro', sans-serif; color: #2c3e50; background: white; }
-    header { background: white; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.3rem; font-weight: 700; color: #1a5f66; text-decoration: none; display: flex; gap: 0.5rem; }
-    .logo-icon { width: 32px; height: 32px; background: #1a5f66; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.6;
+      color: #2c3e50;
+      background-color: #ffffff;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      background: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a5f66;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
 
     /* ========== DONATE BUTTON ========== */
     .donate-btn {
@@ -40,36 +86,7 @@
       transform: translateY(0);
     }
 
-
-    nav ul { list-style: none; display: flex; gap: 2rem; }
-    nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
-    nav a:hover, nav a.active { color: #E8B356; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .hero { background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=400&fit=crop'); background-size: cover; background-position: center; color: white; padding: 180px 2rem 100px; margin-top: 60px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; font-family: 'Lora', serif; font-weight: 600; }
-    .section-header { margin-bottom: 3rem; padding-top: 2rem; }
-    .section-header h2 { font-size: 2.2rem; font-family: 'Lora', serif; color: #1a5f66; margin-bottom: 0.5rem; font-weight: 600; position: relative; display: inline-block; }
-    .section-header h2:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 60px; height: 3px; background: #E8B356; }
-    .content-section { margin: 3rem 0; }
-    .content-section h3 { font-family: 'Lora', serif; color: #1a5f66; font-size: 1.3rem; margin: 2rem 0 1rem; font-weight: 600; }
-    .content-section p { color: #666; line-height: 1.8; margin-bottom: 1rem; }
-    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0; }
-    .video-card { background: #f8f9fa; border-left: 4px solid #E8B356; border-radius: 2px; overflow: hidden; }
-    .video-thumbnail { width: 100%; height: 200px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-    .video-content { padding: 1.5rem; }
-    .video-card h4 { color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 0.5rem; font-size: 1rem; }
-    .video-card p { color: #666; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem; }
-    .btn { display: inline-block; padding: 0.6rem 1.2rem; background: #E8B356; color: white; text-decoration: none; font-size: 0.8rem; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; border-radius: 2px; }
-    .btn:hover { background: #d4a051; }
-    footer { background: #1a5f66; color: white; padding: 3rem 2rem 1.5rem; margin-top: 4rem; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .footer-section h3 { color: #E8B356; font-family: 'Lora', serif; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
-    .footer-section ul { list-style: none; }
-    .footer-section li { margin-bottom: 0.6rem; }
-    .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .footer-section a:hover { color: #E8B356; }
-    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
-    @media (max-width: 768px) { .hero h1 { font-size: 2rem; } nav ul { gap: 1rem; } .video-grid { grid-template-columns: 1fr; } .footer-content { grid-template-columns: 1fr; } }    /* ========== DROPDOWN NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       gap: 0.5rem;
@@ -140,13 +157,706 @@
       background-color: #f0f7f8;
       cursor: default;
     }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      background: linear-gradient(135deg, rgba(26,95,102,0.85), rgba(232,179,86,0.85)), 
+                  url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop') center/cover;
+      color: white;
+      padding: 140px 2rem 80px;
+      text-align: center;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    /* ========== CONTAINER ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #E8B356;
+      border-radius: 2px;
+    }
+
+    /* ========== VIDEO FILTER ========== */
+    .video-filter {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      background: white;
+      color: #1a5f66;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .filter-btn:hover {
+      border-color: #E8B356;
+      color: #E8B356;
+    }
+
+    .filter-btn.active {
+      background: #E8B356;
+      color: white;
+      border-color: #E8B356;
+    }
+
+    /* ========== VIDEO GRID ========== */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .video-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #E8B356;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .video-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1a5f66 0%, #E8B356 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #1a5f66, #E8B356);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .video-thumbnail:hover .play-overlay {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .video-thumbnail:hover .play-icon {
+      transform: scale(1.1);
+    }
+
+    .thumbnail-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .video-thumbnail:hover .thumbnail-image {
+      transform: scale(1.05);
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .play-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(232, 179, 86, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .video-duration {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .video-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card h4 {
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .video-card p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .video-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .video-tag {
+      background: rgba(232, 179, 86, 0.1);
+      color: #1a5f66;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .video-date {
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: #E8B356;
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .btn:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #1a5f66;
+    }
+
+    .btn-secondary:hover {
+      background: #154a4e;
+      box-shadow: 0 4px 12px rgba(26,95,102,0.3);
+    }
+
+    /* ========== VIDEO MODAL ========== */
+    .video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .video-modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 8px;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #666;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: #E8B356;
+    }
+
+    .modal-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    .modal-body h4 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .modal-body p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ========== FEATURED VIDEO ========== */
+    .featured-video {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem;
+      border-radius: 8px;
+      margin: 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .featured-video-content {
+      padding-right: 2rem;
+    }
+
+    .featured-video-content h3 {
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .featured-video-player {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      background: linear-gradient(135deg, #1a5f66, #E8B356);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .featured-video-player:hover .play-overlay {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .featured-video-player:hover .play-icon {
+      transform: scale(1.1);
+    }
+
+    /* ========== VIDEO STATS ========== */
+    .video-stats {
+      background: linear-gradient(135deg, rgba(26, 95, 102, 0.05), rgba(232, 179, 86, 0.05));
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a5f66;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* ========== YOUTUBE SECTION ========== */
+    .youtube-section {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 8px;
+      margin: 3rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .youtube-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=400&fit=crop&q=10') center/cover;
+      opacity: 0.1;
+    }
+
+    .youtube-section h3 {
+      font-family: 'Lora', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: white;
+      position: relative;
+    }
+
+    .youtube-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .youtube-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      background: #FF0000;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      font-family: 'Source Sans Pro', sans-serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    .youtube-btn:hover {
+      background: #cc0000;
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+      transform: translateY(-3px);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background-color: #1a5f66;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #E8B356;
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #E8B356;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .featured-video {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .featured-video-content {
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+
+      nav {
+        gap: 0.25rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      .featured-video {
+        padding: 2rem;
+      }
+
+      .modal-content {
+        margin: 1rem;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 120px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .video-card {
+        margin-bottom: 1.5rem;
+      }
+
+      .featured-video-player {
+        height: 200px;
+      }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <div class="header-container">
-      <a href="/home" class="logo"><div class="logo-icon">M</div><span>Manwell</span></a>
+      <a href="/home" class="logo">
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
+      </a>
       <nav>
         <div class="nav-item">
           <a href="/home">Home</a>
@@ -155,6 +865,7 @@
           <a href="#">About ▼</a>
           <div class="dropdown-menu">
             <a href="/about">Our Mission & Values</a>
+            <a href="/strategy">Our Strategy</a>
             <a href="/experts">Our Experts</a>
             <a href="/stories">Member Stories</a>
           </div>
@@ -172,12 +883,12 @@
           </div>
         </div>
         <div class="nav-item">
-          <a href="#">Community ▼</a>
+          <a href="#" class="active">Community ▼</a>
           <div class="dropdown-menu">
             <a href="/community">Community Programs</a>
             <a href="/find-therapist">Find a Therapist</a>
             <a href="/gallery">Our Gallery</a>
-            <a href="/videos">Educational Videos</a>
+            <a href="/videos" class="active">Educational Videos</a>
           </div>
         </div>
         <div class="nav-item">
@@ -187,110 +898,627 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-              <a href="/donate" class="donate-btn">💚 Donate</a>
+        <a href="/donate" class="donate-btn">💚 Donate</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero"><h1>Educational Videos</h1></section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Educational Videos</h1>
+    <p>Expert-Led Mental Health Education, Coping Strategies, and Wellness Guidance</p>
+  </section>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
-    <section class="content-section">
-      <h3>Learn About Mental Health</h3>
-      <p>Our video library features educational content on mental health topics, coping strategies, and wellness tips. Learn from our mental health experts and community members.</p>
-    </section>
-
     <div class="section-header">
-      <h2>Featured Videos</h2>
+      <h2>Learn About Mental Health</h2>
+      <p style="color: #666; margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        Our video library features evidence-based content created by mental health professionals. 
+        Learn practical strategies, understand mental health conditions, and discover tools for wellness.
+      </p>
     </div>
 
-    <div class="video-grid">
-      <div class="video-card">
-        <div class="video-thumbnail">▶</div>
-        <div class="video-content">
-          <h4>Understanding Depression</h4>
-          <p>A comprehensive overview of depression symptoms, causes, and evidence-based treatment approaches.</p>
-          <a href="#" class="btn">Watch Now</a>
+    <!-- Video Filter -->
+    <div class="video-filter" id="videoFilter">
+      <button class="filter-btn active" data-filter="all">All Videos</button>
+      <button class="filter-btn" data-filter="depression">Depression</button>
+      <button class="filter-btn" data-filter="anxiety">Anxiety</button>
+      <button class="filter-btn" data-filter="mindfulness">Mindfulness</button>
+      <button class="filter-btn" data-filter="relationships">Relationships</button>
+      <button class="filter-btn" data-filter="trauma">Trauma</button>
+      <button class="filter-btn" data-filter="self-care">Self-Care</button>
+    </div>
+
+    <!-- Featured Video -->
+    <div class="featured-video">
+      <div class="featured-video-content">
+        <h3>Featured: Understanding Anxiety Disorders</h3>
+        <p style="color: #666; line-height: 1.7; margin-bottom: 1.5rem;">
+          Join Dr. Amina Kagwe, our lead psychologist, as she explains different types of anxiety disorders, 
+          their symptoms, and evidence-based treatment approaches. This comprehensive guide includes practical 
+          coping strategies you can start using today.
+        </p>
+        <div class="video-tags">
+          <span class="video-tag">Anxiety</span>
+          <span class="video-tag">CBT</span>
+          <span class="video-tag">Expert-Led</span>
+          <span class="video-tag">45 Min</span>
         </div>
+        <button class="btn" style="margin-top: 1.5rem;" id="watchFeaturedBtn">Watch Now</button>
       </div>
-      <div class="video-card">
-        <div class="video-thumbnail">▶</div>
-        <div class="video-content">
-          <h4>Managing Anxiety Naturally</h4>
-          <p>Practical techniques for reducing anxiety through breathing, mindfulness, and lifestyle changes.</p>
-          <a href="#" class="btn">Watch Now</a>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumbnail">▶</div>
-        <div class="video-content">
-          <h4>Sleep and Mental Health</h4>
-          <p>Explore the connection between sleep quality and mental wellness, plus tips for better sleep.</p>
-          <a href="#" class="btn">Watch Now</a>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumbnail">▶</div>
-        <div class="video-content">
-          <h4>Building Healthy Relationships</h4>
-          <p>Communication strategies and relationship skills to strengthen your connections with others.</p>
-          <a href="#" class="btn">Watch Now</a>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumbnail">▶</div>
-        <div class="video-content">
-          <h4>Stress Management Basics</h4>
-          <p>Learn effective stress management techniques you can use in your daily life.</p>
-          <a href="#" class="btn">Watch Now</a>
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-thumbnail">▶</div>
-        <div class="video-content">
-          <h4>Self-Care Strategies</h4>
-          <p>Discover practical self-care activities to nurture your mental and physical wellbeing.</p>
-          <a href="#" class="btn">Watch Now</a>
+      <div class="featured-video-player" id="featuredVideoPlayer">
+        <div class="play-overlay">
+          <div class="play-icon">▶</div>
         </div>
       </div>
     </div>
 
-    <section class="content-section">
-      <h3>Subscribe for More</h3>
-      <p>Subscribe to our YouTube channel for new videos every week on mental health topics, wellness, and personal growth.</p>
-    </section>
+    <!-- Video Grid -->
+    <div class="video-grid" id="videoGrid">
+      <!-- Video 1 -->
+      <div class="video-card" data-category="depression education">
+        <div class="video-thumbnail" data-video="depression">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=225&fit=crop" alt="Understanding Depression" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">25:30</div>
+        </div>
+        <div class="video-content">
+          <h4>Understanding Depression: Symptoms & Treatment</h4>
+          <p>Learn about depression symptoms, causes, and evidence-based treatment options including therapy and medication management.</p>
+          <div class="video-tags">
+            <span class="video-tag">Depression</span>
+            <span class="video-tag">Education</span>
+            <span class="video-tag">Treatment</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 2 weeks ago</div>
+            <button class="btn btn-secondary" data-video="depression">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 2 -->
+      <div class="video-card" data-category="anxiety coping">
+        <div class="video-thumbnail" data-video="anxiety">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=225&fit=crop" alt="Managing Anxiety" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">18:45</div>
+        </div>
+        <div class="video-content">
+          <h4>Managing Anxiety Naturally: Breathing & Mindfulness</h4>
+          <p>Practical techniques for reducing anxiety through breathing exercises, mindfulness practices, and lifestyle adjustments.</p>
+          <div class="video-tags">
+            <span class="video-tag">Anxiety</span>
+            <span class="video-tag">Mindfulness</span>
+            <span class="video-tag">Coping</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 1 month ago</div>
+            <button class="btn btn-secondary" data-video="anxiety">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 3 -->
+      <div class="video-card" data-category="sleep health">
+        <div class="video-thumbnail" data-video="sleep">
+          <img src="https://images.unsplash.com/photo-1548613053-8aee570c15b7?w=400&h=225&fit=crop" alt="Sleep and Mental Health" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">22:10</div>
+        </div>
+        <div class="video-content">
+          <h4>Sleep & Mental Health: The Vital Connection</h4>
+          <p>Explore how sleep quality affects mental wellness and learn practical tips for improving your sleep hygiene naturally.</p>
+          <div class="video-tags">
+            <span class="video-tag">Sleep</span>
+            <span class="video-tag">Health</span>
+            <span class="video-tag">Wellness</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 3 weeks ago</div>
+            <button class="btn btn-secondary" data-video="sleep">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 4 -->
+      <div class="video-card" data-category="relationships communication">
+        <div class="video-thumbnail" data-video="relationships">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=225&fit=crop" alt="Building Healthy Relationships" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">32:15</div>
+        </div>
+        <div class="video-content">
+          <h4>Building Healthy Relationships: Communication Skills</h4>
+          <p>Learn effective communication strategies and relationship skills to strengthen your connections with family, friends, and partners.</p>
+          <div class="video-tags">
+            <span class="video-tag">Relationships</span>
+            <span class="video-tag">Communication</span>
+            <span class="video-tag">Skills</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 2 months ago</div>
+            <button class="btn btn-secondary" data-video="relationships">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 5 -->
+      <div class="video-card" data-category="stress management">
+        <div class="video-thumbnail" data-video="stress">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=225&fit=crop" alt="Stress Management" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">20:05</div>
+        </div>
+        <div class="video-content">
+          <h4>Stress Management: Practical Techniques for Daily Life</h4>
+          <p>Discover effective stress management techniques you can incorporate into your daily routine for better mental and physical health.</p>
+          <div class="video-tags">
+            <span class="video-tag">Stress</span>
+            <span class="video-tag">Management</span>
+            <span class="video-tag">Daily Life</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 1 week ago</div>
+            <button class="btn btn-secondary" data-video="stress">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 6 -->
+      <div class="video-card" data-category="self-care wellness">
+        <div class="video-thumbnail" data-video="selfcare">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=225&fit=crop" alt="Self-Care Strategies" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">15:40</div>
+        </div>
+        <div class="video-content">
+          <h4>Self-Care Strategies for Mental Wellness</h4>
+          <p>Learn practical self-care activities to nurture your mental and physical wellbeing, even with a busy schedule.</p>
+          <div class="video-tags">
+            <span class="video-tag">Self-Care</span>
+            <span class="video-tag">Wellness</span>
+            <span class="video-tag">Mental Health</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 4 days ago</div>
+            <button class="btn btn-secondary" data-video="selfcare">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 7 -->
+      <div class="video-card" data-category="trauma healing">
+        <div class="video-thumbnail" data-video="trauma">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=225&fit=crop" alt="Understanding Trauma" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">28:20</div>
+        </div>
+        <div class="video-content">
+          <h4>Understanding Trauma: Healing & Recovery</h4>
+          <p>Learn about different types of trauma, their effects on mental health, and evidence-based approaches to healing and recovery.</p>
+          <div class="video-tags">
+            <span class="video-tag">Trauma</span>
+            <span class="video-tag">Healing</span>
+            <span class="video-tag">Recovery</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 3 months ago</div>
+            <button class="btn btn-secondary" data-video="trauma">Watch Now</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video 8 -->
+      <div class="video-card" data-category="mindfulness meditation">
+        <div class="video-thumbnail" data-video="mindfulness">
+          <img src="https://images.unsplash.com/photo-1545389336-cf09028c9b01?w=400&h=225&fit=crop" alt="Mindfulness Meditation" class="thumbnail-image">
+          <div class="play-overlay">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-duration">12:30</div>
+        </div>
+        <div class="video-content">
+          <h4>Mindfulness Meditation: A Guided Practice</h4>
+          <p>Join our mindfulness instructor for a guided meditation practice designed to reduce stress and increase present-moment awareness.</p>
+          <div class="video-tags">
+            <span class="video-tag">Mindfulness</span>
+            <span class="video-tag">Meditation</span>
+            <span class="video-tag">Guided</span>
+          </div>
+          <div class="video-meta">
+            <div class="video-date">Posted: 5 days ago</div>
+            <button class="btn btn-secondary" data-video="mindfulness">Watch Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Stats -->
+    <div class="video-stats">
+      <h3 style="color: #1a5f66; font-family: 'Lora', serif; margin-bottom: 1rem;">Our Video Impact</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Educational Videos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50K+</div>
+          <div class="stat-label">Views Monthly</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Find Content Helpful</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Access Available</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YouTube Channel Section -->
+    <div class="youtube-section">
+      <h3>Subscribe to Our YouTube Channel</h3>
+      <p>Get weekly mental health education, coping strategies, and wellness tips delivered directly to your inbox.</p>
+      <a href="https://youtube.com/@manwellwithin" target="_blank" class="youtube-btn">
+        <span style="font-size: 1.2rem;">▶</span> Subscribe @manwellwithin
+      </a>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">New videos every Tuesday and Thursday</p>
+    </div>
+
+    <!-- Request Videos -->
+    <div class="section-header">
+      <h2>Request a Video Topic</h2>
+      <p style="color: #666; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Have a specific mental health topic you'd like us to cover? Let us know what would be most helpful for you.
+      </p>
+    </div>
+    <div style="text-align: center; margin: 2rem 0 3rem;">
+      <button class="btn" id="requestVideoBtn">Request a Video Topic</button>
+    </div>
   </div>
 
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle"></h3>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-video" id="modalVideo">
+        <!-- Video will be embedded here -->
+      </div>
+      <div class="modal-body">
+        <h4 id="videoDescriptionTitle"></h4>
+        <p id="videoDescription"></p>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="https://youtube.com/@manwellwithin" target="_blank" class="btn">Subscribe for More</a>
+          <button class="btn btn-secondary" style="margin-left: 1rem;" id="closeModalBtn">Close Video</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
+    <div class="footer-container">
       <div class="footer-section">
-        <h3>Our Services</h3>
+        <h3>Services</h3>
         <ul>
-          <li><a href="/mental-health">Clinical Therapy</a></li>
+          <li><a href="/mental-health">Mental Health Hub</a></li>
           <li><a href="/assessments">Assessments</a></li>
-          <li><a href="/community">Group Programs</a></li>
           <li><a href="/crisis">Crisis Support</a></li>
+          <li><a href="/find-therapist">Find a Therapist</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3>Contact</h3>
+        <h3>Company</h3>
         <ul>
-          <li><a href="tel:+254754151315">+254 754 151 315</a></li>
-          <li><a href="mailto:hello@mibw.org">hello@mibw.org</a></li>
-          <li>Syscraft Place, Sports Road, Westlands, Nairobi</li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/experts">Our Team</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-            <div class="footer-section">
+      <div class="footer-section">
         <h3>Follow Us</h3>
         <ul>
           <li><a href="https://facebook.com/manwellwithin" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2024 Manwell. All rights reserved.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Manwell. All rights reserved. | Educational Videos for Mental Wellness | Follow @manwellwithin | Support: +254 754 151 315</p>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const videoCards = document.querySelectorAll('.video-card');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const watchButtons = document.querySelectorAll('.btn-secondary');
+      const featuredVideoPlayer = document.getElementById('featuredVideoPlayer');
+      const watchFeaturedBtn = document.getElementById('watchFeaturedBtn');
+      const videoModal = document.getElementById('videoModal');
+      const modalClose = document.getElementById('modalClose');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const requestVideoBtn = document.getElementById('requestVideoBtn');
+      const youtubeBtn = document.querySelector('.youtube-btn');
+      
+      // Video data
+      const videos = {
+        'depression': {
+          title: 'Understanding Depression: Symptoms & Treatment',
+          description: 'This comprehensive guide covers depression symptoms, causes, and evidence-based treatment options. Learn about therapy approaches, medication management, and lifestyle changes that can help with depression recovery.',
+          youtubeId: 'XiCrniLQGYc',
+          duration: '25:30',
+          category: 'depression'
+        },
+        'anxiety': {
+          title: 'Managing Anxiety Naturally: Breathing & Mindfulness',
+          description: 'Learn practical techniques for reducing anxiety through breathing exercises, mindfulness practices, and lifestyle adjustments. This video includes guided exercises you can practice at home.',
+          youtubeId: '1ZYbU82GVz4',
+          duration: '18:45',
+          category: 'anxiety'
+        },
+        'sleep': {
+          title: 'Sleep & Mental Health: The Vital Connection',
+          description: 'Explore how sleep quality affects mental wellness and learn practical tips for improving your sleep hygiene naturally. Discover the science behind sleep and mental health connections.',
+          youtubeId: 'Nm2B3BCw4yQ',
+          duration: '22:10',
+          category: 'sleep'
+        },
+        'relationships': {
+          title: 'Building Healthy Relationships: Communication Skills',
+          description: 'Learn effective communication strategies and relationship skills to strengthen your connections with family, friends, and partners. Includes practical exercises for improving relationship dynamics.',
+          youtubeId: '7Lw3bOZUHfg',
+          duration: '32:15',
+          category: 'relationships'
+        },
+        'stress': {
+          title: 'Stress Management: Practical Techniques for Daily Life',
+          description: 'Discover effective stress management techniques you can incorporate into your daily routine for better mental and physical health. Includes quick stress relief methods and long-term strategies.',
+          youtubeId: '3vlj5YpQ7hY',
+          duration: '20:05',
+          category: 'stress'
+        },
+        'selfcare': {
+          title: 'Self-Care Strategies for Mental Wellness',
+          description: 'Learn practical self-care activities to nurture your mental and physical wellbeing, even with a busy schedule. This video includes a self-care assessment and personalized plan creation.',
+          youtubeId: 'y9K18tLwJv0',
+          duration: '15:40',
+          category: 'self-care'
+        },
+        'trauma': {
+          title: 'Understanding Trauma: Healing & Recovery',
+          description: 'Learn about different types of trauma, their effects on mental health, and evidence-based approaches to healing and recovery. Includes information on trauma-informed care and support resources.',
+          youtubeId: '9FdS3oJpQq8',
+          duration: '28:20',
+          category: 'trauma'
+        },
+        'mindfulness': {
+          title: 'Mindfulness Meditation: A Guided Practice',
+          description: 'Join our mindfulness instructor for a guided meditation practice designed to reduce stress and increase present-moment awareness. Perfect for beginners and experienced practitioners alike.',
+          youtubeId: 'ssss7V1_eyA',
+          duration: '12:30',
+          category: 'mindfulness'
+        },
+        'featured': {
+          title: 'Understanding Anxiety Disorders: A Comprehensive Guide',
+          description: 'Join Dr. Amina Kagwe, our lead psychologist, as she explains different types of anxiety disorders, their symptoms, and evidence-based treatment approaches. Includes practical coping strategies.',
+          youtubeId: 'zqoxpYQkZPk',
+          duration: '45:00',
+          category: 'anxiety'
+        }
+      };
+      
+      // Video Filtering
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Filter video cards
+          videoCards.forEach(card => {
+            const categories = card.getAttribute('data-category').split(' ');
+            
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = 'flex';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Open Video Modal
+      function openVideoModal(videoId) {
+        const video = videos[videoId];
+        if (!video) return;
+        
+        document.getElementById('modalTitle').textContent = video.title;
+        document.getElementById('videoDescriptionTitle').textContent = video.title;
+        document.getElementById('videoDescription').textContent = video.description;
+        
+        // Embed YouTube video
+        const videoContainer = document.getElementById('modalVideo');
+        videoContainer.innerHTML = `
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&rel=0" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        `;
+        
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeVideoModal() {
+        videoModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        
+        // Stop video playback
+        const videoContainer = document.getElementById('modalVideo');
+        videoContainer.innerHTML = '';
+      }
+      
+      // Watch Button Clicks
+      watchButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const videoId = this.getAttribute('data-video');
+          openVideoModal(videoId);
+        });
+      });
+      
+      // Thumbnail Clicks
+      const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+      videoThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+          const videoId = this.getAttribute('data-video');
+          openVideoModal(videoId);
+        });
+      });
+      
+      // Featured Video
+      featuredVideoPlayer.addEventListener('click', function() {
+        openVideoModal('featured');
+      });
+      
+      watchFeaturedBtn.addEventListener('click', function() {
+        openVideoModal('featured');
+      });
+      
+      // Modal Close Buttons
+      modalClose.addEventListener('click', closeVideoModal);
+      closeModalBtn.addEventListener('click', closeVideoModal);
+      
+      // Close modal on background click
+      videoModal.addEventListener('click', function(e) {
+        if (e.target === videoModal) {
+          closeVideoModal();
+        }
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (videoModal.classList.contains('active') && e.key === 'Escape') {
+          closeVideoModal();
+        }
+      });
+      
+      // Request Video Button
+      requestVideoBtn.addEventListener('click', function() {
+        const requestInfo = `
+Request a Video Topic
+
+📹 **How to Request:**
+1. Email: videos@manwellwithin.org
+2. Subject: Video Topic Request
+3. Include your suggested topic
+4. Explain why it would be helpful
+
+🎯 **Topics We Cover:**
+- Mental health conditions
+- Coping strategies
+- Relationship skills
+- Self-care techniques
+- Wellness practices
+- Therapy approaches
+
+👥 **Community Voting:**
+We regularly poll our community about video topics. The most requested topics get prioritized.
+
+📧 Contact: videos@manwellwithin.org
+        `;
+        
+        alert(requestInfo);
+      });
+      
+      // YouTube Button
+      youtubeBtn.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) {
+          const confirmYouTube = confirm('Open Manwell YouTube Channel?\n\nWe post new mental health education videos every week.\n\nClick OK to open YouTube, or Cancel to stay on this page.');
+          
+          if (!confirmYouTube) {
+            e.preventDefault();
+          }
+        }
+      });
+      
+      // Video Card Hover Effects
+      videoCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-10px)';
+          const thumbnail = this.querySelector('.thumbnail-image');
+          if (thumbnail) {
+            thumbnail.style.transform = 'scale(1.05)';
+          }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          if (!this.style.display || this.style.display !== 'none') {
+            this.style.transform = 'translateY(0)';
+            const thumbnail = this.querySelector('.thumbnail-image');
+            if (thumbnail) {
+              thumbnail.style.transform = 'scale(1)';
+            }
+          }
+        });
+      });
+      
+      // Featured Video Player Hover
+      featuredVideoPlayer.addEventListener('mouseenter', function() {
+        const playOverlay = this.querySelector('.play-overlay');
+        const playIcon = this.querySelector('.play-icon');
+        
+        if (playOverlay) playOverlay.style.background = 'rgba(0, 0, 0, 0.3)';
+        if (playIcon) playIcon.style.transform = 'scale(1.1)';
+      });
+      
+      featuredVideoPlayer.addEventListener('mouseleave', function() {
+        const playOverlay = this.querySelector('.play-overlay');
+        const playIcon = this.querySelector('.play-icon');
+        
+        if (playOverlay) playOverlay.style.background = 'rgba(0, 0, 0, 0.2)';
+        if (playIcon) playIcon.style.transform = 'scale(1)';
+      });
+    });
+  </script>
 </body>
 </html>
