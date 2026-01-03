@@ -106,7 +106,7 @@ header {
 
 .logo-img {
   width: 200px;        /* Increased from 32px */
-  height: 30px;       /* Increased from 32px */
+  height: 40px;       /* Increased from 32px */
   display: block;
   flex-shrink: 0;
   object-fit: contain;
