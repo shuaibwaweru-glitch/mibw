@@ -104,6 +104,26 @@ header {
   z-index: 100;
 }
 
+/* REPLACE THE .logo-icon STYLES WITH THESE */
+.logo-img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0; /* Prevents logo from shrinking */
+  object-fit: contain; /* Ensures logo scales properly */
+}
+
+/* KEEP your existing .logo-text styles */
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a3a52;
+  letter-spacing: 1px;
+}
+
+/* REMOVE or COMMENT OUT these old styles: */
+/*
 .logo-icon {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
@@ -114,14 +134,7 @@ header {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a3a52;
-  letter-spacing: 1px;
-}
+*/
 
 nav ul {
   display: flex;

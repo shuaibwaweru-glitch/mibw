@@ -751,14 +751,20 @@
   <header>
   <div class="header-container">
     <a href="/home" class="logo">
-      <!-- REPLACED: Original placeholder with SVG logo -->
-      <!-- OLD: <div class="logo-icon">M</div> -->
-      <!-- NEW: SVG logo loaded from assets -->
-      <object class="logo-svg" type="image/svg+xml" data="assets/images/logo.svg" width="32" height="32">
+      <!-- LOGO: Choose ONE option below -->
+      
+      <!-- OPTION 1: If your SVG is true vector -->
+      <object class="logo-img" type="image/svg+xml" data="assets/images/logo.svg" width="32" height="32">
         <!-- Fallback if SVG doesn't load -->
-        <span style="color: #1a5f66; font-weight: 700;">M</span>
+        <span style="color: #d4af37; font-weight: 700; font-size: 1.8rem;">M</span>
       </object>
-      Manwell
+      
+      <!-- OPTION 2: If SVG is embedded JPEG, use PNG instead -->
+      <!-- 
+      <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img" width="32" height="32">
+      -->
+      
+      <span class="logo-text">Manwell</span>
     </a>
       <nav>
         <div class="nav-item">
