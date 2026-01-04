@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Support MIBW - Help us provide mental health support to men and boys across Africa. Your donation transforms lives.">
+  <meta name="description" content="Support Manwell - Help us provide mental health support to men and boys across Africa. Your donation transforms lives.">
   <meta name="theme-color" content="#1a5f66">
-  <title>Donate - Support Men's Wellness</title>
+  <title>Donate - Support Men's Mental Health | Manwell</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     * {
@@ -21,6 +22,7 @@
       line-height: 1.6;
       color: #2c3e50;
       background-color: #ffffff;
+      overflow-x: hidden;
     }
 
     /* ========== HEADER ========== */
@@ -52,16 +54,12 @@
       gap: 0.5rem;
     }
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: #1a5f66;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
+    .logo-img {
+      width: 200px;
+      height: 47px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
     }
 
     /* ========== DONATE BUTTON ========== */
@@ -90,24 +88,11 @@
       transform: translateY(0);
     }
 
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
-      gap: 2rem;
-      align-items: center;
+      gap: 0.5rem;
       list-style: none;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #666;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #E8B356;
     }
 
     .nav-item {
@@ -177,13 +162,14 @@
 
     /* ========== HERO SECTION ========== */
     .hero {
-      background: linear-gradient(rgba(26, 95, 102, 0.5), rgba(26, 95, 102, 0.5)), url('https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=1200&h=400&fit=crop');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(135deg, rgba(26,95,102,0.9), rgba(232,179,86,0.9)), 
+                  url('https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=1200&h=600&fit=crop') center/cover;
       color: white;
-      padding: 180px 2rem 100px;
-      margin-top: 60px;
+      padding: 140px 2rem 80px;
       text-align: center;
+      margin-top: 60px;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero h1 {
@@ -191,13 +177,40 @@
       font-family: 'Lora', serif;
       margin-bottom: 1rem;
       font-weight: 600;
-      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       max-width: 700px;
-      margin: 0 auto;
+      margin: 0 auto 2rem;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Lora', serif;
+      color: white;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
     }
 
     /* ========== CONTAINER ========== */
@@ -207,15 +220,65 @@
       padding: 3rem 2rem;
     }
 
-    /* ========== DONATION SECTION ========== */
-    .donation-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 4rem;
+    /* ========== SECTION HEADER ========== */
+    .section-header {
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      text-align: center;
     }
 
-    .donation-content h2 {
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-family: 'Lora', serif;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #E8B356;
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      color: #666;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+    }
+
+    /* ========== DONATION GRID ========== */
+    .donation-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      margin: 3rem 0 4rem;
+    }
+
+    @media (max-width: 992px) {
+      .donation-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ========== WHY DONATE SECTION ========== */
+    .why-donate {
+      background: linear-gradient(135deg, rgba(26,95,102,0.05), rgba(232,179,86,0.05));
+      padding: 2.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #1a5f66;
+      margin-bottom: 2rem;
+    }
+
+    .why-donate h2 {
       font-size: 2rem;
       font-family: 'Lora', serif;
       color: #1a5f66;
@@ -223,119 +286,230 @@
       font-weight: 600;
     }
 
-    .donation-content p {
+    .why-donate p {
       color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
     }
 
-    .donation-content ul {
+    .impact-list {
       list-style: none;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
     }
 
-    .donation-content li {
-      padding: 0.8rem 0;
-      padding-left: 1.5rem;
-      position: relative;
+    .impact-list li {
       color: #666;
+      padding: 1rem 0 1rem 2.5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
-    .donation-content li:before {
+    .impact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .impact-list li::before {
       content: '✓';
       position: absolute;
       left: 0;
+      width: 30px;
+      height: 30px;
+      background: #E8B356;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .transparency-badges {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a5f66;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .badge i {
       color: #E8B356;
-      font-weight: 700;
     }
 
     /* ========== DONATION OPTIONS ========== */
     .donation-options {
-      background: #f8f9fa;
-      padding: 2.5rem;
-      border-left: 4px solid #E8B356;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 100px;
     }
 
-    .donation-options h3 {
-      font-size: 1.5rem;
+    .donation-header {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .donation-header h3 {
       font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin-bottom: 2rem;
-      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
     }
 
+    .donation-header p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+
+    .donation-body {
+      padding: 2rem;
+    }
+
+    /* ========== DONATION LEVELS ========== */
     .donation-levels {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
       margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .donation-levels {
+        grid-template-columns: 1fr;
+      }
     }
 
     .donation-level {
-      background: white;
+      background: #f8f9fa;
       padding: 1.5rem;
-      border-left: 4px solid #1a5f66;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+      border: 2px solid transparent;
     }
 
     .donation-level:hover {
-      box-shadow: 0 4px 12px rgba(26, 95, 102, 0.15);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-color: rgba(232,179,86,0.3);
     }
 
-    .donation-level.featured {
-      border-left-color: #E8B356;
-      background: linear-gradient(135deg, rgba(232, 179, 86, 0.1), rgba(26, 95, 102, 0.05));
+    .donation-level.selected {
+      background: linear-gradient(135deg, rgba(232,179,86,0.1), rgba(26,95,102,0.05));
+      border-color: #E8B356;
     }
 
-    .donation-level h4 {
-      font-size: 1.5rem;
+    .donation-level.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #E8B356;
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .amount-display {
+      font-size: 1.8rem;
+      font-weight: 700;
       color: #1a5f66;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      margin: 0.5rem 0;
+      font-family: 'Lora', serif;
     }
 
-    .donation-level p {
+    .amount-description {
       color: #666;
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
     }
 
-    .donation-level .amount {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin: 1rem 0;
-    }
-
-    .donation-level .impact {
-      font-size: 0.85rem;
-      color: #666;
-      font-style: italic;
-    }
-
-    .custom-amount {
-      background: white;
-      padding: 1.5rem;
-      border-left: 4px solid #1a5f66;
-    }
-
-    .custom-amount label {
-      display: block;
-      margin-bottom: 0.5rem;
+    .impact-tag {
+      display: inline-block;
+      background: rgba(232,179,86,0.1);
       color: #1a5f66;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    /* ========== CUSTOM AMOUNT ========== */
+    .custom-amount {
+      margin-bottom: 2rem;
+    }
+
+    .custom-amount h4 {
+      color: #1a5f66;
+      font-size: 1rem;
+      margin-bottom: 1rem;
       font-weight: 600;
     }
 
-    .custom-amount input {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 1rem;
-      margin-bottom: 1rem;
+    .amount-input-container {
+      display: flex;
+      align-items: center;
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      border: 2px solid #e0e0e0;
+      transition: all 0.3s ease;
+    }
+
+    .amount-input-container:focus-within {
+      border-color: #1a5f66;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(26,95,102,0.1);
+    }
+
+    .currency {
+      color: #1a5f66;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    #customAmount {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a5f66;
+      outline: none;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    #customAmount::placeholder {
+      color: #aaa;
+    }
+
+    .currency-symbol {
+      color: #E8B356;
+      font-weight: 700;
+      margin-left: 0.5rem;
     }
 
     /* ========== PAYMENT METHODS ========== */
@@ -352,181 +526,415 @@
 
     .methods-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
     }
 
+    @media (max-width: 480px) {
+      .methods-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       padding: 1rem;
-      background: white;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-      text-align: center;
+      background: #f8f9fa;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-weight: 600;
-      color: #666;
+      border: 2px solid transparent;
     }
 
     .method:hover {
-      border-color: #E8B356;
-      background: #fffef5;
-    }
-
-    .method.active {
-      border-color: #E8B356;
-      background: rgba(232, 179, 86, 0.1);
-      color: #E8B356;
-    }
-
-    .donate-form-btn {
-      background: #E8B356;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .donate-form-btn:hover {
-      background: #d4a051;
-      box-shadow: 0 4px 12px rgba(232, 179, 86, 0.3);
+      background: white;
+      border-color: rgba(232,179,86,0.3);
       transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
 
-    /* ========== IMPACT CARDS ========== */
-    .impact-section {
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid #e0e0e0;
+    .method.selected {
+      background: white;
+      border-color: #E8B356;
+      box-shadow: 0 3px 10px rgba(232,179,86,0.2);
     }
 
-    .impact-section h2 {
-      font-size: 2rem;
-      font-family: 'Lora', serif;
+    .method-icon {
+      width: 40px;
+      height: 40px;
+      background: #1a5f66;
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .method-info {
+      flex: 1;
+    }
+
+    .method-name {
       color: #1a5f66;
-      margin-bottom: 2rem;
       font-weight: 600;
-      text-align: center;
+      margin-bottom: 0.2rem;
     }
 
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .impact-card {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-left: 4px solid #E8B356;
-      text-align: center;
-    }
-
-    .impact-card .amount {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #E8B356;
-      margin-bottom: 0.5rem;
-    }
-
-    .impact-card p {
+    .method-description {
       color: #666;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
-    /* ========== DONOR STORY ========== */
-    .donor-story {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-left: 4px solid #1a5f66;
+    /* ========== DONATE BUTTON ========== */
+    .donate-action {
+      margin-top: 2rem;
+    }
+
+    .donate-btn-large {
+      display: block;
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, #E8B356, #e0a940);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .donate-btn-large:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(232,179,86,0.4);
+      background: linear-gradient(135deg, #e0a940, #d4a051);
+    }
+
+    .security-notice {
+      text-align: center;
+      color: #888;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .security-notice i {
+      color: #4CAF50;
+    }
+
+    /* ========== IMPACT VISUALIZATION ========== */
+    .impact-visualization {
+      background: linear-gradient(135deg, rgba(26,95,102,0.05), rgba(232,179,86,0.05));
+      padding: 3rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+    }
+
+    .impact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
       margin-top: 3rem;
     }
 
-    .donor-story h3 {
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+    .impact-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      border-top: 4px solid #E8B356;
     }
 
-    .donor-story p {
+    .impact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .impact-icon {
+      width: 70px;
+      height: 70px;
+      background: #E8B356;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      margin: 0 auto 1.5rem;
+    }
+
+    .impact-amount {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-family: 'Lora', serif;
+    }
+
+    .impact-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ========== DONOR STORIES ========== */
+    .donor-stories {
+      margin: 4rem 0;
+    }
+
+    .story-slider {
+      max-width: 800px;
+      margin: 3rem auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-cards {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .story-card {
+      min-width: 100%;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border-left: 4px solid #1a5f66;
+    }
+
+    .story-quote {
+      font-size: 1.1rem;
       color: #666;
       line-height: 1.8;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      position: relative;
+      padding-left: 1.5rem;
     }
 
-    .donor-quote {
-      font-style: italic;
+    .story-quote::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -10px;
+      font-size: 3rem;
+      color: #E8B356;
+      opacity: 0.3;
+      font-family: serif;
+    }
+
+    .story-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      background: #E8B356;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .author-info h5 {
       color: #1a5f66;
-      border-left: 4px solid #E8B356;
-      padding-left: 1rem;
-      margin: 1rem 0;
+      font-family: 'Lora', serif;
+      margin-bottom: 0.3rem;
+    }
+
+    .author-info p {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      background: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background: #E8B356;
+      transform: scale(1.2);
     }
 
     /* ========== FAQ ========== */
     .faq-section {
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid #e0e0e0;
+      margin: 4rem 0;
     }
 
-    .faq-section h2 {
-      font-size: 2rem;
-      font-family: 'Lora', serif;
-      color: #1a5f66;
-      margin-bottom: 2rem;
-      font-weight: 600;
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
     .faq-item {
-      margin-bottom: 1.5rem;
-      background: #f8f9fa;
+      background: white;
       padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       border-left: 4px solid #E8B356;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-3px);
     }
 
     .faq-item h4 {
       color: #1a5f66;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .faq-item h4 i {
+      color: #E8B356;
     }
 
     .faq-item p {
       color: #666;
+      line-height: 1.6;
       font-size: 0.95rem;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=1200&h=400&fit=crop&q=10') center/cover;
+      opacity: 0.1;
+    }
+
+    .cta-section h3 {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+      position: relative;
+    }
+
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .cta-btn {
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .cta-btn-primary {
+      background: #E8B356;
+      color: white;
+    }
+
+    .cta-btn-primary:hover {
+      background: #d4a051;
+      box-shadow: 0 8px 20px rgba(232,179,86,0.3);
+      transform: translateY(-3px);
+    }
+
+    .cta-btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-btn-secondary:hover {
+      background: white;
+      color: #1a5f66;
     }
 
     /* ========== FOOTER ========== */
     footer {
-      background: #1a5f66;
+      background-color: #1a5f66;
       color: white;
       padding: 3rem 2rem 1.5rem;
       margin-top: 4rem;
     }
 
-    .footer-content {
+    .footer-container {
       max-width: 1200px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
     .footer-section h3 {
       color: #E8B356;
       font-family: 'Lora', serif;
+      margin-bottom: 1rem;
       font-size: 1.1rem;
-      margin-bottom: 1.2rem;
-      font-weight: 600;
     }
 
     .footer-section ul {
@@ -534,14 +942,13 @@
     }
 
     .footer-section li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .footer-section a {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
     .footer-section a:hover {
@@ -549,38 +956,295 @@
     }
 
     .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 2rem;
       text-align: center;
-      font-size: 0.85rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
       color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* ========== DONATION MODAL ========== */
+    .donation-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .donation-modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 500px;
+      width: 100%;
+      border-radius: 12px;
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-header {
+      padding: 2rem;
+      background: linear-gradient(135deg, #1a5f66, #1a5f66);
+      color: white;
+      border-radius: 12px 12px 0 0;
+      text-align: center;
+    }
+
+    .modal-header h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: white;
+      transition: color 0.3s ease;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .modal-close:hover {
+      color: #E8B356;
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    .donation-summary {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .donation-amount {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a5f66;
+      margin-bottom: 0.5rem;
+      font-family: 'Lora', serif;
+    }
+
+    .donation-method {
+      color: #666;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #1a5f66;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #1a5f66;
+      box-shadow: 0 0 0 3px rgba(26,95,102,0.1);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .modal-btn {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    .modal-btn-primary {
+      background: #E8B356;
+      color: white;
+    }
+
+    .modal-btn-primary:hover {
+      background: #d4a051;
+      box-shadow: 0 4px 12px rgba(232,179,86,0.3);
+    }
+
+    .modal-btn-secondary {
+      background: #f8f9fa;
+      color: #1a5f66;
+    }
+
+    .modal-btn-secondary:hover {
+      background: #e9ecef;
     }
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .header-container {
+        padding: 0.75rem 1rem;
+      }
+
+      .logo-img {
+        width: 160px;
+        height: 37px;
+      }
+
+      nav {
+        gap: 0.25rem;
+      }
+
+      .nav-item > a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+
+      .donate-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .section-header h2 {
         font-size: 2rem;
       }
 
+      .container {
+        padding: 2rem 1rem;
+      }
+
       .donation-grid {
+        gap: 2rem;
+      }
+
+      .why-donate,
+      .donation-options {
+        padding: 1.5rem;
+      }
+
+      .impact-visualization {
+        padding: 2rem;
+      }
+
+      .story-card {
+        padding: 1.5rem;
+      }
+
+      .footer-container {
         grid-template-columns: 1fr;
       }
 
+      .cta-section h3 {
+        font-size: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 120px 1rem 60px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-stats {
+        gap: 2rem;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+
+      .logo-img {
+        width: 140px;
+        height: 33px;
+      }
+
       .donation-levels {
-        grid-template-columns: 1fr;
+        gap: 0.8rem;
       }
 
       .methods-grid {
         grid-template-columns: 1fr;
       }
 
-      .impact-grid {
+      .impact-cards {
         grid-template-columns: 1fr;
       }
 
-      .footer-content {
+      .faq-grid {
         grid-template-columns: 1fr;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+
+      .modal-actions {
+        flex-direction: column;
       }
     }
   </style>
@@ -591,8 +1255,7 @@
   <header>
     <div class="header-container">
       <a href="/home" class="logo">
-        <div class="logo-icon">M</div>
-        Manwell
+        <img src="assets/images/logo.png" alt="Manwell Logo" class="logo-img">
       </a>
       <nav>
         <div class="nav-item">
@@ -635,181 +1298,428 @@
             <a href="/contact">Contact Us</a>
           </div>
         </div>
-        <a href="/donate" class="donate-btn active">💚 Donate</a>
+        <a href="/donate" class="donate-btn active">💚 Donate Now</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Your Donation Saves Lives</h1>
+    <h1>Your Donation Transforms Lives</h1>
     <p>Every contribution helps us provide free mental health support, crisis intervention, and community programs for men and boys across Africa.</p>
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">5000+</div>
+        <div class="stat-label">Lives Impacted</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Crisis Support</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Program Impact</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Transparent</div>
+      </div>
+    </div>
   </section>
 
   <!-- MAIN CONTENT -->
   <div class="container">
+    <!-- Why Donate & Donation Form -->
     <div class="donation-grid">
-      <!-- LEFT SIDE: WHY DONATE -->
-      <div class="donation-content">
+      <!-- Left Column: Why Donate -->
+      <div class="why-donate">
         <h2>Why Your Support Matters</h2>
-        <p>We're an NGO committed to breaking the silence around men's mental health. With your help, we can reach more men in crisis, provide free counseling, and build supportive communities.</p>
+        <p>We're a non-profit organization committed to breaking the silence around men's mental health. With your help, we can reach more men in crisis, provide free counseling, and build supportive communities where men can heal and grow.</p>
         
-        <h3 style="color: #1a5f66; margin-top: 1.5rem; font-family: 'Lora', serif;">What Your Donation Supports:</h3>
-        <ul>
-          <li>24/7 Crisis Support Hotline</li>
-          <li>Free Mental Health Assessments</li>
-          <li>Peer Support Group Programs</li>
-          <li>Clinical Counseling Sessions</li>
-          <li>Community Education & Workshops</li>
-          <li>Research & Mental Health Advocacy</li>
-          <li>Therapist Training Programs</li>
+        <p>Men's mental health remains one of the most neglected areas in healthcare. Cultural stigmas prevent men from seeking help, leading to devastating consequences. Your donation directly addresses this crisis.</p>
+        
+        <h3 style="color: #1a5f66; margin-top: 2rem; font-family: 'Lora', serif;">What Your Donation Supports:</h3>
+        <ul class="impact-list">
+          <li>24/7 Crisis Support Hotline & Suicide Prevention</li>
+          <li>Free Mental Health Assessments & Screenings</li>
+          <li>Peer Support Group Programs & Brotherhood Circles</li>
+          <li>Clinical Counseling Sessions with Licensed Therapists</li>
+          <li>Community Education & Mental Health Workshops</li>
+          <li>Research & Mental Health Advocacy Initiatives</li>
+          <li>Therapist Training & Capacity Building Programs</li>
           <li>Emergency Mental Health Interventions</li>
         </ul>
-
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #999;">✓ 100% Transparency: See exactly where your donation goes</p>
-        <p style="font-size: 0.9rem; color: #999;">✓ Tax Deductible: Your contribution is fully tax-deductible</p>
-        <p style="font-size: 0.9rem; color: #999;">✓ Secure Payment: All transactions are encrypted & secure</p>
-      </div>
-
-      <!-- RIGHT SIDE: DONATION FORM -->
-      <div class="donation-options">
-        <h3>Choose Your Impact Level</h3>
         
-        <div class="donation-levels">
-          <div class="donation-level">
-            <h4>Ksh 500</h4>
-            <div class="amount">≈ 1 Hour</div>
-            <p class="impact">1 Hour of Counseling</p>
+        <div class="transparency-badges">
+          <div class="badge">
+            <i class="fas fa-shield-alt"></i>
+            100% Transparent
           </div>
-
-          <div class="donation-level">
-            <h4>Ksh 1,000</h4>
-            <div class="amount">≈ 2 Hours</div>
-            <p class="impact">2 Hours of Counseling</p>
+          <div class="badge">
+            <i class="fas fa-hand-holding-heart"></i>
+            Tax Deductible
           </div>
-
-          <div class="donation-level">
-            <h4>Ksh 2,500</h4>
-            <div class="amount">≈ 1 Week</div>
-            <p class="impact">1 Week Support Services</p>
+          <div class="badge">
+            <i class="fas fa-lock"></i>
+            Secure Payment
           </div>
-
-          <div class="donation-level featured">
-            <h4>Ksh 5,000</h4>
-            <div class="amount">≈ 1 Month</div>
-            <p class="impact">1 Month of Crisis Support</p>
-          </div>
-
-          <div class="donation-level">
-            <h4>Ksh 10,000</h4>
-            <div class="amount">≈ 1 Program</div>
-            <p class="impact">1 Support Group Program</p>
-          </div>
-
-          <div class="donation-level">
-            <h4>Ksh 25,000</h4>
-            <div class="amount">≈ Impact</div>
-            <p class="impact">Transformative Support</p>
+          <div class="badge">
+            <i class="fas fa-chart-line"></i>
+            Impact Reports
           </div>
         </div>
-
-        <!-- CUSTOM AMOUNT -->
-        <div class="custom-amount">
-          <label for="custom-amount">Or enter a custom amount:</label>
-          <input type="number" id="custom-amount" placeholder="Enter amount in KES" min="100">
+      </div>
+      
+      <!-- Right Column: Donation Form -->
+      <div class="donation-options">
+        <div class="donation-header">
+          <h3>Make a Difference Today</h3>
+          <p>Choose your donation amount and payment method</p>
         </div>
-
-        <!-- PAYMENT METHODS -->
-        <div class="payment-methods">
-          <h4>Payment Method</h4>
-          <div class="methods-grid">
-            <div class="method active" onclick="this.classList.add('active'); document.querySelectorAll('.method').forEach(m => m !== this && m.classList.remove('active'));">
-              📱 M-Pesa
+        
+        <div class="donation-body">
+          <!-- Donation Levels -->
+          <div class="donation-levels" id="donationLevels">
+            <div class="donation-level" data-amount="500">
+              <div class="amount-display">Ksh 500</div>
+              <div class="amount-description">Emergency Support</div>
+              <div class="impact-tag">1 Hour of Counseling</div>
             </div>
-            <div class="method" onclick="this.classList.add('active'); document.querySelectorAll('.method').forEach(m => m !== this && m.classList.remove('active'));">
-              💳 Card
+            
+            <div class="donation-level" data-amount="1000">
+              <div class="amount-display">Ksh 1,000</div>
+              <div class="amount-description">Basic Support</div>
+              <div class="impact-tag">2 Hours of Counseling</div>
             </div>
-            <div class="method" onclick="this.classList.add('active'); document.querySelectorAll('.method').forEach(m => m !== this && m.classList.remove('active'));">
-              🏦 Bank Transfer
+            
+            <div class="donation-level" data-amount="2500">
+              <div class="amount-display">Ksh 2,500</div>
+              <div class="amount-description">Weekly Support</div>
+              <div class="impact-tag">1 Week of Services</div>
             </div>
-            <div class="method" onclick="this.classList.add('active'); document.querySelectorAll('.method').forEach(m => m !== this && m.classList.remove('active'));">
-              📧 Mpesa Paybill
+            
+            <div class="donation-level featured" data-amount="5000">
+              <div class="amount-display">Ksh 5,000</div>
+              <div class="amount-description">Monthly Support</div>
+              <div class="impact-tag">1 Month Crisis Support</div>
+            </div>
+            
+            <div class="donation-level" data-amount="10000">
+              <div class="amount-display">Ksh 10,000</div>
+              <div class="amount-description">Program Support</div>
+              <div class="impact-tag">1 Support Group Program</div>
+            </div>
+            
+            <div class="donation-level" data-amount="25000">
+              <div class="amount-display">Ksh 25,000</div>
+              <div class="amount-description">Transformative Support</div>
+              <div class="impact-tag">Life-Changing Impact</div>
             </div>
           </div>
+          
+          <!-- Custom Amount -->
+          <div class="custom-amount">
+            <h4>Or enter a custom amount:</h4>
+            <div class="amount-input-container">
+              <span class="currency">KES</span>
+              <input type="number" id="customAmount" placeholder="Enter amount" min="100" step="100">
+              <span class="currency-symbol">Ksh</span>
+            </div>
+          </div>
+          
+          <!-- Payment Methods -->
+          <div class="payment-methods">
+            <h4>Select Payment Method</h4>
+            <div class="methods-grid" id="paymentMethods">
+              <div class="method selected" data-method="mpesa">
+                <div class="method-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">M-Pesa</div>
+                  <div class="method-description">Via Lipa Na M-Pesa</div>
+                </div>
+              </div>
+              
+              <div class="method" data-method="card">
+                <div class="method-icon">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">Credit/Debit Card</div>
+                  <div class="method-description">Visa, Mastercard, Amex</div>
+                </div>
+              </div>
+              
+              <div class="method" data-method="bank">
+                <div class="method-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">Bank Transfer</div>
+                  <div class="method-description">Direct bank deposit</div>
+                </div>
+              </div>
+              
+              <div class="method" data-method="paybill">
+                <div class="method-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="method-info">
+                  <div class="method-name">M-Pesa Paybill</div>
+                  <div class="method-description">Business Number: 123456</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Donate Button -->
+          <div class="donate-action">
+            <button class="donate-btn-large" id="donateNowBtn">
+              <i class="fas fa-heart"></i>
+              Donate Now
+            </button>
+            <div class="security-notice">
+              <i class="fas fa-lock"></i>
+              Secure & encrypted payment
+            </div>
+          </div>
+          
+          <!-- Monthly Donation Option -->
+          <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+            <label style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="monthlyDonation" style="width: auto;">
+              <span style="color: #666; font-size: 0.9rem;">Make this a monthly recurring donation</span>
+            </label>
+            <p style="color: #888; font-size: 0.8rem; margin-top: 0.5rem;">Monthly donors provide consistent support for ongoing programs</p>
+          </div>
         </div>
-
-        <button class="donate-form-btn">Proceed to Donation</button>
-
-        <p style="font-size: 0.8rem; text-align: center; color: #999; margin-top: 1rem;">Your donation is secure and encrypted</p>
       </div>
     </div>
 
-    <!-- IMPACT SECTION -->
-    <section class="impact-section">
-      <h2>See Your Impact</h2>
-      <div class="impact-grid">
+    <!-- Impact Visualization -->
+    <div class="impact-visualization">
+      <div class="section-header">
+        <h2>See Your Impact</h2>
+        <p>Your donation directly supports life-changing mental health services</p>
+      </div>
+      
+      <div class="impact-cards">
         <div class="impact-card">
-          <div class="amount">Ksh 500</div>
-          <p>Provides emergency crisis counseling for one man in suicidal crisis</p>
+          <div class="impact-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="impact-amount">Ksh 500</div>
+          <div class="impact-description">Provides emergency crisis counseling for one man in suicidal crisis, potentially saving a life</div>
         </div>
+        
         <div class="impact-card">
-          <div class="amount">Ksh 2,500</div>
-          <p>Funds one week of peer support group sessions for struggling men</p>
+          <div class="impact-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="impact-amount">Ksh 2,500</div>
+          <div class="impact-description">Funds one week of peer support group sessions, helping 10 men find community and healing</div>
         </div>
+        
         <div class="impact-card">
-          <div class="amount">Ksh 10,000</div>
-          <p>Enables a comprehensive 4-week therapy program with a licensed therapist</p>
+          <div class="impact-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <div class="impact-amount">Ksh 10,000</div>
+          <div class="impact-description">Enables a comprehensive 4-week therapy program with a licensed clinical psychologist</div>
+        </div>
+        
+        <div class="impact-card">
+          <div class="impact-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="impact-amount">Ksh 25,000</div>
+          <div class="impact-description">Trains one community mental health worker to support hundreds of men in their region</div>
         </div>
       </div>
+    </div>
 
-      <!-- DONOR STORY -->
-      <div class="donor-story">
-        <h3>💚 How Your Donation Changed A Life</h3>
-        <p><strong>Moses's Story:</strong> After two years of silent struggle with depression, Moses called our crisis line. Your donations provided him with 12 weeks of free therapy, crisis support, and peer group connections. Today, he's healing and helping other men find hope too.</p>
-        <div class="donor-quote">"I thought I was alone. Your support gave me a reason to live. Now I'm showing other men they don't have to suffer in silence either." - Moses</div>
-        <p>Your donation directly enables stories like Moses's. Help us reach more men in crisis.</p>
+    <!-- Donor Stories -->
+    <div class="donor-stories">
+      <div class="section-header">
+        <h2>Donor Stories</h2>
+        <p>Hear from people whose donations are making a real difference</p>
       </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h4>How is my donation used?</h4>
-        <p>Every shilling goes directly to supporting our services: 60% for clinical therapy and counseling, 25% for community programs and outreach, 10% for research and advocacy, 5% for operational costs. See our full transparency report.</p>
+      
+      <div class="story-slider" id="storySlider">
+        <div class="story-cards">
+          <div class="story-card" data-story="1">
+            <div class="story-quote">
+              "As a man who struggled with depression for years, I know how crucial this work is. My monthly donation is my way of ensuring other men don't have to suffer in silence like I did. Every shilling I give helps create safe spaces for men to heal."
+            </div>
+            <div class="story-author">
+              <div class="author-avatar">JK</div>
+              <div class="author-info">
+                <h5>James Kariuki</h5>
+                <p>Monthly Donor since 2022</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="story-card" data-story="2">
+            <div class="story-quote">
+              "After my brother lost his battle with mental illness, I committed to supporting organizations like Manwell. Knowing that my donation funds the crisis hotline gives me hope that other families won't experience the pain mine did."
+            </div>
+            <div class="story-author">
+              <div class="author-avatar">SW</div>
+              <div class="author-info">
+                <h5>Sarah Wangari</h5>
+                <p>In Memory Donor</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="story-card" data-story="3">
+            <div class="story-quote">
+              "Our company partners with Manwell because we've seen firsthand how mental health support transforms employees' lives. Corporate donations create ripple effects—when our team members are well, our entire community benefits."
+            </div>
+            <div class="story-author">
+              <div class="author-avatar">TM</div>
+              <div class="author-info">
+                <h5>Thomas Mwangi</h5>
+                <p>Corporate Partner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="slider-nav">
+          <div class="slider-dot active" data-slide="0"></div>
+          <div class="slider-dot" data-slide="1"></div>
+          <div class="slider-dot" data-slide="2"></div>
+        </div>
       </div>
+    </div>
 
-      <div class="faq-item">
-        <h4>Is my donation tax-deductible?</h4>
-        <p>Yes! MIBW is a registered NGO. Your donation is fully tax-deductible. We'll provide a receipt for all donations.</p>
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about donating to Manwell</p>
       </div>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4><i class="fas fa-chart-pie"></i> How is my donation used?</h4>
+          <p>Every shilling goes directly to supporting our services: 65% for clinical therapy and counseling, 20% for community programs and outreach, 10% for research and advocacy, and 5% for essential operational costs. We publish detailed transparency reports annually.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-receipt"></i> Is my donation tax-deductible?</h4>
+          <p>Yes! Manwell is a registered non-profit organization. All donations are fully tax-deductible. We provide official receipts for all donations which you can use for tax purposes.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-calendar-alt"></i> Can I set up monthly donations?</h4>
+          <p>Absolutely! Monthly donors are our most valued partners. You can set up recurring donations through M-Pesa Auto-Debit, credit card, or bank standing order. Monthly supporters receive exclusive impact updates.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-shield-alt"></i> Is my payment secure?</h4>
+          <p>Completely secure. All online transactions are encrypted with SSL technology. We never store your full payment details. Our payment processors are PCI-DSS compliant and meet the highest security standards.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-gift"></i> Can I donate in someone's honor?</h4>
+          <p>Yes! You can make memorial donations or honor someone special. We'll send a personalized acknowledgment to the person or family you're honoring (without mentioning the amount).</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-eye"></i> How can I see my donation's impact?</h4>
+          <p>All donors receive quarterly impact reports showing exactly how funds are being used and the lives being transformed. Major donors are invited to visit our programs and meet the people they're helping.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-handshake"></i> Do you accept corporate donations?</h4>
+          <p>Yes! We welcome corporate partnerships and donations. Companies can support specific programs, sponsor events, or provide matching gift programs for employees. Contact our partnerships team for details.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4><i class="fas fa-exchange-alt"></i> Can I change or cancel my donation?</h4>
+          <p>You can update or cancel your recurring donation at any time by contacting our donor support team. One-time donations cannot be refunded unless there was an error in processing.</p>
+        </div>
+      </div>
+    </div>
 
-      <div class="faq-item">
-        <h4>Can I set up a monthly recurring donation?</h4>
-        <p>Absolutely! Monthly donors are our most reliable partners. Monthly supporters receive exclusive updates on the lives they're helping transform.</p>
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h3>Other Ways to Support</h3>
+      <p>Your support goes beyond financial donations. Explore other meaningful ways to contribute to our mission of transforming men's mental health.</p>
+      <div class="cta-buttons">
+        <button class="cta-btn cta-btn-primary" id="volunteerBtn">Volunteer With Us</button>
+        <button class="cta-btn cta-btn-secondary" id="corporateBtn">Corporate Partnership</button>
+        <button class="cta-btn cta-btn-secondary" id="fundraiseBtn">Start a Fundraiser</button>
       </div>
+    </div>
+  </div>
 
-      <div class="faq-item">
-        <h4>What payment methods do you accept?</h4>
-        <p>We accept M-Pesa, credit/debit cards (Visa, Mastercard), bank transfers, and Paybill payments. All transactions are secure and encrypted.</p>
+  <!-- DONATION MODAL -->
+  <div class="donation-modal" id="donationModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <h3>Complete Your Donation</h3>
+        <p>Thank you for supporting men's mental health</p>
       </div>
-
-      <div class="faq-item">
-        <h4>Can I donate on behalf of someone else?</h4>
-        <p>Yes! You can make a memorial donation or give as a gift. Just mention this during the donation process.</p>
+      <div class="modal-body">
+        <div class="donation-summary">
+          <div class="donation-amount" id="modalAmount">Ksh 5,000</div>
+          <div class="donation-method" id="modalMethod">via M-Pesa</div>
+          <div id="modalRecurring" style="color: #666; font-size: 0.9rem;"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="donorName">Your Name *</label>
+          <input type="text" id="donorName" placeholder="Enter your full name">
+        </div>
+        
+        <div class="form-group">
+          <label for="donorEmail">Email Address *</label>
+          <input type="email" id="donorEmail" placeholder="Enter your email">
+        </div>
+        
+        <div class="form-group" id="mpesaNumberGroup">
+          <label for="mpesaNumber">M-Pesa Number *</label>
+          <input type="tel" id="mpesaNumber" placeholder="07XX XXX XXX">
+        </div>
+        
+        <div class="form-group" id="cardDetailsGroup" style="display: none;">
+          <label for="cardNumber">Card Number *</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div>
+              <label for="cardExpiry">Expiry Date *</label>
+              <input type="text" id="cardExpiry" placeholder="MM/YY">
+            </div>
+            <div>
+              <label for="cardCVC">CVC *</label>
+              <input type="text" id="cardCVC" placeholder="123">
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="modal-btn modal-btn-secondary" id="modalCancelBtn">Cancel</button>
+          <button class="modal-btn modal-btn-primary" id="modalConfirmBtn">Complete Donation</button>
+        </div>
+        
+        <p style="text-align: center; color: #888; font-size: 0.8rem; margin-top: 1.5rem;">
+          <i class="fas fa-lock"></i> Your payment is secure and encrypted
+        </p>
       </div>
-
-      <div class="faq-item">
-        <h4>Where can I see the impact of my donation?</h4>
-        <p>We send monthly impact reports to all donors showing exactly how our funds are being used and the lives being transformed. You're invited to visit our transparency page anytime.</p>
-      </div>
-    </section>
+    </div>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
+    <div class="footer-container">
       <div class="footer-section">
         <h3>Services</h3>
         <ul>
@@ -823,8 +1733,8 @@
         <h3>Company</h3>
         <ul>
           <li><a href="/about">About Us</a></li>
+          <li><a href="/strategy">Our Strategy</a></li>
           <li><a href="/experts">Our Team</a></li>
-          <li><a href="/community">Community</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
@@ -835,12 +1745,473 @@
           <li><a href="https://twitter.com/manwellwithin" target="_blank">Twitter</a></li>
           <li><a href="https://instagram.com/manwellwithin" target="_blank">Instagram</a></li>
           <li><a href="https://tiktok.com/@manwellwithin" target="_blank">TikTok</a></li>
+          <li><a href="https://youtube.com/@manwellwithin" target="_blank">YouTube</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 MIBW - Men's Integrated Broth ers' Wellness. All rights reserved. Compassion in every interaction.</p>
+      <p>&copy; 2024 Manwell. All rights reserved. | Transforming men's mental health through community support | Registered Non-Profit Organization | Support: +254 754 151 315</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elements
+      const donationLevels = document.querySelectorAll('.donation-level');
+      const customAmountInput = document.getElementById('customAmount');
+      const paymentMethods = document.querySelectorAll('.method');
+      const donateNowBtn = document.getElementById('donateNowBtn');
+      const monthlyDonationCheckbox = document.getElementById('monthlyDonation');
+      const donationModal = document.getElementById('donationModal');
+      const modalClose = document.getElementById('modalClose');
+      const modalCancelBtn = document.getElementById('modalCancelBtn');
+      const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+      const storyCards = document.querySelector('.story-cards');
+      const sliderDots = document.querySelectorAll('.slider-dot');
+      const volunteerBtn = document.getElementById('volunteerBtn');
+      const corporateBtn = document.getElementById('corporateBtn');
+      const fundraiseBtn = document.getElementById('fundraiseBtn');
+      
+      // State
+      let selectedAmount = 5000; // Default to featured amount
+      let selectedMethod = 'mpesa';
+      let isMonthly = false;
+      let currentSlide = 0;
+      const totalSlides = 3;
+      
+      // Initialize with featured level selected
+      document.querySelector('.donation-level.featured').classList.add('selected');
+      
+      // Donation level selection
+      donationLevels.forEach(level => {
+        level.addEventListener('click', function() {
+          // Remove selected class from all levels
+          donationLevels.forEach(l => l.classList.remove('selected'));
+          
+          // Add selected class to clicked level
+          this.classList.add('selected');
+          
+          // Update selected amount
+          selectedAmount = parseInt(this.getAttribute('data-amount'));
+          
+          // Clear custom amount if set
+          customAmountInput.value = '';
+        });
+      });
+      
+      // Custom amount input
+      customAmountInput.addEventListener('input', function() {
+        const value = parseInt(this.value) || 0;
+        
+        if (value >= 100) {
+          // Remove selected class from all levels
+          donationLevels.forEach(l => l.classList.remove('selected'));
+          
+          // Update selected amount
+          selectedAmount = value;
+        }
+      });
+      
+      customAmountInput.addEventListener('focus', function() {
+        // Remove selected class from all levels when custom amount is focused
+        donationLevels.forEach(l => l.classList.remove('selected'));
+      });
+      
+      // Payment method selection
+      paymentMethods.forEach(method => {
+        method.addEventListener('click', function() {
+          // Remove selected class from all methods
+          paymentMethods.forEach(m => m.classList.remove('selected'));
+          
+          // Add selected class to clicked method
+          this.classList.add('selected');
+          
+          // Update selected method
+          selectedMethod = this.getAttribute('data-method');
+        });
+      });
+      
+      // Monthly donation toggle
+      monthlyDonationCheckbox.addEventListener('change', function() {
+        isMonthly = this.checked;
+      });
+      
+      // Donate Now button
+      donateNowBtn.addEventListener('click', function() {
+        // Validate amount
+        const amount = customAmountInput.value.trim() ? parseInt(customAmountInput.value) : selectedAmount;
+        
+        if (amount < 100) {
+          alert('Please enter a donation amount of at least Ksh 100');
+          customAmountInput.focus();
+          return;
+        }
+        
+        // Update modal with selected options
+        document.getElementById('modalAmount').textContent = `Ksh ${amount.toLocaleString()}`;
+        
+        let methodText = '';
+        switch(selectedMethod) {
+          case 'mpesa':
+            methodText = 'via M-Pesa';
+            document.getElementById('mpesaNumberGroup').style.display = 'block';
+            document.getElementById('cardDetailsGroup').style.display = 'none';
+            break;
+          case 'card':
+            methodText = 'via Credit/Debit Card';
+            document.getElementById('mpesaNumberGroup').style.display = 'none';
+            document.getElementById('cardDetailsGroup').style.display = 'block';
+            break;
+          case 'bank':
+            methodText = 'via Bank Transfer';
+            document.getElementById('mpesaNumberGroup').style.display = 'none';
+            document.getElementById('cardDetailsGroup').style.display = 'none';
+            break;
+          case 'paybill':
+            methodText = 'via M-Pesa Paybill';
+            document.getElementById('mpesaNumberGroup').style.display = 'block';
+            document.getElementById('cardDetailsGroup').style.display = 'none';
+            break;
+        }
+        
+        document.getElementById('modalMethod').textContent = methodText;
+        
+        if (isMonthly) {
+          document.getElementById('modalRecurring').innerHTML = '<i class="fas fa-sync-alt"></i> Monthly recurring donation';
+        } else {
+          document.getElementById('modalRecurring').textContent = '';
+        }
+        
+        // Clear form fields
+        document.getElementById('donorName').value = '';
+        document.getElementById('donorEmail').value = '';
+        document.getElementById('mpesaNumber').value = '';
+        document.getElementById('cardNumber').value = '';
+        document.getElementById('cardExpiry').value = '';
+        document.getElementById('cardCVC').value = '';
+        
+        // Show modal
+        donationModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      
+      // Close modal
+      function closeDonationModal() {
+        donationModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+      
+      modalClose.addEventListener('click', closeDonationModal);
+      modalCancelBtn.addEventListener('click', closeDonationModal);
+      
+      // Confirm donation
+      modalConfirmBtn.addEventListener('click', function() {
+        const donorName = document.getElementById('donorName').value.trim();
+        const donorEmail = document.getElementById('donorEmail').value.trim();
+        
+        // Basic validation
+        if (!donorName) {
+          alert('Please enter your name');
+          document.getElementById('donorName').focus();
+          return;
+        }
+        
+        if (!donorEmail) {
+          alert('Please enter your email address');
+          document.getElementById('donorEmail').focus();
+          return;
+        }
+        
+        if (!validateEmail(donorEmail)) {
+          alert('Please enter a valid email address');
+          document.getElementById('donorEmail').focus();
+          return;
+        }
+        
+        // Method-specific validation
+        if (selectedMethod === 'mpesa' || selectedMethod === 'paybill') {
+          const mpesaNumber = document.getElementById('mpesaNumber').value.trim();
+          if (!validateMpesaNumber(mpesaNumber)) {
+            alert('Please enter a valid M-Pesa number (format: 07XX XXX XXX)');
+            document.getElementById('mpesaNumber').focus();
+            return;
+          }
+        }
+        
+        if (selectedMethod === 'card') {
+          const cardNumber = document.getElementById('cardNumber').value.trim();
+          const cardExpiry = document.getElementById('cardExpiry').value.trim();
+          const cardCVC = document.getElementById('cardCVC').value.trim();
+          
+          if (!validateCardNumber(cardNumber)) {
+            alert('Please enter a valid card number');
+            document.getElementById('cardNumber').focus();
+            return;
+          }
+          
+          if (!validateExpiryDate(cardExpiry)) {
+            alert('Please enter a valid expiry date (MM/YY)');
+            document.getElementById('cardExpiry').focus();
+            return;
+          }
+          
+          if (!validateCVC(cardCVC)) {
+            alert('Please enter a valid CVC (3 or 4 digits)');
+            document.getElementById('cardCVC').focus();
+            return;
+          }
+        }
+        
+        // Show processing message
+        const originalText = this.textContent;
+        this.textContent = 'Processing...';
+        this.disabled = true;
+        
+        // Simulate processing delay
+        setTimeout(() => {
+          // In a real implementation, this would submit to payment processor
+          const donationDetails = `
+Donation Successful!
+
+🎉 Thank you for your generous donation of Ksh ${selectedAmount.toLocaleString()}!
+
+📧 A confirmation email has been sent to ${donorEmail}
+💰 ${isMonthly ? 'Monthly recurring donation set up successfully' : 'One-time donation processed'}
+🔒 Your payment is secure and encrypted
+📊 You'll receive impact reports showing how your donation is helping
+
+💌 For any questions, contact: donations@manwellwithin.org
+📞 Donor Support: +254 754 151 315
+
+Thank you for supporting men's mental health!
+          `;
+          
+          alert(donationDetails);
+          
+          // Reset button
+          this.textContent = originalText;
+          this.disabled = false;
+          
+          // Close modal
+          closeDonationModal();
+          
+          // Reset form
+          donationLevels.forEach(l => l.classList.remove('selected'));
+          document.querySelector('.donation-level.featured').classList.add('selected');
+          customAmountInput.value = '';
+          selectedAmount = 5000;
+          monthlyDonationCheckbox.checked = false;
+          isMonthly = false;
+          
+        }, 1500);
+      });
+      
+      // Validation functions
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+      
+      function validateMpesaNumber(number) {
+        const re = /^07[0-9]{8}$/;
+        return re.test(number.replace(/\s/g, ''));
+      }
+      
+      function validateCardNumber(number) {
+        const re = /^[0-9]{16}$/;
+        return re.test(number.replace(/\s/g, ''));
+      }
+      
+      function validateExpiryDate(expiry) {
+        const re = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+        if (!re.test(expiry)) return false;
+        
+        const [month, year] = expiry.split('/');
+        const now = new Date();
+        const currentYear = now.getFullYear() % 100;
+        const currentMonth = now.getMonth() + 1;
+        
+        if (parseInt(year) < currentYear) return false;
+        if (parseInt(year) === currentYear && parseInt(month) < currentMonth) return false;
+        
+        return true;
+      }
+      
+      function validateCVC(cvc) {
+        const re = /^[0-9]{3,4}$/;
+        return re.test(cvc);
+      }
+      
+      // Story slider
+      function updateSlider() {
+        const translateX = -currentSlide * 100;
+        storyCards.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        sliderDots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      sliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          currentSlide = index;
+          updateSlider();
+        });
+      });
+      
+      // Auto-advance slider every 5 seconds
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      }, 5000);
+      
+      // CTA Buttons
+      volunteerBtn.addEventListener('click', function() {
+        const volunteerInfo = `
+Volunteer with Manwell
+
+🤝 **Volunteer Opportunities:**
+1. **Crisis Line Support:** Help man our 24/7 crisis hotline
+2. **Peer Support Facilitation:** Lead brotherhood circles
+3. **Event Coordination:** Help organize wellness events
+4. **Professional Skills:** Offer your expertise (therapy, marketing, etc.)
+5. **Community Outreach:** Spread awareness in your community
+
+📋 **Requirements:**
+- Minimum 6-month commitment
+- Complete our volunteer training
+- Background check required
+- Passion for men's mental health
+
+⏰ **Time Commitment:**
+Flexible options from 4-20 hours per week
+
+📝 **Apply Now:**
+volunteer@manwellwithin.org
++254 754 151 315
+
+Click OK to visit our volunteer page, or Cancel to stay on this page.
+        `;
+        
+        const proceed = confirm(volunteerInfo);
+        if (proceed) {
+          // In a real implementation, this would redirect
+          alert('Redirecting to volunteer application...\n\n(In a live site, this would go to volunteer page)');
+        }
+      });
+      
+      corporateBtn.addEventListener('click', function() {
+        const corporateInfo = `
+Corporate Partnership Opportunities
+
+🏢 **Partnership Benefits:**
+• Employee Wellness Programs
+• CSR Impact & Recognition
+• Team Building Activities
+• Positive Brand Association
+• Tax Benefits
+
+🤝 **Partnership Types:**
+1. **Program Sponsorship:** Support specific mental health programs
+2. **Matching Gifts:** Match employee donations
+3. **Event Sponsorship:** Sponsor awareness events
+4. **Pro Bono Services:** Offer professional services
+5. **Cause Marketing:** Percentage of sales to Manwell
+
+📊 **Our Corporate Partners:**
+• Tech Companies
+• Financial Institutions
+• Healthcare Organizations
+• Manufacturing Firms
+• Service Industries
+
+📞 **Contact Partnerships Team:**
+partnerships@manwellwithin.org
++254 754 151 315
+
+Click OK to discuss partnership opportunities, or Cancel to stay on this page.
+        `;
+        
+        const proceed = confirm(corporateInfo);
+        if (proceed) {
+          // In a real implementation, this would redirect
+          alert('Opening partnership inquiry form...\n\n(In a live site, this would open contact form)');
+        }
+      });
+      
+      fundraiseBtn.addEventListener('click', function() {
+        const fundraiseInfo = `
+Start a Fundraiser for Manwell
+
+🎯 **Fundraising Ideas:**
+• Birthday Fundraiser: Ask for donations instead of gifts
+• Event Fundraiser: Organize a sports event, concert, or gala
+• Challenge Fundraiser: Run a marathon, climb a mountain, etc.
+• Memorial Fundraiser: Honor a loved one
+• Corporate Fundraiser: Engage your workplace
+
+🛠️ **We Provide:**
+• Fundraising toolkit & resources
+• Custom donation pages
+• Marketing materials
+• Social media support
+• Impact reports for your donors
+
+💡 **Success Stories:**
+• "Run for Men's Mental Health" raised Ksh 500,000
+• "Birthday for a Cause" raised Ksh 150,000
+• "Corporate Challenge" raised Ksh 1,000,000
+
+📞 **Get Started:**
+fundraising@manwellwithin.org
++254 754 151 315
+
+Click OK to start your fundraiser, or Cancel to stay on this page.
+        `;
+        
+        const proceed = confirm(fundraiseInfo);
+        if (proceed) {
+          // In a real implementation, this would redirect
+          alert('Opening fundraiser setup page...\n\n(In a live site, this would go to fundraising page)');
+        }
+      });
+      
+      // Keyboard navigation for modal
+      document.addEventListener('keydown', function(e) {
+        if (donationModal.classList.contains('active') && e.key === 'Escape') {
+          closeDonationModal();
+        }
+      });
+      
+      // Close modal on background click
+      donationModal.addEventListener('click', function(e) {
+        if (e.target === donationModal) {
+          closeDonationModal();
+        }
+      });
+      
+      // Donation level hover effects
+      donationLevels.forEach(level => {
+        level.addEventListener('mouseenter', function() {
+          if (!this.classList.contains('selected')) {
+            this.style.transform = 'translateY(-3px)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+          }
+        });
+        
+        level.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('selected')) {
+            this.style.transform = '';
+            this.style.boxShadow = '';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
